@@ -60,9 +60,11 @@ a:hover{color:#e8d27a;text-decoration:underline}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
 img{display:block}
 
-#seria-kredyt{margin:2px 0 0;font-size:12px;color:var(--tekst-3);letter-spacing:.02em}
-#csri-logo{display:block;height:30px;width:auto;margin:8px 0 0;opacity:.85}
-#csri-logo.brak{display:none}
+#seria-kredyt{margin:6px 0 0;font-size:12px;color:var(--tekst-3);letter-spacing:.02em}
+#kredyt-loga{display:flex;align-items:center;gap:14px;margin:8px 0 0}
+#csri-logo{display:block;height:30px;width:auto;opacity:.85}
+#wz-logo-kredyt{display:block;height:26px;width:auto;opacity:.85}
+#csri-logo.brak,#wz-logo-kredyt.brak{display:none}
 #pelny-seria{display:none}
 
 /* ── Pasek osadzenia (widoczny tylko w ramce) ── */
@@ -97,8 +99,9 @@ body.w-ramce #pasek-ramki{
 #logo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 #logo.brak{display:none}
 #naglowek h1{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
-#podpis-serii{font-size:13px;color:var(--tekst-2);margin-top:4px}
-#seria-opis{font-size:13.5px;color:var(--tekst-2);margin-top:8px;line-height:1.55;max-width:44ch;text-wrap:pretty}
+#podpis-serii{display:none}
+#kredyt-nazwy{font-size:13px;color:var(--tekst-2);margin-top:8px;line-height:1.5}
+#seria-opis{font-size:13.5px;color:var(--tekst-2);margin-top:14px;line-height:1.55;max-width:44ch;text-wrap:pretty}
 
 /* ── Wyszukiwarka ── */
 #szukaj-wrap{position:relative;margin:0 0 12px}
@@ -359,15 +362,18 @@ body.w-ramce .wiz-uwaga{display:none}
   <a id="wz-logo" href="https://wz.uw.edu.pl" aria-label="Wydział Zarządzania, Uniwersytet Warszawski">
     <img src="okladki/wz-uw.png" alt="WZ UW">
     <span class="wz-nazwa"><b>Wydział Zarządzania</b><span>Uniwersytet Warszawski</span></span>
+    <img id="csri-logo" src="okladki/csri.png" alt="Centrum Innowacji Odpowiedzialnych Społecznie">
   </a>
 
   <header id="naglowek">
     <span class="logo-rama"><img id="logo" src="okladki/podcast.png" alt="Okładka serii"></span>
     <div>
-      <h1 id="nazwa-serii">Pomoc naukowa do zajęć</h1>
-      <p id="podpis-serii">Wydział Zarządzania UW</p>
-      <p id="seria-kredyt">Podcasty przygotowało Centrum Innowacji Odpowiedzialnych Społecznie</p>
-      <img id="csri-logo" src="okladki/csri.png" alt="Centrum Innowacji Odpowiedzialnych Społecznie">
+      <h1 id="nazwa-serii">Pomoc naukowa</h1>
+      <p id="seria-kredyt">Podcasty przygotowane przez:</p>
+      <div id="kredyt-loga">
+      </div>
+      <p id="podpis-serii" class="brak">Wydział Zarządzania UW</p>
+      <p id="kredyt-nazwy">Centrum Innowacji Odpowiedzialnych Społecznie<br>Wydział Zarządzania UW</p>
       <p id="seria-opis">64 odcinki — od Taylora i Fayola po najnowsze nurty. Słuchaj w drodze na zajęcia albo przed kolokwium: zacznij od A.01 albo wybierz sekcję.</p>
     </div>
   </header>
@@ -574,7 +580,7 @@ if (miniOk) new MutationObserver(podmienKafelki).observe(miniOk, { attributes: t
 (function () {
   const h = document.getElementById('nazwa-serii');
   if (!h) return;
-  const ustaw = () => { if (h.textContent !== 'Pomoc naukowa do zajęć') h.textContent = 'Pomoc naukowa do zajęć'; };
+  const ustaw = () => { if (h.textContent !== 'Pomoc naukowa') h.textContent = 'Pomoc naukowa'; };
   ustaw();
   new MutationObserver(ustaw).observe(h, { childList: true, characterData: true, subtree: true });
 })();
