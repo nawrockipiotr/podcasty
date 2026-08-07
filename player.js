@@ -199,7 +199,8 @@ function szablonOdcinka(o, indeks) {
   }
 
   const okladka = o.okladka || seria.okladka || '';
-  const metryczka = [o.numer ? `Odc. ${o.numer}` : '', dataOpisowa(o.data)].filter(Boolean).join(' · ');
+  const oznaczenie = o.kod || (o.numer ? ('Odc. ' + o.numer) : '');
+  const metryczka = [oznaczenie, dataOpisowa(o.data)].filter(Boolean).join(' · ');
 
   return `<button class="odcinek" data-i="${indeks}" aria-current="${indeks === biezacy}">
       <span class="okladka">${okladka ? `<img src="${okladka}" alt="" loading="lazy">` : ''}
@@ -519,7 +520,10 @@ document.addEventListener('keydown', (e) => {
 /* ------------------------------------------------------------------
    Service worker (PWA) — działa tylko po HTTPS
    ------------------------------------------------------------------ */
-if ('serviceWorker' in navigator && location.protocol === 'https:') {
+const wRamce = (() => { try { return window.self !== window.top; } catch { return true; } })();
+if (wRamce) document.body.classList.add('w-ramce');
+
+if ('serviceWorker' in navigator && location.protocol === 'https:' && !wRamce) {
   window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 }
 
