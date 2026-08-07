@@ -1,0 +1,659 @@
+{
+  "seria": {
+    "tytul": "Zarządzanie — podcasty CSRI",
+    "podpis": "Wydział Zarządzania UW",
+    "opis": "Kurs zarządzania w 64 odcinkach. Od genezy dyscypliny, przez teorię biurokracji, psychologię organizacji i decyzje, po strategię, innowacje i nurty współczesne. Materiał Centrum Przedsiębiorczości i Transferu Technologii Wydziału Zarządzania Uniwersytetu Warszawskiego.",
+    "okladka": "okladki/podcast.jpg",
+    "autor": "Centrum Przedsiębiorczości i Transferu Technologii WZ UW",
+    "email": "csri@wz.uw.edu.pl",
+    "strona": "https://csri.wz.uw.edu.pl",
+    "jezyk": "pl",
+    "kategoria": "Business",
+    "podkategoria": "Entrepreneurship",
+    "explicit": false,
+    "kolejnosc": "rosnaco",
+    "typ": "kurs"
+  },
+  "odcinki": [
+    {
+      "id": "odc-064",
+      "numer": 64,
+      "sezon": "11. Nurty współczesne",
+      "tytul": "Mody w zarządzaniu",
+      "opis": "Rozmawiając o spojrzeniu na zarządzanie z poziomu meta, dochodzimy teraz do punktu kulminacyjnego. Teoria mód w zarządzaniu patrzy na całą dyscyplinę właśnie z poziomu meta.",
+      "dlugosc": 559,
+      "rozmiar": 4472524,
+      "audio": "audio/odc-064.mp3"
+    },
+    {
+      "id": "odc-063",
+      "numer": 63,
+      "sezon": "11. Nurty współczesne",
+      "tytul": "Podejście interpretatywistyczno-symboliczne",
+      "opis": "Dziś przyjrzymy się podejściu interpretatywistyczno-symbolicznemu w badaniach nad organizacjami. To coś nowego, coś co wykracza poza wcześniej omawiane perspektywy, inne niż metafory maszyny albo organizmu.",
+      "dlugosc": 518,
+      "rozmiar": 4146307,
+      "audio": "audio/odc-063.mp3"
+    },
+    {
+      "id": "odc-062",
+      "numer": 62,
+      "sezon": "11. Nurty współczesne",
+      "tytul": "Metafory i paradygmaty w zarządzaniu",
+      "opis": "Stopniowo zbliżamy się do końca naszego cyklu podcastów. I to chyba dobry moment, żeby spojrzeć na historię rozwoju badań nad zarządzaniem i organizacją w szerszym kontekście.",
+      "dlugosc": 665,
+      "rozmiar": 5323071,
+      "audio": "audio/odc-062.mp3"
+    },
+    {
+      "id": "odc-061",
+      "numer": 61,
+      "sezon": "10. Zarządzanie operacyjne",
+      "tytul": "Zarządzanie środowiskowe",
+      "opis": "Zarządzanie środowiskowe wywodzi się z dorobku zarządzania procesami, ale jego cele są bardziej szczegółowe. Zamiast koncentrować się na obniżaniu kosztów czy skracaniu czasu realizacji zadań, skupia się na zmniejszaniu obciążeń dla…",
+      "dlugosc": 355,
+      "rozmiar": 2837467,
+      "audio": "audio/odc-061.mp3"
+    },
+    {
+      "id": "odc-060",
+      "numer": 60,
+      "sezon": "10. Zarządzanie operacyjne",
+      "tytul": "Reinżyniering",
+      "opis": "Business process reingineering, reinżynieria procesów gospodarczych. Reinżynieringu czyli koncepcji, która odcisnęła wyraźne piętno na teorii i praktyce zarządzania, szczególnie pod koniec XX wieku.",
+      "dlugosc": 335,
+      "rozmiar": 2676762,
+      "audio": "audio/odc-060.mp3"
+    },
+    {
+      "id": "odc-059",
+      "numer": 59,
+      "sezon": "10. Zarządzanie operacyjne",
+      "tytul": "Benchmarking",
+      "opis": "Szukam najlepszych rozwiązań dla swojej firmy. Ale gdzie ich szukam? Obserwując rynek, konkurentów, inne organizacje.",
+      "dlugosc": 584,
+      "rozmiar": 4675861,
+      "audio": "audio/odc-059.mp3"
+    },
+    {
+      "id": "odc-058",
+      "numer": 58,
+      "sezon": "10. Zarządzanie operacyjne",
+      "tytul": "Outsourcing",
+      "opis": "Strategia bardzo popularna w ostatnich latach. Najczęściej firma korzysta z outsourcingu, żeby skupić się na tym, w czym jest naprawdę dobra – na swoich kluczowych kompetencjach.",
+      "dlugosc": 273,
+      "rozmiar": 2181272,
+      "audio": "audio/odc-058.mp3"
+    },
+    {
+      "id": "odc-057",
+      "numer": 57,
+      "sezon": "10. Zarządzanie operacyjne",
+      "tytul": "Model łańcucha wartości",
+      "opis": "Spójrzmy na model łańcucha wartości Michaela Portera. To narzędzie wyjaśnia, w jaki sposób przedsiębiorstwa mogą osiągać przewagę konkurencyjną, lepiej zarządzając swoimi operacjami.",
+      "dlugosc": 329,
+      "rozmiar": 2635175,
+      "audio": "audio/odc-057.mp3"
+    },
+    {
+      "id": "odc-056",
+      "numer": 56,
+      "sezon": "10. Zarządzanie operacyjne",
+      "tytul": "Zarządzanie operacyjne",
+      "opis": "Zarządzanie operacyjne składa się z dwóch kluczowych obszarów: zarządzania procesami i zarządzania projektami. I każdy z nich jest często przedmiotem odrębnych książek, kursów czy szkoleń.",
+      "dlugosc": 497,
+      "rozmiar": 3980168,
+      "audio": "audio/odc-056.mp3"
+    },
+    {
+      "id": "odc-055",
+      "numer": 55,
+      "sezon": "9. Przedsiębiorczość i innowacje",
+      "tytul": "Technologie informatyczne w teorii zarządzania",
+      "opis": "Technologia w organizacjach często kojarzy się głównie z maszynami i urządzeniami, które pozwalają realizować procesy gospodarcze. Ale w literaturze znajdziemy szersze podejścia.",
+      "dlugosc": 516,
+      "rozmiar": 4132096,
+      "audio": "audio/odc-055.mp3"
+    },
+    {
+      "id": "odc-054",
+      "numer": 54,
+      "sezon": "9. Przedsiębiorczość i innowacje",
+      "tytul": "Organizacyjne uczenie się i zarządzanie wiedzą",
+      "opis": "W literaturze zarządzania coraz częściej podkreśla się, że jedną z najcenniejszych zdolności organizacji jest umiejętność uczenia się. I to nie byle jakiego uczenia się, ale uczenia szybszego niż konkurencja.",
+      "dlugosc": 249,
+      "rozmiar": 1990055,
+      "audio": "audio/odc-054.mp3"
+    },
+    {
+      "id": "odc-053",
+      "numer": 53,
+      "sezon": "9. Przedsiębiorczość i innowacje",
+      "tytul": "Modele biznesu",
+      "opis": "Od blisko dwóch dekad pojęcie „model biznesu” stało się wyjątkowo popularne, zarówno wśród menedżerów, jak i teoretyków zarządzania. Wielu menedżerów myśli, że modele biznesu to kluczowe źródło przewagi konkurencyjnej.",
+      "dlugosc": 377,
+      "rozmiar": 3018444,
+      "audio": "audio/odc-053.mp3"
+    },
+    {
+      "id": "odc-052",
+      "numer": 52,
+      "sezon": "9. Przedsiębiorczość i innowacje",
+      "tytul": "Technologie a przyszłość biznesu",
+      "opis": "Zastanówmy się… czy globalizacja i nowe technologie naprawdę zmieniły reguły gry w biznesie? Była taka słynna książka Thomasa Friedmana „Świat jest płaski”.",
+      "dlugosc": 599,
+      "rozmiar": 4795397,
+      "audio": "audio/odc-052.mp3"
+    },
+    {
+      "id": "odc-051",
+      "numer": 51,
+      "sezon": "9. Przedsiębiorczość i innowacje",
+      "tytul": "Innowacje",
+      "opis": "Zacznijmy od definicji – co właściwie rozumiemy przez innowację? Najprościej mówiąc, to wdrożenie przez organizację nowego lub znacząco udoskonalonego produktu albo procesu w porównaniu z tym, co stosowano wcześniej.",
+      "dlugosc": 468,
+      "rozmiar": 3745275,
+      "audio": "audio/odc-051.mp3"
+    },
+    {
+      "id": "odc-050",
+      "numer": 50,
+      "sezon": "9. Przedsiębiorczość i innowacje",
+      "tytul": "Przedsiębiorczość",
+      "opis": "Weźmy na warsztat przedsiębiorczość, a właściwie to, jak różne teorie próbują uchwycić jej naturę. W literaturze znajdziemy ich naprawdę wiele, bo przedsiębiorczość bada się w ramach zarządzania, ekonomii, psychologii, socjologii czy…",
+      "dlugosc": 433,
+      "rozmiar": 3466078,
+      "audio": "audio/odc-050.mp3"
+    },
+    {
+      "id": "odc-049",
+      "numer": 49,
+      "sezon": "8. Marketing",
+      "tytul": "Marketing",
+      "opis": "Zacznijmy od tego, że fundamentem marketingu jest orientacja na klienta. Drucker już w latach 50. mówił, że to właśnie klient zapewnia firmie istnienie. Czyli bez klienta żadna strategia, żaden produkt po prostu nie ma sensu?",
+      "dlugosc": 370,
+      "rozmiar": 2959721,
+      "audio": "audio/odc-049.mp3"
+    },
+    {
+      "id": "odc-048",
+      "numer": 48,
+      "sezon": "6. Strategia",
+      "tytul": "Relacje międzyorganizacyjne",
+      "opis": "Współczesne przedsiębiorstwa coraz rzadziej funkcjonują w pełnej izolacji. Mówi się o tym, że współpraca międzyorganizacyjna stała się kluczowym elementem strategii rozwoju.",
+      "dlugosc": 582,
+      "rozmiar": 4660187,
+      "audio": "audio/odc-048.mp3"
+    },
+    {
+      "id": "odc-047",
+      "numer": 47,
+      "sezon": "6. Strategia",
+      "tytul": "Podejście zasobowe do organizacji",
+      "opis": "Mówiliśmy już o szkole planistycznej w zarządzaniu strategicznym, o szkole pozycyjnej i Michaelu Porterze, a potem o wkładzie firm doradczych. I teraz czas na nowsze, bardziej aktualne spojrzenie.",
+      "dlugosc": 546,
+      "rozmiar": 4367198,
+      "audio": "audio/odc-047.mp3"
+    },
+    {
+      "id": "odc-046",
+      "numer": 46,
+      "sezon": "6. Strategia",
+      "tytul": "Wkład firm doradczych w rozwój teorii zarządzania",
+      "opis": "Porozmawiamy może o tym, jak firmy doradcze wpłynęły na rozwój zarządzania. Mało kto zdaje sobie sprawę, że nauka o zarządzaniu i konsulting były ze sobą związane właściwie od samego początku. Dokładnie.",
+      "dlugosc": 545,
+      "rozmiar": 4360511,
+      "audio": "audio/odc-046.mp3"
+    },
+    {
+      "id": "odc-045",
+      "numer": 45,
+      "sezon": "6. Strategia",
+      "tytul": "Krytyka analizy Portera",
+      "opis": "W tym odcinku trochę krytyki – bo nie wszystkim w zarządzaniu podobały się propozycje Michaela Portera. Zacznijmy od tego, że propozycje Portera mają charakter analityczny i mocno odwołują się do pojęć mikroekonomicznych.",
+      "dlugosc": 393,
+      "rozmiar": 3140697,
+      "audio": "audio/odc-045.mp3"
+    },
+    {
+      "id": "odc-044",
+      "numer": 44,
+      "sezon": "6. Strategia",
+      "tytul": "Wkład Michaela Portera",
+      "opis": "Porozmawiamy o Michaelu E. Porterze – jednym z najbardziej wpływowych teoretyków zarządzania i czołowym przedstawicielu tak szkoły pozycyjnej w zarządzaniu strategicznym. To ten od modelu pięciu sił konkurencji?",
+      "dlugosc": 609,
+      "rozmiar": 4875824,
+      "audio": "audio/odc-044.mp3"
+    },
+    {
+      "id": "odc-043",
+      "numer": 43,
+      "sezon": "6. Strategia",
+      "tytul": "Proces formułowania strategii",
+      "opis": "Czy pamiętasz, jak wygląda typowy proces formułowania strategii w organizacji? No właśnie – mam wrażenie, że w podręcznikach pełno jest skomplikowanych diagramów i długich list kolejnych kroków.",
+      "dlugosc": 310,
+      "rozmiar": 2478441,
+      "audio": "audio/odc-043.mp3"
+    },
+    {
+      "id": "odc-042",
+      "numer": 42,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Strategie przyrostowe",
+      "opis": "Dotychczas rozmawialiśmy o podejmowaniu decyzji, planowaniu, podejściu systemowym i analizach otoczenia jako sposobach na kompleksowe zaplanowanie strategii i działań organizacji.",
+      "dlugosc": 537,
+      "rozmiar": 4298862,
+      "audio": "audio/odc-042.mp3"
+    },
+    {
+      "id": "odc-041",
+      "numer": 41,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Analiza SWOT",
+      "opis": "Dziś bierzemy na warsztat jedno z najpopularniejszych narzędzi analitycznych w świecie biznesu – analizę SWOT. I to nie tylko w biznesie. Absolutny must-have na naszych studiach. Strength and weaknesses. Silne i słabe strony organizacji.",
+      "dlugosc": 454,
+      "rozmiar": 3630754,
+      "audio": "audio/odc-041.mp3"
+    },
+    {
+      "id": "odc-040",
+      "numer": 40,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Analiza otoczenia bliższego",
+      "opis": "Zacznijmy od tego, że otoczenie bliższe – czasem nazywane sektorowym albo konkurencyjnym – to obszar, na który organizacja może wpływać i który jednocześnie wpływa na nią.",
+      "dlugosc": 521,
+      "rozmiar": 4165951,
+      "audio": "audio/odc-040.mp3"
+    },
+    {
+      "id": "odc-039",
+      "numer": 39,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Analiza otoczenia dalszego",
+      "opis": "Kontynuujemy temat analizy otoczenia organizacji, tym razem: otoczenia dalszego. To ważny element analiz strategicznych, który pozwala zrozumieć, w jakim środowisku działa firma. Powtórzmy, czym właściwie jest to „otoczenie dalsze”?",
+      "dlugosc": 721,
+      "rozmiar": 5767331,
+      "audio": "audio/odc-039.mp3"
+    },
+    {
+      "id": "odc-038",
+      "numer": 38,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Otoczenie organizacji",
+      "opis": "Dzisiaj porozmawiamy o otoczeniu organizacji – pojęciu, które w teorii zarządzania jest fundamentem planowania strategicznego, ale w praktyce okazuje się, że nie wszyscy je rozumieją.",
+      "dlugosc": 568,
+      "rozmiar": 4543159,
+      "audio": "audio/odc-038.mp3"
+    },
+    {
+      "id": "odc-037",
+      "numer": 37,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Dynamika systemów",
+      "opis": "Rozmawialiśmy wcześniej o podejściu systemowym i o tym, że organizację można interpretować jako system otwarty. Ale w zarządzaniu i ekonomii pojawiło się też bardzo szczegółowy nurt badań, nazywany dynamiką systemów.",
+      "dlugosc": 850,
+      "rozmiar": 6801780,
+      "audio": "audio/odc-037.mp3"
+    },
+    {
+      "id": "odc-036",
+      "numer": 36,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Organizacja jako system",
+      "opis": "Przyjrzymy się teraz organizacji z perspektywy podejścia systemowego, a dokładniej – potraktujemy ją jako system otwarty. System otwarty? Brzmi jak coś, co jest cały czas w ruchu i w kontakcie z otoczeniem.",
+      "dlugosc": 632,
+      "rozmiar": 5054084,
+      "audio": "audio/odc-036.mp3"
+    },
+    {
+      "id": "odc-035",
+      "numer": 35,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Geneza podejścia systemowego",
+      "opis": "Dziś przyjrzymy się podejściu systemowemu, które wywarło ogromny wpływ na nauki o zarządzaniu. Czyli wreszcie porozmawiamy o tym, skąd wzięło się pojęcie ekwifinalności, bo mówiliśmy o nim przy okazji krytyki naukowego zarządzania.",
+      "dlugosc": 336,
+      "rozmiar": 2689510,
+      "audio": "audio/odc-035.mp3"
+    },
+    {
+      "id": "odc-034",
+      "numer": 34,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Krytyka planowania",
+      "opis": "Dziś... o krytyce szkoły planistycznej w zarządzaniu strategicznym. To podejście, choć miało duży wpływ na rozwój teorii i praktyki zarządzania, doczekało się też rozbudowanej krytyki – zarówno ze strony badaczy, jak i praktyków.",
+      "dlugosc": 641,
+      "rozmiar": 5125346,
+      "audio": "audio/odc-034.mp3"
+    },
+    {
+      "id": "odc-033",
+      "numer": 33,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Zarządzanie przez cele",
+      "opis": "Porozmawiamy o koncepcji zarządzania przez cele, czyli po angielsku Management by Objectives, w skrócie MBO. Albo ZPC, ten polski skrót też jest stosowany.",
+      "dlugosc": 506,
+      "rozmiar": 4049758,
+      "audio": "audio/odc-033.mp3"
+    },
+    {
+      "id": "odc-032",
+      "numer": 32,
+      "sezon": "5. Planowanie i podejście systemowe",
+      "tytul": "Planowanie",
+      "opis": "Dziś porozmawiamy o szkole planistycznej w zarządzaniu. Jej rozkwit przypadł na okres po drugiej wojnie światowej, kiedy państwa odbudowujące swoje gospodarki przejęły odpowiedzialność za koordynację zasobów.",
+      "dlugosc": 780,
+      "rozmiar": 6242969,
+      "audio": "audio/odc-032.mp3"
+    },
+    {
+      "id": "odc-031",
+      "numer": 31,
+      "sezon": "4. Decyzje i odpowiedzialność",
+      "tytul": "Poza głównym nurtem",
+      "opis": "Zaczniemy dziś od podejść w zarządzaniu, które określamy jako funkcjonujące „poza głównym nurtem”. To perspektywy czerpiące inspirację z różnych nurtów filozoficznych, między innymi z XIX-wiecznej myśli Karola Marksa.",
+      "dlugosc": 881,
+      "rozmiar": 7051302,
+      "audio": "audio/odc-031.mp3"
+    },
+    {
+      "id": "odc-030",
+      "numer": 30,
+      "sezon": "4. Decyzje i odpowiedzialność",
+      "tytul": "Społeczna odpowiedzialność biznesu",
+      "opis": "Dziś zaczynamy od tematu społecznej odpowiedzialności biznesu. Wydaje się, że to pojęcie jest dziś bardzo popularne, ale czy często jest prawidłowo rozumiane? Niestety, nie zawsze.",
+      "dlugosc": 495,
+      "rozmiar": 3957598,
+      "audio": "audio/odc-030.mp3"
+    },
+    {
+      "id": "odc-029",
+      "numer": 29,
+      "sezon": "4. Decyzje i odpowiedzialność",
+      "tytul": "Wpływ społeczny",
+      "opis": "Dziś porozmawiamy o wpływie społecznym — temacie, który od lat interesuje psychologów społecznych i ma ogromne znaczenie w zarządzaniu.",
+      "dlugosc": 460,
+      "rozmiar": 3679655,
+      "audio": "audio/odc-029.mp3"
+    },
+    {
+      "id": "odc-028",
+      "numer": 28,
+      "sezon": "4. Decyzje i odpowiedzialność",
+      "tytul": "Błędy decyzyjne",
+      "opis": "W tym odcinku porozmawiamy o błędach decyzyjnych. To zjawisko, które dotyczy zarówno codziennego życia, jak i zarządzania.",
+      "dlugosc": 893,
+      "rozmiar": 7146597,
+      "audio": "audio/odc-028.mp3"
+    },
+    {
+      "id": "odc-027",
+      "numer": 27,
+      "sezon": "4. Decyzje i odpowiedzialność",
+      "tytul": "Heurystyki",
+      "opis": "Z poprzedniej rozmowy pamiętasz zapewne, że Herbert Simon wprowadził koncepcję ograniczonej racjonalności, pokazując, że decydenci często wybierają rozwiązanie wystarczająco dobre, zamiast tego optymalnego.",
+      "dlugosc": 433,
+      "rozmiar": 3466496,
+      "audio": "audio/odc-027.mp3"
+    },
+    {
+      "id": "odc-026",
+      "numer": 26,
+      "sezon": "4. Decyzje i odpowiedzialność",
+      "tytul": "Model ograniczonej racjonalnosci",
+      "opis": "Tak, oczywiście kojarzę, podstawa współczesnej ekonomii i zarządzania. Simon dostał przecież nagrodę Nobla z ekonomii za zakwestionowanie tradycyjnego podejścia znanego z mikroekonomii, prawda? Dokładnie.",
+      "dlugosc": 482,
+      "rozmiar": 3859796,
+      "audio": "audio/odc-026.mp3"
+    },
+    {
+      "id": "odc-025",
+      "numer": 25,
+      "sezon": "4. Decyzje i odpowiedzialność",
+      "tytul": "Decyzje",
+      "opis": "Właśnie. Sam termin „decyzja” pochodzi od łacińskiego decisio, czyli postanowienie, rozstrzygnięcie. W nauce o zarządzaniu rozumiemy ją jako świadomy, nielosowy wybór jednego z co najmniej dwóch możliwych sposobów działania.",
+      "dlugosc": 950,
+      "rozmiar": 7598202,
+      "audio": "audio/odc-025.mp3"
+    },
+    {
+      "id": "odc-024",
+      "numer": 24,
+      "sezon": "3. Psychologia w zarządzaniu",
+      "tytul": "Work-life balance",
+      "opis": "Technologia pozwala nam być w pracy 24 godziny na dobę albo raczej zmusza nas do pracy 24 godziny na dobę! A więc w tym odcinku skupimy się na trzech obszarach.",
+      "dlugosc": 641,
+      "rozmiar": 5125346,
+      "audio": "audio/odc-024.mp3"
+    },
+    {
+      "id": "odc-023",
+      "numer": 23,
+      "sezon": "3. Psychologia w zarządzaniu",
+      "tytul": "Znaczenie kultur narodowych dla zarządzania",
+      "opis": "Zacznijmy w tym odcinku od pytania, które przez lata wydawało się proste: czy istnieją uniwersalne zasady zarządzania, które sprawdzą się w każdym kraju i kulturze? Brzmi kusząco, ale badania pokazały, że to bardziej mit niż rzeczywistość.",
+      "dlugosc": 562,
+      "rozmiar": 4495273,
+      "audio": "audio/odc-023.mp3"
+    },
+    {
+      "id": "odc-022",
+      "numer": 22,
+      "sezon": "3. Psychologia w zarządzaniu",
+      "tytul": "Kultura organizacji",
+      "opis": "Porozmawiajmy teraz o jednym z najbardziej popularnych modeli kultury organizacyjnej — koncepcji Edgara Scheina. To właśnie on uporządkował różne sposoby patrzenia na kulturę w organizacjach, pokazując, że można ją zrozumieć przez pryzmat…",
+      "dlugosc": 380,
+      "rozmiar": 3038506,
+      "audio": "audio/odc-022.mp3"
+    },
+    {
+      "id": "odc-021",
+      "numer": 21,
+      "sezon": "3. Psychologia w zarządzaniu",
+      "tytul": "Praca zespolowa",
+      "opis": "Zacznijmy dziś od pracy zespołowej — tematu, który może wydawać się oczywisty, ale w rzeczywistości kryje wiele niuansów istotnych z punktu widzenia zarządzania. Czyli będziemy mówić o tym, jak ludzie współpracują w organizacjach?",
+      "dlugosc": 377,
+      "rozmiar": 3015518,
+      "audio": "audio/odc-021.mp3"
+    },
+    {
+      "id": "odc-020",
+      "numer": 20,
+      "sezon": "3. Psychologia w zarządzaniu",
+      "tytul": "Przywództwo",
+      "opis": "Dziś porozmawiamy o przywództwie. Jednym z kluczowych zagadnień w zarządzaniu, które można rozpatrywać na wielu płaszczyznach: przez pryzmat wpływu lidera, jego pozycji w grupie, osiąganych wyników czy samego procesu przewodzenia.",
+      "dlugosc": 407,
+      "rozmiar": 3258352,
+      "audio": "audio/odc-020.mp3"
+    },
+    {
+      "id": "odc-019",
+      "numer": 19,
+      "sezon": "3. Psychologia w zarządzaniu",
+      "tytul": "Motywacja",
+      "opis": "Czyli patrzymy zarówno na jednostkę, jak i na grupę oraz na to, w jakich warunkach funkcjonują? Dokładnie tak. Fundament pod rozwój badań w tej dziedzinie stworzyli Elton Mayo i Mary Parker Follett. Ich prace w latach 20.",
+      "dlugosc": 755,
+      "rozmiar": 6040886,
+      "audio": "audio/odc-019.mp3"
+    },
+    {
+      "id": "odc-018",
+      "numer": 18,
+      "sezon": "3. Psychologia w zarządzaniu",
+      "tytul": "Nurt Human Relations",
+      "opis": "Porozmawiajmy tym razem o nurcie Human Relations, który w zarządzaniu był odpowiedzią na zbyt mechaniczne podejście naukowego zarządzania.",
+      "dlugosc": 317,
+      "rozmiar": 2534656,
+      "audio": "audio/odc-018.mp3"
+    },
+    {
+      "id": "odc-017",
+      "numer": 17,
+      "sezon": "3. Psychologia w zarządzaniu",
+      "tytul": "Psychologia i jej związki z zarządzaniem",
+      "opis": "Zanim przejdziemy w tym odcinku do szczegółów, warto zacząć od szerszego spojrzenia. Zarządzanie to dziedzina, która czerpie z wielu innych nauk. Jedną z nich jest psychologia — nauka badająca zachowanie i procesy psychiczne ludzi.",
+      "dlugosc": 520,
+      "rozmiar": 4162368,
+      "audio": "audio/odc-017.mp3"
+    },
+    {
+      "id": "odc-016",
+      "numer": 16,
+      "sezon": "2. Biurokracja i socjologia organizacji",
+      "tytul": "Struktury organizacyjne",
+      "opis": "Porozmawiajmy o strukturach organizacyjnych. To coś więcej niż tylko graficzny schemat – struktury decydują o tym, jak działa firma, kto komu podlega i jak przepływają informacje. Dokładnie.",
+      "dlugosc": 461,
+      "rozmiar": 3689477,
+      "audio": "audio/odc-016.mp3"
+    },
+    {
+      "id": "odc-015",
+      "numer": 15,
+      "sezon": "2. Biurokracja i socjologia organizacji",
+      "tytul": "Gry organizacyjne i polityczna perspektywa analiz organizacji",
+      "opis": "Czyli nie chodzi tu tylko o politykę w sensie państwowym, ale o codzienne relacje w pracy? Dokładnie. Jak zauważył Henry Mintzberg, polityka jest obecna w każdej organizacji i w każdym ludzkim systemie.",
+      "dlugosc": 620,
+      "rozmiar": 4959446,
+      "audio": "audio/odc-015.mp3"
+    },
+    {
+      "id": "odc-014",
+      "numer": 14,
+      "sezon": "2. Biurokracja i socjologia organizacji",
+      "tytul": "Badania operacyjne",
+      "opis": "Czyli mówimy o technikach wywodzących się z wojska, prawda? Dokładnie. Rozwinęły się w Stanach Zjednoczonych w czasie II wojny światowej, aby wspierać amerykańskie operacje wojskowe.",
+      "dlugosc": 323,
+      "rozmiar": 2581258,
+      "audio": "audio/odc-014.mp3"
+    },
+    {
+      "id": "odc-013",
+      "numer": 13,
+      "sezon": "2. Biurokracja i socjologia organizacji",
+      "tytul": "Peter Drucker",
+      "opis": "Peter Ferdinand Drucker to postać, którą często określa się mianem ojca współczesnego zarządzania. Urodził się w 1909 roku w Wiedniu, później mieszkał w Londynie, a niedługo przed wojną, w 1937 roku przeniósł się do Stanów Zjednoczonych.",
+      "dlugosc": 578,
+      "rozmiar": 4620899,
+      "audio": "audio/odc-013.mp3"
+    },
+    {
+      "id": "odc-012",
+      "numer": 12,
+      "sezon": "2. Biurokracja i socjologia organizacji",
+      "tytul": "Socjologia a teoria zarządzania",
+      "opis": "W tej części zajmiemy się tym, jak socjologia wniosła swój wkład do nauk o zarządzaniu. Warto od razu zaznaczyć, że teoria organizacji i zarządzania jest w wielu aspektach bliżej nauk społecznych niż ekonomicznych, co widać choćby po…",
+      "dlugosc": 648,
+      "rozmiar": 5184905,
+      "audio": "audio/odc-012.mp3"
+    },
+    {
+      "id": "odc-011",
+      "numer": 11,
+      "sezon": "2. Biurokracja i socjologia organizacji",
+      "tytul": "Kontynuatorzy i krytycy teorii biurokracji Maxa Webera",
+      "opis": "Dziś porozmawiajmy o tym, co działo się z koncepcją biurokracji Maxa Webera po jej sformułowaniu – i o tym, dlaczego w praktyce idea „organizacji idealnej” napotyka trudności.",
+      "dlugosc": 695,
+      "rozmiar": 5557964,
+      "audio": "audio/odc-011.mp3"
+    },
+    {
+      "id": "odc-010",
+      "numer": 10,
+      "sezon": "2. Biurokracja i socjologia organizacji",
+      "tytul": "Max Weber i władza w organizacji",
+      "opis": "Porozmawiamy o tym, jak Max Weber rozumiał władzę w organizacji. W jego koncepcji, w racjonalnie zaprojektowanej strukturze podstawą hierarchii powinna być władza legalna, czyli taka, która wynika z formalnych uprawnień.",
+      "dlugosc": 400,
+      "rozmiar": 3200674,
+      "audio": "audio/odc-010.mp3"
+    },
+    {
+      "id": "odc-009",
+      "numer": 9,
+      "sezon": "2. Biurokracja i socjologia organizacji",
+      "tytul": "Max Weber i teoria biurokracji",
+      "opis": "Zaczynamy temat, który w literaturze o zarządzaniu pojawia się zaskakująco często – Max Weber i jego teoria biurokracji. Szczerze mówiąc, to podejście jest fundamentem zrozumienia, jak działają złożone organizacje, nawet jeśli na co dzień…",
+      "dlugosc": 507,
+      "rozmiar": 4059162,
+      "audio": "audio/odc-009.mp3"
+    },
+    {
+      "id": "odc-008",
+      "numer": 8,
+      "sezon": "1. Geneza zarządzania",
+      "tytul": "Zarządzanie jako dyscyplina badawcza",
+      "opis": "Kiedy mówimy „zarządzanie”, wiele osób myśli o intuicji, doświadczeniu, „zdrowym rozsądku”… Ale to coś więcej. Zarządzanie to dziś pełnoprawna dyscyplina naukowa, która ma swoje teorie, podejścia i konkretne narzędzia.",
+      "dlugosc": 557,
+      "rozmiar": 4457477,
+      "audio": "audio/odc-008.mp3"
+    },
+    {
+      "id": "odc-007",
+      "numer": 7,
+      "sezon": "1. Geneza zarządzania",
+      "tytul": "Naukowe zarządzanie - ograniczenia i współczesne znaczenie",
+      "opis": "W poprzednich odcinkach rozmawialiśmy o narodzinach naukowego zarządzania – o Tayloryzmie, jego kontynuatorach, a także o nurcie administracyjnym.",
+      "dlugosc": 455,
+      "rozmiar": 3643711,
+      "audio": "audio/odc-007.mp3"
+    },
+    {
+      "id": "odc-006",
+      "numer": 6,
+      "sezon": "1. Geneza zarządzania",
+      "tytul": "Naukowe zarządzanie - nurt administracyjny",
+      "opis": "Kontynuujemy naszą podróż przez początki naukowego zarządzania, ale tym razem przenosimy się z Ameryki do Europy. Równolegle z rozwijającym się w Stanach Zjednoczonych tayloryzmem, we Francji pojawił się nieco inny kierunek – nurt…",
+      "dlugosc": 481,
+      "rozmiar": 3848511,
+      "audio": "audio/odc-006.mp3"
+    },
+    {
+      "id": "odc-005",
+      "numer": 5,
+      "sezon": "1. Geneza zarządzania",
+      "tytul": "Naukowe zarządzanie - kontynuatorzy Taylora",
+      "opis": "O wpływie Taylora na rozwój nauk o zarządzaniu mówi się zazwyczaj w superlatywach. Ale warto pamiętać, że jego koncepcje od samego początku wywoływały też bardzo silne reakcje – i to wcale nie tylko pozytywne. Zdecydowanie.",
+      "dlugosc": 550,
+      "rozmiar": 4401053,
+      "audio": "audio/odc-005.mp3"
+    },
+    {
+      "id": "odc-004",
+      "numer": 4,
+      "sezon": "1. Geneza zarządzania",
+      "tytul": "Naukowe zarządzanie - tayloryzm",
+      "opis": "Kiedy patrzymy na dzisiejsze organizacje, trudno sobie wyobrazić, że kiedyś nie było w nich menedżerów. A przecież przez większość historii ludzkości… po prostu ich nie było. Zgadza się.",
+      "dlugosc": 480,
+      "rozmiar": 3844331,
+      "audio": "audio/odc-004.mp3"
+    },
+    {
+      "id": "odc-003",
+      "numer": 3,
+      "sezon": "1. Geneza zarządzania",
+      "tytul": "Prakseologia",
+      "opis": "Dziś porozmawiamy o czymś, co może brzmieć jak temat oczywisty, ale wcale takim nie jest – o skutecznym działaniu. Bo przecież każdy z nas codziennie coś planuje, coś organizuje, coś próbuje zrealizować.",
+      "dlugosc": 691,
+      "rozmiar": 5526408,
+      "audio": "audio/odc-003.mp3"
+    },
+    {
+      "id": "odc-002",
+      "numer": 2,
+      "sezon": "1. Geneza zarządzania",
+      "tytul": "Role menedżerskie",
+      "opis": "Przyjrzyjmy się tematowi, który z pozoru może wydawać się oczywisty, ale w praktyce bywa zaskakująco złożony – co tak naprawdę robi menedżer? No właśnie. Bo wszyscy słyszeliśmy, że menedżer „zarządza” albo „kieruje zespołem”.",
+      "dlugosc": 279,
+      "rozmiar": 2228710,
+      "audio": "audio/odc-002.mp3"
+    },
+    {
+      "id": "odc-001",
+      "numer": 1,
+      "sezon": "1. Geneza zarządzania",
+      "tytul": "Zarządzanie",
+      "opis": "Dziś przyjrzymy się bliżej temu, czym naprawdę jest zarządzanie. To coś, co otacza nas wszędzie, choć nie zawsze zdajemy sobie z tego sprawę.",
+      "dlugosc": 322,
+      "rozmiar": 2572899,
+      "audio": "audio/odc-001.mp3"
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+  SZKIELET TECHNICZNY — nie jest to wersja docelowa wizualnie.
+  Zawiera komplet identyfikatorów wymaganych przez player.js oraz minimalny CSS,
+  żeby dało się przetestować działanie. Warstwę wizualną budujesz w Claude Design
+  (patrz BRIEF-DO-CLAUDE-DESIGN.md) — zachowaj identyfikatory, podmień style.
+-->
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Podcasty CSRI">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Podcasty CSRI</title>
+<style>
+:root{
+  --tlo:#0d1117; --tlo-2:#161b22; --tlo-3:#21262d;
+  --tekst:#e6edf3; --tekst-2:#8b949e; --akcent:#4a9eff;
+  --linia:rgba(255,255,255,.08); --mini-h:64px;
+  --dol:env(safe-area-inset-bottom,0px); --gora:env(safe-area-inset-top,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overscroll-behavior-y:none}
+body{background:var(--tlo);color:var(--tekst);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+
+.naglowek{position:sticky;top:0;z-index:20;padding:calc(var(--gora) + 20px) 20px 12px;background:linear-gradient(180deg,#1a2332,var(--tlo))}
+.naglowek-tytul{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.naglowek-tytul img{width:44px;height:44px;border-radius:10px;object-fit:cover;background:var(--tlo-3)}
+.naglowek-tytul h1{margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em}
+.naglowek-tytul p{margin:2px 0 0;font-size:12px;color:var(--tekst-2)}
+#szukaj{width:100%;padding:11px 12px;border-radius:10px;background:var(--tlo-3);border:1px solid transparent;color:var(--tekst);font:inherit;font-size:15px}
+#szukaj:focus{outline:none;border-color:var(--akcent)}
+
+.filtry{display:flex;gap:8px;overflow-x:auto;padding:12px 20px 4px;scrollbar-width:none}
+.filtry::-webkit-scrollbar{display:none}
+.filtr{flex:none;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;background:var(--tlo-3);color:var(--tekst-2);white-space:nowrap}
+.filtr[aria-pressed="true"]{background:var(--tekst);color:var(--tlo)}
+
+.lista{padding:8px 12px calc(var(--mini-h) + var(--dol) + 24px)}
+.pusto{padding:48px 20px;text-align:center;color:var(--tekst-2);font-size:14px}
+.odcinek{display:flex;gap:12px;padding:10px 8px;border-radius:12px;align-items:flex-start;width:100%;text-align:left}
+.odcinek:active,.odcinek[aria-current="true"]{background:var(--tlo-2)}
+.odcinek[aria-current="true"] .odcinek-tytul{color:var(--akcent)}
+.okladka{position:relative;flex:none;width:56px;height:56px;border-radius:8px;overflow:hidden;background:var(--tlo-3)}
+.okladka img{width:100%;height:100%;object-fit:cover;display:block}
+/* nakładka „ten odcinek gra" na miniaturze */
+.wskaznik{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.55)}
+.wskaznik::before{content:"";width:14px;height:14px;background:var(--akcent);
+  -webkit-mask:radial-gradient(circle,#000 99%,transparent) center/8px 8px no-repeat;
+  mask:radial-gradient(circle,#000 99%,transparent) center/8px 8px no-repeat;
+  border:2px solid var(--akcent);border-radius:50%;box-sizing:border-box}
+.odcinek[aria-current="true"] .wskaznik{display:flex}
+.odcinek-tresc{flex:1;min-width:0}
+.odcinek-meta{display:block;font-size:11px;color:var(--tekst-2);text-transform:uppercase;letter-spacing:.04em}
+.odcinek-tytul{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:15px;font-weight:600;line-height:1.3;margin:2px 0 3px}
+.odcinek-opis{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px;color:var(--tekst-2);margin-bottom:6px}
+.odcinek-stopka{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--tekst-2)}
+.pasek-postepu{flex:none;width:44px;height:3px;border-radius:2px;background:var(--tlo-3);overflow:hidden}
+.pasek-postepu i{display:block;height:100%;background:var(--akcent)}
+.znacznik-koniec{color:var(--akcent);font-size:11px;font-weight:600}
+
+.mini{position:fixed;left:8px;right:8px;bottom:calc(var(--dol) + 8px);z-index:30;height:var(--mini-h);display:flex;align-items:center;gap:12px;padding:0 12px;background:rgba(33,38,45,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--linia);border-radius:12px;transform:translateY(140%);transition:transform .3s cubic-bezier(.32,.72,0,1);box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.mini.widoczny{transform:translateY(0)}
+.mini img{width:44px;height:44px;border-radius:6px;object-fit:cover;flex:none;background:var(--tlo-3)}
+.mini-tekst{flex:1;min-width:0}
+#mini-tytul{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#mini-podtytul{font-size:12px;color:var(--tekst-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mini-kreska{position:absolute;left:12px;right:12px;bottom:6px;height:2px;background:var(--tlo-3);border-radius:1px;overflow:hidden}
+.mini-kreska i{display:block;height:100%;background:var(--akcent)}
+.ikona-btn{flex:none;width:44px;height:44px;display:grid;place-items:center;border-radius:50%}
+.ikona-btn svg{width:24px;height:24px;fill:currentColor}
+
+.pelny{position:fixed;inset:0;z-index:40;background:linear-gradient(180deg,#1e2a3d,var(--tlo) 45%);display:flex;flex-direction:column;padding:calc(var(--gora) + 8px) 24px calc(var(--dol) + 24px);transform:translateY(100%);transition:transform .35s cubic-bezier(.32,.72,0,1);overflow-y:auto}
+.pelny.otwarty{transform:translateY(0)}
+.pelny-gora{display:flex;align-items:center;justify-content:space-between;flex:none}
+.pelny-gora span{font-size:12px;color:var(--tekst-2);text-transform:uppercase;letter-spacing:.08em}
+.pelny-okladka{width:min(72vw,300px);aspect-ratio:1;margin:16px auto 28px;flex:none;border-radius:12px;overflow:hidden;background:var(--tlo-3);box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.pelny-okladka img{width:100%;height:100%;object-fit:cover;display:block}
+#pelny-tytul{font-size:21px;font-weight:700;line-height:1.25;margin:0 0 6px;letter-spacing:-.02em}
+#pelny-podtytul{font-size:14px;color:var(--tekst-2);margin:0 0 24px}
+#suwak{width:100%;margin:0 0 6px;-webkit-appearance:none;appearance:none;background:transparent;height:20px}
+#suwak::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:var(--tlo-3)}
+#suwak::-moz-range-track{height:4px;border-radius:2px;background:var(--tlo-3)}
+#suwak::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--tekst);margin-top:-5px}
+#suwak::-moz-range-thumb{width:14px;height:14px;border:0;border-radius:50%;background:var(--tekst)}
+.czasy{display:flex;justify-content:space-between;font-size:12px;color:var(--tekst-2);margin-bottom:20px;font-variant-numeric:tabular-nums}
+.sterowanie{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:24px}
+.duzy-btn{width:64px;height:64px;border-radius:50%;background:var(--tekst);color:var(--tlo);display:grid;place-items:center;flex:none}
+.duzy-btn:active{transform:scale(.94)}
+.duzy-btn svg{width:30px;height:30px;fill:currentColor}
+.skok{width:48px;height:48px;display:grid;place-items:center;position:relative;flex:none;font-size:13px;font-weight:600}
+.pelny-dol{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:16px;flex:none}
+.chip{padding:8px 14px;border-radius:999px;background:var(--tlo-3);font-size:13px;font-weight:600;white-space:nowrap}
+.chip[data-stan="gotowe"]{background:#1f6feb;color:#fff}
+.chip[data-stan="trwa"]{opacity:.6}
+.pelny-opis{margin-top:24px;padding-top:20px;border-top:1px solid var(--linia);font-size:14px;line-height:1.6;color:var(--tekst-2);white-space:pre-wrap}
+.pelny-opis h3{color:var(--tekst);font-size:14px;margin:0 0 8px;text-transform:uppercase;letter-spacing:.06em}
+
+.komunikat{position:fixed;left:50%;bottom:calc(var(--mini-h) + var(--dol) + 24px);transform:translateX(-50%) translateY(20px);z-index:60;background:var(--tekst);color:var(--tlo);padding:10px 18px;border-radius:999px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:.25s}
+.komunikat.widoczny{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(min-width:720px){.naglowek,.filtry,.lista{max-width:720px;margin-inline:auto}.mini{max-width:704px;margin-inline:auto}.pelny{max-width:520px;margin-inline:auto}}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<header class="naglowek">
+  <div class="naglowek-tytul">
+    <img id="logo" alt="" onerror="this.style.visibility='hidden'">
+    <div><h1 id="nazwa-serii">Podcasty CSRI</h1><p id="podpis-serii">Wydział Zarządzania UW</p></div>
+  </div>
+  <input id="szukaj" type="search" placeholder="Szukaj odcinka, gościa, tematu…" autocomplete="off" enterkeyhint="search">
+</header>
+
+<nav class="filtry" id="filtry"></nav>
+<main class="lista" id="lista"></main>
+
+<div class="mini" id="mini">
+  <img id="mini-okladka" alt="">
+  <div class="mini-tekst" id="mini-otworz">
+    <div id="mini-tytul"></div>
+    <div id="mini-podtytul"></div>
+  </div>
+  <button class="ikona-btn" id="mini-play" aria-label="Odtwórz lub zatrzymaj"></button>
+  <div class="mini-kreska"><i id="mini-postep" style="width:0"></i></div>
+</div>
+
+<section class="pelny" id="pelny" aria-hidden="true">
+  <div class="pelny-gora">
+    <button class="ikona-btn" id="zamknij" aria-label="Zwiń odtwarzacz">
+      <svg viewBox="0 0 24 24"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41Z"/></svg>
+    </button>
+    <span id="pelny-seria">Podcasty CSRI</span>
+    <button class="ikona-btn" id="udostepnij" aria-label="Udostępnij odcinek">
+      <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 1 0-3-3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0 0 6c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65a2.92 2.92 0 1 0 2.92-2.92Z"/></svg>
+    </button>
+  </div>
+
+  <div class="pelny-okladka"><img id="pelny-okladka-img" alt=""></div>
+  <h2 id="pelny-tytul"></h2>
+  <p id="pelny-podtytul"></p>
+
+  <input id="suwak" type="range" min="0" max="1000" value="0" step="1" aria-label="Pozycja odtwarzania">
+  <div class="czasy"><span id="czas-teraz">0:00</span><span id="czas-koniec">–:––</span></div>
+
+  <div class="sterowanie">
+    <button class="skok" id="cofnij" aria-label="Cofnij o 15 sekund">−15</button>
+    <button class="duzy-btn" id="play" aria-label="Odtwórz lub zatrzymaj"></button>
+    <button class="skok" id="dalej" aria-label="Przewiń o 30 sekund">+30</button>
+  </div>
+
+  <div class="pelny-dol">
+    <button class="chip" id="predkosc">1×</button>
+    <button class="chip" id="pobierz">Pobierz</button>
+    <button class="chip" id="nastepny">Następny ›</button>
+  </div>
+
+  <div class="pelny-opis"><h3>O odcinku</h3><div id="pelny-opis-tresc"></div></div>
+</section>
+
+<div class="komunikat" id="komunikat"></div>
+<audio id="audio" preload="metadata" playsinline></audio>
+
+<script src="player.js"></script>
+</body>
+</html>
