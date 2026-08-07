@@ -326,19 +326,15 @@ body.w-ramce #pelny{padding-bottom:20px}
   *,#mini,#pelny{transition:none !important;animation:none !important}
 }
 
-/* Osadzenie: pasek zamiast pelnoekranowej wizytowki */
-body.w-ramce #wizytowka{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"ok tyt btn" "ok pod btn";align-items:center;gap:1px 16px;min-height:0;height:auto;padding:14px 18px;text-align:left}
-body.w-ramce .wiz-okladka{grid-area:ok;width:64px;height:64px}
-body.w-ramce #wizytowka h2{grid-area:tyt;align-self:end;font-size:17px;margin-top:0;line-height:1.25}
-body.w-ramce .wiz-podpis{grid-area:pod;align-self:start;margin-top:0;font-size:12.5px}
-body.w-ramce .wiz-przycisk{grid-area:btn;margin-top:0;padding:11px 20px;font-size:14.5px;white-space:nowrap}
-body.w-ramce .wiz-uwaga{display:none}
-@media (max-width:560px){body.w-ramce #wizytowka{grid-template-columns:auto 1fr;grid-template-areas:"ok tyt" "ok pod" "btn btn";gap:5px 14px}body.w-ramce .wiz-przycisk{justify-self:stretch;justify-content:center;margin-top:10px}}
-/* Karta w ramce: baner jako kafelek, nie pasek na cala szerokosc */
+/* Karta w ramce: kwadratowy kafelek z zaokraglonymi rogami */
 body.w-ramce{background:transparent;overflow:hidden}
 html:has(body.w-ramce){overflow:hidden;scrollbar-width:none}
-body.w-ramce #wizytowka{max-width:720px;margin:10px auto;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,.20);overflow:hidden}
-@media (max-width:560px){body.w-ramce #wizytowka{margin:8px;border-radius:16px}}
+body.w-ramce #wizytowka{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;width:min(320px,100% - 20px);aspect-ratio:1;min-height:0;height:auto;margin:10px auto;padding:22px 20px;border-radius:26px;box-shadow:0 3px 14px rgba(0,0,0,.22);text-align:center;overflow:hidden}
+body.w-ramce .wiz-okladka{width:116px;height:116px;aspect-ratio:1}
+body.w-ramce #wizytowka h2{font-size:19px;line-height:1.25;margin-top:16px}
+body.w-ramce .wiz-podpis{font-size:13px;margin-top:7px}
+body.w-ramce .wiz-przycisk{margin-top:18px;padding:12px 24px;font-size:15px;white-space:nowrap}
+body.w-ramce .wiz-uwaga{display:none}
 </style>
 </head>
 <body>
