@@ -325,6 +325,25 @@ body.w-ramce #pelny{padding-bottom:20px}
 @media (prefers-reduced-motion:reduce){
   *,#mini,#pelny{transition:none !important;animation:none !important}
 }
+
+/* ── Osadzenie: pasek zamiast pełnoekranowej wizytówki ──
+   Blok w Google Sites bywa niski. Układ siatkowy mieści okładkę, tytuł
+   i przycisk w jednym rzędzie, więc przycisk jest widoczny bez przewijania. */
+body.w-ramce #wizytowka{
+  display:grid;grid-template-columns:auto 1fr auto;
+  grid-template-areas:"ok tyt btn" "ok pod btn";
+  align-items:center;gap:1px 16px;
+  min-height:0;height:auto;padding:14px 18px;text-align:left;
+}
+body.w-ramce .wiz-okladka{grid-area:ok;width:64px;height:64px}
+body.w-ramce #wizytowka h2{grid-area:tyt;align-self:end;font-size:17px;margin-top:0;line-height:1.25}
+body.w-ramce .wiz-podpis{grid-area:pod;align-self:start;margin-top:0;font-size:12.5px}
+body.w-ramce .wiz-przycisk{grid-area:btn;margin-top:0;padding:11px 20px;font-size:14.5px;white-space:nowrap}
+body.w-ramce .wiz-uwaga{display:none}
+@media (max-width:560px){
+  body.w-ramce #wizytowka{grid-template-columns:auto 1fr;grid-template-areas:"ok tyt" "ok pod" "btn btn";gap:6px 14px}
+  body.w-ramce .wiz-przycisk{justify-self:stretch;text-align:center;justify-content:center;margin-top:10px}
+}
 </style>
 </head>
 <body>
