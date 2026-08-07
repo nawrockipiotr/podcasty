@@ -334,6 +334,10 @@ body.w-ramce .wiz-podpis{grid-area:pod;align-self:start;margin-top:0;font-size:1
 body.w-ramce .wiz-przycisk{grid-area:btn;margin-top:0;padding:11px 20px;font-size:14.5px;white-space:nowrap}
 body.w-ramce .wiz-uwaga{display:none}
 @media (max-width:560px){body.w-ramce #wizytowka{grid-template-columns:auto 1fr;grid-template-areas:"ok tyt" "ok pod" "btn btn";gap:5px 14px}body.w-ramce .wiz-przycisk{justify-self:stretch;justify-content:center;margin-top:10px}}
+/* Karta w ramce: baner jako kafelek, nie pasek na cala szerokosc */
+body.w-ramce{background:transparent}
+body.w-ramce #wizytowka{max-width:720px;margin:10px auto;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,.20);overflow:hidden}
+@media (max-width:560px){body.w-ramce #wizytowka{margin:8px;border-radius:16px}}
 </style>
 </head>
 <body>
