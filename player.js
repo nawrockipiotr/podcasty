@@ -15,21 +15,21 @@
 
      lista               kontener listy odcinków
      szukaj              <input> wyszukiwarki
-     filtry              kontener przycisków filtrów sezonów
+     filtry              kontener przycisków filtrów modułów
      nazwa-serii         tytuł serii
      podpis-serii        podpis pod tytułem
      logo                <img> okładki serii
      mini                pasek mini-playera (klasa `widoczny` = pokazany)
      mini-okladka        <img>
      mini-tytul          tytuł w mini-playerze
-     mini-podtytul       gość i data w mini-playerze
+     mini-podtytul       gość i data — w kursie CSRI PUSTE, zaprojektuj układ bez tego wiersza
      mini-play           przycisk odtwarzania w mini-playerze
      mini-postep         <i> paska postępu (sterowany przez style.width)
      mini-otworz         obszar klikalny otwierający pełny ekran
      pelny               panel pełnoekranowy (klasa `otwarty` = pokazany)
      pelny-okladka-img   <img> dużej okładki
      pelny-tytul         tytuł odcinka
-     pelny-podtytul      gość i data
+     pelny-podtytul      gość i data — w kursie CSRI PUSTE
      pelny-opis-tresc    pełny opis
      pelny-seria         nazwa serii w nagłówku panelu
      suwak               <input type="range" min=0 max=1000>
@@ -39,7 +39,7 @@
      cofnij / dalej      skoki −15 s i +30 s
      predkosc            przełącznik prędkości
      pobierz             przycisk trybu offline
-     nastepny            przejście do starszego odcinka
+     nastepny            przejście do kolejnej pozycji na liście
      zamknij             zwinięcie panelu
      udostepnij          udostępnianie
      komunikat           „toast" (klasa `widoczny`)
@@ -63,7 +63,7 @@ const IKONA_PAUZA = '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14Zm8-14v14h4
 const $ = (id) => document.getElementById(id);
 const audio = $('audio');
 
-let odcinki = [];       // wszystkie, posortowane malejąco po dacie
+let odcinki = [];       // kolejność wg seria.kolejnosc: rosnąco (kurs) lub malejąco (podcast)
 let widoczne = [];      // po filtrze i wyszukiwaniu
 let biezacy = null;     // indeks w `odcinki`
 let seria = {};
@@ -199,7 +199,9 @@ function szablonOdcinka(o, indeks) {
   }
 
   const okladka = o.okladka || seria.okladka || '';
-  const oznaczenie = o.kod || (o.numer ? ('Odc. ' + o.numer) : '');
+  // Kod z Kampusa (A.01, P.64) pozwala studentowi dopasować odcinek do sekcji
+  // kursu. Gdy go nie ma, wracamy do zwykłej numeracji.
+  const oznaczenie = o.kod || (o.numer ? `Odc. ${o.numer}` : '');
   const metryczka = [oznaczenie, dataOpisowa(o.data)].filter(Boolean).join(' · ');
 
   return `<button class="odcinek" data-i="${indeks}" aria-current="${indeks === biezacy}">
@@ -518,11 +520,22 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ------------------------------------------------------------------
-   Service worker (PWA) — działa tylko po HTTPS
-   ------------------------------------------------------------------ */
+   Tryb osadzenia (Google Sites na csri.wz.uw.edu.pl)
+   ------------------------------------------------------------------
+   W ramce część możliwości przeglądarki jest niedostępna:
+     · MediaSession nie przejmuje sesji multimedialnej → brak ekranu blokady
+     · service worker nie działa → brak trybu offline i dodania do ekranu
+     · localStorage bywa partycjonowany lub zablokowany (Safari) → wznawianie
+       odsłuchu może nie przetrwać zamknięcia karty
+   Dlatego osadzenie służy do przeglądania i słuchania na miejscu, a pełne
+   doświadczenie daje otwarcie strony samodzielnie. Klasa `w-ramce` na <body>
+   pozwala CSS-owi pokazać zachętę do otwarcia w nowej karcie. */
 const wRamce = (() => { try { return window.self !== window.top; } catch { return true; } })();
 if (wRamce) document.body.classList.add('w-ramce');
 
+/* ------------------------------------------------------------------
+   Service worker (PWA) — tylko po HTTPS i poza ramką
+   ------------------------------------------------------------------ */
 if ('serviceWorker' in navigator && location.protocol === 'https:' && !wRamce) {
   window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 }

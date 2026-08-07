@@ -5,22 +5,45 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#081732">
-<title>Podstawy zarządzania — podcasty · WZ UW</title>
+<title>Podstawy zarządzania — pomoc naukowa · WZ UW</title>
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-
+<style>/* latin-ext */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonty/font-1.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonty/font-2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<link rel="apple-touch-icon" href="ikony/ikona-192.png">
 <!--
 KONTRAKT IDENTYFIKATORÓW player.js (nie zmieniać):
   lista, szukaj, filtry, nazwa-serii, podpis-serii, logo,
-  mini (.widoczny), mini-okladka, mini-tytul, mini-podtytul, mini-play, mini-postep, mini-otworz,
+  mini (.widoczny), mini-okladka, mini-tytul, mini-podtytul, mini-play, mini-postep (<i>, style.width), mini-otworz,
   pelny (.otwarty), pelny-okladka-img, pelny-tytul, pelny-podtytul, pelny-opis-tresc, pelny-seria,
-  suwak, czas-teraz, czas-koniec, play, cofnij, dalej,
-  predkosc, pobierz, nastepny, zamknij, udostepnij, komunikat, audio.
-  Klasa body.w-ramce = osadzenie w Google Sites.
+  suwak (range 0–1000), czas-teraz, czas-koniec, play, cofnij, dalej,
+  predkosc, pobierz, nastepny, zamknij, udostepnij, komunikat (.widoczny), audio.
+  Karty listy generuje JS: .odcinek [aria-current] > .okladka(img,.wskaznik) + .odcinek-tresc
+  (.odcinek-meta,.odcinek-tytul,.odcinek-opis,.odcinek-stopka: .pasek-postepu>i, .znacznik-koniec).
+  Filtry: .filtr [aria-pressed]. Pusta lista: .pusto. Chipy predkosc/pobierz: [data-stan].
+  Klasa body.w-ramce = osadzenie (Google Sites): pasek „pełna wersja", panel ≤640px.
+  #play i #mini-play są puste — JS wstrzykuje <svg> dziedziczący currentColor.
 -->
 <style>
 :root{
+  /* Paleta WZ UW: granat 281C #142A5B, ciemny 296C #081732, niebieski 2728C #284BA9, złoty 110C #D8BC44 */
   --tlo:#081732;--tlo-gradient:#142A5B;--karta:#122349;--karta-jasna:#1c3260;
   --obrys:rgba(151,156,164,.22);--tekst:#f2f3f5;--tekst-2:#aeb6c6;--tekst-3:#8790a1;
   --akcent:#D8BC44;--akcent-cien:rgba(216,188,68,.16);--niebieski:#284BA9;
@@ -35,52 +58,71 @@ a:hover{color:#e8d27a;text-decoration:underline}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
 img{display:block}
 
+#seria-kredyt{margin:2px 0 0;font-size:12px;color:var(--tekst-3);letter-spacing:.02em}
+#csri-logo{display:block;height:30px;width:auto;margin:8px 0 0;opacity:.85}
+#csri-logo.brak{display:none}
+#pelny-seria{display:none}
+
+/* ── Pasek osadzenia (widoczny tylko w ramce) ── */
 #pasek-ramki{display:none}
-body.w-ramce #pasek-ramki{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:9px 14px;font-size:12.5px;color:var(--tekst-2);text-align:center;background:var(--karta);border-bottom:1px solid var(--obrys)}
+body.w-ramce #pasek-ramki{
+  display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+  padding:9px 14px;font-size:12.5px;color:var(--tekst-2);text-align:center;
+  background:var(--karta);border-bottom:1px solid var(--obrys);
+}
 #pasek-ramki a{font-weight:600;white-space:nowrap}
-body.w-ramce #pobierz{display:none}
 
-#app{max-width:720px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 20px) 16px calc(env(safe-area-inset-bottom) + 120px);background:linear-gradient(180deg,var(--tlo-gradient) 0%,var(--tlo) 340px);min-height:100dvh}
+/* ── Kolumna treści ── */
+#app{
+  max-width:720px;margin:0 auto;
+  padding:calc(env(safe-area-inset-top) + 20px) 16px calc(env(safe-area-inset-bottom) + 120px);
+  background:linear-gradient(180deg,var(--tlo-gradient) 0%,var(--tlo) 340px);min-height:100dvh;
+}
 
-#wz-logo{display:inline-flex;align-items:center;gap:9px;padding:2px 4px 14px;text-decoration:none}
+/* ── Logotyp WZ UW (wersja skrócona, biała) ── */
+/* ── Logotyp WZ UW (oficjalny znak uproszczony, biały) ── */
+#wz-logo{display:inline-flex;align-items:center;gap:12px;padding:2px 4px 14px;text-decoration:none}
 #wz-logo:hover{text-decoration:none}
-.wz-sygnet{display:block;height:24px;width:auto;color:#fff}
-.wz-uw{display:flex;flex-direction:column;align-items:center;gap:2px}
-.wz-uw::before,.wz-uw::after{content:"";display:block;width:100%;height:2.5px;background:#fff}
-.wz-uw span{font-weight:700;font-size:11px;letter-spacing:.08em;color:#fff;line-height:1;padding:1px 2px}
+#wz-logo img{display:block;height:26px;width:auto}
 .wz-nazwa{display:flex;flex-direction:column;line-height:1.25;padding-left:2px}
 .wz-nazwa b{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:-.01em}
 .wz-nazwa span{font-size:11.5px;color:var(--tekst-2)}
 
+/* ── Nagłówek serii ── */
 #naglowek{display:flex;gap:16px;align-items:center;padding:8px 4px 20px}
 .logo-rama{position:relative;width:96px;height:96px;flex:none;border-radius:var(--promien);overflow:hidden;background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient));box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.logo-rama::before{content:"";position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 60" fill="white"><polygon points="0,0 15,0 29.5,39.5 38.1,16 53.1,16 37,60 22,60"/><polygon points="49,0 64,0 78.5,39.5 93,0 108,0 86,60 71,60"/><path d="M96 0 H 150 V 4 L 122 46 H 150 V 60 H 96 V 56 L 124 14 H 96 Z"/></svg>') center/52% no-repeat;opacity:.85}
 #logo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 #logo.brak{display:none}
 #naglowek h1{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
 #podpis-serii{font-size:13px;color:var(--tekst-2);margin-top:4px}
-#seria-opis{font-size:13px;color:var(--tekst-3);margin-top:6px;line-height:1.45}
+#seria-opis{font-size:13.5px;color:var(--tekst-2);margin-top:8px;line-height:1.55;max-width:44ch;text-wrap:pretty}
 
+/* ── Wyszukiwarka ── */
 #szukaj-wrap{position:relative;margin:0 0 12px}
 #szukaj-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--tekst-3);pointer-events:none}
 #szukaj{width:100%;height:44px;border:1px solid var(--obrys);border-radius:var(--promien);background:var(--karta);color:var(--tekst);font-size:15px;padding:0 14px 0 42px;outline:none;transition:border-color var(--dotyk);appearance:none;-webkit-appearance:none}
 #szukaj::placeholder{color:var(--tekst-3)}
 #szukaj:focus{border-color:var(--niebieski)}
 
-#filtry{display:flex;flex-wrap:nowrap;gap:8px;padding:2px 0 14px;overflow-x:auto;scrollbar-width:none}
-#filtry::-webkit-scrollbar{display:none}
-.filtr{flex:none;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;background:var(--karta);border:1px solid var(--obrys);color:var(--tekst-2);font-size:12.5px;font-weight:500;white-space:nowrap;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk),transform var(--dotyk)}
-.filtr b{width:22px;height:22px;margin-left:-6px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;background:rgba(216,188,68,.16);color:var(--akcent)}
+/* ── Filtry sezonów (generuje JS: .filtr + aria-pressed) ── */
+#filtry{display:flex;flex-wrap:wrap;gap:8px;padding:2px 0 14px}
+.filtr{flex:none;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;background:var(--karta);border:1px solid var(--obrys);color:var(--tekst-2);font-size:12.5px;font-weight:500;white-space:nowrap;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk)}
+.filtr b{width:22px;height:22px;margin-left:-6px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;background:rgba(216,188,68,.16);color:var(--akcent);transition:background var(--dotyk),color var(--dotyk)}
 .filtr[aria-pressed="true"] b{background:var(--akcent);color:var(--tlo)}
 .filtr[aria-pressed="true"]{background:var(--tekst);border-color:var(--tekst);color:var(--tlo)}
-@media (hover:hover){.filtr:hover:not([aria-pressed="true"]){border-color:var(--tekst-3);color:var(--tekst)}}
+@media (hover:hover){.filtr:hover:not([aria-pressed="true"]){border-color:var(--tekst-3);color:var(--tekst);transform:translateY(-1px)}}
+.filtr{transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk),transform var(--dotyk)}
 .filtr:active{transform:scale(.95)}
 
+/* ── Lista odcinków (karty generuje JS) ── */
 #lista{display:flex;flex-direction:column}
 .odcinek{display:flex;gap:12px;padding:14px 4px;width:100%;text-align:left;border-bottom:1px solid var(--obrys);transition:background var(--dotyk);align-items:flex-start}
 .odcinek:active{background:var(--karta)}
 @media (hover:hover){.odcinek:hover{background:rgba(255,255,255,.035)}}
 .odcinek[aria-current="true"] .odcinek-tytul{color:var(--akcent)}
 .okladka{position:relative;width:56px;height:56px;border-radius:10px;overflow:hidden;flex:none;background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient))}
+.okladka::before{content:"";position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 60" fill="white"><polygon points="0,0 15,0 29.5,39.5 38.1,16 53.1,16 37,60 22,60"/><polygon points="49,0 64,0 78.5,39.5 93,0 108,0 86,60 71,60"/><path d="M96 0 H 150 V 4 L 124 46 H 150 V 60 H 96 V 56 L 124 14 H 96 Z"/></svg>') center/56% no-repeat;opacity:.75}
 .okladka img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .okladka img.brak{display:none}
 .wskaznik{display:none;position:absolute;inset:0;place-items:center;background:rgba(8,23,50,.55)}
@@ -99,7 +141,15 @@ body.w-ramce #pobierz{display:none}
 .odc-licznik{margin-left:auto;flex:none;font-variant-numeric:tabular-nums}
 .pusto{text-align:center;color:var(--tekst-3);font-size:14px;padding:48px 16px;line-height:1.5}
 
-#mini{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 12px);max-width:696px;margin:0 auto;z-index:40;display:flex;align-items:center;gap:4px;padding:10px 12px;background:var(--blur-tlo);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);border:1px solid var(--obrys);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.45);transform:translateY(calc(100% + 40px));transition:transform var(--przejscie)}
+/* ── Mini-player ── */
+#mini{
+  position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 12px);
+  max-width:696px;margin:0 auto;z-index:40;
+  display:flex;align-items:center;gap:4px;padding:10px 12px;
+  background:var(--blur-tlo);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);
+  border:1px solid var(--obrys);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.45);
+  transform:translateY(calc(100% + 40px));transition:transform var(--przejscie);
+}
 #mini.widoczny{transform:translateY(0)}
 #mini-otworz{flex:1;min-width:0;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer}
 .mini-okladka-rama{position:relative;width:40px;height:40px;border-radius:8px;overflow:hidden;flex:none;background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient))}
@@ -111,14 +161,36 @@ body.w-ramce #pobierz{display:none}
 #mini-podtytul:empty{display:none}
 #mini-play{width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:50%;transition:transform var(--dotyk)}
 #mini-play:active{transform:scale(.9)}
+@media (hover:hover){#mini-play:hover{transform:scale(1.08)}}
 #mini-play svg{width:22px;height:22px;fill:currentColor}
 .mini-pasek{position:absolute;left:12px;right:12px;bottom:0;height:4px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
 #mini-postep{display:block;height:100%;width:0;background:var(--akcent)}
 
-#komunikat{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 84px);transform:translate(-50%,16px);z-index:60;max-width:88vw;padding:10px 18px;border-radius:999px;background:var(--tekst);color:var(--tlo);font-size:13.5px;font-weight:600;text-align:center;opacity:0;pointer-events:none;transition:opacity var(--dotyk),transform var(--dotyk);box-shadow:0 8px 24px rgba(0,0,0,.4)}
-#komunikat.widoczny{opacity:1;transform:translate(-50%,0)}
+/* ── Komunikat — linijka pod tytułem w panelu (JS przenosi #komunikat pod #pelny-podtytul) ── */
+#komunikat{
+  min-height:19px;margin:8px 0 0;max-width:100%;
+  color:var(--akcent);font-size:12.5px;font-weight:600;letter-spacing:.02em;text-align:center;
+  opacity:0;pointer-events:none;transition:opacity var(--dotyk);
+}
+#komunikat.widoczny{opacity:1}
+/* Lustro komunikatu, gdy panel jest zamknięty — dyskretna pastylka nad mini-playerem */
+#komunikat-lustro{
+  position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 92px);transform:translate(-50%,8px);
+  z-index:60;max-width:88vw;padding:8px 16px;border-radius:999px;
+  background:var(--tekst);color:var(--tlo);font-size:12.5px;font-weight:600;text-align:center;
+  opacity:0;pointer-events:none;transition:opacity var(--dotyk),transform var(--dotyk);
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+#komunikat-lustro.widoczny{opacity:1;transform:translate(-50%,0)}
 
-#pelny{position:fixed;inset:0;z-index:50;background:linear-gradient(180deg,var(--tlo-gradient) 0%,var(--tlo) 55%);transform:translateY(100%);transition:transform var(--przejscie);overflow-y:auto;overscroll-behavior:contain;padding:calc(env(safe-area-inset-top) + 8px) 24px calc(env(safe-area-inset-bottom) + 32px)}
+/* ── Pełny ekran ── */
+#pelny{
+  position:fixed;inset:0;z-index:50;
+  background:linear-gradient(180deg,var(--tlo-gradient) 0%,var(--tlo) 55%);
+  transform:translateY(100%);transition:transform var(--przejscie);
+  overflow-y:auto;overscroll-behavior:contain;
+  padding:calc(env(safe-area-inset-top) + 8px) 24px calc(env(safe-area-inset-bottom) + 32px);
+}
 #pelny.otwarty{transform:translateY(0)}
 .pelny-kolumna{width:100%;max-width:480px;margin:0 auto;display:flex;flex-direction:column}
 #pelny-uchwyt{width:36px;height:4px;border-radius:2px;background:var(--tekst-3);opacity:.5;margin:0 auto 4px}
@@ -126,19 +198,34 @@ body.w-ramce #pobierz{display:none}
 #pelny-seria{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--tekst-3);text-align:center;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #zamknij,#udostepnij{width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:50%;color:var(--tekst-2);transition:background var(--dotyk),transform var(--dotyk)}
 #zamknij:active,#udostepnij:active{background:var(--karta);transform:scale(.92)}
-.pelny-okladka-rama{position:relative;width:min(72vw,320px,40vh);aspect-ratio:1;border-radius:var(--promien);overflow:hidden;margin:14px auto 22px;box-shadow:0 20px 48px rgba(0,0,0,.5);background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient))}
+@media (hover:hover){#zamknij:hover,#udostepnij:hover{background:var(--karta);color:var(--tekst)}}
+.pelny-okladka-rama{
+  position:relative;width:min(72vw,320px,40vh);aspect-ratio:1;border-radius:var(--promien);overflow:hidden;
+  margin:14px auto 22px;box-shadow:0 20px 48px rgba(0,0,0,.5);
+  background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient));
+}
+.pelny-okladka-rama::before{content:"";position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 60" fill="white"><polygon points="0,0 15,0 29.5,39.5 38.1,16 53.1,16 37,60 22,60"/><polygon points="49,0 64,0 78.5,39.5 93,0 108,0 86,60 71,60"/><path d="M96 0 H 150 V 4 L 124 46 H 150 V 60 H 96 V 56 L 124 14 H 96 Z"/></svg>') center/48% no-repeat;opacity:.8}
 #pelny-okladka-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 #pelny-okladka-img.brak{display:none}
+/* Żółte kreski — nakładka 1:1 na falę z okładki (geometria zmierzona z PNG), pływa przy odtwarzaniu */
 .fale{position:absolute;inset:0;pointer-events:none}
 .fale i{position:absolute;top:46.97%;width:3.91%;border-radius:999px;background:#d8bc44;transform:translateY(-50%);transform-origin:center}
-.fale i:nth-child(1){left:26.46%;height:9.96%;--s:1.9}
-.fale i:nth-child(2){left:33.59%;height:16.7%;--s:1.55}
-.fale i:nth-child(3){left:40.82%;height:23.05%;--s:1.32}
-.fale i:nth-child(4){left:48.05%;height:28.52%;--s:1.13}
-.fale i:nth-child(5){left:55.27%;height:23.05%;--s:1.32}
-.fale i:nth-child(6){left:62.4%;height:16.7%;--s:1.55}
-.fale i:nth-child(7){left:69.63%;height:9.96%;--s:1.9}
+.fale i:nth-child(1){left:26.46%;height:9.96%}
+.fale i:nth-child(2){left:33.59%;height:16.7%}
+.fale i:nth-child(3){left:40.82%;height:23.05%}
+.fale i:nth-child(4){left:48.05%;height:28.52%}
+.fale i:nth-child(5){left:55.27%;height:23.05%}
+.fale i:nth-child(6){left:62.4%;height:16.7%}
+.fale i:nth-child(7){left:69.63%;height:9.96%}
 body.gra .fale i{animation:plyw 1.6s ease-in-out infinite}
+.fale i:nth-child(1){--s:1.9}
+.fale i:nth-child(2){--s:1.55}
+.fale i:nth-child(3){--s:1.32}
+.fale i:nth-child(4){--s:1.13}
+.fale i:nth-child(5){--s:1.32}
+.fale i:nth-child(6){--s:1.55}
+.fale i:nth-child(7){--s:1.9}
+body.gra .fale i:nth-child(1){animation-delay:0s}
 body.gra .fale i:nth-child(2){animation-delay:.18s}
 body.gra .fale i:nth-child(3){animation-delay:.36s}
 body.gra .fale i:nth-child(4){animation-delay:.54s}
@@ -147,37 +234,54 @@ body.gra .fale i:nth-child(6){animation-delay:.9s}
 body.gra .fale i:nth-child(7){animation-delay:1.08s}
 @keyframes plyw{0%,100%{transform:translateY(-50%) scaleY(1)}50%{transform:translateY(-50%) scaleY(var(--s,1.3))}}
 body.gra .pelny-okladka-rama{animation:oddech 3.2s ease-in-out infinite}
-@keyframes oddech{0%,100%{transform:scale(1)}50%{transform:scale(1.022)}}
-#pelny-tytul{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.25;text-align:center}
+@keyframes oddech{0%,100%{transform:scale(1);box-shadow:0 20px 48px rgba(0,0,0,.5)}50%{transform:scale(1.022);box-shadow:0 22px 56px rgba(0,0,0,.5),0 0 44px rgba(216,188,68,.22)}}
+body.gra .mini-okladka-rama{animation:oddech-mini 3.2s ease-in-out infinite}
+@keyframes oddech-mini{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+#pelny-tytul{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.25;text-align:center;text-wrap:pretty}
 #pelny-podtytul{text-align:center;margin-top:6px;font-size:14px;color:var(--tekst-2)}
 #pelny-podtytul:empty{display:none}
 
+/* suwak */
 #suwak-wrap{margin-top:22px}
 #suwak{width:100%;height:32px;appearance:none;-webkit-appearance:none;background:transparent;display:block}
 #suwak::-webkit-slider-runnable-track{height:9px;border-radius:5px;background:linear-gradient(90deg,var(--akcent) var(--wypelnienie,0%),var(--karta-jasna) var(--wypelnienie,0%))}
 #suwak::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--tekst);margin-top:-6.5px;box-shadow:0 2px 6px rgba(0,0,0,.4)}
 #suwak::-moz-range-track{height:9px;border-radius:5px;background:var(--karta-jasna)}
 #suwak::-moz-range-progress{height:9px;border-radius:5px;background:var(--akcent)}
-#suwak::-moz-range-thumb{width:22px;height:22px;border:0;border-radius:50%;background:var(--tekst)}
-#czasy{display:flex;justify-content:space-between;font-size:12px;color:var(--tekst-3);font-variant-numeric:tabular-nums;margin-top:2px}
+#suwak::-moz-range-thumb{width:22px;height:22px;border:0;border-radius:50%;background:var(--tekst);box-shadow:0 2px 6px rgba(0,0,0,.4)}
+#czasy{display:flex;justify-content:space-between;font-size:15px;font-weight:600;color:var(--tekst-2);font-variant-numeric:tabular-nums;margin-top:4px}
 
+/* sterowanie */
 #sterowanie{display:flex;align-items:center;justify-content:center;gap:36px;margin-top:18px}
 #cofnij,#dalej{width:56px;height:56px;display:grid;place-items:center;border-radius:50%;color:var(--tekst);transition:transform var(--dotyk),background var(--dotyk);position:relative}
 #cofnij:active,#dalej:active{transform:scale(.9);background:var(--karta)}
+@media (hover:hover){#cofnij:hover,#dalej:hover{background:var(--karta)}}
 .skok-liczba{position:absolute;font-size:10px;font-weight:700;top:53%;left:50%;transform:translate(-50%,-50%)}
 #play{width:76px;height:76px;border-radius:50%;background:var(--tekst);color:var(--tlo);display:grid;place-items:center;transition:transform var(--dotyk);box-shadow:0 8px 24px rgba(0,0,0,.4)}
 #play:active{transform:scale(.94)}
+@media (hover:hover){#play:hover{transform:scale(1.05)}}
+body.gra #play{box-shadow:0 8px 24px rgba(0,0,0,.4),0 0 0 0 rgba(216,188,68,.45);animation:tetno 2.4s ease-out infinite}
+@keyframes tetno{0%{box-shadow:0 8px 24px rgba(0,0,0,.4),0 0 0 0 rgba(216,188,68,.4)}70%{box-shadow:0 8px 24px rgba(0,0,0,.4),0 0 0 14px rgba(216,188,68,0)}100%{box-shadow:0 8px 24px rgba(0,0,0,.4),0 0 0 0 rgba(216,188,68,0)}}
 #play svg{width:32px;height:32px;fill:currentColor}
 
-#chipy{display:flex;justify-content:center;gap:10px;margin-top:22px;flex-wrap:wrap}
+/* chipy */
+#chipy{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"poprz nast" "pred pob";gap:10px;margin-top:22px;max-width:340px;margin-left:auto;margin-right:auto}
+#poprzedni{grid-area:poprz}
+#nastepny{grid-area:nast}
+#predkosc{grid-area:pred}
+#pobierz{grid-area:pob}
+#chipy .chip{justify-content:center}
 .chip{height:38px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;background:var(--karta);border:1px solid var(--obrys);color:var(--tekst-2);font-size:13px;font-weight:600;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk),transform var(--dotyk)}
 .chip:active{transform:scale(.95)}
+@media (hover:hover){.chip:hover{background:var(--karta-jasna);transform:translateY(-1px)}}
 #predkosc{min-width:70px;justify-content:center;font-variant-numeric:tabular-nums}
 #pobierz[data-stan="trwa"]{color:var(--tekst-3);border-style:dashed}
 #pobierz[data-stan="gotowe"]{background:var(--akcent-cien);border-color:var(--akcent);color:var(--akcent)}
 
-#pelny-opis-tresc{margin-top:26px;font-size:14.5px;line-height:1.6;color:var(--tekst-2);white-space:pre-line;padding-bottom:8px}
+/* opis */
+#pelny-opis-tresc{margin-top:26px;font-size:14.5px;line-height:1.6;color:var(--tekst-2);white-space:pre-line;text-wrap:pretty;padding-bottom:8px}
 
+/* ── Ciasne okna i ramka 600–800 px: całe sterowanie bez przewijania ── */
 @media (max-height:700px){
   .pelny-okladka-rama{width:min(60vw,240px,32vh);margin:10px auto 14px}
   #sterowanie{margin-top:14px}
@@ -187,23 +291,38 @@ body.gra .pelny-okladka-rama{animation:oddech 3.2s ease-in-out infinite}
 body.w-ramce .pelny-okladka-rama{width:min(50vw,200px,30vh);margin:8px auto 12px}
 body.w-ramce #pelny{padding-bottom:20px}
 
+/* ── Tryb zwięzły: ramka ≤700 px (telefon w Google Sites) — jedna karta zamiast listy ── */
 #wizytowka{display:none}
 @media (max-width:700px){
-  body.w-ramce #wizytowka{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100dvh;padding:28px 24px;text-align:center;background:linear-gradient(180deg,var(--tlo-gradient) 0%,var(--tlo) 85%)}
-  body.w-ramce #pasek-ramki,body.w-ramce #app,body.w-ramce #mini,body.w-ramce #pelny,body.w-ramce #komunikat{display:none}
-  .wiz-okladka{position:relative;width:min(38vw,150px,26vh);aspect-ratio:1;border-radius:var(--promien);overflow:hidden;background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient));box-shadow:0 14px 36px rgba(0,0,0,.45)}
+  body.w-ramce #wizytowka{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
+    min-height:100dvh;padding:28px 24px;text-align:center;
+    background:linear-gradient(180deg,var(--tlo-gradient) 0%,var(--tlo) 85%);
+  }
+  body.w-ramce #pasek-ramki,body.w-ramce #app,body.w-ramce #mini,body.w-ramce #pelny,body.w-ramce #komunikat,body.w-ramce #komunikat-lustro{display:none}
+  .wiz-okladka{
+    position:relative;width:min(38vw,150px,26vh);aspect-ratio:1;border-radius:var(--promien);overflow:hidden;
+    background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient));box-shadow:0 14px 36px rgba(0,0,0,.45);
+  }
   .wiz-okladka img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .wiz-okladka img.brak{display:none}
   .wiz-okladka svg{position:absolute;left:50%;top:50%;width:46%;transform:translate(-50%,-50%);color:#fff;opacity:.9}
   .wiz-okladka img:not(.brak)+svg{display:none}
-  #wizytowka h2{font-size:21px;font-weight:700;letter-spacing:-.01em;margin-top:20px}
+  #wizytowka h2{font-size:21px;font-weight:700;letter-spacing:-.01em;margin-top:20px;text-wrap:balance}
   .wiz-podpis{font-size:13.5px;color:var(--tekst-2);margin-top:7px}
-  .wiz-przycisk{display:inline-flex;align-items:center;gap:9px;margin-top:26px;padding:15px 26px;border-radius:999px;background:var(--akcent);color:var(--tlo);font-size:15.5px;font-weight:700;text-decoration:none;box-shadow:0 10px 28px rgba(216,188,68,.28)}
-  .wiz-przycisk:hover{color:var(--tlo);text-decoration:none}
-  .wiz-uwaga{font-size:12.5px;line-height:1.55;color:var(--tekst-3);margin-top:14px;max-width:300px}
+  .wiz-przycisk{
+    display:inline-flex;align-items:center;gap:9px;margin-top:26px;padding:15px 26px;border-radius:999px;
+    background:var(--akcent);color:var(--tlo);font-size:15.5px;font-weight:700;text-decoration:none;
+    box-shadow:0 10px 28px rgba(216,188,68,.28);transition:transform var(--dotyk)
+  }
+  .wiz-przycisk:hover{color:var(--tlo);text-decoration:none;transform:translateY(-1px)}
+  .wiz-przycisk:active{transform:scale(.96)}
+  .wiz-uwaga{font-size:12.5px;line-height:1.55;color:var(--tekst-3);margin-top:14px;max-width:300px;text-wrap:pretty}
 }
 
-@media (prefers-reduced-motion:reduce){*,#mini,#pelny{transition:none !important;animation:none !important}}
+@media (prefers-reduced-motion:reduce){
+  *,#mini,#pelny{transition:none !important;animation:none !important}
+}
 </style>
 </head>
 <body>
@@ -215,7 +334,7 @@ body.w-ramce #pelny{padding-bottom:20px}
 
 <section id="wizytowka" aria-label="Podstawy zarządzania — podcasty">
   <span class="wiz-okladka">
-    <img alt="">
+    <img src="okladki/podcast.png" alt="">
     <svg viewBox="0 0 152 60" fill="currentColor" aria-hidden="true"><polygon points="0,0 15,0 29.5,39.5 38.1,16 53.1,16 37,60 22,60"></polygon><polygon points="49,0 64,0 78.5,39.5 93,0 108,0 86,60 71,60"></polygon><path d="M96 0 H 150 V 4 L 122 46 H 150 V 60 H 96 V 56 L 124 14 H 96 Z"></path></svg>
   </span>
   <h2>Podstawy zarządzania — podcasty</h2>
@@ -226,17 +345,18 @@ body.w-ramce #pelny{padding-bottom:20px}
 
 <main id="app">
   <a id="wz-logo" href="https://wz.uw.edu.pl" aria-label="Wydział Zarządzania, Uniwersytet Warszawski">
-    <svg class="wz-sygnet" viewBox="0 0 152 60" fill="currentColor" aria-hidden="true"><polygon points="0,0 15,0 29.5,39.5 38.1,16 53.1,16 37,60 22,60"></polygon><polygon points="49,0 64,0 78.5,39.5 93,0 108,0 86,60 71,60"></polygon><path d="M96 0 H 150 V 4 L 122 46 H 150 V 60 H 96 V 56 L 124 14 H 96 Z"></path></svg>
-    <span class="wz-uw"><span>UW</span></span>
+    <img src="okladki/wz-uw.png" alt="WZ UW">
     <span class="wz-nazwa"><b>Wydział Zarządzania</b><span>Uniwersytet Warszawski</span></span>
   </a>
 
   <header id="naglowek">
-    <span class="logo-rama"><img id="logo" alt="Okładka serii"></span>
+    <span class="logo-rama"><img id="logo" src="okladki/podcast.png" alt="Okładka serii"></span>
     <div>
-      <h1 id="nazwa-serii">Podstawy zarządzania — podcasty</h1>
+      <h1 id="nazwa-serii">Pomoc naukowa do zajęć</h1>
       <p id="podpis-serii">Wydział Zarządzania UW</p>
-      <p id="seria-opis">Zarządzanie do słuchania — w tramwaju, na spacerze, przed kolokwium. Cały kurs w 64 krótkich odcinkach: od Taylora i Fayola po najnowsze nurty. Zacznij od A.01 albo wybierz sekcję.</p>
+      <p id="seria-kredyt">Podcasty przygotowało Centrum Innowacji Odpowiedzialnych Społecznie</p>
+      <img id="csri-logo" src="okladki/csri.png" alt="Centrum Innowacji Odpowiedzialnych Społecznie">
+      <p id="seria-opis">64 odcinki — od Taylora i Fayola po najnowsze nurty. Słuchaj w drodze na zajęcia albo przed kolokwium: zacznij od A.01 albo wybierz sekcję.</p>
     </div>
   </header>
 
@@ -245,14 +365,14 @@ body.w-ramce #pelny{padding-bottom:20px}
     <input id="szukaj" type="search" placeholder="Szukaj odcinka lub tematu…" autocomplete="off" aria-label="Szukaj odcinków">
   </div>
 
-  <nav id="filtry" aria-label="Filtr sekcji"></nav>
+  <nav id="filtry" aria-label="Filtr modułów"></nav>
 
   <div id="lista" aria-label="Lista odcinków"></div>
 </main>
 
 <div id="mini" aria-label="Mini-odtwarzacz">
   <button id="mini-otworz" type="button" aria-label="Otwórz pełny widok odtwarzacza">
-    <span class="mini-okladka-rama"><img id="mini-okladka" alt=""></span>
+    <span class="mini-okladka-rama"><img id="mini-okladka" src="okladki/podcast.png" alt=""></span>
     <span class="mini-tresc">
       <span id="mini-tytul"></span>
       <span id="mini-podtytul"></span>
@@ -275,7 +395,7 @@ body.w-ramce #pelny{padding-bottom:20px}
       </button>
     </div>
 
-    <span class="pelny-okladka-rama"><img id="pelny-okladka-img" alt="Okładka odcinka"><span class="fale" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+    <span class="pelny-okladka-rama"><img id="pelny-okladka-img" src="okladki/podcast.png" alt="Okładka odcinka"><span class="fale" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
     <h2 id="pelny-tytul"></h2>
     <p id="pelny-podtytul"></p>
 
@@ -309,342 +429,75 @@ body.w-ramce #pelny{padding-bottom:20px}
 
 <p id="komunikat" role="status" aria-live="polite"></p>
 
-<audio id="audio" preload="metadata" playsinline=""></audio>
 
-<script src="player.js"></script>
-<script>
-document.addEventListener('error', (e) => {
-  if (e.target && e.target.tagName === 'IMG') e.target.classList.add('brak');
-}, true);
-setInterval(() => {<!DOCTYPE html>
-<html lang="pl"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#081732">
-<title>Podstawy zarządzania — podcasty · WZ UW</title>
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-
-<!--
-KONTRAKT IDENTYFIKATORÓW player.js (nie zmieniać):
-  lista, szukaj, filtry, nazwa-serii, podpis-serii, logo,
-  mini (.widoczny), mini-okladka, mini-tytul, mini-podtytul, mini-play, mini-postep, mini-otworz,
-  pelny (.otwarty), pelny-okladka-img, pelny-tytul, pelny-podtytul, pelny-opis-tresc, pelny-seria,
-  suwak, czas-teraz, czas-koniec, play, cofnij, dalej,
-  predkosc, pobierz, nastepny, zamknij, udostepnij, komunikat, audio.
-  Klasa body.w-ramce = osadzenie w Google Sites.
--->
-<style>
-:root{
-  --tlo:#081732;--tlo-gradient:#142A5B;--karta:#122349;--karta-jasna:#1c3260;
-  --obrys:rgba(151,156,164,.22);--tekst:#f2f3f5;--tekst-2:#aeb6c6;--tekst-3:#8790a1;
-  --akcent:#D8BC44;--akcent-cien:rgba(216,188,68,.16);--niebieski:#284BA9;
-  --blur-tlo:rgba(11,25,53,.74);--promien:12px;
-  --przejscie:340ms cubic-bezier(.32,.72,0,1);--dotyk:150ms ease;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
-body{font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--tlo);color:var(--tekst);min-height:100dvh;-webkit-font-smoothing:antialiased}
-a{color:var(--akcent);text-decoration:none}
-a:hover{color:#e8d27a;text-decoration:underline}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
-img{display:block}
-
-#pasek-ramki{display:none}
-body.w-ramce #pasek-ramki{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:9px 14px;font-size:12.5px;color:var(--tekst-2);text-align:center;background:var(--karta);border-bottom:1px solid var(--obrys)}
-#pasek-ramki a{font-weight:600;white-space:nowrap}
-body.w-ramce #pobierz{display:none}
-
-#app{max-width:720px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 20px) 16px calc(env(safe-area-inset-bottom) + 120px);background:linear-gradient(180deg,var(--tlo-gradient) 0%,var(--tlo) 340px);min-height:100dvh}
-
-#wz-logo{display:inline-flex;align-items:center;gap:9px;padding:2px 4px 14px;text-decoration:none}
-#wz-logo:hover{text-decoration:none}
-.wz-sygnet{display:block;height:24px;width:auto;color:#fff}
-.wz-uw{display:flex;flex-direction:column;align-items:center;gap:2px}
-.wz-uw::before,.wz-uw::after{content:"";display:block;width:100%;height:2.5px;background:#fff}
-.wz-uw span{font-weight:700;font-size:11px;letter-spacing:.08em;color:#fff;line-height:1;padding:1px 2px}
-.wz-nazwa{display:flex;flex-direction:column;line-height:1.25;padding-left:2px}
-.wz-nazwa b{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:-.01em}
-.wz-nazwa span{font-size:11.5px;color:var(--tekst-2)}
-
-#naglowek{display:flex;gap:16px;align-items:center;padding:8px 4px 20px}
-.logo-rama{position:relative;width:96px;height:96px;flex:none;border-radius:var(--promien);overflow:hidden;background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient));box-shadow:0 8px 24px rgba(0,0,0,.4)}
-#logo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-#logo.brak{display:none}
-#naglowek h1{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
-#podpis-serii{font-size:13px;color:var(--tekst-2);margin-top:4px}
-#seria-opis{font-size:13px;color:var(--tekst-3);margin-top:6px;line-height:1.45}
-
-#szukaj-wrap{position:relative;margin:0 0 12px}
-#szukaj-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--tekst-3);pointer-events:none}
-#szukaj{width:100%;height:44px;border:1px solid var(--obrys);border-radius:var(--promien);background:var(--karta);color:var(--tekst);font-size:15px;padding:0 14px 0 42px;outline:none;transition:border-color var(--dotyk);appearance:none;-webkit-appearance:none}
-#szukaj::placeholder{color:var(--tekst-3)}
-#szukaj:focus{border-color:var(--niebieski)}
-
-#filtry{display:flex;flex-wrap:nowrap;gap:8px;padding:2px 0 14px;overflow-x:auto;scrollbar-width:none}
-#filtry::-webkit-scrollbar{display:none}
-.filtr{flex:none;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;background:var(--karta);border:1px solid var(--obrys);color:var(--tekst-2);font-size:12.5px;font-weight:500;white-space:nowrap;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk),transform var(--dotyk)}
-.filtr b{width:22px;height:22px;margin-left:-6px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;background:rgba(216,188,68,.16);color:var(--akcent)}
-.filtr[aria-pressed="true"] b{background:var(--akcent);color:var(--tlo)}
-.filtr[aria-pressed="true"]{background:var(--tekst);border-color:var(--tekst);color:var(--tlo)}
-@media (hover:hover){.filtr:hover:not([aria-pressed="true"]){border-color:var(--tekst-3);color:var(--tekst)}}
-.filtr:active{transform:scale(.95)}
-
-#lista{display:flex;flex-direction:column}
-.odcinek{display:flex;gap:12px;padding:14px 4px;width:100%;text-align:left;border-bottom:1px solid var(--obrys);transition:background var(--dotyk);align-items:flex-start}
-.odcinek:active{background:var(--karta)}
-@media (hover:hover){.odcinek:hover{background:rgba(255,255,255,.035)}}
-.odcinek[aria-current="true"] .odcinek-tytul{color:var(--akcent)}
-.okladka{position:relative;width:56px;height:56px;border-radius:10px;overflow:hidden;flex:none;background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient))}
-.okladka img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.okladka img.brak{display:none}
-.wskaznik{display:none;position:absolute;inset:0;place-items:center;background:rgba(8,23,50,.55)}
-.wskaznik::before{content:"";width:14px;height:14px;background:var(--akcent);border-radius:50%;animation:puls 1.4s ease-in-out infinite}
-.odcinek[aria-current="true"] .wskaznik{display:grid}
-@keyframes puls{0%,100%{transform:scale(.7);opacity:.7}50%{transform:scale(1);opacity:1}}
-.odcinek-tresc{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
-.odcinek-meta{font-size:11.5px;color:var(--tekst-3);font-weight:500;text-transform:uppercase;letter-spacing:.03em}
-.odcinek-tytul{font-size:15px;font-weight:600;letter-spacing:-.01em;line-height:1.3;color:var(--tekst);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.odcinek-opis{font-size:13px;color:var(--tekst-2);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.odcinek-stopka{display:flex;align-items:center;gap:10px;margin-top:4px;min-height:16px;font-size:12px;color:var(--tekst-3)}
-.pasek-postepu{flex:1;max-width:120px;height:3px;border-radius:2px;background:var(--karta-jasna);overflow:hidden}
-.pasek-postepu i{display:block;height:100%;width:0;background:var(--akcent);border-radius:2px}
-.znacznik-koniec{display:inline-flex;align-items:center;gap:5px;color:var(--tekst-3)}
-.znacznik-koniec::before{content:"✓";color:var(--akcent);font-weight:700}
-.odc-licznik{margin-left:auto;flex:none;font-variant-numeric:tabular-nums}
-.pusto{text-align:center;color:var(--tekst-3);font-size:14px;padding:48px 16px;line-height:1.5}
-
-#mini{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 12px);max-width:696px;margin:0 auto;z-index:40;display:flex;align-items:center;gap:4px;padding:10px 12px;background:var(--blur-tlo);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);border:1px solid var(--obrys);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.45);transform:translateY(calc(100% + 40px));transition:transform var(--przejscie)}
-#mini.widoczny{transform:translateY(0)}
-#mini-otworz{flex:1;min-width:0;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer}
-.mini-okladka-rama{position:relative;width:40px;height:40px;border-radius:8px;overflow:hidden;flex:none;background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient))}
-#mini-okladka{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-#mini-okladka.brak{display:none}
-.mini-tresc{flex:1;min-width:0}
-#mini-tytul{display:block;font-size:14px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#mini-podtytul{display:block;font-size:12px;color:var(--tekst-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#mini-podtytul:empty{display:none}
-#mini-play{width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:50%;transition:transform var(--dotyk)}
-#mini-play:active{transform:scale(.9)}
-#mini-play svg{width:22px;height:22px;fill:currentColor}
-.mini-pasek{position:absolute;left:12px;right:12px;bottom:0;height:4px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
-#mini-postep{display:block;height:100%;width:0;background:var(--akcent)}
-
-#komunikat{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 84px);transform:translate(-50%,16px);z-index:60;max-width:88vw;padding:10px 18px;border-radius:999px;background:var(--tekst);color:var(--tlo);font-size:13.5px;font-weight:600;text-align:center;opacity:0;pointer-events:none;transition:opacity var(--dotyk),transform var(--dotyk);box-shadow:0 8px 24px rgba(0,0,0,.4)}
-#komunikat.widoczny{opacity:1;transform:translate(-50%,0)}
-
-#pelny{position:fixed;inset:0;z-index:50;background:linear-gradient(180deg,var(--tlo-gradient) 0%,var(--tlo) 55%);transform:translateY(100%);transition:transform var(--przejscie);overflow-y:auto;overscroll-behavior:contain;padding:calc(env(safe-area-inset-top) + 8px) 24px calc(env(safe-area-inset-bottom) + 32px)}
-#pelny.otwarty{transform:translateY(0)}
-.pelny-kolumna{width:100%;max-width:480px;margin:0 auto;display:flex;flex-direction:column}
-#pelny-uchwyt{width:36px;height:4px;border-radius:2px;background:var(--tekst-3);opacity:.5;margin:0 auto 4px}
-#pelny-pasek{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-#pelny-seria{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--tekst-3);text-align:center;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#zamknij,#udostepnij{width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:50%;color:var(--tekst-2);transition:background var(--dotyk),transform var(--dotyk)}
-#zamknij:active,#udostepnij:active{background:var(--karta);transform:scale(.92)}
-.pelny-okladka-rama{position:relative;width:min(72vw,320px,40vh);aspect-ratio:1;border-radius:var(--promien);overflow:hidden;margin:14px auto 22px;box-shadow:0 20px 48px rgba(0,0,0,.5);background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient))}
-#pelny-okladka-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-#pelny-okladka-img.brak{display:none}
-.fale{position:absolute;inset:0;pointer-events:none}
-.fale i{position:absolute;top:46.97%;width:3.91%;border-radius:999px;background:#d8bc44;transform:translateY(-50%);transform-origin:center}
-.fale i:nth-child(1){left:26.46%;height:9.96%;--s:1.9}
-.fale i:nth-child(2){left:33.59%;height:16.7%;--s:1.55}
-.fale i:nth-child(3){left:40.82%;height:23.05%;--s:1.32}
-.fale i:nth-child(4){left:48.05%;height:28.52%;--s:1.13}
-.fale i:nth-child(5){left:55.27%;height:23.05%;--s:1.32}
-.fale i:nth-child(6){left:62.4%;height:16.7%;--s:1.55}
-.fale i:nth-child(7){left:69.63%;height:9.96%;--s:1.9}
-body.gra .fale i{animation:plyw 1.6s ease-in-out infinite}
-body.gra .fale i:nth-child(2){animation-delay:.18s}
-body.gra .fale i:nth-child(3){animation-delay:.36s}
-body.gra .fale i:nth-child(4){animation-delay:.54s}
-body.gra .fale i:nth-child(5){animation-delay:.72s}
-body.gra .fale i:nth-child(6){animation-delay:.9s}
-body.gra .fale i:nth-child(7){animation-delay:1.08s}
-@keyframes plyw{0%,100%{transform:translateY(-50%) scaleY(1)}50%{transform:translateY(-50%) scaleY(var(--s,1.3))}}
-body.gra .pelny-okladka-rama{animation:oddech 3.2s ease-in-out infinite}
-@keyframes oddech{0%,100%{transform:scale(1)}50%{transform:scale(1.022)}}
-#pelny-tytul{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.25;text-align:center}
-#pelny-podtytul{text-align:center;margin-top:6px;font-size:14px;color:var(--tekst-2)}
-#pelny-podtytul:empty{display:none}
-
-#suwak-wrap{margin-top:22px}
-#suwak{width:100%;height:32px;appearance:none;-webkit-appearance:none;background:transparent;display:block}
-#suwak::-webkit-slider-runnable-track{height:9px;border-radius:5px;background:linear-gradient(90deg,var(--akcent) var(--wypelnienie,0%),var(--karta-jasna) var(--wypelnienie,0%))}
-#suwak::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--tekst);margin-top:-6.5px;box-shadow:0 2px 6px rgba(0,0,0,.4)}
-#suwak::-moz-range-track{height:9px;border-radius:5px;background:var(--karta-jasna)}
-#suwak::-moz-range-progress{height:9px;border-radius:5px;background:var(--akcent)}
-#suwak::-moz-range-thumb{width:22px;height:22px;border:0;border-radius:50%;background:var(--tekst)}
-#czasy{display:flex;justify-content:space-between;font-size:12px;color:var(--tekst-3);font-variant-numeric:tabular-nums;margin-top:2px}
-
-#sterowanie{display:flex;align-items:center;justify-content:center;gap:36px;margin-top:18px}
-#cofnij,#dalej{width:56px;height:56px;display:grid;place-items:center;border-radius:50%;color:var(--tekst);transition:transform var(--dotyk),background var(--dotyk);position:relative}
-#cofnij:active,#dalej:active{transform:scale(.9);background:var(--karta)}
-.skok-liczba{position:absolute;font-size:10px;font-weight:700;top:53%;left:50%;transform:translate(-50%,-50%)}
-#play{width:76px;height:76px;border-radius:50%;background:var(--tekst);color:var(--tlo);display:grid;place-items:center;transition:transform var(--dotyk);box-shadow:0 8px 24px rgba(0,0,0,.4)}
-#play:active{transform:scale(.94)}
-#play svg{width:32px;height:32px;fill:currentColor}
-
-#chipy{display:flex;justify-content:center;gap:10px;margin-top:22px;flex-wrap:wrap}
-.chip{height:38px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;background:var(--karta);border:1px solid var(--obrys);color:var(--tekst-2);font-size:13px;font-weight:600;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk),transform var(--dotyk)}
-.chip:active{transform:scale(.95)}
-#predkosc{min-width:70px;justify-content:center;font-variant-numeric:tabular-nums}
-#pobierz[data-stan="trwa"]{color:var(--tekst-3);border-style:dashed}
-#pobierz[data-stan="gotowe"]{background:var(--akcent-cien);border-color:var(--akcent);color:var(--akcent)}
-
-#pelny-opis-tresc{margin-top:26px;font-size:14.5px;line-height:1.6;color:var(--tekst-2);white-space:pre-line;padding-bottom:8px}
-
-@media (max-height:700px){
-  .pelny-okladka-rama{width:min(60vw,240px,32vh);margin:10px auto 14px}
-  #sterowanie{margin-top:14px}
-  #chipy{margin-top:16px}
-  #pelny-opis-tresc{margin-top:18px}
-}
-body.w-ramce .pelny-okladka-rama{width:min(50vw,200px,30vh);margin:8px auto 12px}
-body.w-ramce #pelny{padding-bottom:20px}
-
-#wizytowka{display:none}
-@media (max-width:700px){
-  body.w-ramce #wizytowka{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100dvh;padding:28px 24px;text-align:center;background:linear-gradient(180deg,var(--tlo-gradient) 0%,var(--tlo) 85%)}
-  body.w-ramce #pasek-ramki,body.w-ramce #app,body.w-ramce #mini,body.w-ramce #pelny,body.w-ramce #komunikat{display:none}
-  .wiz-okladka{position:relative;width:min(38vw,150px,26vh);aspect-ratio:1;border-radius:var(--promien);overflow:hidden;background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient));box-shadow:0 14px 36px rgba(0,0,0,.45)}
-  .wiz-okladka img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .wiz-okladka img.brak{display:none}
-  .wiz-okladka svg{position:absolute;left:50%;top:50%;width:46%;transform:translate(-50%,-50%);color:#fff;opacity:.9}
-  .wiz-okladka img:not(.brak)+svg{display:none}
-  #wizytowka h2{font-size:21px;font-weight:700;letter-spacing:-.01em;margin-top:20px}
-  .wiz-podpis{font-size:13.5px;color:var(--tekst-2);margin-top:7px}
-  .wiz-przycisk{display:inline-flex;align-items:center;gap:9px;margin-top:26px;padding:15px 26px;border-radius:999px;background:var(--akcent);color:var(--tlo);font-size:15.5px;font-weight:700;text-decoration:none;box-shadow:0 10px 28px rgba(216,188,68,.28)}
-  .wiz-przycisk:hover{color:var(--tlo);text-decoration:none}
-  .wiz-uwaga{font-size:12.5px;line-height:1.55;color:var(--tekst-3);margin-top:14px;max-width:300px}
-}
-
-@media (prefers-reduced-motion:reduce){*,#mini,#pelny{transition:none !important;animation:none !important}}
-</style>
-</head>
-<body>
-
-<div id="pasek-ramki">
-  <span>Słuchasz w wersji osadzonej.</span>
-  <a href="https://nawrockipiotr.github.io/podcasty/" target="_blank" rel="noopener">Otwórz pełną wersję, żeby słuchać przy zgaszonym ekranie&nbsp;→</a>
-</div>
-
-<section id="wizytowka" aria-label="Podstawy zarządzania — podcasty">
-  <span class="wiz-okladka">
-    <img alt="">
-    <svg viewBox="0 0 152 60" fill="currentColor" aria-hidden="true"><polygon points="0,0 15,0 29.5,39.5 38.1,16 53.1,16 37,60 22,60"></polygon><polygon points="49,0 64,0 78.5,39.5 93,0 108,0 86,60 71,60"></polygon><path d="M96 0 H 150 V 4 L 122 46 H 150 V 60 H 96 V 56 L 124 14 H 96 Z"></path></svg>
-  </span>
-  <h2>Podstawy zarządzania — podcasty</h2>
-  <p class="wiz-podpis">64 odcinki, 9 godzin, siedem sekcji</p>
-  <a class="wiz-przycisk" href="https://nawrockipiotr.github.io/podcasty/" target="_blank" rel="noopener">Słuchaj w pełnej wersji&nbsp;→</a>
-  <p class="wiz-uwaga">W pełnej wersji dźwięk gra przy zgaszonym ekranie, a odcinki można pobrać na później.</p>
-</section>
-
-<main id="app">
-  <a id="wz-logo" href="https://wz.uw.edu.pl" aria-label="Wydział Zarządzania, Uniwersytet Warszawski">
-    <svg class="wz-sygnet" viewBox="0 0 152 60" fill="currentColor" aria-hidden="true"><polygon points="0,0 15,0 29.5,39.5 38.1,16 53.1,16 37,60 22,60"></polygon><polygon points="49,0 64,0 78.5,39.5 93,0 108,0 86,60 71,60"></polygon><path d="M96 0 H 150 V 4 L 122 46 H 150 V 60 H 96 V 56 L 124 14 H 96 Z"></path></svg>
-    <span class="wz-uw"><span>UW</span></span>
-    <span class="wz-nazwa"><b>Wydział Zarządzania</b><span>Uniwersytet Warszawski</span></span>
-  </a>
-
-  <header id="naglowek">
-    <span class="logo-rama"><img id="logo" alt="Okładka serii"></span>
-    <div>
-      <h1 id="nazwa-serii">Podstawy zarządzania — podcasty</h1>
-      <p id="podpis-serii">Wydział Zarządzania UW</p>
-      <p id="seria-opis">Zarządzanie do słuchania — w tramwaju, na spacerze, przed kolokwium. Cały kurs w 64 krótkich odcinkach: od Taylora i Fayola po najnowsze nurty. Zacznij od A.01 albo wybierz sekcję.</p>
-    </div>
-  </header>
-
-  <div id="szukaj-wrap">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-    <input id="szukaj" type="search" placeholder="Szukaj odcinka lub tematu…" autocomplete="off" aria-label="Szukaj odcinków">
-  </div>
-
-  <nav id="filtry" aria-label="Filtr sekcji"></nav>
-
-  <div id="lista" aria-label="Lista odcinków"></div>
-</main>
-
-<div id="mini" aria-label="Mini-odtwarzacz">
-  <button id="mini-otworz" type="button" aria-label="Otwórz pełny widok odtwarzacza">
-    <span class="mini-okladka-rama"><img id="mini-okladka" alt=""></span>
-    <span class="mini-tresc">
-      <span id="mini-tytul"></span>
-      <span id="mini-podtytul"></span>
-    </span>
-  </button>
-  <button id="mini-play" type="button" aria-label="Odtwórz lub wstrzymaj"></button>
-  <span class="mini-pasek"><i id="mini-postep"></i></span>
-</div>
-
-<section id="pelny" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Odtwarzany odcinek">
-  <div class="pelny-kolumna">
-    <div id="pelny-uchwyt"></div>
-    <div id="pelny-pasek">
-      <button id="zamknij" type="button" aria-label="Zamknij pełny widok">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 9 7 7 7-7"></path></svg>
-      </button>
-      <span id="pelny-seria"></span>
-      <button id="udostepnij" type="button" aria-label="Udostępnij odcinek">
-        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7.5 7.5 4.5-4.5 4.5 4.5"></path><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"></path></svg>
-      </button>
-    </div>
-
-    <span class="pelny-okladka-rama"><img id="pelny-okladka-img" alt="Okładka odcinka"><span class="fale" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
-    <h2 id="pelny-tytul"></h2>
-    <p id="pelny-podtytul"></p>
-
-    <div id="suwak-wrap">
-      <input id="suwak" type="range" min="0" max="1000" value="0" step="1" aria-label="Pozycja odtwarzania">
-      <div id="czasy"><span id="czas-teraz">0:00</span><span id="czas-koniec">0:00</span></div>
-    </div>
-
-    <div id="sterowanie">
-      <button id="cofnij" type="button" aria-label="Cofnij 15 sekund">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9a8.5 8.5 0 1 1-1 6.5"></path><path d="M4 4v5h5"></path></svg>
-        <span class="skok-liczba">15</span>
-      </button>
-      <button id="play" type="button" aria-label="Odtwórz lub wstrzymaj"></button>
-      <button id="dalej" type="button" aria-label="Przewiń 30 sekund">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9A8.5 8.5 0 1 0 21 15.5"></path><path d="M20 4v5h-5"></path></svg>
-        <span class="skok-liczba">30</span>
-      </button>
-    </div>
-
-    <div id="chipy">
-      <button id="poprzedni" class="chip" type="button" aria-label="Poprzedni odcinek">← Poprzedni</button>
-      <button id="predkosc" class="chip" type="button" aria-label="Prędkość odtwarzania">1×</button>
-      <button id="pobierz" class="chip" type="button" aria-label="Pobierz odcinek do trybu offline">Pobierz</button>
-      <button id="nastepny" class="chip" type="button" aria-label="Następny odcinek">Następny →</button>
-    </div>
-
-    <p id="pelny-opis-tresc"></p>
-  </div>
-</section>
-
-<p id="komunikat" role="status" aria-live="polite"></p>
 
 <audio id="audio" preload="metadata" playsinline=""></audio>
 
+<script>
+/* Grafika na ekranie blokady: poprawne rozmiary i typ PNG (player.js deklaruje JPEG). */
+(function () {
+  const Oryg = window.MediaMetadata;
+  if (!Oryg) return;
+  const abs = (u) => new URL(u, location.href).href;
+  window.MediaMetadata = function (o) {
+    if (o && o.artwork && o.artwork.length) o = Object.assign({}, o, { artwork: [
+      { src: abs('okladki/ikona-192.png'), sizes: '192x192', type: 'image/png' },
+      { src: abs('okladki/ikona-512.png'), sizes: '512x512', type: 'image/png' },
+      { src: abs('okladki/podcast.png'), sizes: '1024x1024', type: 'image/png' },
+    ]});
+    return new Oryg(o);
+  };
+})();
+</script>
 <script src="player.js"></script>
 <script>
+/* Warstwa prezentacyjna — bez logiki odtwarzania.
+   1) Brakujące okładki: ukryj zepsuty <img>, pod spodem jest stan zastępczy (sygnet WZ). */
 document.addEventListener('error', (e) => {
   if (e.target && e.target.tagName === 'IMG') e.target.classList.add('brak');
 }, true);
+/* 2) Wypełnienie suwaka (WebKit) — czysto wizualne, czyta stan <audio>. */
 setInterval(() => {
   const a = document.getElementById('audio'), s = document.getElementById('suwak');
   if (a && s && isFinite(a.duration) && a.duration > 0)
     s.style.setProperty('--wypelnienie', (a.currentTime / a.duration * 100).toFixed(2) + '%');
 }, 250);
+/* 3) Poprzedni odcinek — lustro chipu „Następny", używa globalnej funkcji sasiad() z player.js. */
 const btnPoprz = document.getElementById('poprzedni');
 if (btnPoprz && typeof sasiad === 'function') btnPoprz.onclick = () => sasiad(-1);
+/* 4) Stan odtwarzania na <body> — napędza animacje okładki i przycisku play. */
 const au = document.getElementById('audio');
 au.addEventListener('play', () => document.body.classList.add('gra'));
 au.addEventListener('pause', () => document.body.classList.remove('gra'));
 au.addEventListener('ended', () => document.body.classList.remove('gra'));
+/* 5) Licznik odsłuchań — własny klucz, nie dotyka danych player.js. */
+const KL_ODS = 'pz-odsluchania-v1';
+let mojeLiczniki = {}; try { mojeLiczniki = JSON.parse(localStorage.getItem(KL_ODS)) || {}; } catch {}
+const odmiana = (n) => n === 1 ? '1 odsłuchanie' : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? n + ' odsłuchania' : n + ' odsłuchań';
+function odswiezLiczniki() {
+  if (typeof odcinki === 'undefined') return;
+  document.querySelectorAll('#lista .odcinek').forEach((b) => {
+    const o = odcinki[+b.dataset.i]; if (!o) return;
+    const n = mojeLiczniki[o.id];
+    let el = b.querySelector('.odc-licznik');
+    if (!n) { if (el) el.remove(); return; }
+    if (!el) { el = document.createElement('span'); el.className = 'odc-licznik'; const st = b.querySelector('.odcinek-stopka'); if (st) st.appendChild(el); }
+    el.textContent = odmiana(n);
+  });
+}
+let ostatniPoliczony = null;
+au.addEventListener('play', () => {
+  if (typeof odcinki === 'undefined' || typeof biezacy === 'undefined') return;
+  const o = odcinki[biezacy]; if (!o || o.id === ostatniPoliczony) return;
+  ostatniPoliczony = o.id;
+  mojeLiczniki[o.id] = (mojeLiczniki[o.id] || 0) + 1;
+  try { localStorage.setItem(KL_ODS, JSON.stringify(mojeLiczniki)); } catch {}
+  odswiezLiczniki();
+});
+const elLista = document.getElementById('lista');
+if (elLista) new MutationObserver(odswiezLiczniki).observe(elLista, { childList: true });
+odswiezLiczniki();
+/* 6) Filtry sekcji — litera z Kampusa jako złota plakietka (czysta dekoracja tekstu z player.js). */
 function dekorujFiltry() {
   document.querySelectorAll('#filtry .filtr').forEach((b) => {
     if (b.querySelector('b')) return;
@@ -654,29 +507,66 @@ function dekorujFiltry() {
 }
 const elFiltry = document.getElementById('filtry');
 if (elFiltry) { dekorujFiltry(); new MutationObserver(dekorujFiltry).observe(elFiltry, { childList: true }); }
-</script>
-
-</body></html>
-
-  const a = document.getElementById('audio'), s = document.getElementById('suwak');
-  if (a && s && isFinite(a.duration) && a.duration > 0)
-    s.style.setProperty('--wypelnienie', (a.currentTime / a.duration * 100).toFixed(2) + '%');
-}, 250);
-const btnPoprz = document.getElementById('poprzedni');
-if (btnPoprz && typeof sasiad === 'function') btnPoprz.onclick = () => sasiad(-1);
-const au = document.getElementById('audio');
-au.addEventListener('play', () => document.body.classList.add('gra'));
-au.addEventListener('pause', () => document.body.classList.remove('gra'));
-au.addEventListener('ended', () => document.body.classList.remove('gra'));
-function dekorujFiltry() {
-  document.querySelectorAll('#filtry .filtr').forEach((b) => {
-    if (b.querySelector('b')) return;
-    const m = b.textContent.match(/^([A-Z])\s*[-–]\s*(.+)$/);
-    if (m) { b.textContent = ''; const li = document.createElement('b'); li.textContent = m[1]; const nz = document.createElement('span'); nz.textContent = m[2]; b.append(li, nz); }
+/* 9) Komunikaty — linijka pod tytułem odcinka zamiast banera + dodatkowe zdarzenia.
+   Nie zmienia player.js: przenosi #komunikat do panelu, dubluje treść w pastylce
+   nad mini-playerem, gdy panel jest zamknięty, i dopisuje własne komunikaty. */
+(function () {
+  const kom = document.getElementById('komunikat');
+  const podtytul = document.getElementById('pelny-podtytul');
+  const pelny = document.getElementById('pelny');
+  if (kom && podtytul) podtytul.after(kom);
+  const lustro = document.createElement('p');
+  lustro.id = 'komunikat-lustro';
+  lustro.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(lustro);
+  let timerLustra;
+  if (kom) new MutationObserver(() => {
+    const widoczny = kom.classList.contains('widoczny');
+    if (widoczny && pelny && !pelny.classList.contains('otwarty')) {
+      lustro.textContent = kom.textContent;
+      lustro.classList.add('widoczny');
+      clearTimeout(timerLustra);
+      timerLustra = setTimeout(() => lustro.classList.remove('widoczny'), 2600);
+    }
+    if (!widoczny) lustro.classList.remove('widoczny');
+  }).observe(kom, { attributes: true, attributeFilter: ['class'] });
+  let timerWlasny;
+  function pokaz(tekst, opoznienie = 0) {
+    setTimeout(() => {
+      if (!kom || kom.classList.contains('widoczny')) return; // nie nadpisuj komunikatu playera
+      kom.textContent = tekst;
+      kom.classList.add('widoczny');
+      clearTimeout(timerWlasny);
+      timerWlasny = setTimeout(() => kom.classList.remove('widoczny'), 2600);
+    }, opoznienie);
+  }
+  const audio = document.getElementById('audio');
+  if (audio) {
+    audio.addEventListener('ended', () => pokaz('Koniec odcinka — gram następny', 150));
+    audio.addEventListener('play', () => { if (!navigator.onLine) pokaz('Brak internetu — gram z pamięci', 100); });
+  }
+  const predkosc = document.getElementById('predkosc');
+  if (predkosc) predkosc.addEventListener('click', () => pokaz('Prędkość ' + predkosc.textContent, 60));
+})();
+/* 8) Miniatury listy i mini-playera — kafelek z samą falą zamiast pełnej okładki z napisem. */
+function podmienKafelki() {
+  document.querySelectorAll('#lista .okladka img, #mini-okladka').forEach((im) => {
+    if (im.src && im.src.includes('podcast.png')) im.src = 'okladki/kafelek.png';
   });
 }
-const elFiltry = document.getElementById('filtry');
-if (elFiltry) { dekorujFiltry(); new MutationObserver(dekorujFiltry).observe(elFiltry, { childList: true }); }
+podmienKafelki();
+if (elLista) new MutationObserver(podmienKafelki).observe(elLista, { childList: true, subtree: true });
+const miniOk = document.getElementById('mini-okladka');
+if (miniOk) new MutationObserver(podmienKafelki).observe(miniOk, { attributes: true, attributeFilter: ['src'] });
+/* 7) Etykieta kontekstu u góry — nazwa serii zostaje na okładce i w panelu. */
+(function () {
+  const h = document.getElementById('nazwa-serii');
+  if (!h) return;
+  const ustaw = () => { if (h.textContent !== 'Pomoc naukowa do zajęć') h.textContent = 'Pomoc naukowa do zajęć'; };
+  ustaw();
+  new MutationObserver(ustaw).observe(h, { childList: true, characterData: true, subtree: true });
+})();
 </script>
+
 
 </body></html>
