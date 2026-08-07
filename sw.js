@@ -4,7 +4,7 @@
      csri-audio-v1    — pobrane odcinki, NIGDY nie czyszczone automatycznie
    Podbij numer POWLOKA po każdej zmianie w index.html / player.js. */
 
-const POWLOKA = 'csri-powloka-v4';
+const POWLOKA = 'csri-powloka-v5';
 const AUDIO = 'csri-audio-v1';
 const PLIKI = ['./', 'index.html', 'player.js', 'episodes.json', 'manifest.webmanifest'];
 
