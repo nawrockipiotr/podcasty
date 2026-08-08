@@ -26,8 +26,6 @@
   src: url("fonty/font-2.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
-}
 </style>
 <link rel="apple-touch-icon" href="ikony/ikona-192.png">
 <!--
@@ -40,6 +38,8 @@ KONTRAKT IDENTYFIKATORÓW player.js (nie zmieniać):
   Karty listy generuje JS: .odcinek [aria-current] > .okladka(img,.wskaznik) + .odcinek-tresc
   (.odcinek-meta,.odcinek-tytul,.odcinek-opis,.odcinek-stopka: .pasek-postepu>i, .znacznik-koniec).
   Filtry: .filtr [aria-pressed]. Pusta lista: .pusto. Chipy predkosc/pobierz: [data-stan].
+  Nowe (warstwa prezentacji): tryb-studiow, filtry-wykladow, pelny-program, pelny-efekty,
+  .odcinek-program, .pusto-wyczysc, seria-synteza.
   Klasa body.w-ramce = osadzenie (Google Sites): pasek „pełna wersja", panel ≤640px.
   #play i #mini-play są puste — JS wstrzykuje <svg> dziedziczący currentColor.
 -->
@@ -101,7 +101,7 @@ body.w-ramce #pasek-ramki{
 #naglowek h1{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
 #podpis-serii{display:none}
 #kredyt-nazwy{font-size:13px;color:var(--tekst-2);margin-top:8px;line-height:1.5}
-#seria-opis{font-size:13.5px;color:var(--tekst-2);margin-top:14px;line-height:1.55;max-width:44ch;text-wrap:pretty}
+#seria-opis{font-size:15.5px;font-weight:600;color:var(--tekst);margin-top:14px;line-height:1.45;max-width:40ch;letter-spacing:-.01em;text-wrap:pretty}
 
 /* ── Wyszukiwarka ── */
 #szukaj-wrap{position:relative;margin:0 0 12px}
@@ -119,6 +119,43 @@ body.w-ramce #pasek-ramki{
 @media (hover:hover){.filtr:hover:not([aria-pressed="true"]){border-color:var(--tekst-3);color:var(--tekst);transform:translateY(-1px)}}
 .filtr{transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk),transform var(--dotyk)}
 .filtr:active{transform:scale(.95)}
+
+/* ── Przełącznik trybu studiów (wybór wariantu kursu, nie filtr) ── */
+#tryb-wrap{display:flex;align-items:center;gap:10px;padding:0 0 12px}
+#tryb-etykieta{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--tekst-3)}
+#tryb-studiow{display:inline-flex;padding:3px;border-radius:10px;background:var(--karta);border:1px solid var(--obrys)}
+#tryb-studiow button{height:30px;padding:0 16px;border-radius:8px;font-size:13px;font-weight:600;color:var(--tekst-2);transition:background var(--dotyk),color var(--dotyk)}
+#tryb-studiow button[aria-pressed="true"]{background:var(--akcent);color:var(--tlo)}
+
+/* ── Filtr wykładów — rząd podrzędny, przewijany poziomo ── */
+#filtry-wykladow{display:flex;align-items:center;gap:6px;padding:0 0 14px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+#filtry-wykladow::-webkit-scrollbar{display:none}
+.fw-etykieta{flex:none;font-size:11.5px;color:var(--tekst-3);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-right:2px}
+.filtr-w{flex:none;min-width:30px;height:26px;padding:0 10px;border-radius:999px;background:none;border:1px solid var(--obrys);color:var(--tekst-3);font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk)}
+.filtr-w[aria-pressed="true"]{background:var(--karta-jasna);border-color:var(--akcent);color:var(--akcent)}
+@media (hover:hover){.filtr-w:hover:not([aria-pressed="true"]){color:var(--tekst-2);border-color:var(--tekst-3)}}
+/* Chipy bez odcinków w bieżącym zestawieniu filtrów — wyszarzone, nieklikalne */
+.filtr.niedostepny,.filtr-w.niedostepny{opacity:.3;pointer-events:none}
+
+/* ── Linijka programu na liście — jeden wiersz, wielokropek ── */
+.odcinek-program{font-size:11.5px;color:var(--tekst-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+
+/* ── Panel: miejsce w programie + efekty uczenia się ── */
+#pelny-program,#pelny-efekty{margin-top:22px;border-top:1px solid var(--obrys);padding-top:16px}
+#pelny-program h3,#pelny-efekty h3{font-size:13.5px;font-weight:700;color:var(--tekst-3);margin-bottom:10px}
+.prog-wiersz{font-size:13.5px;line-height:1.5;color:var(--tekst-2);margin-top:6px;text-wrap:pretty}
+.prog-wiersz b{color:var(--tekst);font-weight:600}
+#pelny-efekty ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px}
+#pelny-efekty li{font-size:13.5px;line-height:1.5;color:var(--tekst-2);text-wrap:pretty}
+#pelny-efekty li::marker{color:var(--akcent)}
+
+/* ── Pusta lista: czyszczenie filtrów ── */
+.pusto-wyczysc{margin-top:12px;height:34px;padding:0 16px;border-radius:999px;border:1px solid var(--obrys);background:var(--karta);color:var(--tekst);font-size:13px;font-weight:600}
+
+/* ── Informacja o syntezie mowy ── */
+#seria-synteza{font-size:12px;color:var(--tekst-3);margin-top:10px;line-height:1.5;max-width:46ch;text-wrap:pretty}
+#seria-podrecznik{font-size:12px;color:var(--tekst-3);margin-top:8px;line-height:1.5;max-width:46ch;text-wrap:pretty}
+#seria-podrecznik:empty{display:none}
 
 /* ── Lista odcinków (karty generuje JS) ── */
 #lista{display:flex;flex-direction:column}
@@ -210,6 +247,8 @@ body.w-ramce #pasek-ramki{
   background:linear-gradient(135deg,var(--niebieski),var(--tlo-gradient));
 }
 .pelny-okladka-rama::before{content:"";position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 60" fill="white"><polygon points="0,0 15,0 29.5,39.5 38.1,16 53.1,16 37,60 22,60"/><polygon points="49,0 64,0 78.5,39.5 93,0 108,0 86,60 71,60"/><path d="M96 0 H 150 V 4 L 124 46 H 150 V 60 H 96 V 56 L 124 14 H 96 Z"/></svg>') center/48% no-repeat;opacity:.8}
+/* Gdy okładka panelu nie wczyta się, sygnet znika — zostaje gradient + złote kreski (czysty kafelek) */
+.pelny-okladka-rama:has(#pelny-okladka-img.brak)::before{content:none}
 #pelny-okladka-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 #pelny-okladka-img.brak{display:none}
 /* Żółte kreski — nakładka 1:1 na falę z okładki (geometria zmierzona z PNG), pływa przy odtwarzaniu */
@@ -296,7 +335,7 @@ body.gra #play{box-shadow:0 8px 24px rgba(0,0,0,.4),0 0 0 0 rgba(216,188,68,.45)
 body.w-ramce .pelny-okladka-rama{width:min(50vw,200px,30vh);margin:8px auto 12px}
 body.w-ramce #pelny{padding-bottom:20px}
 
-/* ── Tryb zwięzły: ramka ≤700 px (telefon w Google Sites) — jedna karta zamiast listy ── */
+/* ── Tryb zwięzły: każda ramka (Google Sites) — jedna karta zamiast listy ── */
 #wizytowka{display:none}
 @media (min-width:0px){
   body.w-ramce #wizytowka{
@@ -325,10 +364,6 @@ body.w-ramce #pelny{padding-bottom:20px}
   .wiz-uwaga{font-size:12.5px;line-height:1.55;color:var(--tekst-3);margin-top:14px;max-width:300px;text-wrap:pretty}
 }
 
-@media (prefers-reduced-motion:reduce){
-  *,#mini,#pelny{transition:none !important;animation:none !important}
-}
-
 /* Karta w ramce: kwadratowy kafelek z zaokraglonymi rogami */
 body.w-ramce{background:transparent;overflow:hidden}
 html:has(body.w-ramce){overflow:hidden;scrollbar-width:none}
@@ -338,6 +373,10 @@ body.w-ramce #wizytowka h2{font-size:19px;line-height:1.25;margin-top:16px}
 body.w-ramce .wiz-podpis{font-size:13px;margin-top:7px}
 body.w-ramce .wiz-przycisk{margin-top:18px;padding:12px 24px;font-size:15px;white-space:nowrap}
 body.w-ramce .wiz-uwaga{display:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,#mini,#pelny{transition:none !important;animation:none !important}
+}
 </style>
 </head>
 <body>
@@ -374,7 +413,9 @@ body.w-ramce .wiz-uwaga{display:none}
       </div>
       <p id="podpis-serii" class="brak">Wydział Zarządzania UW</p>
       <p id="kredyt-nazwy">Centrum Innowacji Odpowiedzialnych Społecznie<br>Wydział Zarządzania UW</p>
-      <p id="seria-opis">64 odcinki — od Taylora i Fayola po najnowsze nurty. Słuchaj w drodze na zajęcia albo przed kolokwium: zacznij od A.01 albo wybierz sekcję.</p>
+      <p id="seria-opis">64 odcinki — od Taylora i Fayola po najnowsze nurty.</p>
+      <p id="seria-podrecznik"></p>
+      <p id="seria-synteza">Nagrania powstały z wykorzystaniem syntezy mowy. Za dobór i treść materiału odpowiada Katedra Teorii Organizacji i Zarządzania.</p>
     </div>
   </header>
 
@@ -383,7 +424,17 @@ body.w-ramce .wiz-uwaga{display:none}
     <input id="szukaj" type="search" placeholder="Szukaj odcinka lub tematu…" autocomplete="off" aria-label="Szukaj odcinków">
   </div>
 
+  <div id="tryb-wrap">
+    <span id="tryb-etykieta">Tryb studiów</span>
+    <div id="tryb-studiow" role="group" aria-label="Tryb studiów">
+      <button type="button" data-tryb="dzienne" aria-pressed="true">Dzienne</button>
+      <button type="button" data-tryb="zaoczne" aria-pressed="false">Zaoczne</button>
+    </div>
+  </div>
+
   <nav id="filtry" aria-label="Filtr modułów"></nav>
+
+  <nav id="filtry-wykladow" aria-label="Filtr wykładów" style="display:none"></nav>
 
   <div id="lista" aria-label="Lista odcinków"></div>
 </main>
@@ -442,6 +493,9 @@ body.w-ramce .wiz-uwaga{display:none}
     </div>
 
     <p id="pelny-opis-tresc"></p>
+
+    <section id="pelny-program" style="display:none" aria-label="Miejsce w programie kursu"></section>
+    <section id="pelny-efekty" style="display:none" aria-label="Efekty uczenia się"></section>
   </div>
 </section>
 
@@ -452,6 +506,13 @@ body.w-ramce .wiz-uwaga{display:none}
 <audio id="audio" preload="metadata" playsinline=""></audio>
 
 <script>
+/* Zapamiętaj wbudowane okładki PRZED player.js — w standalone są to osadzone data-URI,
+   które player.js nadpisuje ścieżkami plików nieistniejącymi poza serwerem. */
+window.__okladkiStart = {};
+for (const id of ['logo', 'mini-okladka', 'pelny-okladka-img']) {
+  const el = document.getElementById(id);
+  if (el) window.__okladkiStart[id] = el.getAttribute('src') || '';
+}
 /* Grafika na ekranie blokady: poprawne rozmiary i typ PNG (player.js deklaruje JPEG). */
 (function () {
   const Oryg = window.MediaMetadata;
@@ -467,6 +528,7 @@ body.w-ramce .wiz-uwaga{display:none}
   };
 })();
 </script>
+
 <script src="player.js"></script>
 <script>
 /* Warstwa prezentacyjna — bez logiki odtwarzania.
@@ -474,6 +536,22 @@ body.w-ramce .wiz-uwaga{display:none}
 document.addEventListener('error', (e) => {
   if (e.target && e.target.tagName === 'IMG') e.target.classList.add('brak');
 }, true);
+/* 1b) Udane wczytanie zdejmuje stan zastępczy (np. po podmianie src na data-URI). */
+document.addEventListener('load', (e) => {
+  if (e.target && e.target.tagName === 'IMG') e.target.classList.remove('brak');
+}, true);
+/* 1c) Standalone: gdy player.js nadpisze okładkę ścieżką pliku, a w HTML była osadzona
+   kopia (data-URI), przywróć osadzoną — plikowej z dysku nie da się wczytać. */
+for (const [id, startowy] of Object.entries(window.__okladkiStart || {})) {
+  const el = document.getElementById(id);
+  /* przywracaj tylko, gdy bundler przepisał źródło na postać osadzoną (data:, blob:, itp.) */
+  if (!el || !startowy || /^(okladki|ikony)\//.test(startowy)) continue;
+  new MutationObserver(() => {
+    const s = el.getAttribute('src') || '';
+    if (s !== startowy && !s.startsWith('data:') && !s.startsWith('blob:') && s.includes('podcast.png'))
+      el.setAttribute('src', startowy);
+  }).observe(el, { attributes: true, attributeFilter: ['src'] });
+}
 /* 2) Wypełnienie suwaka (WebKit) — czysto wizualne, czyta stan <audio>. */
 setInterval(() => {
   const a = document.getElementById('audio'), s = document.getElementById('suwak');
@@ -568,8 +646,9 @@ if (elFiltry) { dekorujFiltry(); new MutationObserver(dekorujFiltry).observe(elF
 })();
 /* 8) Miniatury listy i mini-playera — kafelek z samą falą zamiast pełnej okładki z napisem. */
 function podmienKafelki() {
+  const KAFELEK = 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22k%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2331479b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23101f45%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22url(%23k)%22%2F%3E%3Cg%20fill%3D%22%23d8bc44%22%3E%3Crect%20x%3D%2252%22%20y%3D%2286%22%20width%3D%2212%22%20height%3D%2228%22%20rx%3D%226%22%2F%3E%3Crect%20x%3D%2274%22%20y%3D%2274%22%20width%3D%2212%22%20height%3D%2252%22%20rx%3D%226%22%2F%3E%3Crect%20x%3D%2296%22%20y%3D%2262%22%20width%3D%2212%22%20height%3D%2276%22%20rx%3D%226%22%2F%3E%3Crect%20x%3D%22118%22%20y%3D%2274%22%20width%3D%2212%22%20height%3D%2252%22%20rx%3D%226%22%2F%3E%3Crect%20x%3D%22140%22%20y%3D%2286%22%20width%3D%2212%22%20height%3D%2228%22%20rx%3D%226%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E';
   document.querySelectorAll('#lista .okladka img, #mini-okladka').forEach((im) => {
-    if (im.src && im.src.includes('podcast.png')) im.src = 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22k%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2331479b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23101f45%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22url(%23k)%22%2F%3E%3Cg%20fill%3D%22%23d8bc44%22%3E%3Crect%20x%3D%2252%22%20y%3D%2286%22%20width%3D%2212%22%20height%3D%2228%22%20rx%3D%226%22%2F%3E%3Crect%20x%3D%2274%22%20y%3D%2274%22%20width%3D%2212%22%20height%3D%2252%22%20rx%3D%226%22%2F%3E%3Crect%20x%3D%2296%22%20y%3D%2262%22%20width%3D%2212%22%20height%3D%2276%22%20rx%3D%226%22%2F%3E%3Crect%20x%3D%22118%22%20y%3D%2274%22%20width%3D%2212%22%20height%3D%2252%22%20rx%3D%226%22%2F%3E%3Crect%20x%3D%22140%22%20y%3D%2286%22%20width%3D%2212%22%20height%3D%2228%22%20rx%3D%226%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E';
+    if (im.src && im.src.includes('podcast.png')) im.src = KAFELEK;
   });
 }
 podmienKafelki();
@@ -583,6 +662,158 @@ if (miniOk) new MutationObserver(podmienKafelki).observe(miniOk, { attributes: t
   const ustaw = () => { if (h.textContent !== 'Pomoc naukowa') h.textContent = 'Pomoc naukowa'; };
   ustaw();
   new MutationObserver(ustaw).observe(h, { childList: true, characterData: true, subtree: true });
+})();
+/* 10) Program kursu — tryb studiów, linijka programu na liście, filtr wykładów,
+   miejsce w programie i efekty w panelu. Nadpisuje szablonOdcinka i rysujListe
+   (wprost dozwolone w nagłówku player.js), owija zaladuj. Bez localStorage. */
+let trybStudiow = 'dzienne';
+let aktywnyWyklad = null;
+function progTrybu(o) { return o && o.program ? o.program[trybStudiow] : null; }
+function tekstLektury(r) { return r == null || r === '' ? '' : (/^\d/.test(String(r)) ? 'rozdz. ' + r : String(r)); }
+function linijkaProgramu(o) {
+  const p = progTrybu(o) || {};
+  const cz = [];
+  if (p.wyklad != null) cz.push('Wykład ' + p.wyklad);
+  if (p.cwiczenia != null) cz.push('Ćwiczenia ' + p.cwiczenia);
+  const lek = tekstLektury(o.rozdzial);
+  if (lek) cz.push(lek);
+  return cz.join(' · ');
+}
+function szablonOdcinka(o, indeks) {
+  const p = postep[o.id];
+  const dlugosc = (p && p.dlugosc) || o.dlugosc || 0;
+  let stopka;
+  if (p && p.skonczony) {
+    stopka = '<span class="znacznik-koniec">Odsłuchany</span>';
+  } else if (p && p.czas > 30 && dlugosc) {
+    const proc = Math.min(100, (p.czas / dlugosc) * 100);
+    stopka = `<span class="pasek-postepu"><i style="width:${proc}%"></i></span>
+              <span>zostało ${dlugoscOpisowa(dlugosc - p.czas)}</span>`;
+  } else {
+    stopka = `<span>${dlugoscOpisowa(dlugosc)}</span>`;
+  }
+  const okladka = o.okladka || seria.okladka || '';
+  const oznaczenie = o.kod || (o.numer ? `Odc. ${o.numer}` : '');
+  const metryczka = [oznaczenie, dataOpisowa(o.data)].filter(Boolean).join(' · ');
+  const prog = linijkaProgramu(o);
+  return `<button class="odcinek" data-i="${indeks}" aria-current="${indeks === biezacy}">
+      <span class="okladka">${okladka ? `<img src="${okladka}" alt="" loading="lazy">` : ''}
+        <span class="wskaznik"></span></span>
+      <span class="odcinek-tresc">
+        <span class="odcinek-meta">${metryczka}</span>
+        <span class="odcinek-tytul">${o.tytul || 'Bez tytułu'}</span>
+        ${prog ? `<span class="odcinek-program">${prog}</span>` : ''}
+        ${o.opis ? `<span class="odcinek-opis">${o.opis}</span>` : ''}
+        <span class="odcinek-stopka">${stopka}</span>
+      </span>
+    </button>`;
+}
+function rysujListe() {
+  const kontener = $('lista');
+  if (!kontener) return;
+  const fraza = ($('szukaj') ? $('szukaj').value : '').trim().toLowerCase();
+  widoczne = odcinki.filter((o) => {
+    if (aktywnyFiltr !== 'wszystkie' && o.sezon !== aktywnyFiltr) return false;
+    if (aktywnyWyklad !== null) { const p = progTrybu(o); if (!p || p.wyklad !== aktywnyWyklad) return false; }
+    if (!fraza) return true;
+    return [o.tytul, o.opis, o.opis_pelny, o.gosc, (o.tagi || []).join(' ')]
+      .filter(Boolean).join(' ').toLowerCase().includes(fraza);
+  });
+  kontener.innerHTML = widoczne.length
+    ? widoczne.map((o) => szablonOdcinka(o, odcinki.indexOf(o))).join('')
+    : `<p class="pusto">${fraza ? 'Nic nie pasuje do zapytania.' : 'Brak odcinków w tej kategorii.'}<br><button type="button" class="pusto-wyczysc">Wyczyść filtry</button></p>`;
+  odswiezDostepnosc();
+}
+/* Wyszarzenie chipów bez wyników: sekcje sprawdzane przy aktywnym wykładzie i frazie,
+   wykłady przy aktywnej sekcji i frazie. Wciśnięty chip nigdy nie jest blokowany. */
+function odswiezDostepnosc() {
+  const fraza = ($('szukaj') ? $('szukaj').value : '').trim().toLowerCase();
+  const pasujeFraza = (o) => !fraza || [o.tytul, o.opis, o.opis_pelny, o.gosc, (o.tagi || []).join(' ')]
+    .filter(Boolean).join(' ').toLowerCase().includes(fraza);
+  const pasujeWyklad = (o) => { if (aktywnyWyklad === null) return true; const p = progTrybu(o); return !!p && p.wyklad === aktywnyWyklad; };
+  document.querySelectorAll('#filtry .filtr').forEach((b) => {
+    const f = b.dataset.filtr;
+    const jest = f === 'wszystkie' || odcinki.some((o) => o.sezon === f && pasujeWyklad(o) && pasujeFraza(o));
+    b.classList.toggle('niedostepny', !jest && b.getAttribute('aria-pressed') !== 'true');
+  });
+  document.querySelectorAll('#filtry-wykladow .filtr-w').forEach((b) => {
+    const n = +b.dataset.w;
+    const jest = odcinki.some((o) => { const p = progTrybu(o); return p && p.wyklad === n && (aktywnyFiltr === 'wszystkie' || o.sezon === aktywnyFiltr) && pasujeFraza(o); });
+    b.classList.toggle('niedostepny', !jest && b.getAttribute('aria-pressed') !== 'true');
+  });
+}
+function zbudujFiltryWykladow() {
+  const k = document.getElementById('filtry-wykladow');
+  if (!k) return;
+  const nry = [...new Set(odcinki.map((o) => { const p = progTrybu(o); return p && p.wyklad != null ? p.wyklad : null; }).filter((n) => n !== null))].sort((a, b) => a - b);
+  if (!nry.length) { k.style.display = 'none'; if (aktywnyWyklad !== null) { aktywnyWyklad = null; rysujListe(); } return; }
+  k.style.display = '';
+  if (aktywnyWyklad !== null && !nry.includes(aktywnyWyklad)) aktywnyWyklad = null;
+  k.innerHTML = '<span class="fw-etykieta">Wykład:</span>' + nry.map((n) =>
+    `<button class="filtr-w" type="button" data-w="${n}" aria-pressed="${n === aktywnyWyklad}">${n}</button>`).join('');
+  odswiezDostepnosc();
+}
+document.getElementById('filtry-wykladow').addEventListener('click', (e) => {
+  const b = e.target.closest('.filtr-w');
+  if (!b) return;
+  const n = +b.dataset.w;
+  aktywnyWyklad = aktywnyWyklad === n ? null : n;
+  document.querySelectorAll('#filtry-wykladow .filtr-w').forEach((x) => x.setAttribute('aria-pressed', String(+x.dataset.w === aktywnyWyklad)));
+  rysujListe();
+});
+document.getElementById('tryb-studiow').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-tryb]');
+  if (!b || b.dataset.tryb === trybStudiow) return;
+  trybStudiow = b.dataset.tryb;
+  document.querySelectorAll('#tryb-studiow [data-tryb]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.tryb === trybStudiow)));
+  zbudujFiltryWykladow();
+  rysujListe();
+  if (biezacy !== null && odcinki[biezacy]) wypelnijSzczegoly(odcinki[biezacy]);
+});
+document.getElementById('lista').addEventListener('click', (e) => {
+  if (!e.target.closest('.pusto-wyczysc')) return;
+  aktywnyFiltr = 'wszystkie';
+  aktywnyWyklad = null;
+  const sz = $('szukaj'); if (sz) sz.value = '';
+  document.querySelectorAll('#filtry .filtr').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.filtr === 'wszystkie')));
+  zbudujFiltryWykladow();
+  rysujListe();
+});
+function wypelnijSzczegoly(o) {
+  const prog = document.getElementById('pelny-program');
+  const ef = document.getElementById('pelny-efekty');
+  if (prog) {
+    const p = progTrybu(o) || {};
+    const w = [];
+    if (p.wyklad != null) w.push(`<p class="prog-wiersz"><b>Wykład ${p.wyklad}</b>${p.wykladTytul ? ' — ' + p.wykladTytul : ''}</p>`);
+    if (p.cwiczenia != null) w.push(`<p class="prog-wiersz"><b>Ćwiczenia ${p.cwiczenia}</b>${p.cwiczeniaTytul ? ' — ' + p.cwiczeniaTytul : ''}</p>`);
+    if (o.lektura) w.push(`<p class="prog-wiersz"><b>Lektura:</b> ${o.lektura}</p>`);
+    prog.innerHTML = w.length ? '<h3>Miejsce w programie</h3>' + w.join('') : '';
+    prog.style.display = w.length ? '' : 'none';
+  }
+  if (ef) {
+    const li = Array.isArray(o.efekty) ? o.efekty : [];
+    ef.innerHTML = li.length ? '<h3>Efekty uczenia się</h3><ul>' + li.map((t) => `<li>${t}</li>`).join('') + '</ul>' : '';
+    ef.style.display = li.length ? '' : 'none';
+  }
+}
+const zaladujOryg = zaladuj;
+zaladuj = function (i, odtworz) {
+  zaladujOryg(i, odtworz);
+  const o = odcinki[i];
+  if (o) wypelnijSzczegoly(o);
+};
+(function czekajNaDane() {
+  if (Array.isArray(odcinki) && odcinki.length) {
+    zbudujFiltryWykladow();
+    if (seria.podrecznik) ustaw('seria-podrecznik', 'Podręcznik kursu: ' + seria.podrecznik);
+  } else setTimeout(czekajNaDane, 120);
+})();
+/* 11) Podgląd poza wdrożeniem: linki „pełna wersja" otwierają TĘ wersję w nowej karcie,
+   nie starą stronę produkcyjną. Na nawrockipiotr.github.io nic się nie zmienia. */
+(function () {
+  if (location.hostname === 'nawrockipiotr.github.io') return;
+  document.querySelectorAll('#wizytowka .wiz-przycisk, #pasek-ramki a').forEach((a) => { a.href = location.href; });
 })();
 </script>
 

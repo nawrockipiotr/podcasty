@@ -2,700 +2,53 @@
   "seria": {
     "tytul": "Podstawy zarządzania — podcasty",
     "podpis": "Wydział Zarządzania UW",
-    "opis": "Podcasty do kursu „Podstawy zarządzania\" dla I roku studiów licencjackich Wydziału Zarządzania Uniwersytetu Warszawskiego. 64 odcinki w siedmiu sekcjach tematycznych.",
-    "autor": "Wydział Zarządzania Uniwersytetu Warszawskiego",
+    "opis": "Cykl 64 nagrań audio do zajęć „Podstawy zarządzania” dla I roku studiów licencjackich Wydziału Zarządzania Uniwersytetu Warszawskiego — od klasycznych nurtów teorii organizacji po współczesne podejścia badawcze. Siedem sekcji, około dziewięciu godzin. Nagrania powstały z wykorzystaniem syntezy mowy. Za dobór i treść materiału odpowiada Katedra Teorii Organizacji i Zarządzania.",
+    "okladka": "okladki/podcast.png",
+    "autor": "Centrum Innowacji Odpowiedzialnych Społecznie, Wydział Zarządzania UW",
     "email": "csri@wz.uw.edu.pl",
     "strona": "https://csri.wz.uw.edu.pl",
     "jezyk": "pl",
-    "kategoria": "Education",
-    "podkategoria": "Courses",
+    "kategoria": "Business",
+    "podkategoria": "Entrepreneurship",
     "explicit": false,
     "kolejnosc": "rosnaco",
     "typ": "kurs",
-    "okladka": "okladki/podcast.png"
+    "podrecznik": "Zarządzanie, organizacje i organizowanie — przegląd perspektyw teoretycznych, red. Krzysztof Klincewicz, Warszawa 2016",
+    "podrecznikSkrot": "Klincewicz (red.)"
   },
   "odcinki": [
     {
-      "id": "odc-001",
-      "numer": 1,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Wprowadzenie do zarządzania",
-      "opis": "Podcast wprowadza podstawowe pojęcia z zakresu zarządzania. Definiuje, czym jest zarządzanie, opisuje jego kluczowe funkcje, szczeble organizacyjne oraz zasoby, którymi dysponuje każda organizacja.",
-      "dlugosc": 322,
-      "rozmiar": 2572899,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-001.mp3",
-      "kod": "A.01"
-    },
-    {
-      "id": "odc-002",
-      "numer": 2,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Role menedżerskie",
-      "opis": "Podcast przedstawia koncepcję ról menedżerskich Henry’ego Mintzberga. Omawia dziesięć ról, podzielonych na trzy grupy: role interpersonalne, informacyjne i decyzyjne, pokazując złożoność codziennej pracy na stanowisku kierowniczym.",
-      "dlugosc": 279,
-      "rozmiar": 2228710,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-002.mp3",
-      "kod": "A.02"
-    },
-    {
-      "id": "odc-003",
-      "numer": 3,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Prakseologia",
-      "opis": "Podcast wyjaśnia, czym jest prakseologia, czyli nauka o sprawnym działaniu i jakie ma znaczenie dla zarządzania. Omawia jej genezę, kluczowe pojęcia, takie jak „dobra robota”, oraz pokazuje, jak jej zasady znajdują odzwierciedlenie w mądrości ludowej i klasycznych teoriach zarządzania.",
-      "dlugosc": 691,
-      "rozmiar": 5526408,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-003.mp3",
-      "kod": "A.03"
-    },
-    {
-      "id": "odc-004",
-      "numer": 4,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Naukowe zarządzanie - tayloryzm",
-      "opis": "Podcast opisuje historyczne tło powstania naukowego zarządzania. Szczegółowo omawia pięć fundamentalnych zasad podejścia Fredericka Taylora: optymalizację, specjalizację, standaryzację, racjonalizację i zasadę „jednego najlepszego sposobu” (one best way).",
-      "dlugosc": 480,
-      "rozmiar": 3844331,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-004.mp3",
-      "kod": "A.04"
-    },
-    {
-      "id": "odc-005",
-      "numer": 5,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Naukowe zarządzanie - kontynuatorzy Taylora",
-      "opis": "Podcast przedstawia dorobek myślicieli, którzy rozwijali idee naukowe zarządzania i kontynuowali badania Fredericka Taylora. Omawia wkład m.in. małżeństwa Gilbrethów (badanie ruchów elementarnych), Henry'ego Forda (fordyzm i taśma produkcyjna) oraz Chestera Barnarda, pokazując ewolucję nurtu naukowego zarządzania.",
-      "dlugosc": 550,
-      "rozmiar": 4401053,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-005.mp3",
-      "kod": "A.05"
-    },
-    {
-      "id": "odc-006",
-      "numer": 6,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Naukowe zarządzanie - nurt administracyjny",
-      "opis": "Podcast koncentruje się na nurcie administracyjnym w naukowym zarządzaniu, którego twórcą był Henri Fayol. Wyjaśnia różnice między jego podejściem (koncentracja na całej organizacji) a podejściem Taylora (koncentracja na stanowisku pracy), a także omawia kluczowe koncepcje Fayola, takie jak funkcje zarządzania i 14 zasad zarządzania.",
-      "dlugosc": 481,
-      "rozmiar": 3848511,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-006.mp3",
-      "kod": "A.06"
-    },
-    {
-      "id": "odc-007",
-      "numer": 7,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Naukowe zarządzanie - ograniczenia i współczesne znaczenie",
-      "opis": "Podcast dokonuje krytycznej oceny naukowego zarządzania, wskazując jego główne ograniczenia, takie jak dehumanizacja pracy, ignorowanie otoczenia organizacji czy błędne założenie o istnieniu „jednego najlepszego sposobu” działania. Przedstawia także pojęcie ekwifinalności i zastanawia się nad współczesną przydatnością dorobku nurtu naukowego zarządzania.",
-      "dlugosc": 455,
-      "rozmiar": 3643711,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-007.mp3",
-      "kod": "A.07"
-    },
-    {
-      "id": "odc-008",
-      "numer": 8,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Zarządzanie jako dyscyplina badawcza",
-      "opis": "Podcast porządkuje podstawowe pojęcia metodologiczne używane w naukach o zarządzaniu. Wyjaśnia takie terminy jak teoria, podejście, model, narzędzie i technika, a także wprowadza sposoby podziału pojęć (podział, typologia, klasyfikacja, kategoryzacja, dychotomia).",
-      "dlugosc": 557,
-      "rozmiar": 4457477,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-008.mp3",
-      "kod": "A.08"
-    },
-    {
-      "id": "odc-009",
-      "numer": 9,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Max Weber i teoria biurokracji",
-      "opis": "Podcast przybliża koncepcję biurokracji Maxa Webera jako „typu idealnego” organizacji – modelu racjonalnie zaprojektowanej organizacji. Omawia pięć kluczowych zasad jej funkcjonowania, takich jak niezawodność, powtarzalność i obiektywizm, oraz cechy, które organizacja biurokratyczna powinna posiadać, by działać sprawnie i w przewidywalny sposób.",
-      "dlugosc": 507,
-      "rozmiar": 4059162,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-009.mp3",
-      "kod": "A.09"
-    },
-    {
-      "id": "odc-010",
-      "numer": 10,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Max Weber i władza w organizacji",
-      "opis": "Podcast przedstawia typologię władzy zaproponowaną przez Maxa Webera, wyróżniając jej trzy rodzaje: władzę charyzmatyczną, tradycyjną i legalną. Wyjaśnia, na jakich podstawach opiera się każdy z typów i dlaczego Weber uważał władzę legalną za fundament racjonalnie zaprojektowanej, nowoczesnej organizacji.",
-      "dlugosc": 400,
-      "rozmiar": 3200674,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-010.mp3",
-      "kod": "A.10"
-    },
-    {
-      "id": "odc-011",
-      "numer": 11,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Kontynuatorzy i krytycy Maxa Webera",
-      "opis": "Podcast analizuje ewolucję i krytykę weberowskiej koncepcji biurokracji. Odróżnia pojęcie biurokracji od jej patologicznej formy – biurokratyzmu – oraz omawia koncepcję „żelaznej klatki racjonalności”, a także przedstawia poglądy kontynuatorów Webera (np. Michela Croziera) oraz jego krytyków (Szkoła Frankfurcka, Zygmunt Bauman, Henry Mintzberg).",
-      "dlugosc": 695,
-      "rozmiar": 5557964,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-011.mp3",
-      "kod": "A.11"
-    },
-    {
-      "id": "odc-012",
-      "numer": 12,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Socjologia a teoria zarządzania",
-      "opis": "Podcast ukazuje wkład socjologii w narodziny i wczesny rozwój nauk o zarządzaniu, począwszy od XIX-wiecznych koncepcji Augusta Comte'a, a skończywszy na podejściu sytuacyjnym. Przedstawia funkcjonalistyczną typologię organizacji Talcotta Parsonsa oraz omawia badania Joan Woodward i szkoły Aston, które stały się podstawą dla podejścia sytuacyjnego w zarządzaniu, badającego zależności pomiędzy zmiennymi organizacyjnymi a sposobami funkcjonowania organizacji.",
-      "dlugosc": 648,
-      "rozmiar": 5184905,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-012.mp3",
-      "kod": "A.12"
-    },
-    {
-      "id": "odc-013",
-      "numer": 13,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Peter Drucker",
-      "opis": "Podcast przybliża postać i dorobek Petera F. Druckera, uznawanego za „ojca współczesnego zarządzania”. Omawia jego kluczowe postulaty, takie jak decentralizacja, rola marketingu i innowacji, cel firmy zorientowany na klienta, a także zasady skuteczności menedżerskiej i odpowiedzialność społeczna biznesu.",
-      "dlugosc": 578,
-      "rozmiar": 4620899,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-013.mp3",
-      "kod": "A.13"
-    },
-    {
-      "id": "odc-014",
-      "numer": 14,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Badania operacyjne",
-      "opis": "Podcast wyjaśnia, czym są badania operacyjne (operations research) – podejście wykorzystujące metody matematyczne do optymalizacji decyzji menedżerskich. Opisuje ich wojskowe korzenie, rozwój badań po II wojnie światowej oraz współczesne zastosowania w biznesie, m.in. w systemach informatycznych, logistyce czy sztucznej inteligencji.",
-      "dlugosc": 323,
-      "rozmiar": 2581258,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-014.mp3",
-      "kod": "A.14"
-    },
-    {
-      "id": "odc-015",
-      "numer": 15,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Gry organizacyjne i polityka organizacyjna",
-      "opis": "Podcast przedstawia organizację jako arenę gier politycznych, gdzie uczestnicy dążą do realizacji własnych interesów poprzez zdobywanie i wykorzystywanie władzy. Omawia pojęcia interesu, konfliktu i władzy, a także przedstawia przykłady konkretnych gier organizacyjnych opisanych przez Henry'ego Mintzberga.",
-      "dlugosc": 620,
-      "rozmiar": 4959446,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-015.mp3",
-      "kod": "A.15"
-    },
-    {
-      "id": "odc-016",
-      "numer": 16,
-      "sezon": "A - Wprowadzenie do zarządzania",
-      "tytul": "Struktury organizacyjne",
-      "opis": "Podcast omawia zasady projektowania struktur organizacyjnych. Wyjaśnia takie pojęcia, jak specjalizacja, droga służbowa, rozpiętość kierowania, centralizacja, a także opisuje podstawowe typy struktur (liniową, liniowo-sztabową, funkcjonalną, macierzową) oraz stopień formalizacji w organizacji.",
-      "dlugosc": 461,
-      "rozmiar": 3689477,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-016.mp3",
-      "kod": "A.16"
-    },
-    {
-      "id": "odc-017",
-      "numer": 17,
-      "sezon": "B - Ludzie i kultura",
-      "tytul": "Psychologia i jej związki z zarządzaniem",
-      "opis": "Podcast omawia relacje między psychologią a zarządzaniem. Prezentuje podstawowe metody badawcze psychologii oraz przedstawia kluczowe nurty, takie jak behawioryzm, psychologia poznawcza i psychologia społeczna, wskazując ich zastosowanie w rozumieniu zachowań w organizacjach.",
-      "dlugosc": 520,
-      "rozmiar": 4162368,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-017.mp3",
-      "kod": "B.17"
-    },
-    {
-      "id": "odc-018",
-      "numer": 18,
-      "sezon": "B - Ludzie i kultura",
-      "tytul": "Nurt Human Relations",
-      "opis": "Podcast koncentruje się na nurcie Human Relations, który w pierwszej połowie XX wieku stanowił odpowiedź na nadmiernie mechanistyczne podejście naukowego zarządzania i tayloryzmu. Opisuje słynne badania Eltona Mayo w Hawthorne, które ujawniły znaczenie czynników psychospołecznych, oraz przedstawia pionierskie idee Mary Parker Follett dotyczące władzy, przywództwa i konfliktu.",
-      "dlugosc": 317,
-      "rozmiar": 2534656,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-018.mp3",
-      "kod": "B.18"
-    },
-    {
-      "id": "odc-019",
-      "numer": 19,
-      "sezon": "B - Ludzie i kultura",
-      "tytul": "Motywacja",
-      "opis": "Podcast oferuje przegląd najważniejszych koncepcji motywacji w kontekście zachowań organizacyjnych. Omawia m.in. hierarchię potrzeb Maslowa, teorie X i Y McGregora, dwuczynnikową teorię Herzberga, koncepcję potrzeb menedżerskich McClellanda oraz teorię oczekiwań Vrooma.",
-      "dlugosc": 755,
-      "rozmiar": 6040886,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-019.mp3",
-      "kod": "B.19"
-    },
-    {
-      "id": "odc-020",
-      "numer": 20,
-      "sezon": "B - Ludzie i kultura",
-      "tytul": "Przywództwo",
-      "opis": "Podcast jest poświęcony przywództwu i omawia ewolucję podejść badawczych od teorii cech po modele sytuacyjne i transformacyjne. Przedstawia kluczowe koncepcje, takie jak siatka kierownicza Blake'a i Mouton, model sytuacyjny Fiedlera oraz rozróżnienie na przywództwo transakcyjne i transformacyjne autorstwa Bernarda Bassa.",
-      "dlugosc": 407,
-      "rozmiar": 3258352,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-020.mp3",
-      "kod": "B.20"
-    },
-    {
-      "id": "odc-021",
-      "numer": 21,
-      "sezon": "B - Ludzie i kultura",
-      "tytul": "Praca zespołowa",
-      "opis": "Podcast skupia się na dynamice pracy zespołowej w organizacjach. Definiuje zespół, omawia cztery fazy jego rozwoju według Tuckmana, a także porusza takie zagadnienia jak role zespołowe Belbina, syndrom myślenia grupowego, kontrakt psychologiczny i teoria sprawiedliwości.",
-      "dlugosc": 377,
-      "rozmiar": 3015518,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-021.mp3",
-      "kod": "B.21"
-    },
-    {
-      "id": "odc-022",
-      "numer": 22,
-      "sezon": "B - Ludzie i kultura",
-      "tytul": "Kultura organizacji",
-      "opis": "Podcast przybliża model kultury organizacyjnej Edgara Scheina, który analizuje ją na trzech poziomach: artefaktów, wartości i ukrytych założeń. Omawia również związek między kulturą a wynikami firmy oraz podkreśla jej integracyjną rolę w budowaniu tożsamości organizacji.",
-      "dlugosc": 380,
-      "rozmiar": 3038506,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-022.mp3",
-      "kod": "B.22"
-    },
-    {
-      "id": "odc-023",
-      "numer": 23,
-      "sezon": "B - Ludzie i kultura",
-      "tytul": "Znaczenie kultur narodowych dla zarządzania",
-      "opis": "Podcast prezentuje badania Geerta Hofstedego nad wpływem kultur narodowych na zarządzanie. Wyjaśnia pięć wymiarów kultury (dystans wobec władzy, indywidualizm–kolektywizm, męskość–kobiecość, unikanie niepewności, orientacja czasowa) i pokazuje, jak różnice te przekładają się na praktyki organizacyjne na całym świecie.",
-      "dlugosc": 562,
-      "rozmiar": 4495273,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-023.mp3",
-      "kod": "B.23"
-    },
-    {
-      "id": "odc-024",
-      "numer": 24,
-      "sezon": "B - Ludzie i kultura",
-      "tytul": "Work-life balance",
-      "opis": "Podcast porusza problematykę równowagi między życiem zawodowym a prywatnym (work-life balance). Omawia konflikty na styku tych sfer, a także zjawiska takie jak pracoholizm, wypalenie zawodowe, praca emocjami i praca ekstremalna, oraz analizuje zagadnienie kontroli pracowników w kontekście nowoczesnych technologii.",
-      "dlugosc": 641,
-      "rozmiar": 5125346,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-024.mp3",
-      "kod": "B.24"
-    },
-    {
-      "id": "odc-025",
-      "numer": 25,
-      "sezon": "C - Decyzje i planowanie",
-      "tytul": "Podejmowanie decyzji",
-      "opis": "Podcast wprowadza w podstawowe zagadnienia dotyczące podejmowania decyzji w zarządzaniu. Wyróżnia problemy ustrukturyzowane i nieustrukturyzowane, a także wyjaśnia, na czym polega podejmowanie decyzji w warunkach pewności, niepewności i ryzyka, dodatkowo dzieląc decyzje na strategiczne, taktyczne i operacyjne.",
-      "dlugosc": 950,
-      "rozmiar": 7598202,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-025.mp3",
-      "kod": "C.25"
-    },
-    {
-      "id": "odc-026",
-      "numer": 26,
-      "sezon": "C - Decyzje i planowanie",
-      "tytul": "Model ograniczonej racjonalności",
-      "opis": "Podcast przybliża model ograniczonej racjonalności Herberta Simona, który stanowi alternatywę dla znanego z mikroekonomii, klasycznego modelu homo oeconomicus. Przedstawia koncepcję człowieka dążącego do satysfakcji (homo satisfaciendus) a nie maksymalizacji użyteczności, czyli decydenta, który z powodu ograniczeń poznawczych i informacyjnych poszukuje rozwiązań wystarczająco dobrych, a nie optymalnych.",
-      "dlugosc": 482,
-      "rozmiar": 3859796,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-026.mp3",
-      "kod": "C.26"
-    },
-    {
-      "id": "odc-027",
-      "numer": 27,
-      "sezon": "C - Decyzje i planowanie",
-      "tytul": "Heurystyki",
-      "opis": "Podcast wprowadza w zagadnienia analizowane przez ekonomię behawioralną, koncentrując się na pracach Daniela Kahnemana i Amosa Tversky'ego dotyczących heurystyk. Definiuje heurystyki jako uproszczone reguły wnioskowania i omawia ich trzy rodzaje: heurystyki dostępności, zakotwiczenia i reprezentatywności, wskazując, jak heurystyki mogą prowadzić do systematycznych błędów decyzyjnych.",
-      "dlugosc": 433,
-      "rozmiar": 3466496,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-027.mp3",
-      "kod": "C.27"
-    },
-    {
-      "id": "odc-028",
-      "numer": 28,
-      "sezon": "C - Decyzje i planowanie",
-      "tytul": "Błędy decyzyjne",
-      "opis": "Podcast stanowi przegląd typowych błędów decyzyjnych i zniekształceń poznawczych. Omawia takie mechanizmy psychologiczne jak selektywna percepcja, efekt pierwszeństwa, efekt aureoli, reaktancja psychologiczna czy myślenie życzeniowe, a także prezentuje koncepcję dysonansu poznawczego i zjawisko konformizmu.",
-      "dlugosc": 893,
-      "rozmiar": 7146597,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-028.mp3",
-      "kod": "C.28"
-    },
-    {
-      "id": "odc-029",
-      "numer": 29,
-      "sezon": "C - Decyzje i planowanie",
-      "tytul": "Wpływ społeczny",
-      "opis": "Podcast koncentruje się na mechanizmach wpływu społecznego, bazując na sześciu regułach zidentyfikowanych w psychologii społecznej przez Roberta Cialdiniego. Szczegółowo omawia reguły wzajemności, zaangażowania i konsekwencji, społecznego dowodu słuszności, lubienia, autorytetu oraz niedostępności, wyjaśniając ich działanie w kontekście perswazji i manipulacji w procesach decyzyjnych, ze szczególnym uwzględnieniem kontekstu pracy menedżerskiej.",
-      "dlugosc": 460,
-      "rozmiar": 3679655,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-029.mp3",
-      "kod": "C.29"
-    },
-    {
-      "id": "odc-030",
-      "numer": 30,
-      "sezon": "C - Decyzje i planowanie",
-      "tytul": "Społeczna odpowiedzialność biznesu",
-      "opis": "Podcast przybliża społeczną odpowiedzialność biznesu (CSR) jako dobrowolne uwzględnianie przez firmy aspektów społecznych i środowiskowych w swojej działalności. Wprowadza teorię interesariuszy, odróżnia CSR od etyki biznesu oraz omawia współczesną praktykę raportowania ESG (dotyczącą aspektów środowiskowych, społecznych i ładu korporacyjnego).",
-      "dlugosc": 495,
-      "rozmiar": 3957598,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-030.mp3",
-      "kod": "C.30"
-    },
-    {
-      "id": "odc-031",
-      "numer": 31,
-      "sezon": "C - Decyzje i planowanie",
-      "tytul": "Poza głównym nurtem zarządzania",
-      "opis": "Podcast omawia krytyczne nurty w naukach o zarządzaniu w XX wieku, które czerpały inspiracje z krytyki kapitalizmu. Przedstawia wpływ myśli Karola Marksa (alienacja, fetyszyzm towarowy), Ericha Fromma, ruchów kontrkulturowych, alterglobalistycznych i ekologicznych na kształtowanie się bardziej humanistycznych i prospołecznych podejść w zarządzaniu.",
-      "dlugosc": 881,
-      "rozmiar": 7051302,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-031.mp3",
-      "kod": "C.31"
-    },
-    {
-      "id": "odc-032",
-      "numer": 32,
-      "sezon": "C - Decyzje i planowanie",
-      "tytul": "Planowanie",
-      "opis": "Podcast wprowadza szkołę planistyczną zarządzania strategicznego, której rozwój przypadł na okres po II wojnie światowej. Omawia dorobek Igora Ansoffa, przybliża narzędzia analityczne takie jak SWOT i PEST, hierarchię planów (strategiczne, taktyczne, operacyjne) oraz znaczenie mierzalnych celów (KPI) i przydatność planów rezerwowych (contingencies).",
-      "dlugosc": 780,
-      "rozmiar": 6242969,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-032.mp3",
-      "kod": "C.32"
-    },
-    {
-      "id": "odc-033",
-      "numer": 33,
-      "sezon": "C - Decyzje i planowanie",
-      "tytul": "Zarządzanie przez cele",
-      "opis": "Podcast omawia koncepcję zarządzania przez cele (ZPC/MBO), spopularyzowaną przez Petera Druckera. Wyjaśnia proces dekompozycji albo kaskadowania celów w dół hierarchii organizacyjnej, podkreślając znaczenie dialogu między przełożonym a podwładnym, a także rolę mierzalnych wskaźników i samokontroli w realizacji strategii.",
-      "dlugosc": 506,
-      "rozmiar": 4049758,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-033.mp3",
-      "kod": "C.33"
-    },
-    {
-      "id": "odc-034",
-      "numer": 34,
-      "sezon": "C - Decyzje i planowanie",
-      "tytul": "Krytyka planowania",
-      "opis": "Podcast przedstawia krytyczne spojrzenie na szkołę planistyczną, głównie w oparciu o poglądy Henry'ego Mintzberga. Omawia zarzuty dotyczące m.in. niemożności przewidzenia przyszłości, oddzielenia planistów od wykonawców i usztywniania działań organizacji. Dodatkowo, prezentuje także kontrargumenty Igora Ansoffa w obronie bardziej elastycznego planowania strategicznego.",
-      "dlugosc": 641,
-      "rozmiar": 5125346,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-034.mp3",
-      "kod": "C.34"
-    },
-    {
-      "id": "odc-035",
-      "numer": 35,
-      "sezon": "D - Otoczenie organizacji",
-      "tytul": "Podejście systemowe",
-      "opis": "Podcast omawia genezę podejścia systemowego w naukach o zarządzaniu, wywodzącego się z ogólnej teorii systemów oraz cybernetyki. Wskazuje, że podejście to traktuje organizację jako zbiór powiązanych ze sobą elementów i podkreśla, że jej analiza wymaga spojrzenia na całość, a nie tylko na poszczególne części.",
-      "dlugosc": 336,
-      "rozmiar": 2689510,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-035.mp3",
-      "kod": "D.35"
-    },
-    {
-      "id": "odc-036",
-      "numer": 36,
-      "sezon": "D - Otoczenie organizacji",
-      "tytul": "Organizacja jako system",
-      "opis": "Podcast oferuje spojrzenie na organizację jako system otwarty, który nieustannie wymienia zasoby ze swoim otoczeniem. Opisuje, czym są czynniki wejścia i wyjścia oraz procesy transformacji, wspierane przez sprzężenia zwrotne. Wprowadza też kluczowe cechy systemów otwartych, takie jak ekwifinalność i entropia.",
-      "dlugosc": 632,
-      "rozmiar": 5054084,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-036.mp3",
-      "kod": "D.36"
-    },
-    {
-      "id": "odc-037",
-      "numer": 37,
-      "sezon": "D - Otoczenie organizacji",
-      "tytul": "Dynamika systemów",
-      "opis": "Podcast oferuje wprowadzenie do nurtu badawczego dynamiki systemów, który analizuje zachowanie złożonych systemów poprzez sieć relacji i sprzężeń zwrotnych. Przedstawia kluczowy archetyp systemowy – granice wzrostu – i wyjaśnia, jak z pozoru pozytywne trendy mogą doprowadzić do stagnacji lub kryzysu, jeśli nie zostaną uwzględnione opóźnienia i bariery.",
-      "dlugosc": 850,
-      "rozmiar": 6801780,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-037.mp3",
-      "kod": "D.37"
-    },
-    {
-      "id": "odc-038",
-      "numer": 38,
-      "sezon": "D - Otoczenie organizacji",
-      "tytul": "Otoczenie organizacji",
-      "opis": "Podcast prezentuje otoczenie jako zbiór czynników zewnętrznych wpływających na organizację. Rozróżnia otoczenie stabilne i turbulentne, wyjaśniając, jak charakterystyka otoczenia wpływa na wewnętrzną strukturę i procesy. Wskazuje również, skąd organizacje pozyskują informacje o otoczeniu.",
-      "dlugosc": 568,
-      "rozmiar": 4543159,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-038.mp3",
-      "kod": "D.38"
-    },
-    {
-      "id": "odc-039",
-      "numer": 39,
-      "sezon": "D - Otoczenie organizacji",
-      "tytul": "Analiza otoczenia dalszego",
-      "opis": "Podcast przybliża techniki analizy otoczenia dalszego, czyli analizy czynników zewnętrznych, na które organizacja nie ma bezpośredniego wpływu. Przedstawia popularne narzędzie analityczne PEST (czynniki polityczno-prawne, ekonomiczne, społeczno-kulturowe i technologiczne) oraz omawia metody prognozowania, planowania scenariuszowego i technikę foresight.",
-      "dlugosc": 721,
-      "rozmiar": 5767331,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-039.mp3",
-      "kod": "D.39"
-    },
-    {
-      "id": "odc-040",
-      "numer": 40,
-      "sezon": "D - Otoczenie organizacji",
-      "tytul": "Analiza otoczenia bliższego",
-      "opis": "Podcast przybliża techniki analizy otoczenia bliższego, na które organizacja ma bezpośredni wpływ. Opisuje dwa kluczowe narzędzia: analizę interesariuszy i model pięciu sił konkurencyjnych Michaela Portera. Wyjaśnia również rolę komplementariuszy i instytucji rządowych w relacjach rynkowych.",
-      "dlugosc": 521,
-      "rozmiar": 4165951,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-040.mp3",
-      "kod": "D.40"
-    },
-    {
-      "id": "odc-041",
-      "numer": 41,
-      "sezon": "D - Otoczenie organizacji",
-      "tytul": "Analiza SWOT",
-      "opis": "Podcast omawia podstawowe założenia analizy SWOT jako narzędzia diagnostycznego, służącego do podsumowania analizy wewnętrznej i zewnętrznej organizacji. Wyjaśnia, że mocne i słabe strony pochodzą z wnętrza firmy, natomiast szanse i zagrożenia wynikają z otoczenia. Podkreśla, że analiza SWOT jest wynikiem wcześniejszych szczegółowych analiz.",
-      "dlugosc": 454,
-      "rozmiar": 3630754,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-041.mp3",
-      "kod": "D.41"
-    },
-    {
-      "id": "odc-042",
-      "numer": 42,
-      "sezon": "D - Otoczenie organizacji",
-      "tytul": "Strategie przyrostowe",
-      "opis": "Podcast omawia koncepcję strategii przyrostowych, które stanowią alternatywę dla formalnego, długoterminowego planowania. Wyjaśnia, że polegają one na podejmowaniu drobnych, stopniowych decyzji, które z czasem tworzą spójny kierunek rozwoju. Wskazuje na ryzyko tak zwanego dryfu strategicznego, odejścia od pożądanego kierunku rozwoju strategicznego, które może pojawić się przy realizacji strategii przyrostowych.",
-      "dlugosc": 537,
-      "rozmiar": 4298862,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-042.mp3",
-      "kod": "D.42"
-    },
-    {
-      "id": "odc-043",
-      "numer": 43,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Proces formułowania strategii",
-      "opis": "Podcast prezentuje typowe etapy procesu formułowania strategii organizacji. Tworzenie strategii obejmuje analizę zewnętrzną i wewnętrzną organizacji, ustalenie misji i celów, a także wybór i wdrożenie konkretnych programów działań. Poruszono także kwestie kontroli i mechanizmów sprzężenia zwrotnego.",
-      "dlugosc": 310,
-      "rozmiar": 2478441,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-043.mp3",
-      "kod": "E.43"
-    },
-    {
-      "id": "odc-044",
-      "numer": 44,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Michael Porter i szkoła pozycyjna",
-      "opis": "Podcast omawia wkład Michaela Portera w zarządzanie strategiczne, ze szczególnym uwzględnieniem szkoły pozycyjnej. Wyjaśnia, że strategia to pozycja w sektorze, a jej tworzenie opiera się na analizie strukturalnej. Dorobek Portera obejmuje również koncepcję grup strategicznych, a także dodatkowe narzędzia analityczne, które są szeroko wykorzystywane w zarządzaniu, wspierając proces tworzenia strategii.",
-      "dlugosc": 609,
-      "rozmiar": 4875824,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-044.mp3",
-      "kod": "E.44"
-    },
-    {
-      "id": "odc-045",
-      "numer": 45,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Krytyka analizy Portera",
-      "opis": "Podcast oferuje analizę ograniczeń i słabych punktów koncepcji Michaela Portera. Wskazuje, że metody Portera nie były oparte na szerokich badaniach empirycznych, a ich ocena bywa subiektywna. Podkreśla również, że w turbulentnym otoczeniu kluczowe dla sukcesu firmy są jej wewnętrzne zasoby, a nie tylko pozycja w sektorze.",
-      "dlugosc": 393,
-      "rozmiar": 3140697,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-045.mp3",
-      "kod": "E.45"
-    },
-    {
-      "id": "odc-046",
-      "numer": 46,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Wkład firm doradczych w rozwój teorii zarządzania",
-      "opis": "Podcast analizuje wpływ firm doradczych na rozwój teorii i narzędzi zarządzania, od czasów naukowego zarządzania Taylora. Wyjaśnia, jak konsultanci przyczynili się do popularyzacji wiedzy i tworzenia standardów w zarządzaniu. Przedstawia również omawiane w literaturze ograniczenia narzędzi doradczych, takich jak macierz Boston Consulting Group, które często nadmiernie upraszczają rzeczywistość biznesową.",
-      "dlugosc": 545,
-      "rozmiar": 4360511,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-046.mp3",
-      "kod": "E.46"
-    },
-    {
-      "id": "odc-047",
-      "numer": 47,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Podejście zasobowe do organizacji",
-      "opis": "Podcast omawia podejście zasobowe w zarządzaniu strategicznym, które skupia się na wewnętrznych atutach organizacji, takich jak zasoby materialne i niematerialne. Zgodnie z tym podejściem, przewaga konkurencyjna wynika ze zdolności do budowania i wykorzystania kluczowych kompetencji organizacji.",
-      "dlugosc": 546,
-      "rozmiar": 4367198,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-047.mp3",
-      "kod": "E.47"
-    },
-    {
-      "id": "odc-048",
-      "numer": 48,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Relacje międzyorganizacyjne",
-      "opis": "Podcast omawia znaczenie współpracy między organizacjami w nowoczesnym biznesie. Wyjaśnia, że kooperacja może przybierać różne formy, takie jak alianse strategiczne, spółki joint ventures czy klastry gospodarcze. Podcast wprowadza również koncepcję otwartych innowacji i wskazuje na ryzyko „wyścigu w uczeniu się” w ramach współpracy.",
-      "dlugosc": 582,
-      "rozmiar": 4660187,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-048.mp3",
-      "kod": "E.48"
-    },
-    {
-      "id": "odc-049",
-      "numer": 49,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Marketing",
-      "opis": "Podcast oferuje wprowadzenie do koncepcji marketingu, która opiera się na orientacji na klienta, a nie tylko na oferowanym produkcie. Wyjaśnia, że sprzedaż i reklama to tylko narzędzia, a istotą marketingu jest zarządzanie obustronnie korzystnymi relacjami z klientami. Opisuje również model segmentacji, wyboru rynku docelowego i pozycjonowania (STP).",
-      "dlugosc": 370,
-      "rozmiar": 2959721,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-049.mp3",
-      "kod": "E.49"
-    },
-    {
-      "id": "odc-050",
-      "numer": 50,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Przedsiębiorczość",
-      "opis": "Podcast prezentuje definicje przedsiębiorczości, z uwzględnieniem koncepcji „twórczej destrukcji” Josepha Schumpetera, w której przedsiębiorca wprowadza nowe rozwiązania, radykalnie zmieniające rynek. Podcast opisuje również kluczowe cechy psychologiczne przedsiębiorców, takie jak wewnętrzne poczucie kontroli i wysoki poziom potrzeby osiągnięć.",
-      "dlugosc": 433,
-      "rozmiar": 3466078,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-050.mp3",
-      "kod": "E.50"
-    },
-    {
-      "id": "odc-051",
-      "numer": 51,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Innowacje",
-      "opis": "Podcast wyjaśnia, czym jest innowacja i jak odróżnić ją od wynalazku. Przedstawia również podział na innowacje radykalne, które otwierają nowe kategorie produktów, oraz innowacje przyrostowe, które są usprawnieniami istniejących rozwiązań. Analizuje też, w jaki sposób różne przedsiębiorstwa radzą sobie z innowacjami.",
-      "dlugosc": 468,
-      "rozmiar": 3745275,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-051.mp3",
-      "kod": "E.51"
-    },
-    {
-      "id": "odc-052",
-      "numer": 52,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Technologie a przyszłość biznesu",
-      "opis": "Podcast omawia wpływ technologii na biznes, przy wykorzystaniu dorobku nauk o zarządzaniu, ze szczególnym odniesieniem do globalizacji i zjawiska dóbr informacyjnych. Wyjaśnia, dlaczego dobra informacyjne zmieniają tradycyjne modele biznesowe. Dotyka również kwestii takich jak nadmiar informacji, licencjonowanie technologii i przydatność oceny technologii (technology assessment).",
-      "dlugosc": 599,
-      "rozmiar": 4795397,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-052.mp3",
-      "kod": "E.52"
-    },
-    {
-      "id": "odc-053",
-      "numer": 53,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Modele biznesu",
-      "opis": "Podcast analizuje modele biznesu jako sposoby organizacji działalności i źródło przewagi konkurencyjnej. Wyjaśnia, że innowacje w modelach biznesowych mogą obniżać koszty i zwiększać elastyczność. Wskazuje też na niebezpieczeństwa wynikające z braku dostatecznie szczegółowych analiz, które powinny stanowić fundament dla wyboru modelu biznesowego i strategii danej organizacji.",
-      "dlugosc": 377,
-      "rozmiar": 3018444,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-053.mp3",
-      "kod": "E.53"
-    },
-    {
-      "id": "odc-054",
-      "numer": 54,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Organizacyjne uczenie się i zarządzanie wiedzą",
-      "opis": "Podcast omawia organizacyjne uczenie się i zarządzanie wiedzą jako istotne sposoby osiągania trwałej przewagi konkurencyjnej. Opisuje, w jaki sposób organizacje mogą się uczyć, od doświadczenia i refleksji, poprzez tworzenie uogólnień, aż do wdrażania ich w praktyce. Zaznacza, że wiedza jest zasobem, którym można i należy zarządzać.",
-      "dlugosc": 249,
-      "rozmiar": 1990055,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-054.mp3",
-      "kod": "E.54"
-    },
-    {
-      "id": "odc-055",
-      "numer": 55,
-      "sezon": "E - Strategia, marketing, innowacje",
-      "tytul": "Technologie informatyczne",
-      "opis": "Podcast analizuje rolę technologii informatycznych w teorii i praktyce zarządzania. Wyjaśnia, że technologia to nie tylko maszyny i sprzęt, ale także wiedza i sposoby organizacji pracy. Podcast omawia koncepcję determinizmu technologicznego, wpływ dóbr informacyjnych na tradycyjne modele ekonomiczne oraz wyzwania związane z transformacją cyfrową i sztuczną inteligencją.",
-      "dlugosc": 516,
-      "rozmiar": 4132096,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-055.mp3",
-      "kod": "E.55"
-    },
-    {
-      "id": "odc-056",
-      "numer": 56,
-      "sezon": "F - Zarządzanie operacyjne",
-      "tytul": "Zarządzanie operacyjne",
-      "opis": "Podcast opisuje zarządzanie operacyjne jako dyscyplinę zajmującą się zarządzaniem powtarzalnymi procesami i unikalnymi projektami. Wyjaśnia, że jego korzenie sięgają naukowego zarządzania. Przedstawia także koncepcje lean management oraz just-in-time, podkreślając ich znaczenie dla redukcji strat i optymalizacji przepływu pracy.",
-      "dlugosc": 497,
-      "rozmiar": 3980168,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-056.mp3",
-      "kod": "F.56"
-    },
-    {
-      "id": "odc-057",
-      "numer": 57,
-      "sezon": "F - Zarządzanie operacyjne",
-      "tytul": "Model łańcucha wartości",
-      "opis": "Podcast przybliża model łańcucha wartości, opisany przez Michaela Portera. Przedstawia go jako narzędzie do analizy działalności organizacji, wspierające poszukiwanie przewag konkurencyjnych. Model łańcucha wartości dzieli działalność przedsiębiorstwa na działania podstawowe i wspomagające. Analiza łańcucha wartości pozwala na identyfikowanie kluczowych procesów i ocenę efektywności działań w porównaniu z konkurentami.",
-      "dlugosc": 329,
-      "rozmiar": 2635175,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-057.mp3",
-      "kod": "F.57"
-    },
-    {
-      "id": "odc-058",
-      "numer": 58,
-      "sezon": "F - Zarządzanie operacyjne",
-      "tytul": "Outsourcing",
-      "opis": "Podcast omawia outsourcing jako podejście do zarządzania polegające na zlecaniu zewnętrznym partnerom części działań dotychczas wykonywanych wewnątrz organizacji. Podkreśla, że głównym celem outsourcingu nie zawsze jest redukcja kosztów, a często chodzi również o dostęp do wiedzy i technologii. Wskazuje, że o ile proste procesy łatwo przekazać w outsourcing, to w przypadku procesów strategicznych należy brać pod uwagę ryzyko uzależnienia od zewnętrznych dostawców.",
-      "dlugosc": 273,
-      "rozmiar": 2181272,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-058.mp3",
-      "kod": "F.58"
-    },
-    {
-      "id": "odc-059",
-      "numer": 59,
-      "sezon": "F - Zarządzanie operacyjne",
-      "tytul": "Benchmarking",
-      "opis": "Podcast opisuje benchmarking jako sposób doskonalenia działalności gospodarczej poprzez porównywanie własnych procesów z tymi stosowanymi przez najlepsze organizacje. Przykład firmy Rank Xerox pokazuje, jak benchmarking pomógł reagować na intensywną konkurencję. Podcast wskazuje także na ograniczenia tej popularnej techniki zarządzania.",
-      "dlugosc": 584,
-      "rozmiar": 4675861,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-059.mp3",
-      "kod": "F.59"
-    },
-    {
-      "id": "odc-060",
-      "numer": 60,
-      "sezon": "F - Zarządzanie operacyjne",
-      "tytul": "Reinżyniering",
-      "opis": "Podcast omawia reinżyniering (reinżynierię procesów gospodarczych, business process reengineering) jako radykalne, fundamentalne przeprojektowanie dotychczasowych procesów w organizacji. Podkreśla, że celem jest osiągnięcie dramatycznej poprawy wyników, więc podejście to wymaga burzenia dotychczasowych schematów i zaprojektowania procesów od podstaw. Analizuje zarówno zalety, jak i wady reinżynieringu, omawiając często powiązane z nim masowe zwolnienia pracowników, które wywołały kontrowersje i krytykę.",
-      "dlugosc": 335,
-      "rozmiar": 2676762,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-060.mp3",
-      "kod": "F.60"
-    },
-    {
-      "id": "odc-061",
-      "numer": 61,
-      "sezon": "F - Zarządzanie operacyjne",
-      "tytul": "Zarządzanie środowiskowe",
-      "opis": "Podcast prezentuje zarządzanie środowiskowe jako dziedzinę, która skupia się na ograniczaniu negatywnego wpływu przedsiębiorstwa na środowisko. Wskazuje na jego historyczne uwarunkowania, takie jak raport Klubu Rzymskiego „Granice wzrostu” oraz rosnącą rolę regulacji środowiskowych. Podcast omawia również, w jaki sposób firmy wdrażają to podejście w praktyce, często działając pod presją ze strony otoczenia i posługując się w tym celu standardami i systemami takimi jak ISO 14001 i EMAS.",
-      "dlugosc": 355,
-      "rozmiar": 2837467,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-061.mp3",
-      "kod": "F.61"
-    },
-    {
-      "id": "odc-062",
-      "numer": 62,
+      "id": "odc-064",
+      "numer": 64,
       "sezon": "P - Podsumowanie",
-      "tytul": "Metafory i paradygmaty w zarządzaniu",
-      "opis": "Podcast analizuje koncepcje metafor i paradygmatów w badaniach nad zarządzaniem, nawiązując do prac Thomasa Kuhna, Harolda Koontza, Gibsona Burrella i Garetha Morgana. Opisuje, jak różne perspektywy, takie jak organizacja jako maszyna czy organizm, pozwalają na wielowymiarowe rozumienie organizacji, przy jednoczesnym podkreśleniu, że różne paradygmaty mogą współistnieć, choć ich założenia są niewspółmierne.",
-      "dlugosc": 665,
-      "rozmiar": 5323071,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-062.mp3",
-      "kod": "P.62"
+      "tytul": "Mody w zarządzaniu",
+      "opis": "Podcast przedstawia teorię mód w zarządzaniu, opisując, jak koncepcje, modele i narzędzia stają się popularne w zarządzaniu, a potem stopniowo zanikają. Wskazuje na negatywne aspekty tego zjawiska, takie jak odciąganie uwagi od rzetelnych badań naukowych, ale też na zalety, w tym stymulowanie zmian organizacyjnych. Opisuje też, w jaki sposób firmy doradcze, media i sami menedżerowie przyczyniają się do powstawania i rozprzestrzeniania się mód w zarządzaniu.",
+      "dlugosc": 559,
+      "rozmiar": 4472524,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-064.mp3",
+      "kod": "P.64",
+      "program": {
+        "dzienne": {
+          "wyklad": 12,
+          "wykladTytul": "Teorie, paradygmaty, mody i trendy w zarządzaniu",
+          "cwiczenia": 13,
+          "cwiczeniaTytul": "Podsumowanie. Przygotowanie do egzaminu"
+        },
+        "zaoczne": {
+          "wyklad": 7,
+          "wykladTytul": "Podsumowanie. Przygotowanie do egzaminu (wykład online)",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "1.7",
+      "efekty": [
+        "Wyjaśnia, na czym polega zjawisko mód w zarządzaniu i jak moda różni się od teorii naukowej",
+        "Argumentuje, dlaczego mody w zarządzaniu mogą mieć zarówno negatywne, jak i pozytywne skutki dla organizacji i osób zarządzających",
+        "Rozumie, że czas „życia” mody systematycznie się skraca",
+        "Omawia przykładowe mody w zarządzaniu, wskazując dlaczego można interpretować je jako mody a nie teorie naukowe"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 1.7"
     },
     {
       "id": "odc-063",
@@ -706,18 +59,2079 @@
       "dlugosc": 518,
       "rozmiar": 4146307,
       "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-063.mp3",
-      "kod": "P.63"
+      "kod": "P.63",
+      "program": {
+        "dzienne": {
+          "wyklad": 12,
+          "wykladTytul": "Teorie, paradygmaty, mody i trendy w zarządzaniu",
+          "cwiczenia": 13,
+          "cwiczeniaTytul": "Podsumowanie. Przygotowanie do egzaminu"
+        },
+        "zaoczne": {
+          "wyklad": 7,
+          "wykladTytul": "Podsumowanie. Przygotowanie do egzaminu (wykład online)",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "1.5",
+      "efekty": [
+        "Opisuje założenia podejścia interpretatywistyczno-symboliczne w badaniach nad organizacjami i różnice w stosunku do tradycyjnych podejść do organizacji i zarządzania",
+        "Omawia istotę analizy procesów organizowania, symboli i codziennych doświadczeń uczestników organizacji",
+        "Wyjaśnia, że organizację można traktować jako fenomen kulturowy, a nie tylko postrzegać kulturę jako jedną ze zmiennych organizacyjnych",
+        "Wyjaśnia, dlaczego podejście interpretatywistyczno-symboliczne wykorzystuje metody jakościowe badań"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 1.5"
     },
     {
-      "id": "odc-064",
-      "numer": 64,
+      "id": "odc-062",
+      "numer": 62,
       "sezon": "P - Podsumowanie",
-      "tytul": "Mody w zarządzaniu",
-      "opis": "Podcast przedstawia teorię mód w zarządzaniu, opisując, jak koncepcje, modele i narzędzia stają się popularne w zarządzaniu, a potem stopniowo zanikają. Wskazuje na negatywne aspekty tego zjawiska, takie jak odciąganie uwagi od rzetelnych badań naukowych, ale też na zalety, w tym stymulowanie zmian organizacyjnych. Opisuje też, w jaki sposób firmy doradcze, media i sami menedżerowie przyczyniają się do powstawania i rozprzestrzeniania się mód w zarządzaniu.",
-      "dlugosc": 559,
-      "rozmiar": 4472524,
-      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-064.mp3",
-      "kod": "P.64"
+      "tytul": "Metafory i paradygmaty w zarządzaniu",
+      "opis": "Podcast analizuje koncepcje metafor i paradygmatów w badaniach nad zarządzaniem, nawiązując do prac Thomasa Kuhna, Harolda Koontza, Gibsona Burrella i Garetha Morgana. Opisuje, jak różne perspektywy, takie jak organizacja jako maszyna czy organizm, pozwalają na wielowymiarowe rozumienie organizacji, przy jednoczesnym podkreśleniu, że różne paradygmaty mogą współistnieć, choć ich założenia są niewspółmierne.",
+      "dlugosc": 665,
+      "rozmiar": 5323071,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-062.mp3",
+      "kod": "P.62",
+      "program": {
+        "dzienne": {
+          "wyklad": 12,
+          "wykladTytul": "Teorie, paradygmaty, mody i trendy w zarządzaniu",
+          "cwiczenia": 13,
+          "cwiczeniaTytul": "Podsumowanie. Przygotowanie do egzaminu"
+        },
+        "zaoczne": {
+          "wyklad": 7,
+          "wykladTytul": "Podsumowanie. Przygotowanie do egzaminu (wykład online)",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "1.7",
+      "efekty": [
+        "Wyjaśnia, na czym polega perspektywa meta w badaniach nad zarządzaniem",
+        "Na wybranych przykładach omawia pojęcie paradygmatu w nauce, a także identyfikuje różne paradygmaty w naukach o zarządzaniu",
+        "Opisuje, jak różne metafory organizacji jako maszyny czy organizmu, pozwalają na pogłębione analizy organizacji",
+        "Wyjaśnia, dlaczego spojrzenie na organizację z różnych perspektyw, w tym: przy wykorzystaniu różnych paradygmatów i metafor, jest kluczowe dla lepszego jej zrozumienia"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 1.7"
+    },
+    {
+      "id": "odc-061",
+      "numer": 61,
+      "sezon": "F - Zarządzanie operacyjne",
+      "tytul": "Zarządzanie środowiskowe",
+      "opis": "Podcast prezentuje zarządzanie środowiskowe jako dziedzinę, która skupia się na ograniczaniu negatywnego wpływu przedsiębiorstwa na środowisko. Wskazuje na jego historyczne uwarunkowania, takie jak raport Klubu Rzymskiego \"Granice wzrostu\" oraz rosnącą rolę regulacji środowiskowych. Podcast omawia również, w jaki sposób firmy wdrażają to podejście w praktyce, często działając pod presją ze strony otoczenia i posługują się w tym celu standardami i systemami takimi jak ISO 14001 i EMAS.",
+      "dlugosc": 355,
+      "rozmiar": 2837467,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-061.mp3",
+      "kod": "F.61",
+      "program": {
+        "dzienne": {
+          "wyklad": 10,
+          "wykladTytul": "Zarządzanie operacyjne",
+          "cwiczenia": 12,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "4",
+      "efekty": [
+        "Wyjaśnia istotę zarządzania środowiskowego i jego główne cele",
+        "Opisuje wpływ uwarunkowań zewnętrznych na decyzje organizacji dotyczące oddziaływania na środowisko, ze szczególnym uwzględnieniem standardów ISO 14001 i EMAS",
+        "Prezentuje hipotezę Portera i jej znaczenie dla konkurencyjności przedsiębiorstw",
+        "Omawia przykłady obszarów zmian organizacyjnych, związanych z zarządzaniem środowiskowym (m.in. odnawialne źródła energii, gospodarka odpadami, recykling, zarządzanie ściekami przemysłowymi i oszczędzanie energii)"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 4"
+    },
+    {
+      "id": "odc-060",
+      "numer": 60,
+      "sezon": "F - Zarządzanie operacyjne",
+      "tytul": "Reinżyniering",
+      "opis": "Podcast omawia reinżyniering (reinżynierię procesów gospodarczych, business proces reengineering) jako radykalne, fundamentalne przeprojektowanie dotychczasowych procesów w organizacji. Podkreśla, że celem jest osiągnięcie dramatycznej poprawy wyników, więc podejście to wymaga „burzenia” dotychczasowych schematów i zaprojektowania procesów od podstaw. Analizuje zarówno zalety, jak i wady reinżynieringu, omawiając często powiązane z nim masowe zwolnienia pracowników, które wywołały kontrowersje i krytykę reinżynieringu.",
+      "dlugosc": 335,
+      "rozmiar": 2676762,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-060.mp3",
+      "kod": "F.60",
+      "program": {
+        "dzienne": {
+          "wyklad": 10,
+          "wykladTytul": "Zarządzanie operacyjne",
+          "cwiczenia": 12,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "4",
+      "efekty": [
+        "Wyjaśnia, na czym polega reinżyniering i jakie są jego kluczowe założenia",
+        "Odróżnia reinżyniering od drobnych usprawnień procesów gospodarczych",
+        "Krytycznie ocenia zalety i ograniczenia reinżynieringu jako podejścia do zmian organizacyjnych"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 4"
+    },
+    {
+      "id": "odc-059",
+      "numer": 59,
+      "sezon": "F - Zarządzanie operacyjne",
+      "tytul": "Benchmarking",
+      "opis": "Podcast opisuje benchmarking jako sposób doskonalenia działalności gospodarczej poprzez porównywanie własnych procesów z tymi stosowanymi przez najlepsze organizacje. Przykład firmy Rank Xerox pokazuje, jak benchmarking pomógł reagować na intensywną konkurencję. Podcast wskazuje także na ograniczenia tej popularnej techniki zarządzania.",
+      "dlugosc": 584,
+      "rozmiar": 4675861,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-059.mp3",
+      "kod": "F.59",
+      "program": {
+        "dzienne": {
+          "wyklad": 10,
+          "wykladTytul": "Zarządzanie operacyjne",
+          "cwiczenia": 12,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "4",
+      "efekty": [
+        "Wyjaśnia ideę benchmarkingu jako sposób na podnoszenie efektywności organizacji",
+        "Na wybranym przykładzie, proponuje sposób przeprowadzenia benchmarking w biznesie",
+        "Prezentuje istotę koncepcji zarządzania przez przechadzanie się (management by wandering around)",
+        "Omawia korzyści z koncentracji organizacji na aktywnościach, które są kluczowe dla jej działalności (stick to the knitting)",
+        "Omawia wkład Petersa i Watermana oraz ich książki „W poszukiwaniu doskonałości” (In search of excellence) we współczesne praktyki zarządzania"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 4"
+    },
+    {
+      "id": "odc-058",
+      "numer": 58,
+      "sezon": "F - Zarządzanie operacyjne",
+      "tytul": "Outsourcing",
+      "opis": "Podcast omawia outsourcing jako podejście do zarządzania polegające na zlecaniu zewnętrznym partnerom części działań dotychczas wykonywanych wewnątrz organizacji. Podkreśla, że głównym celem outsourcingu nie zawsze jest redukcja kosztów, a często chodzi również o dostęp do wiedzy i technologii. Wskazuje, że o ile proste procesy łatwo przekazać w outsourcing, to w przypadku procesów strategicznych należy brać pod uwagę ryzyko uzależnienia od zewnętrznych dostawców.",
+      "dlugosc": 273,
+      "rozmiar": 2181272,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-058.mp3",
+      "kod": "F.58",
+      "program": {
+        "dzienne": {
+          "wyklad": 10,
+          "wykladTytul": "Zarządzanie operacyjne",
+          "cwiczenia": 12,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "4",
+      "efekty": [
+        "Wyjaśnia, na czym polega outsourcing i jakie odgrywa znaczenie w strategii i operacjach organizacji",
+        "Odróżnia outsourcing od offshoringu",
+        "Omawia czynniki, uwzględniane w decyzjach o tym, które procesy warto pozostawić wewnątrz, a które zlecić na zewnątrz organizacji w ramach outsourcingu",
+        "Prezentuje potencjalne ryzyka i korzyści związane z outsourcingiem"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 4"
+    },
+    {
+      "id": "odc-057",
+      "numer": 57,
+      "sezon": "F - Zarządzanie operacyjne",
+      "tytul": "Model łańcucha wartości",
+      "opis": "Podcast przybliża model łańcucha wartości, opisany przez Michaela Portera. Przedstawia go jako narzędzie do analizy działalności organizacji, wspierające poszukiwanie przewag konkurencyjnych. Model łańcucha wartości dzieli działalność przedsiębiorstwa na działania podstawowe i wspomagające. Analiza łańcucha wartości pozwala na identyfikowanie kluczowych procesów i ocenę efektywności działań w porównaniu z konkurentami.",
+      "dlugosc": 329,
+      "rozmiar": 2635175,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-057.mp3",
+      "kod": "F.57",
+      "program": {
+        "dzienne": {
+          "wyklad": 10,
+          "wykladTytul": "Zarządzanie operacyjne",
+          "cwiczenia": 12,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "18",
+      "efekty": [
+        "Wyjaśnia, do czego służy model łańcucha wartości w zarządzaniu",
+        "Rozróżnia działania podstawowe i wspomagające w modelu łańcucha wartości oraz omawia je na przykładzie wybranej organizacji",
+        "Omawia związki pomiędzy modelem łańcucha wartości a outsourcingiem i benchmarkingiem"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 18"
+    },
+    {
+      "id": "odc-056",
+      "numer": 56,
+      "sezon": "F - Zarządzanie operacyjne",
+      "tytul": "Zarządzanie operacyjne",
+      "opis": "Podcast opisuje zarządzanie operacyjne jako dyscyplinę zajmującą się zarządzaniem (powtarzalnymi) procesami i (unikalnymi) projektami. Wyjaśnia, że jego korzenie sięgają naukowego zarządzania. Przedstawia także koncepcje lean management oraz just-in-time, podkreślając ich znaczenie dla redukcji strat i optymalizacji przepływu pracy.",
+      "dlugosc": 497,
+      "rozmiar": 3980168,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-056.mp3",
+      "kod": "F.56",
+      "program": {
+        "dzienne": {
+          "wyklad": 10,
+          "wykladTytul": "Zarządzanie operacyjne",
+          "cwiczenia": 12,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "4",
+      "efekty": [
+        "Definiuje zarządzanie operacyjne i jego kluczowe obszary, związane z procesami i projektami",
+        "Rozróżnia procesy od projektów w kontekście biznesowym",
+        "Opisuje znaczenie jakości i zarządzania jakością w historii zarządzania, ze szczególnym naciskiem na doświadczenia gospodarki Japonii",
+        "Wyjaśnia założenia i powody stosowania technik lean management oraz just-in-time",
+        "Prezentuje, w jaki sposób techniki zarządzania operacyjnego mogą przełożyć się na wyniki organizacji"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 4"
+    },
+    {
+      "id": "odc-055",
+      "numer": 55,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Technologie informatyczne",
+      "opis": "Podcast analizuje rolę technologii informatycznych w teorii i praktyce zarządzania. Wyjaśnia, że technologia to nie tylko maszyny i sprzęt, ale także wiedza i sposoby organizacji pracy. Podcast omawia koncepcję determinizmu technologicznego, wpływ dóbr informacyjnych na tradycyjne modele ekonomiczne oraz wyzwania związane z transformacją cyfrową i sztuczną inteligencją.",
+      "dlugosc": 516,
+      "rozmiar": 4132096,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-055.mp3",
+      "kod": "E.55",
+      "program": {
+        "dzienne": {
+          "wyklad": 11,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu",
+          "cwiczenia": 12,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "6",
+      "efekty": [
+        "Wyjaśnia, jakie znaczenie mają technologie w zarządzaniu",
+        "Omawia koncepcję determinizmu technologicznego Joan Woodward i jej ograniczenia",
+        "Opisuje znaczenie technologii informacyjnych w zarządzaniu procesami gospodarczymi (w tym: reinżynieringu, outsourcingu, zarządzaniu łańcuchami dostaw i eliminacji pośredników)",
+        "Wyjaśnia założenia transformacji cyfrowej i modelu Przemysłu 4.0 (Industry 4.0)",
+        "Omawia potencjalny wpływ sztucznej inteligencji na organizacje i zarządzanie"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 6"
+    },
+    {
+      "id": "odc-054",
+      "numer": 54,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Organizacyjne uczenie się i zarządzanie wiedzą",
+      "opis": "Podcast omawia organizacyjne uczenie się i zarządzanie wiedzą jako istotne sposoby osiągania trwałej przewagi konkurencyjnej. Opisuje, w jaki sposób organizacje mogą się uczyć, od doświadczenia i refleksji, poprzez tworzenie uogólnień, aż do wdrażania ich w praktyce. Zaznacza, że wiedza jest zasobem, którym można i należy zarządzać.",
+      "dlugosc": 249,
+      "rozmiar": 1990055,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-054.mp3",
+      "kod": "E.54",
+      "program": {
+        "dzienne": {
+          "wyklad": 11,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu",
+          "cwiczenia": 12,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "34",
+      "efekty": [
+        "Wyjaśnia, na czym polega organizacyjne uczenie się i jakie jest jego znaczenie w praktyce",
+        "Rozróżnia organizacyjne uczenie się, organizację uczącą się i zarządzanie wiedzą",
+        "Omawia, jak inwestycja w wiedzę może przyczynić się do rozwoju przedsiębiorstwa"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 34"
+    },
+    {
+      "id": "odc-053",
+      "numer": 53,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Modele biznesu",
+      "opis": "Podcast analizuje modele biznesu jako sposoby organizacji działalności i źródło przewagi konkurencyjnej. Wyjaśnia, że innowacje w modelach biznesowych mogą obniżać koszty i zwiększać elastyczność. Wskazuje też na niebezpieczeństwa wynikające z braku dostatecznie szczegółowych analiz, które powinny stanowić fundament dla wyboru modelu biznesowego i strategii danej organizacji.",
+      "dlugosc": 377,
+      "rozmiar": 3018444,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-053.mp3",
+      "kod": "E.53",
+      "program": {
+        "dzienne": {
+          "wyklad": 11,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu",
+          "cwiczenia": 11,
+          "cwiczeniaTytul": "Marketing"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "20",
+      "efekty": [
+        "Wyjaśnia, czym jest model biznesu i jak odnosi się do strategii",
+        "Opisuje, w jaki sposób modele biznesu mogą stanowić źródło przewagi rynkowej",
+        "Omawia i krytycznie ocenia wybrane typy modeli biznesowych"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 20"
+    },
+    {
+      "id": "odc-052",
+      "numer": 52,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Technologie a przyszłość biznesu",
+      "opis": "Podcast omawia wpływ technologii na biznes, przy wykorzystaniu dorobku nauk o zarządzaniu, ze szczególnym odniesieniem do globalizacji i zjawiska dóbr informacyjnych. Wyjaśnia, dlaczego dobra informacyjne zmieniają tradycyjne modele biznesowe. Dotyka również kwestii takich jak nadmiar informacji, licencjonowanie technologii i przydatność oceny technologii (technology assessment).",
+      "dlugosc": 599,
+      "rozmiar": 4795397,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-052.mp3",
+      "kod": "E.52",
+      "program": {
+        "dzienne": {
+          "wyklad": 11,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu",
+          "cwiczenia": 12,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Zarządzanie operacyjne"
+        }
+      },
+      "rozdzial": "6",
+      "efekty": [
+        "Wyjaśnia, czym są dobra informacyjne i jak wpływają na funkcjonowanie przykładowych organizacji",
+        "Opisuje konsekwencje zjawiska nadmiaru informacji (information overload)",
+        "Wyjaśnia, w jaki sposób nowe technologie mogą obniżać wydajność pracy",
+        "Definiuje pojęcie prosumpcji i prezentuje jego przykłady",
+        "Prezentuje przykłady konwergencji branż i fuzji technologii",
+        "Omawia korzyści z licencjonowania technologii w biznesie",
+        "Omawia korzyści z prowadzenia oceny technologii (technology assessment) i refleksji w obszarze futurologii"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 6"
+    },
+    {
+      "id": "odc-051",
+      "numer": 51,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Innowacje",
+      "opis": "Podcast wyjaśnia, czym jest innowacja i jak odróżnić ją od wynalazku. Przedstawia również podział na innowacje radykalne, które otwierają nowe kategorie produktów, oraz innowacje przyrostowe, które są usprawnieniami istniejących rozwiązań. Analizuje też, w jaki sposób różne przedsiębiorstwa radzą sobie z innowacjami.",
+      "dlugosc": 468,
+      "rozmiar": 3745275,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-051.mp3",
+      "kod": "E.51",
+      "program": {
+        "dzienne": {
+          "wyklad": 11,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu",
+          "cwiczenia": 11,
+          "cwiczeniaTytul": "Marketing"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "33",
+      "efekty": [
+        "Definiuje innowację i wyróżnia podstawowe typy innowacji",
+        "Wyjaśnia, czym innowacja różni się od pomysłu, wynalazku i wdrożenia",
+        "Na wybranych przykładach omawia innowacje radykalne i przyrostowe",
+        "Wyjaśnia, kim są „inkumbenci” (incumbents) w wybranej branży i jaką rolę odgrywają w procesach innowacyjnych"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 33"
+    },
+    {
+      "id": "odc-050",
+      "numer": 50,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Przedsiębiorczość",
+      "opis": "Podcast prezentuje definicje przedsiębiorczości, z uwzględnieniem koncepcji „twórczej destrukcji” Josepha Schumpetera, w której przedsiębiorca wprowadza nowe rozwiązania, radykalnie zmieniające rynek. Podcast opisuje również kluczowe cechy psychologiczne przedsiębiorców, takie jak wewnętrzne poczucie kontroli i wysoki poziom potrzeby osiągnięć.",
+      "dlugosc": 433,
+      "rozmiar": 3466078,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-050.mp3",
+      "kod": "E.50",
+      "program": {
+        "dzienne": {
+          "wyklad": 11,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu",
+          "cwiczenia": 11,
+          "cwiczeniaTytul": "Marketing"
+        },
+        "zaoczne": {
+          "wyklad": 6,
+          "wykladTytul": "Przedsiębiorczość, innowacje i modele biznesu + Zarządzanie operacyjne",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "32",
+      "efekty": [
+        "Wyjaśnia, czym jest przedsiębiorczość i na czym polega „twórcza destrukcja” opisywana przez Schumpetera",
+        "Odróżnia wynalazek od innowacji",
+        "Wymienia przykładowe cechy psychologiczne przedsiębiorcy (np. wysokie poczucie własnej skuteczności i tolerancja niepewności)",
+        "Opisuje na czym polega \"orientacja przedsiębiorcza\" mierzona w badaniach pracowników i organizacji"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 32"
+    },
+    {
+      "id": "odc-049",
+      "numer": 49,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Marketing",
+      "opis": "Podcast oferuje wprowadzenie do koncepcji marketingu, która opiera się na orientacji na klienta, a nie tylko na oferowanym produkcie. Wyjaśnia, że sprzedaż i reklama to tylko narzędzia, a istotą marketingu jest zarządzanie obustronnie korzystnymi relacjami z klientami. Opisuje również model segmentacji, wyboru rynku docelowego i pozycjonowania (STP).",
+      "dlugosc": 370,
+      "rozmiar": 2959721,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-049.mp3",
+      "kod": "E.49",
+      "program": {
+        "dzienne": {
+          "wyklad": 9,
+          "wykladTytul": "Marketing",
+          "cwiczenia": 11,
+          "cwiczeniaTytul": "Marketing"
+        },
+        "zaoczne": {
+          "wyklad": 5,
+          "wykladTytul": "Zarządzanie strategiczne + Marketing",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "21",
+      "efekty": [
+        "Omawia różnicę między promocją produktu a marketingiem zorientowanym na zaspokajanie potrzeb klienta",
+        "Rozumie, że klient jest aktywnym uczestnikiem procesu marketingowego, a nie tylko odbiorcą",
+        "Na wybranym przykładzie, prezentuje elementy modelu STP (segmentacja, targetowanie, pozycjonowanie)",
+        "Wyjaśnia, dlaczego różnicowanie jest kluczowe, aby wzmocnić pozycję oferty rynkowej danej organizacji"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 21"
+    },
+    {
+      "id": "odc-048",
+      "numer": 48,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Relacje międzyorganizacyjne",
+      "opis": "Podcast omawia znaczenie współpracy między organizacjami w nowoczesnym biznesie. Wyjaśnia, że kooperacja może przybierać różne formy, takie jak alianse strategiczne, spółki joint ventures czy klastry gospodarcze. Podcast wprowadza również koncepcję otwartych innowacji i wskazuje na ryzyko „wyścigu w uczeniu się” w ramach współpracy.",
+      "dlugosc": 582,
+      "rozmiar": 4660187,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-048.mp3",
+      "kod": "E.48",
+      "program": {
+        "dzienne": {
+          "wyklad": 8,
+          "wykladTytul": "Zarządzanie strategiczne",
+          "cwiczenia": 10,
+          "cwiczeniaTytul": "Zarządzanie strategiczne"
+        },
+        "zaoczne": {
+          "wyklad": 5,
+          "wykladTytul": "Zarządzanie strategiczne + Marketing",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "23",
+      "efekty": [
+        "Wyjaśnia, jaką rolę współpraca między organizacjami odgrywa przy wdrażaniu strategii",
+        "Opisuje różne formy relacji międzyorganizacyjnych",
+        "Wyjaśnia pojęcie otwartych innowacji",
+        "Omawia ryzyko, jakie niesie za sobą współpraca organizacji z innymi podmiotami"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 23"
+    },
+    {
+      "id": "odc-047",
+      "numer": 47,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Podejście zasobowe do organizacji",
+      "opis": "Podcast omawia podejście zasobowe w zarządzaniu strategicznym, które skupia się na wewnętrznych atutach organizacji, takich jak zasoby materialne i niematerialne. Zgodnie z tym podejściem, przewaga konkurencyjna wynika ze zdolności do budowania i wykorzystania kluczowych kompetencji organizacji.",
+      "dlugosc": 546,
+      "rozmiar": 4367198,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-047.mp3",
+      "kod": "E.47",
+      "program": {
+        "dzienne": {
+          "wyklad": 8,
+          "wykladTytul": "Zarządzanie strategiczne",
+          "cwiczenia": 10,
+          "cwiczeniaTytul": "Zarządzanie strategiczne"
+        },
+        "zaoczne": {
+          "wyklad": 5,
+          "wykladTytul": "Zarządzanie strategiczne + Marketing",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "22",
+      "efekty": [
+        "Wyjaśnia, czym jest podejście zasobowe w zarządzaniu strategicznym",
+        "Rozróżnia zasoby i kompetencje w organizacji",
+        "Wskazuje, jakie rodzaje zasobów są najważniejsze dla organizacji",
+        "Wyjaśnia pojęcię \"kluczowe kompetencje\" oraz ich rolę w budowaniu strategii"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 22"
+    },
+    {
+      "id": "odc-046",
+      "numer": 46,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Wkład firm doradczych w rozwój teorii zarządzania",
+      "opis": "Podcast analizuje wpływ firm doradczych na rozwój teorii i narzędzi zarządzania, od czasów naukowego zarządzania Taylora. Wyjaśnia, jak konsultanci przyczynili się do popularyzacji wiedzy i tworzenia standardów w zarządzaniu. Przedstawia również omawiane w literaturze ograniczenia narzędzi doradczych, takich jak macierz Boston Consulting Group, które często nadmiernie upraszczają rzeczywistość biznesową.",
+      "dlugosc": 545,
+      "rozmiar": 4360511,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-046.mp3",
+      "kod": "E.46",
+      "program": {
+        "dzienne": {
+          "wyklad": 8,
+          "wykladTytul": "Zarządzanie strategiczne",
+          "cwiczenia": 10,
+          "cwiczeniaTytul": "Zarządzanie strategiczne"
+        },
+        "zaoczne": {
+          "wyklad": 5,
+          "wykladTytul": "Zarządzanie strategiczne + Marketing",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "8",
+      "efekty": [
+        "Omawia, jak historia konsultingu wiąże się z ewolucją dorobku nauk o zarządzaniu",
+        "Pokazuje, w jaki sposób narzędzia doradcze mogą wpływać na podejmowanie decyzji",
+        "Omawia wkład książki „W poszukiwaniu doskonałości” (In search of excellence) Petersa i Watermana w naukę i praktykę zarządzania",
+        "Wyjaśnia różnice metodologiczne pomiędzy badaniami naukowymi a metodami stosowanymi w konsultingu"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 8"
+    },
+    {
+      "id": "odc-045",
+      "numer": 45,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Krytyka analizy Portera",
+      "opis": "Podcast oferuje analizę ograniczeń i słabych punktów koncepcji Michaela Portera. Wskazuje, że metody Portera nie były oparte na szerokich badaniach empirycznych, a ich ocena bywa subiektywna. Podkreśla również, że w turbulentnym otoczeniu, kluczowe dla sukcesu firmy są jej wewnętrzne zasoby, a nie tylko pozycja w sektorze.",
+      "dlugosc": 393,
+      "rozmiar": 3140697,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-045.mp3",
+      "kod": "E.45",
+      "program": {
+        "dzienne": {
+          "wyklad": 8,
+          "wykladTytul": "Zarządzanie strategiczne",
+          "cwiczenia": 10,
+          "cwiczeniaTytul": "Zarządzanie strategiczne"
+        },
+        "zaoczne": {
+          "wyklad": 5,
+          "wykladTytul": "Zarządzanie strategiczne + Marketing",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "18",
+      "efekty": [
+        "Omawia najważniejsze ograniczenia modeli Michaela Portera",
+        "Porównuje szkołę pozycyjną i dorobek Michaela Portera z innymi podejściami w zarządzaniu strategicznym, w tym ze szkołą zasobową"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 18"
+    },
+    {
+      "id": "odc-044",
+      "numer": 44,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Michael Porter i szkoła pozycyjna",
+      "opis": "Podcast omawia wkład Michaela Portera w zarządzanie strategiczne, ze szczególnym uwzględnieniem szkoły pozycyjnej. Wyjaśnia, że strategia to pozycja w sektorze, a jej tworzenie opiera się na analizie strukturalnej. Dorobek Portera obejmuje również koncepcję grup strategicznych, a także dodatkowe narzędzia analityczne, które są szeroko wykorzystywane w zarządzaniu, wspierając proces tworzenia strategii.",
+      "dlugosc": 609,
+      "rozmiar": 4875824,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-044.mp3",
+      "kod": "E.44",
+      "program": {
+        "dzienne": {
+          "wyklad": 8,
+          "wykladTytul": "Zarządzanie strategiczne",
+          "cwiczenia": 10,
+          "cwiczeniaTytul": "Zarządzanie strategiczne"
+        },
+        "zaoczne": {
+          "wyklad": 5,
+          "wykladTytul": "Zarządzanie strategiczne + Marketing",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "18",
+      "efekty": [
+        "Omawia znaczenie szkoły pozycyjnej w zarządzaniu strategicznym",
+        "Prezentuje najważniejszy wkład Michaela Portera do dorobku szkoły pozycyjnej",
+        "Wyjaśnia, czym jest grupa strategiczna i bariery mobilności",
+        "Uzasadnia, dlaczego narzędzia analityczne to tylko część procesu tworzenia strategii"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 18"
+    },
+    {
+      "id": "odc-043",
+      "numer": 43,
+      "sezon": "E - Strategia, marketing, innowacje",
+      "tytul": "Proces formułowania strategii",
+      "opis": "Podcast prezentuje typowe etapy procesu formułowania strategii organizacji. Tworzenie strategii obejmuje analizę zewnętrzną i wewnętrzną organizacji, ustalenie misji i celów, a także wybór i wdrożenie konkretnych programów działań. Poruszono także kwestie kontroli i mechanizmów sprzężenia zwrotnego.",
+      "dlugosc": 310,
+      "rozmiar": 2478441,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-043.mp3",
+      "kod": "E.43",
+      "program": {
+        "dzienne": {
+          "wyklad": 8,
+          "wykladTytul": "Zarządzanie strategiczne",
+          "cwiczenia": 10,
+          "cwiczeniaTytul": "Zarządzanie strategiczne"
+        },
+        "zaoczne": {
+          "wyklad": 5,
+          "wykladTytul": "Zarządzanie strategiczne + Marketing",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "7",
+      "efekty": [
+        "Wyróżnia kluczowe etapy w procesie tworzenia strategii, od analizy aż po wdrożenie i kontrolę",
+        "Wyjaśnia rolę misji organizacji",
+        "Określa, na czym polegają analizy otoczenia zewnętrznego i wewnętrznego, prowadzące do identyfikacji mocnych i słabych stron oraz szans i zagrożeń",
+        "Stosuje kryteria SMART do formułowania celów strategicznych",
+        "Opisuje, na czym polega mechanizm kontroli wdrożenia strategii i pętla sprzężenia zwrotnego w procesie planowania strategicznego"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 7"
+    },
+    {
+      "id": "odc-042",
+      "numer": 42,
+      "sezon": "D - Otoczenie organizacji",
+      "tytul": "Strategie przyrostowe",
+      "opis": "Podcast omawia koncepcję strategii przyrostowych, które stanowią alternatywę dla formalnego, długoterminowego planowania. Wyjaśnia, że polegają one na podejmowaniu drobnych, stopniowych decyzji, które z czasem tworzą spójny kierunek rozwoju. Wskazuje na ryzyko tak zwanego dryfu strategicznego, odejścia od pożądanego kierunku rozwoju strategicznego, które może pojawić się przy realizacji strategii przyrostowych.",
+      "dlugosc": 537,
+      "rozmiar": 4298862,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-042.mp3",
+      "kod": "D.42",
+      "program": {
+        "dzienne": {
+          "wyklad": 6,
+          "wykladTytul": "Planowanie",
+          "cwiczenia": 10,
+          "cwiczeniaTytul": "Zarządzanie strategiczne"
+        },
+        "zaoczne": {
+          "wyklad": 5,
+          "wykladTytul": "Zarządzanie strategiczne + Marketing",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Zarządzanie strategiczne + Marketing"
+        }
+      },
+      "rozdzial": "7",
+      "efekty": [
+        "Odróżnia strategie przyrostowe od podejścia planistycznego w zarządzaniu strategicznym",
+        "Omawia historyczny kontekst pojawienia się strategii przyrostowych",
+        "Rozumie koncepcję dryfu strategicznego",
+        "Omawia sytuacje, w których podejście przyrostowe jest przydatne oraz jego ograniczenia"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 7"
+    },
+    {
+      "id": "odc-041",
+      "numer": 41,
+      "sezon": "D - Otoczenie organizacji",
+      "tytul": "Analiza SWOT",
+      "opis": "Podcast omawia podstawowe założenia analizy SWOT jako narzędzia diagnostycznego, służącego do podsumowania analizy wewnętrznej i zewnętrznej organizacji. Wyjaśnia, że mocne i słabe strony pochodzą z wnętrza firmy, natomiast szanse i zagrożenia wynikają z otoczenia. Podkreśla, że analiza SWOT jest wynikiem wcześniejszych szczegółowych analiz.",
+      "dlugosc": 454,
+      "rozmiar": 3630754,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-041.mp3",
+      "kod": "D.41",
+      "program": {
+        "dzienne": {
+          "wyklad": 7,
+          "wykladTytul": "Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 9,
+          "cwiczeniaTytul": "Analiza otoczenia 2"
+        },
+        "zaoczne": {
+          "wyklad": 4,
+          "wykladTytul": "Planowanie  + Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Analiza otoczenia"
+        }
+      },
+      "rozdzial": "Otoczenie",
+      "efekty": [
+        "Prezentuje SWOT jako narzędzie analityczne",
+        "Odróżnia czynniki wewnętrzne (mocne i słabe strony) od zewnętrznych (szanse i zagrożenia)",
+        "Wyjaśnia, jak analiza SWOT powinna wynikać z wcześniejszych analiz otoczenia i organizacji",
+        "Na przykładach wyjaśnia rolę SWOT jako narzędzia pomagającego w podejmowaniu decyzji strategicznych"
+      ],
+      "lektura": "Otoczenie"
+    },
+    {
+      "id": "odc-040",
+      "numer": 40,
+      "sezon": "D - Otoczenie organizacji",
+      "tytul": "Analiza otoczenia bliższego",
+      "opis": "Podcast przybliża techniki analizy otoczenia bliższego, na które organizacja ma bezpośredni wpływ. Opisuje dwa kluczowe narzędzia: analizę interesariuszy i model pięciu sił konkurencyjnych Michaela Portera. Wyjaśnia również rolę komplementariuszy i instytucji rządowych w relacjach rynkowych.",
+      "dlugosc": 521,
+      "rozmiar": 4165951,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-040.mp3",
+      "kod": "D.40",
+      "program": {
+        "dzienne": {
+          "wyklad": 7,
+          "wykladTytul": "Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 9,
+          "cwiczeniaTytul": "Analiza otoczenia 2"
+        },
+        "zaoczne": {
+          "wyklad": 4,
+          "wykladTytul": "Planowanie  + Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Analiza otoczenia"
+        }
+      },
+      "rozdzial": "Otoczenie",
+      "efekty": [
+        "Opisuje otoczenie bliższe (konkurencyjne, branżowe)",
+        "Wskazuje, dlaczego warto analizować otoczenie branżowe przy formułowaniu strategii przedsiębiorstwa",
+        "Wyjaśnia pojęcia interesariusza",
+        "Wyjaśnia założenia modelu 5 sił Portera, definiując poszczególne siły",
+        "Rozumie, jakie czynniki wpływają na siłę przetargową nabywców i dostawców",
+        "Na wybranym przykładzie, wskazuje zagrożenia ze strony substytutów i nowych wejść"
+      ],
+      "lektura": "Otoczenie"
+    },
+    {
+      "id": "odc-039",
+      "numer": 39,
+      "sezon": "D - Otoczenie organizacji",
+      "tytul": "Analiza otoczenia dalszego",
+      "opis": "Podcast przybliża techniki analizy otoczenia dalszego, czyli analizy czynników zewnętrznych, na które organizacja nie ma bezpośredniego wpływu. Przedstawia popularne narzędzie analityczne PEST (czynniki polityczno-prawne, ekonomiczne, społeczno-kulturowe i technologiczne) oraz omawia metody prognozowania, planowania scenariuszowego i technikę foresight.",
+      "dlugosc": 721,
+      "rozmiar": 5767331,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-039.mp3",
+      "kod": "D.39",
+      "program": {
+        "dzienne": {
+          "wyklad": 7,
+          "wykladTytul": "Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 8,
+          "cwiczeniaTytul": "Analiza otoczenia 1"
+        },
+        "zaoczne": {
+          "wyklad": 4,
+          "wykladTytul": "Planowanie  + Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Analiza otoczenia"
+        }
+      },
+      "rozdzial": "Otoczenie",
+      "efekty": [
+        "Definiuje otoczenie dalsze (makrootoczenie)",
+        "Opisuje, na czym polega analiza PEST",
+        "Wymienia i wyjaśnia cztery obszary analizy PEST",
+        "Odróżnia prognozowanie, w tym ekstrapolację trendów, od foresightu",
+        "Rozumie, że organizacja może wpływać na otoczenie dalsze tylko pośrednio"
+      ],
+      "lektura": "Otoczenie"
+    },
+    {
+      "id": "odc-038",
+      "numer": 38,
+      "sezon": "D - Otoczenie organizacji",
+      "tytul": "Otoczenie organizacji",
+      "opis": "Podcast prezentuje otoczenie jako zbiór czynników zewnętrznych wpływających na organizację. Rozróżnia otoczenie stabilne i turbulentne, wyjaśniając, jak charakterystyka otoczenia wpływa na wewnętrzną strukturę i procesy. Wskazuje również, skąd organizacje pozyskują informacje o otoczeniu.",
+      "dlugosc": 568,
+      "rozmiar": 4543159,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-038.mp3",
+      "kod": "D.38",
+      "program": {
+        "dzienne": {
+          "wyklad": 7,
+          "wykladTytul": "Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 8,
+          "cwiczeniaTytul": "Analiza otoczenia 1"
+        },
+        "zaoczne": {
+          "wyklad": 4,
+          "wykladTytul": "Planowanie  + Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Analiza otoczenia"
+        }
+      },
+      "rozdzial": "Otoczenie",
+      "efekty": [
+        "Definiuje otoczenie organizacji",
+        "Rozróżnia otoczenie stabilne i turbulentne",
+        "Wyjaśnia, jak otoczenie wpływa na strukturę i formalizację organizacji",
+        "Wyjaśnia pojęcie homeostazy w odniesieniu do zarządzania",
+        "Identyfikuje sposoby zbierania wiedzy o otoczeniu"
+      ],
+      "lektura": "Otoczenie"
+    },
+    {
+      "id": "odc-037",
+      "numer": 37,
+      "sezon": "D - Otoczenie organizacji",
+      "tytul": "Dynamika systemów",
+      "opis": "Podcast oferuje wprowadzenie do nurtu badawczego dynamiki systemów, który analizuje zachowanie złożonych systemów poprzez sieć relacji i sprzężeń zwrotnych. Przedstawia kluczowy archetyp systemowy – granice wzrostu – i wyjaśnia, jak z pozoru pozytywne trendy mogą doprowadzić do stagnacji lub kryzysu, jeśli nie zostaną uwzględnione opóźnienia i bariery.",
+      "dlugosc": 850,
+      "rozmiar": 6801780,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-037.mp3",
+      "kod": "D.37",
+      "program": {
+        "dzienne": {
+          "wyklad": 7,
+          "wykladTytul": "Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 8,
+          "cwiczeniaTytul": "Analiza otoczenia 1"
+        },
+        "zaoczne": {
+          "wyklad": 4,
+          "wykladTytul": "Planowanie  + Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Analiza otoczenia"
+        }
+      },
+      "rozdzial": "13",
+      "efekty": [
+        "Wyjaśnia cele i założenia nurtu badawczego dynamiki systemów",
+        "Opisuje, w jaki sposób sprzężenia zwrotne wpływają na zachowanie systemu organizacyjnego",
+        "Omawia archetyp \"granice wzrostu\"",
+        "Rozpoznaje powiązania pomiędzy odległymi w czasie i przestrzeni elementami systemu i podeje przykłady użycia archetypów systemowych do diagnozowania problemów"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 13"
+    },
+    {
+      "id": "odc-036",
+      "numer": 36,
+      "sezon": "D - Otoczenie organizacji",
+      "tytul": "Organizacja jako system",
+      "opis": "Podcast oferuje spojrzenie na organizację jako system otwarty, który nieustannie wymienia zasoby ze swoim otoczeniem. Opisuje, czym są czynniki wejścia i wyjścia oraz procesy transformacji, wspierane przez sprzężenia zwrotne. Wprowadza też kluczowe cechy systemów otwartych, takie jak ekwifinalność i entropia.",
+      "dlugosc": 632,
+      "rozmiar": 5054084,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-036.mp3",
+      "kod": "D.36",
+      "program": {
+        "dzienne": {
+          "wyklad": 7,
+          "wykladTytul": "Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 8,
+          "cwiczeniaTytul": "Analiza otoczenia 1"
+        },
+        "zaoczne": {
+          "wyklad": 4,
+          "wykladTytul": "Planowanie  + Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Analiza otoczenia"
+        }
+      },
+      "rozdzial": "13",
+      "efekty": [
+        "Przedstawia organizację jako system otwarty",
+        "Definiuje pojęcia czynniki wejścia, procesy transformacji i czynniki wyjścia w modelu organizacji jako systemu otwartego",
+        "Wyjaśnia znaczenie ekwifinalności w zarządzaniu",
+        "Pokazuje, jak informacja zwrotna wpływa na funkcjonowanie organizacji jako systemu",
+        "Wyjaśnia pojęcie entropii w kontekście organizacji"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 13"
+    },
+    {
+      "id": "odc-035",
+      "numer": 35,
+      "sezon": "D - Otoczenie organizacji",
+      "tytul": "Podejście systemowe",
+      "opis": "Podcast omawia genezę podejścia systemowego w naukach o zarządzaniu, wywodzącego się z ogólnej teorii systemów oraz cybernetyki. Wskazuje, że podejście to traktuje organizację jako zbiór powiązanych ze sobą elementów i podkreśla, że jej analiza wymaga spojrzenia na całość, a nie tylko na poszczególne części.",
+      "dlugosc": 336,
+      "rozmiar": 2689510,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-035.mp3",
+      "kod": "D.35",
+      "program": {
+        "dzienne": {
+          "wyklad": 7,
+          "wykladTytul": "Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 8,
+          "cwiczeniaTytul": "Analiza otoczenia 1"
+        },
+        "zaoczne": {
+          "wyklad": 4,
+          "wykladTytul": "Planowanie  + Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Analiza otoczenia"
+        }
+      },
+      "rozdzial": "13",
+      "efekty": [
+        "Wyjaśnia, skąd wywodzi się podejście systemowe oraz definiuje system jako kompleks elementów i relacji",
+        "Wyjaśnia, że podejście systemowe jest podstawą dla innych koncepcji zarządzania oraz analiz strategicznych",
+        "Rozróżnia pojęcia anatomii i fizjologii, prezentując ich zastosowania w odniesieniu do organizacji"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 13"
+    },
+    {
+      "id": "odc-034",
+      "numer": 34,
+      "sezon": "C - Decyzje i planowanie",
+      "tytul": "Krytyka planowania",
+      "opis": "Podcast przedstawia krytyczne spojrzenie na szkołę planistyczną, głównie w oparciu o poglądy Henry'ego Mintzberga. Omawia zarzuty dotyczące m.in. niemożności przewidzenia przyszłości, oddzielenia planistów od wykonawców i usztywniania działań organizacji. Dodatkowo, prezentuje także kontrargumenty Igora Ansoffa w obronie bardziej elastycznego planowania strategicznego.",
+      "dlugosc": 641,
+      "rozmiar": 5125346,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-034.mp3",
+      "kod": "C.34",
+      "program": {
+        "dzienne": {
+          "wyklad": 6,
+          "wykladTytul": "Planowanie",
+          "cwiczenia": 7,
+          "cwiczeniaTytul": "Planowanie i kontrola"
+        },
+        "zaoczne": {
+          "wyklad": 4,
+          "wykladTytul": "Planowanie  + Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Podejmowanie decyzji + Planowanie i kontrola"
+        }
+      },
+      "rozdzial": "7",
+      "efekty": [
+        "Wymienia główne zarzuty wobec szkoły planistycznej sformułowane przez Henry'ego Mintzberga (np. błąd w założeniu o przewidywalności przyszłości, oddzielenie myślenia od działania)",
+        "Wyjaśnia, na czym polega zjawisko \"paraliżu przez analizę\" (paralysis by analysis)",
+        "Opisuje argumenty Igora Ansoffa w obronie planowania, takie jak stosowanie kontroli strategicznej w czasie rzeczywistym czy planów rezerwowych",
+        "Odróżnia prognozowanie (forecasting) od foresightu (tworzenia wizji przyszłości)"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 7"
+    },
+    {
+      "id": "odc-033",
+      "numer": 33,
+      "sezon": "C - Decyzje i planowanie",
+      "tytul": "Zarządzanie przez cele",
+      "opis": "Podcast omawia koncepcję zarządzania przez cele (ZPC/MBO), spopularyzowaną przez Petera Druckera. Wyjaśnia proces dekompozycji albo kaskadowania celów w dół hierarchii organizacyjnej, podkreślając znaczenie dialogu między przełożonym a podwładnym, a także rolę mierzalnych wskaźników i samokontroli w realizacji strategii.",
+      "dlugosc": 506,
+      "rozmiar": 4049758,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-033.mp3",
+      "kod": "C.33",
+      "program": {
+        "dzienne": {
+          "wyklad": 6,
+          "wykladTytul": "Planowanie",
+          "cwiczenia": 7,
+          "cwiczeniaTytul": "Planowanie i kontrola"
+        },
+        "zaoczne": {
+          "wyklad": 4,
+          "wykladTytul": "Planowanie  + Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Podejmowanie decyzji + Planowanie i kontrola"
+        }
+      },
+      "rozdzial": "3",
+      "efekty": [
+        "Definiuje Zarządzanie przez Cele (ZPC/MBO) i wskazuje Petera Druckera jako autora, który spopularyzował tę koncepcję",
+        "Wyjaśnia proces dekompozycji, czyli kaskadowania celów w dół organizacji",
+        "Wymienia kluczowe obszary, dla których, zdaniem Druckera, należy ustalać cele",
+        "Rozumie rolę samokontroli pracownika i ocen okresowych w systemie ZPC",
+        "Identyfikuje powszechne błędy we wdrażaniu ZPC, np. wyznaczanie celów indywidualnych bez powiązania ich ze strategią firmy"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 3"
+    },
+    {
+      "id": "odc-032",
+      "numer": 32,
+      "sezon": "C - Decyzje i planowanie",
+      "tytul": "Planowanie",
+      "opis": "Podcast wprowadza szkołę planistyczną zarządzania strategicznego, której rozwój przypadł na okres po II wojnie światowej. Omawia dorobek Igora Ansoffa, przybliża narzędzia analityczne takie jak SWOT i PEST, hierarchię planów (strategiczne, taktyczne, operacyjne) oraz znaczenie mierzalnych celów (KPI) i przydatność planów rezerwowych (contingencies).",
+      "dlugosc": 780,
+      "rozmiar": 6242969,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-032.mp3",
+      "kod": "C.32",
+      "program": {
+        "dzienne": {
+          "wyklad": 6,
+          "wykladTytul": "Planowanie",
+          "cwiczenia": 7,
+          "cwiczeniaTytul": "Planowanie i kontrola"
+        },
+        "zaoczne": {
+          "wyklad": 4,
+          "wykladTytul": "Planowanie  + Organizacja jako system. Analiza otoczenia",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Podejmowanie decyzji + Planowanie i kontrola"
+        }
+      },
+      "rozdzial": "7",
+      "efekty": [
+        "Opisuje podstawowe założenia szkoły planistycznej i historyczny kontekst jej powstania",
+        "Wyjaśnia cel stosowania narzędzi analitycznych, takich jak SWOT i PEST",
+        "Rozróżnia decyzje i plany strategiczne, taktyczne i operacyjne ze względu na ich horyzont czasowy i zakres",
+        "Wyjaśnia, czym są kluczowe wskaźniki efektywności (KPI) i rozumie ich rolę w procesie planowania",
+        "Uzasadnia potrzebę tworzenia planów rezerwowych (contingencies) w warunkach niepewności"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 7"
+    },
+    {
+      "id": "odc-031",
+      "numer": 31,
+      "sezon": "C - Decyzje i planowanie",
+      "tytul": "Poza głównym nurtem zarządzania",
+      "opis": "Podcast omawia krytyczne nurty w naukach o zarządzaniu w XX wieku, które czerpały inspiracje z krytyki kapitalizmu. Przedstawia wpływ myśli Karola Marksa (alienacja, fetyszyzm towarowy), Ericha Fromma, ruchów kontrkulturowych, alterglobalistycznych i ekologicznych na kształtowanie się bardziej humanistycznych i prospołecznych podejść w zarządzaniu.",
+      "dlugosc": 881,
+      "rozmiar": 7051302,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-031.mp3",
+      "kod": "C.31",
+      "program": {
+        "dzienne": {
+          "wyklad": 5,
+          "wykladTytul": "Społeczna odpowiedzialność biznesu i umiędzynarodowienie (wykład online)",
+          "cwiczenia": 8,
+          "cwiczeniaTytul": "Analiza otoczenia 1"
+        },
+        "zaoczne": {
+          "wyklad": 3,
+          "wykladTytul": "Społeczna odpowiedzialność biznesu i umiędzynarodowienie (wykład online)",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Analiza otoczenia"
+        }
+      },
+      "rozdzial": "27",
+      "efekty": [
+        "Wyjaśnia pojęcia \"alienacji pracy\" i \"fetyszyzmu towarowego\" Karola Marksa i potrafi odnieść je do współczesnych zjawisk",
+        "Opisuje główne założenia orientacji humanistycznej w zarządzaniu",
+        "Identyfikuje wpływ ruchów kontrkulturowych, alterglobalistycznych i ekologicznych na współczesne praktyki zarządcze (np. komunikację wewnętrzną, zarządzanie środowiskowe)",
+        "Omawia negatywne skutki globalizacji i ich znaczenie dla współczesnych organizacji"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 27"
+    },
+    {
+      "id": "odc-030",
+      "numer": 30,
+      "sezon": "C - Decyzje i planowanie",
+      "tytul": "Społeczna odpowiedzialność biznesu",
+      "opis": "Podcast przybliża społeczną odpowiedzialność biznesu (CSR) jako dobrowolne uwzględnianie przez firmy aspektów społecznych i środowiskowych w swojej działąlności. Wprowadza teorię interesariuszy, odróżnia CSR od etyki biznesu oraz omawia współczesną praktykę raportowania ESG (dotyczącą aspektów środowiskowych, społecznych i ładu korporacyjnego).",
+      "dlugosc": 495,
+      "rozmiar": 3957598,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-030.mp3",
+      "kod": "C.30",
+      "program": {
+        "dzienne": {
+          "wyklad": 5,
+          "wykladTytul": "Społeczna odpowiedzialność biznesu i umiędzynarodowienie (wykład online)",
+          "cwiczenia": 8,
+          "cwiczeniaTytul": "Analiza otoczenia 1"
+        },
+        "zaoczne": {
+          "wyklad": 3,
+          "wykladTytul": "Społeczna odpowiedzialność biznesu i umiędzynarodowienie (wykład online)",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Analiza otoczenia"
+        }
+      },
+      "rozdzial": "14",
+      "efekty": [
+        "Definiuje społeczną odpowiedzialność biznesu (CSR) i rozumie jej dobrowolny charakter, wykraczający poza wymogi prawne",
+        "Wyjaśnia elementy teorii interesariuszy i potrafi wskazać kluczowe grupy interesariuszy dla przedsiębiorstwa",
+        "Odróżnia CSR od etyki biznesu",
+        "Tłumaczy, co oznacza skrót ESG i jaki jest cel raportowania w oparciu o ten standard"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 14"
+    },
+    {
+      "id": "odc-029",
+      "numer": 29,
+      "sezon": "C - Decyzje i planowanie",
+      "tytul": "Wpływ społeczny",
+      "opis": "Podcast koncentruje się na mechanizmach wpływu społecznego, bazując na sześciu regułach zidentyfikowanych w psychologii społecznej przez Roberta Cialdiniego. Szczegółowo omawia reguły wzajemności, zaangażowania i konsekwencji, społecznego dowodu słuszności, lubienia, autorytetu oraz niedostępności, wyjaśniając ich działanie w kontekście perswazji i manipulacji w procesach decyzyjnych, ze szczególnym uwzględnieniem kontekstu pracy menedżerskiej.",
+      "dlugosc": 460,
+      "rozmiar": 3679655,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-029.mp3",
+      "kod": "C.29",
+      "program": {
+        "dzienne": {
+          "wyklad": 4,
+          "wykladTytul": "Podejmowanie decyzji",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Podejmowanie decyzji"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Podejmowanie decyzji + Planowanie i kontrola"
+        }
+      },
+      "rozdzial": "25",
+      "efekty": [
+        "Definiuje wpływ społeczny i prezentuje jego znaczenie w zarządzaniu",
+        "Wymienia i wyjaśnia sześć reguł wpływu społecznego według Roberta Cialdiniego",
+        "Opisuje technikę \"stopy w drzwiach\" jako przykład zastosowania reguły zaangażowania i konsekwencji",
+        "Rozumie, w jaki sposób symbole autorytetu (np. tytuły, ubiór) mogą wywoływać automatyczne podporządkowanie"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 25"
+    },
+    {
+      "id": "odc-028",
+      "numer": 28,
+      "sezon": "C - Decyzje i planowanie",
+      "tytul": "Błędy decyzyjne",
+      "opis": "Podcast stanowi przegląd typowych błędów decyzyjnych i zniekształceń poznawczych. Omawia takie mechanizmy psychologiczne jak selektywna percepcja, efekt pierwszeństwa, efekt aureoli, reaktancja psychologiczna czy myślenie życzeniowe, a także prezentuje koncepcję dysonansu poznawczego i zjawisko konformizmu.",
+      "dlugosc": 893,
+      "rozmiar": 7146597,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-028.mp3",
+      "kod": "C.28",
+      "program": {
+        "dzienne": {
+          "wyklad": 4,
+          "wykladTytul": "Podejmowanie decyzji",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Podejmowanie decyzji"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Podejmowanie decyzji + Planowanie i kontrola"
+        }
+      },
+      "rozdzial": "25",
+      "efekty": [
+        "Identyfikuje i opisuje co najmniej cztery błędy decyzyjne (np. efekt pierwszeństwa, efekt aureoli, reaktancja psychologiczna, syndrom \"not invented here\")",
+        "Wyjaśnia, na czym polega teoria dysonansu poznawczego Leona Festingera",
+        "Rozróżnia wpływ informacyjny i normatywny jako przyczyny konformizmu",
+        "Rozumie, jak stereotypizacja wynikająca z procesu kategoryzacji może prowadzić do dyskryminacji"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 25"
+    },
+    {
+      "id": "odc-027",
+      "numer": 27,
+      "sezon": "C - Decyzje i planowanie",
+      "tytul": "Heurystyki",
+      "opis": "Podcast wprowadza w zagadnienia analizowane przez ekonomię behawioralną, koncentrując się na pracach Daniela Kahnemana i Amosa Tversky'ego dotyczących heurystyk. Definiuje heurystyki jako uproszczone reguły wnioskowania i omawia ich trzy rodzaje: heurystyki dostępności, zakotwiczenia i reprezentatywności, wskazując, jak heurystyki mogą prowadzić do systematycznych błędów decyzyjnych.",
+      "dlugosc": 433,
+      "rozmiar": 3466496,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-027.mp3",
+      "kod": "C.27",
+      "program": {
+        "dzienne": {
+          "wyklad": 4,
+          "wykladTytul": "Podejmowanie decyzji",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Podejmowanie decyzji"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Podejmowanie decyzji + Planowanie i kontrola"
+        }
+      },
+      "rozdzial": "15",
+      "efekty": [
+        "Definiuje, czym są heurystyki i rozumie ich podwójną rolę – jako użytecznych skrótów myślowych i źródła błędów poznawczych",
+        "Opisuje heurystykę dostępności i jej wpływ na ocenę prawdopodobieństwa zdarzeń",
+        "Wyjaśnia działanie heurystyki zakotwiczenia i podaje przykłady jej wykorzystania w negocjacjach lub marketingu",
+        "Opisuje heurystykę reprezentatywności i rozumie, jak może ona prowadzić do stereotypizacji"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 15"
+    },
+    {
+      "id": "odc-026",
+      "numer": 26,
+      "sezon": "C - Decyzje i planowanie",
+      "tytul": "Model ograniczonej racjonalności",
+      "opis": "Podcast przybliża model ograniczonej racjonalności Herberta Simona, który stanowi alternatywę dla znanego z mikroekonomii, klasycznego modelu homo oeconomicus. Przedstawia koncepcję człowieka dążącego do satysfakcji (homo satisfaciendus) a nie maksymalizacji użyteczności, czyli decydenta, który z powodu ograniczeń poznawczych i informacyjnych poszukuje rozwiązań wystarczająco dobrych, a nie optymalnych.",
+      "dlugosc": 482,
+      "rozmiar": 3859796,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-026.mp3",
+      "kod": "C.26",
+      "program": {
+        "dzienne": {
+          "wyklad": 4,
+          "wykladTytul": "Podejmowanie decyzji",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Podejmowanie decyzji"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Podejmowanie decyzji + Planowanie i kontrola"
+        }
+      },
+      "rozdzial": "15",
+      "efekty": [
+        "Wyjaśnia różnicę między modelem homo oeconomicus (maksymalizacja użyteczności) a modelem homo satisfaciendus (dążenie do satysfakcji)",
+        "Wyjaśnia koncepcję ograniczonej racjonalności według Herberta Simona",
+        "Tłumaczy, na czym polega \"reguła zatrzymania\" (stop rule) w procesie decyzyjnym",
+        "Potrafi podać praktyczne przykłady zastosowania modelu ograniczonej racjonalności (np. w procesie rekrutacji lub w marketingu)"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 15"
+    },
+    {
+      "id": "odc-025",
+      "numer": 25,
+      "sezon": "C - Decyzje i planowanie",
+      "tytul": "Podejmowanie decyzji",
+      "opis": "Podcast wprowadza w podstawowe zagadnienia dotyczące podejmowania decyzji w zarządzaniu. Wyróżnia problemy ustrukturyzowane i nieustrukturyzowane, a także wyjaśnia, na czym polega podejmowanie decyzji w warunkach pewności, niepewności i ryzyka, dodatkowo dzieląc decyzje na strategiczne, taktyczne i operacyjne.",
+      "dlugosc": 950,
+      "rozmiar": 7598202,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-025.mp3",
+      "kod": "C.25",
+      "program": {
+        "dzienne": {
+          "wyklad": 4,
+          "wykladTytul": "Podejmowanie decyzji",
+          "cwiczenia": 6,
+          "cwiczeniaTytul": "Podejmowanie decyzji"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Podejmowanie decyzji + Planowanie i kontrola"
+        }
+      },
+      "rozdzial": "15",
+      "efekty": [
+        "Definiuje pojęcia \"decyzja\" i \"proces decyzyjny\"",
+        "Rozróżnia problemy dobrze ustrukturyzowane od nieustrukturyzowanych oraz odpowiadające im decyzje programowalne i nieprogramowalne",
+        "Wyjaśnia różnicę między podejmowaniem decyzji w warunkach pewności, niepewności i ryzyka",
+        "Identyfikuje trzy poziomy decyzji w organizacji: strategiczne, taktyczne i operacyjne"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 15"
+    },
+    {
+      "id": "odc-024",
+      "numer": 24,
+      "sezon": "B - Ludzie i kultura",
+      "tytul": "Work-life balance",
+      "opis": "Podcast porusza problematykę równowagi między życiem zawodowym a prywatnym (work-life balance). Omawia konflikty na styku tych sfer, a także zjawiska takie jak pracoholizm, wypalenie zawodowe, praca emocjami i praca ekstremalna, oraz analizuje zagadnienie kontroli pracowników w kontekście nowoczesnych technologii.",
+      "dlugosc": 641,
+      "rozmiar": 5125346,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-024.mp3",
+      "kod": "B.24",
+      "program": {
+        "dzienne": {
+          "wyklad": 3,
+          "wykladTytul": "Zarządzanie ludźmi",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Motywacja"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Przywództwo + Motywacja + Kultura organizacyjna"
+        }
+      },
+      "rozdzial": "28",
+      "efekty": [
+        "Definiuje pojęcie równowagi między życiem zawodowym i prywatnym (work-life balance) i rozumie jego ewolucję od separacji do integracji sfery zawodowej i prywatnej",
+        "Opisuje zjawiska pracoholizmu i syndromu wypalenia zawodowego, wskazując na ich kluczowe symptomy",
+        "Wyjaśnia, czym jest praca emocjami (emotional labor) i praca ekstremalna, podając przykłady zawodów, w których występują",
+        "Rozumie koncepcję panoptykonu jako metafory nowoczesnych, inwazyjnych form kontroli nad pracownikami"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 28"
+    },
+    {
+      "id": "odc-023",
+      "numer": 23,
+      "sezon": "B - Ludzie i kultura",
+      "tytul": "Znaczenie kultur narodowych dla zarządzania",
+      "opis": "Podcast prezentuje badania Geerta Hofstedego nad wpływem kultur narodowych na zarządzanie. Wyjaśnia pięć wymiarów kultury (dystans wobec władzy, indywidualizm–kolektywizm, męskość–kobiecość, unikanie niepewności, orientacja czasowa) i pokazuje, jak różnice te przekładają się na praktyki organizacyjne na całym świecie.",
+      "dlugosc": 562,
+      "rozmiar": 4495273,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-023.mp3",
+      "kod": "B.23",
+      "program": {
+        "dzienne": {
+          "wyklad": 5,
+          "wykladTytul": "Społeczna odpowiedzialność biznesu i umiędzynarodowienie (wykład online)",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Kultura organizacyjna"
+        },
+        "zaoczne": {
+          "wyklad": 3,
+          "wykladTytul": "Społeczna odpowiedzialność biznesu i umiędzynarodowienie (wykład online)",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Przywództwo + Motywacja + Kultura organizacyjna"
+        }
+      },
+      "rozdzial": "30",
+      "efekty": [
+        "Wymienia i definiuje pięć wymiarów kultury narodowej według Geerta Hofstedego",
+        "Potrafi podać przykłady, jak poszczególne wymiary (np. indywidualizm vs kolektywizm) wpływają na konkretne praktyki zarządcze, takie jak rekrutacja czy systemy motywacyjne",
+        "Rozumie pojęcie szoku kulturowego i znaczenie zarządzania różnorodnością w organizacjach wielokulturowych"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 30"
+    },
+    {
+      "id": "odc-022",
+      "numer": 22,
+      "sezon": "B - Ludzie i kultura",
+      "tytul": "Kultura organizacji",
+      "opis": "Podcast przybliża model kultury organizacyjnej Edgara Scheina, który analizuje ją na trzech poziomach: artefaktów, wartości i ukrytych założeń. Omawia również związek między kulturą a wynikami firmy oraz podkreśla jej integracyjną rolę w budowaniu tożsamości organizacji.",
+      "dlugosc": 380,
+      "rozmiar": 3038506,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-022.mp3",
+      "kod": "B.22",
+      "program": {
+        "dzienne": {
+          "wyklad": 3,
+          "wykladTytul": "Zarządzanie ludźmi",
+          "cwiczenia": 5,
+          "cwiczeniaTytul": "Kultura organizacyjna"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Przywództwo + Motywacja + Kultura organizacyjna"
+        }
+      },
+      "rozdzial": "29",
+      "efekty": [
+        "Opisuje trzy poziomy kultury organizacyjnej w modelu Edgara Scheina: artefakty, wartości i ukryte założenia",
+        "Podaje przykłady dla każdego z trzech poziomów kultury (np. wygląd biura, deklarowane zasady, stosunek do rywalizacji)",
+        "Wyjaśnia, na czym polega integracyjna rola kultury, odwołując się do metafory \"kleju\" spajającego organizację",
+        "Rozumie, że kultura wpływa na wyniki finansowe i innowacyjność, ale jej bezpośrednie kształtowanie jest procesem trudnym i długotrwałym"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 29"
+    },
+    {
+      "id": "odc-021",
+      "numer": 21,
+      "sezon": "B - Ludzie i kultura",
+      "tytul": "Praca zespołowa",
+      "opis": "Podcast skupia się na dynamice pracy zespołowej w organizacjach. Definiuje zespół, omawia cztery fazy jego rozwoju według Tuckmana, a także porusza takie zagadnienia jak role zespołowe Belbina, syndrom myślenia grupowego, kontrakt psychologiczny i teoria sprawiedliwości.",
+      "dlugosc": 377,
+      "rozmiar": 3015518,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-021.mp3",
+      "kod": "B.21",
+      "program": {
+        "dzienne": {
+          "wyklad": 3,
+          "wykladTytul": "Zarządzanie ludźmi",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Przywództwo"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Przywództwo + Motywacja + Kultura organizacyjna"
+        }
+      },
+      "rozdzial": "26",
+      "efekty": [
+        "Definiuje, czym jest zespół i opisuje cztery fazy jego rozwoju (forming, storming, norming, performing) według Bruce’a Tuckmana",
+        "Wyjaśnia, na czym polega syndrom myślenia grupowego opisany przez Irvinga Janisa",
+        "Tłumaczy pojęcie kontraktu psychologicznego i jego znaczenie dla relacji pracownik-organizacja",
+        "Opisuje założenia teorii sprawiedliwości Johna Adamsa i jej wpływ na motywację pracowników",
+        "Rozumie, czym jest zaangażowanie organizacyjne i jakie są jego trzy wymiary według Meyera i Allen"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 26"
+    },
+    {
+      "id": "odc-020",
+      "numer": 20,
+      "sezon": "B - Ludzie i kultura",
+      "tytul": "Przywództwo",
+      "opis": "Podcast jest poświęcony przywództwu i omawia ewolucję podejść badawczych od teorii cech po modele sytuacyjne i transformacyjne. Przedstawia kluczowe koncepcje, takie jak siatka kierownicza Blake'a i Mouton, model sytuacyjny Fiedlera oraz rozróżnienie na przywództwo transakcyjne i transformacyjne autorstwa Bernarda Bassa.",
+      "dlugosc": 407,
+      "rozmiar": 3258352,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-020.mp3",
+      "kod": "B.20",
+      "program": {
+        "dzienne": {
+          "wyklad": 3,
+          "wykladTytul": "Zarządzanie ludźmi",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Przywództwo"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Przywództwo + Motywacja + Kultura organizacyjna"
+        }
+      },
+      "rozdzial": "26",
+      "efekty": [
+        "Rozróżnia przywództwo formalne i nieformalne oraz prezentuje ewolucję teorii przywództwa w zarządzaniu",
+        "Opisuje siatkę kierowniczą Blake’a i Mouton, potrafiąc wskazać jej dwa wymiary oraz pięć głównych stylów kierowania",
+        "Wyjaśnia podstawowe założenia modelu sytuacyjnego Fiedlera i wymienia kluczowe czynniki sytuacyjne uwzględnione w modelu",
+        "Rozróżnia przywództwo transakcyjne od transformacyjnego według koncepcji Bernarda Bassa"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 26"
+    },
+    {
+      "id": "odc-019",
+      "numer": 19,
+      "sezon": "B - Ludzie i kultura",
+      "tytul": "Motywacja",
+      "opis": "Podcast oferuje przegląd najważniejszych koncepcji motywacji w kontekście zachowań organizacyjnych. Omawia m.in. hierarchię potrzeb Maslowa, „teorie” X i Y McGregora, dwuczynnikową teorię Herzberga, koncepcję potrzeb menedżerskich McClellanda oraz teorię oczekiwań Vrooma.",
+      "dlugosc": 755,
+      "rozmiar": 6040886,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-019.mp3",
+      "kod": "B.19",
+      "program": {
+        "dzienne": {
+          "wyklad": 3,
+          "wykladTytul": "Zarządzanie ludźmi",
+          "cwiczenia": 4,
+          "cwiczeniaTytul": "Motywacja"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Przywództwo + Motywacja + Kultura organizacyjna"
+        }
+      },
+      "rozdzial": "26",
+      "efekty": [
+        "Opisuje hierarchię potrzeb Maslowa oraz teorię X i Y McGregora, omawiając jednocześnie ich ograniczenia empiryczne",
+        "Wyjaśnia dwuczynnikową teorię Herzberga, rozróżniając czynniki higieniczne od motywujących na praktycznych przykładach",
+        "Identyfikuje potrzeby menedżerskie według McClellanda (osiągnięć, władzy, afiliacji)",
+        "Tłumaczy, na czym polega teoria oczekiwań Vrooma, uwzględniając jej trzy kluczowe elementy: oczekiwanie, instrumentalność i walencję",
+        "Rozróżnia pracowników typu \"niebieskie\", \"białe\", \"różowe\" i \"złote kołnierzyki\""
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 26"
+    },
+    {
+      "id": "odc-018",
+      "numer": 18,
+      "sezon": "B - Ludzie i kultura",
+      "tytul": "Nurt Human Relations",
+      "opis": "Podcast koncentruje się na nurcie Human Relations, który w pierwszej połowie XX wieku stanowił odpowiedź na nadmiernie mechanistyczne podejście naukowego zarządzania/tayloryzmu. Opisuje słynne badania Eltona Mayo w Hawthorne, które ujawniły znaczenie czynników psychospołecznych, oraz przedstawia pionierskie idee Mary Parker Follett dotyczące władzy, przywództwa i konfliktu.",
+      "dlugosc": 317,
+      "rozmiar": 2534656,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-018.mp3",
+      "kod": "B.18",
+      "program": {
+        "dzienne": {
+          "wyklad": 3,
+          "wykladTytul": "Zarządzanie ludźmi",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Przywództwo"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Przywództwo + Motywacja + Kultura organizacyjna"
+        }
+      },
+      "rozdzial": "26",
+      "efekty": [
+        "Opisuje cel i główne wnioski z badań Eltona Mayo w Hawthorne, w tym wyjaśnia pojęcie \"efektu Hawthorne\"",
+        "Rozumie, w jaki sposób nurt Human Relations zakwestionował założenia naukowego zarządzania, zwracając uwagę na rolę człowieka w organizacji",
+        "Rozróżnia koncepcje \"władzy nad innymi\" i \"władzy z innymi\" według Mary Parker Follett",
+        "Chrakteryzuje style zarządzania konfliktem opisane przez Follett: dominujący, kompromisowy i integrujący"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 26"
+    },
+    {
+      "id": "odc-017",
+      "numer": 17,
+      "sezon": "B - Ludzie i kultura",
+      "tytul": "Psychologia i jej związki z zarządzaniem",
+      "opis": "Podcast omawia relacje między psychologią a zarządzaniem. Prezentuje podstawowe metody badawcze psychologii oraz przedstawia kluczowe nurty, takie jak behawioryzm, psychologia poznawcza i psychologia społeczna, wskazując ich zastosowanie w rozumieniu zachowań w organizacjach.",
+      "dlugosc": 520,
+      "rozmiar": 4162368,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-017.mp3",
+      "kod": "B.17",
+      "program": {
+        "dzienne": {
+          "wyklad": 3,
+          "wykladTytul": "Zarządzanie ludźmi",
+          "cwiczenia": 3,
+          "cwiczeniaTytul": "Przywództwo"
+        },
+        "zaoczne": {
+          "wyklad": 2,
+          "wykladTytul": "Zarządzanie ludźmi + Podejmowanie decyzji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Przywództwo + Motywacja + Kultura organizacyjna"
+        }
+      },
+      "rozdzial": "25",
+      "efekty": [
+        "Rozróżnia badania eksperymentalne i korelacyjne w naukach społecznych",
+        "Wyjaśnia podstawowe założenia behawioryzmu, w tym warunkowanie klasyczne i sprawcze",
+        "Rozumie, czym zajmuje się psychologia poznawcza i jak jej dorobek jest wykorzystywany w zarządzaniu",
+        "Identyfikuje zjawiska z zakresu psychologii społecznej, takie jak syndrom myślenia grupowego czy efekt Pigmaliona i potrafi odnieść je do przykładowej sytuacji w organizacji"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 25"
+    },
+    {
+      "id": "odc-016",
+      "numer": 16,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Struktury organizacyjne",
+      "opis": "Podcast omawia zasady projektowania struktur organizacyjnych. Wyjaśnia takie pojęcia, jak specjalizacja, droga służbowa, rozpiętość kierowania, centralizacja, a także opisuje podstawowe typy struktur (liniową, liniowo-sztabową, funkcjonalną, macierzową) oraz stopień formalizacji w organizacji.",
+      "dlugosc": 461,
+      "rozmiar": 3689477,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-016.mp3",
+      "kod": "A.16",
+      "program": {
+        "dzienne": {
+          "wyklad": 2,
+          "wykladTytul": "Biurokracja i teoria organizacji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Struktury organizacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "Projektowanie",
+      "efekty": [
+        "Definiuje podstawowe pojęcia związane ze strukturą organizacyjną, takie jak specjalizacja, hierarchia, jedność rozkazodawstwa i centralizacja",
+        "Odróżnia rozpiętość kierowania od zasięgu kierowania",
+        "Opisuje co najmniej trzy podstawowe typy struktur organizacyjnych (np. liniową, funkcjonalną, macierzową)",
+        "Wymienia i charakteryzuje różne rodzaje więzi organizacyjnych (służbowe, funkcjonalne, techniczne, informacyjne, nieformalne)",
+        "Wyjaśnia różnicę między reorganizacją a restrukturyzacją"
+      ],
+      "lektura": "Projektowanie"
+    },
+    {
+      "id": "odc-015",
+      "numer": 15,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Gry organizacyjne i polityka organizacyjna",
+      "opis": "Podcast przedstawia organizację jako arenę gier politycznych, gdzie uczestnicy dążą do realizacji własnych interesów poprzez zdobywanie i wykorzystywanie władzy. Omawia pojęcia interesu, konfliktu i władzy, a także przedstawia przykłady konkretnych gier organizacyjnych opisanych przez Henry'ego Mintzberga.",
+      "dlugosc": 620,
+      "rozmiar": 4959446,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-015.mp3",
+      "kod": "A.15",
+      "program": {
+        "dzienne": {
+          "wyklad": 2,
+          "wykladTytul": "Biurokracja i teoria organizacji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Struktury organizacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "10",
+      "efekty": [
+        "Rozumie pojęcia gier organizacyjnych i polityki organizacyjnej",
+        "Rozróżnia typy interesów w organizacji: zadaniowe, związane z karierą i prywatne",
+        "Wyjaśnia, w jaki sposób kontrola nad rzadkimi zasobami staje się źródłem władzy",
+        "Wymienia i opisuje co najmniej trzy przykłady gier politycznych według typologii Mintzberga (np. gry \"powstańcy\", \"sponsor\", \"sygnalizowanie\")",
+        "Rozumie, że konflikt jest nieodłącznym elementem funkcjonowania organizacji, w której ścierają się różne interesy"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 10"
+    },
+    {
+      "id": "odc-014",
+      "numer": 14,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Badania operacyjne",
+      "opis": "Podcast wyjaśnia, czym są badania operacyjne (operations research) – podejście wykorzystujące metody matematyczne do optymalizacji decyzji menedżerskich. Opisuje ich wojskowe korzenie, rozwój badań po II wojnie światowej oraz współczesne zastosowania w biznesie, m.in. w systemach informatycznych, logistyce czy sztucznej inteligencji.",
+      "dlugosc": 323,
+      "rozmiar": 2581258,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-014.mp3",
+      "kod": "A.14",
+      "program": {
+        "dzienne": {
+          "wyklad": 2,
+          "wykladTytul": "Biurokracja i teoria organizacji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Struktury organizacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "1.3",
+      "efekty": [
+        "Definiuje badania operacyjne i opisuje ich historyczne pochodzenie związane z działaniami wojskowymi",
+        "Podaje przykłady praktycznego zastosowania badań operacyjnych we współczesnym zarządzaniu (np. harmonogramowanie projektów, optymalizacja zapasów w działalności produkcyjnej)",
+        "Rozumie związek między badaniami operacyjnymi a współczesnym rozwojem systemów informatycznych (systemy klasy MRP i ERP) oraz podejściami do analizy danych (data mining) i sztuczna inteligencja)"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 1.3"
+    },
+    {
+      "id": "odc-013",
+      "numer": 13,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Peter Drucker",
+      "opis": "Podcast przybliża postać i dorobek Petera F. Druckera, uznawanego za \"ojca współczesnego zarządzania\". Omawia jego kluczowe postulaty, takie jak decentralizacja, rola marketingu i innowacji, cel firmy zorientowany na klienta, a także zasady skuteczności menedżerskiej i odpowiedzialność społeczna biznesu.",
+      "dlugosc": 578,
+      "rozmiar": 4620899,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-013.mp3",
+      "kod": "A.13",
+      "program": {
+        "dzienne": {
+          "wyklad": 2,
+          "wykladTytul": "Biurokracja i teoria organizacji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Struktury organizacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "3",
+      "efekty": [
+        "Identyfikuje Petera Druckera jako pioniera praktycznego podejścia do zarządzania i wymienia jego kluczowe propozycje",
+        "Wyjaśnia, dlaczego według Druckera celem przedsiębiorstwa jest pozyskiwanie i utrzymywanie klientów, a nie tylko generowanie zysku",
+        "Opisuje, czym jest skuteczność menedżerska według Druckera i jakie nawyki ją wspierają (np. kontrola czasu, ustalanie priorytetów)",
+        "Rozumie koncepcję delegowania uprawnień i jej znaczenie dla rozwoju menedżerów",
+        "Wyjaśnia jaką rolę Drucker przypisywał społecznej odpowiedzialności biznesu"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 3"
+    },
+    {
+      "id": "odc-012",
+      "numer": 12,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Socjologia a teoria zarządzania",
+      "opis": "Podcast ukazuje wkład socjologii w narodziny i wczesny rozwój nauk o zarządzaniu, począwszy od XIX-wiecznych koncepcji Augusta Comte'a, a skończywszy na podejściu sytuacyjnym. Przedstawia funkcjonalistyczną typologię organizacji Talcotta Parsonsa oraz omawia badania Joan Woodward i szkoły Aston, które stały się podstawą dla podejścia sytuacyjnego w zarządzaniu, badającego zależności pomiędzy zmiennymi organizacyjnymi a sposobami funkcjonowania organizacji.",
+      "dlugosc": 648,
+      "rozmiar": 5184905,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-012.mp3",
+      "kod": "A.12",
+      "program": {
+        "dzienne": {
+          "wyklad": 2,
+          "wykladTytul": "Biurokracja i teoria organizacji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Struktury organizacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "1.3",
+      "efekty": [
+        "Opisuje wczesne inspiracje socjologiczne w podejściu do organizacji oraz metaforę organizacji jako organizmu",
+        "Wymienia i charakteryzuje cztery typy organizacji według Talcotta Parsonsa (zorientowane na produkcję, cele polityczne, integrujące, podtrzymujące wzorce)",
+        "Wyjaśnia, na czym polega podejście sytuacyjne w zarządzaniu i jakie są jego podstawowe założenia",
+        "Wyjaśnia, dlaczego nurt badań sytuacyjnych bywa współcześnie krytykowany"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 1.3"
+    },
+    {
+      "id": "odc-011",
+      "numer": 11,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Kontynuatorzy i krytycy Maxa Webera",
+      "opis": "Podcast analizuje ewolucję i krytykę weberowskiej koncepcji biurokracji. Odróżnia pojęcie biurokracji od jej patologicznej formy – biurokratyzmu – oraz omawia koncepcję \"żelaznej klatki racjonalności\", a także przedstawia poglądy kontynuatorów Webera (np. Michela Croziera) oraz jego krytyków (Szkoła Frankfurcka, Zygmunt Bauman, Henry Mintzberg).",
+      "dlugosc": 695,
+      "rozmiar": 5557964,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-011.mp3",
+      "kod": "A.11",
+      "program": {
+        "dzienne": {
+          "wyklad": 2,
+          "wykladTytul": "Biurokracja i teoria organizacji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Struktury organizacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "9",
+      "efekty": [
+        "Rozróżnia pojęcia \"biurokracja\" (model idealny) i \"biurokratyzm\" (forma zwyrodniała)",
+        "Wyjaśnia, na czym polega koncepcja \"żelaznej klatki racjonalności\" i jakie problemy generuje (m.in. lawinowy przyrost przepisów, monotonia pracy)",
+        "Opisuje humorystyczne \"prawa\" ilustrujące dysfunkcje organizacji, takie jak zasada Petera i prawo Parkinsona",
+        "Wymienia co najmniej dwie krytyczne perspektywy wobec koncepcji Webera (np. krytykę Szkoły Frankfurckiej, alternatywę w postaci typologii struktur Mintzberga)",
+        "Rozumie, czym jest \"błędne koło\" biurokracji opisane przez Michela Croziera"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 9"
+    },
+    {
+      "id": "odc-010",
+      "numer": 10,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Max Weber i władza w organizacji",
+      "opis": "Podcast przedstawia typologię władzy zaproponowaną przez Maxa Webera, wyróżniając jej trzy rodzaje: władzę charyzmatyczną, tradycyjną i legalną. Wyjaśnia, na jakich podstawach opiera się każdy z typów i dlaczego Weber uważał władzę legalną za fundament racjonalnie zaprojektowanej, nowoczesnej organizacji.",
+      "dlugosc": 400,
+      "rozmiar": 3200674,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-010.mp3",
+      "kod": "A.10",
+      "program": {
+        "dzienne": {
+          "wyklad": 2,
+          "wykladTytul": "Biurokracja i teoria organizacji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Struktury organizacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "9",
+      "efekty": [
+        "Wymienia i charakteryzuje trzy typy władzy według Maxa Webera: władzę charyzmatyczną, tradycyjną i legalną",
+        "Podaje przykłady historyczne lub współczesne dla każdego z trzech typów władzy",
+        "Wyjaśnia, dlaczego władza legalna, oparta na przepisach i procedurach, zapewnia organizacji stabilność i ciągłość działania",
+        "Tłumaczy, dlaczego Weber uznawał władzę legalną za podstawę modelu biurokratycznego, w przeciwieństwie do archaicznych form organizacyjnych"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 9"
+    },
+    {
+      "id": "odc-009",
+      "numer": 9,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Max Weber i teoria biurokracji",
+      "opis": "Podcast przybliża koncepcję biurokracji Maxa Webera jako \"typu idealnego\" organizacji –modelu racjonalnie zaprojektowanej organizacji. Omawia pięć kluczowych zasad jej funkcjonowania, takich jak niezawodność, powtarzalność i obiektywizm, oraz cechy, które organizacja biurokratyczna powinna posiadać, by działać sprawnie i w przewidywalny sposób.",
+      "dlugosc": 507,
+      "rozmiar": 4059162,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-009.mp3",
+      "kod": "A.09",
+      "program": {
+        "dzienne": {
+          "wyklad": 2,
+          "wykladTytul": "Biurokracja i teoria organizacji",
+          "cwiczenia": 2,
+          "cwiczeniaTytul": "Struktury organizacyjne"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "9",
+      "efekty": [
+        "Wyjaśnia, czym jest \"typ idealny\" biurokracji według Maxa Webera i jakie jest jego analityczne zastosowanie",
+        "Wymienia i opisuje pięć fundamentalnych zasad biurokracji: niezawodność, powtarzalność, obiektywizm, racjonalność i bezosobowość przepisów",
+        "Potrafi scharakteryzować idealną organizację według Webera, wskazując na takie cechy jak hierarchia, kompetencje pracowników czy formalizacja działań",
+        "Odróżnia podejście Webera od koncepcji Taylora i Fayola"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 9"
+    },
+    {
+      "id": "odc-008",
+      "numer": 8,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Zarządzanie jako dyscyplina badawcza",
+      "opis": "Podcast porządkuje podstawowe pojęcia metodologiczne używane w naukach o zarządzaniu. Wyjaśnia takie terminy jak teoria, podejście, model, narzędzie i technika, a także wprowadza sposoby podziału pojęć (podział, typologia, klasyfikacja, kategoryzacja, dychotomia).",
+      "dlugosc": 557,
+      "rozmiar": 4457477,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-008.mp3",
+      "kod": "A.08",
+      "program": {
+        "dzienne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "efekty": [
+        "Rozróżnia pojęcia: teoria, podejście, model, narzędzie i technika, podając przykłady każdego z nich",
+        "Wyjaśnia różnicę między podziałem, typologią, klasyfikacją i dychotomią",
+        "Tłumaczy, czym jest hipoteza badawcza i czym różni się od twierdzenia naukowego",
+        "Wymienia co najmniej trzy metody badawcze stosowane w naukach o zarządzaniu (np. ankieta, wywiad, eksperyment)"
+      ]
+    },
+    {
+      "id": "odc-007",
+      "numer": 7,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Naukowe zarządzanie - ograniczenia i współczesne znaczenie",
+      "opis": "Podcast dokonuje krytycznej oceny naukowego zarządzania, wskazując jego główne ograniczenia, takie jak dehumanizacja pracy, ignorowanie otoczenia organizacji czy błędne założenie o istnieniu \"jednego najlepszego sposobu\" działania. Przedstawia także pojęcie ekwifinalności i zastanawia się nad współczesną przydatnością dorobku nurtu naukowego zarządzania.",
+      "dlugosc": 455,
+      "rozmiar": 3643711,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-007.mp3",
+      "kod": "A.07",
+      "program": {
+        "dzienne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "2",
+      "efekty": [
+        "Identyfikuje główne ograniczenia klasycznego naukowego zarządzania (np. dehumanizacja pracy, ignorowanie otoczenia, nadmierny podział pracy)",
+        "Wyjaśnia pojęcie ekwifinalności i potrafi je przeciwstawić taylorowskiej zasadzie \"one best way\"",
+        "Opisuje, jak zmienił się kontekst społeczny i gospodarczy od czasów Taylora (np. wzrost poziomu wykształcenia pracowników, rozwój sektora usług)",
+        "Podaje przykład współczesnego zastosowania zasad tayloryzmu (np. w programowaniu robotów przemysłowych)"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 2"
+    },
+    {
+      "id": "odc-006",
+      "numer": 6,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Naukowe zarządzanie - nurt administracyjny",
+      "opis": "Podcast koncentruje się na nurcie administracyjnym w naukowym zarządzaniu, którego twórcą był Henri Fayol. Wyjaśnia różnice między jego podejściem (koncentracja na całej organizacji) a podejściem Taylora (koncentracja na stanowisku pracy), a także omawia kluczowe koncepcje Fayola, takie jak funkcje zarządzania i 14 zasad zarządzania.",
+      "dlugosc": 481,
+      "rozmiar": 3848511,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-006.mp3",
+      "kod": "A.06",
+      "program": {
+        "dzienne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "2",
+      "efekty": [
+        "Wyjaśnia podstawową różnicę między podejściem Taylora a podejściem Fayola do zarządzania",
+        "Wymienia funkcje zarządzania zidentyfikowane przez Fayola",
+        "Potrafi opisać wybrane zasady zarządzania Fayola",
+        "Tłumaczy, na czym polega koncepcja \"kładki Fayola\" i jakie ma znaczenie dla elastyczności komunikacji w organizacji"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 2"
+    },
+    {
+      "id": "odc-005",
+      "numer": 5,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Naukowe zarządzanie - kontynuatorzy Taylora",
+      "opis": "Podcast przedstawia dorobek myślicieli, którzy rozwijali idee naukowe zarządzania i kontynuowali badania Fredericka Taylora. Omawia wkład m.in. małżeństwa Gilbrethów (badanie ruchów elementarnych), Henry'ego Forda (fordyzm i taśma produkcyjna) oraz Chestera Barnarda, pokazując ewolucję nurtu naukowego zarządzania.",
+      "dlugosc": 550,
+      "rozmiar": 4401053,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-005.mp3",
+      "kod": "A.05",
+      "program": {
+        "dzienne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "2",
+      "efekty": [
+        "Wymienia co najmniej trzech kontynuatorów myśli Taylora i ich wkład w rozwój zarządzania (np. Gilbrethowie – badania ruchów elementarnych; Gantt – harmonogramy; Ford – taśma produkcyjna)",
+        "Wyjaśnia, na czym polega cykl działania zorganizowanego według Le Châteliera",
+        "Opisuje różnicę między fordyzmem a postfordyzmem"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 2"
+    },
+    {
+      "id": "odc-004",
+      "numer": 4,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Naukowe zarządzanie - tayloryzm",
+      "opis": "Podcast opisuje historyczne tło powstania naukowego zarządzania. Szczegółowo omawia pięć fundamentalnych zasad podejścia Fredericka Taylora: optymalizację, specjalizację, standaryzację, racjonalizację i zasadę \"jednego najlepszego sposobu\" (one best way).",
+      "dlugosc": 480,
+      "rozmiar": 3844331,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-004.mp3",
+      "kod": "A.04",
+      "program": {
+        "dzienne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie"
+        },
+        "zaoczne": {
+          "wyklad": 1,
+          "wykladTytul": "Naukowe zarządzanie + Biurokracja i teoria organizacji",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "2",
+      "efekty": [
+        "Opisuje kontekst historyczny, który doprowadził do powstania naukowego zarządzania",
+        "Wymienia i wyjaśnia kluczowe założenia tayloryzmu",
+        "Tłumaczy, na czym polegała dychotomia kierownik-pracownik, zaproponowana przez Taylora",
+        "Rozumie metaforę organizacji jako maszyny, charakterystyczną dla nurtu naukowego zadządzania"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 2"
+    },
+    {
+      "id": "odc-003",
+      "numer": 3,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Prakseologia",
+      "opis": "Podcast wyjaśnia, czym jest prakseologia, czyli nauka o sprawnym działaniu i jakie ma znaczenie dla zarządzania. Omawia jej genezę, kluczowe pojęcia, takie jak \"dobra robota\", oraz pokazuje, jak jej zasady znajdują odzwierciedlenie w mądrości ludowej i klasycznych teoriach zarządzania.",
+      "dlugosc": 691,
+      "rozmiar": 5526408,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-003.mp3",
+      "kod": "A.03",
+      "program": {
+        "dzienne": {
+          "wyklad": 0,
+          "wykladTytul": "Wprowadzenie do zarządzania (wykład wprowadzający online)",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie"
+        },
+        "zaoczne": {
+          "wyklad": 0,
+          "wykladTytul": "Wprowadzenie do zarządzania (wykład wprowadzający online)",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "rozdzial": "1.2",
+      "efekty": [
+        "Wyjaśnia, czym jest prakseologia i jaki jest jej związek z zarządzaniem",
+        "Definiuje pojęcie \"dobrej roboty\" w ujęciu prakseologicznym, uwzględniając kryteria takie jak skuteczność i ekonomiczność",
+        "Podaje przykłady dyrektyw sprawnościowych mających na celu usprawnienie pracy, np. automatyzacja, antycypacja, upraszczanie",
+        "Rozpoznaje prakseologiczne inspiracje w innych koncepcjach zarządzania, np. w tayloryzmie czy koncepcji biurokracji Webera"
+      ],
+      "lektura": "Klincewicz (red.), rozdz. 1.2"
+    },
+    {
+      "id": "odc-002",
+      "numer": 2,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Role menedżerskie",
+      "opis": "Podcast przedstawia koncepcję ról menedżerskich Henry’ego Mintzberga. Omawia dziesięć ról, podzielonych na trzy grupy: role interpersonalne, informacyjne i decyzyjne, pokazując złożoność codziennej pracy na stanowisku kierowniczym.",
+      "dlugosc": 279,
+      "rozmiar": 2228710,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-002.mp3",
+      "kod": "A.02",
+      "program": {
+        "dzienne": {
+          "wyklad": 0,
+          "wykladTytul": "Wprowadzenie do zarządzania (wykład wprowadzający online)",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie"
+        },
+        "zaoczne": {
+          "wyklad": 0,
+          "wykladTytul": "Wprowadzenie do zarządzania (wykład wprowadzający online)",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "efekty": [
+        "Wymienia trzy główne grupy ról menedżerskich według Henry'ego Mintzberga: interpersonalne, informacyjne i decyzyjne",
+        "Potrafi opisać wybrane role menedżerskie",
+        "Wyjaśnia, na czym polega złożoność pracy menedżerskiej, odwołując się do konieczności pełnienia wielu ról jednocześnie",
+        "Rozumie, że role menedżerskie nie są sztywnymi kategoriami, ale dynamicznymi \"trybami działania\" zależnymi od sytuacji"
+      ]
+    },
+    {
+      "id": "odc-001",
+      "numer": 1,
+      "sezon": "A - Wprowadzenie do zarządzania",
+      "tytul": "Wprowadzenie do zarządzania",
+      "opis": "Podcast wprowadza podstawowe pojęcia z zakresu zarządzania. Definiuje, czym jest zarządzanie, opisuje jego kluczowe funkcje, szczeble organizacyjne oraz zasoby, którymi dysponuje każda organizacja.",
+      "dlugosc": 322,
+      "rozmiar": 2572899,
+      "audio": "https://archive.org/download/csri-wz-uw-zarzadzanie/odc-001.mp3",
+      "kod": "A.01",
+      "program": {
+        "dzienne": {
+          "wyklad": 0,
+          "wykladTytul": "Wprowadzenie do zarządzania (wykład wprowadzający online)",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie"
+        },
+        "zaoczne": {
+          "wyklad": 0,
+          "wykladTytul": "Wprowadzenie do zarządzania (wykład wprowadzający online)",
+          "cwiczenia": 1,
+          "cwiczeniaTytul": "Wprowadzenie do zarządzania + Naukowe zarządzanie + Struktury organizacyjne"
+        }
+      },
+      "efekty": [
+        "Potrafi zdefiniować zarządzanie i odróżnić je od pojęć takich jak kierowanie czy przywództwo",
+        "Wymienia i krótko charakteryzuje cztery podstawowe funkcje zarządzania: planowanie, organizowanie, kierowanie i kontrolę",
+        "Rozróżnia trzy szczeble zarządzania (najwyższy, średni, niższy) i rozumie ich rolę w organizacji",
+        "Identyfikuje cztery podstawowe rodzaje zasobów w organizacji: ludzkie, finansowe, rzeczowe i informacyjne"
+      ]
     }
   ]
 }
