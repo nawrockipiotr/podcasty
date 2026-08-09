@@ -116,8 +116,8 @@ body.w-ramce #pasek-ramki{
 #filtry{display:flex;flex-wrap:wrap;gap:8px;padding:2px 0 10px}
 .filtr{flex:none;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;background:var(--karta);border:1px solid var(--obrys);color:var(--tekst-2);font-size:12.5px;font-weight:500;white-space:nowrap;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk)}
 .filtr b{width:22px;height:22px;margin-left:-6px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;background:rgba(216,188,68,.16);color:var(--akcent);transition:background var(--dotyk),color var(--dotyk)}
-.filtr[aria-pressed="true"] b{background:var(--akcent);color:var(--tlo)}
-.filtr[aria-pressed="true"]{background:var(--tekst);border-color:var(--tekst);color:var(--tlo)}
+.filtr[aria-pressed="true"] b{background:rgba(11,29,62,.18);color:var(--tlo)}
+.filtr[aria-pressed="true"]{background:var(--akcent);border-color:var(--akcent);color:var(--tlo)}
 @media (hover:hover){.filtr:hover:not([aria-pressed="true"]){border-color:var(--tekst-3);color:var(--tekst);transform:translateY(-1px)}}
 .filtr{transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk),transform var(--dotyk)}
 .filtr:active{transform:scale(.95)}
@@ -136,6 +136,20 @@ body.w-ramce #pasek-ramki{
 #chip-nieodsluchane[aria-pressed="true"]{background:var(--akcent);border-color:var(--akcent);color:var(--tlo)}
 @media (hover:hover){#chip-nieodsluchane:hover:not([aria-pressed="true"]){border-color:var(--tekst-3);color:var(--tekst)}}
 
+/* ── Zwijany panel filtrów ── */
+#filtry-przelacznik{display:flex;align-items:center;gap:9px;width:100%;height:44px;padding:0 2px;background:none;border:none;border-top:1px solid var(--obrys);color:var(--tekst);font-size:15px;font-weight:700;cursor:pointer}
+#filtry-przelacznik svg{transition:transform var(--dotyk)}
+#filtry-przelacznik[aria-expanded="true"] svg{transform:rotate(180deg)}
+#filtry-przelacznik .fp-aktywne{margin-left:auto;font-size:12px;font-weight:600;color:var(--akcent)}
+#filtry-panel.zwiniete{display:none}
+#filtry-panel .grupa-filtrow:first-child{border-top:none;padding-top:4px}
+
+/* ── Następny do odsłuchania ── */
+#nastepny-odsluch{display:inline-flex;align-items:center;gap:8px;margin-top:10px;height:34px;padding:0 16px;border-radius:999px;background:var(--akcent);border:1px solid var(--akcent);color:var(--tlo);font-size:13px;font-weight:700;transition:transform var(--dotyk),filter var(--dotyk)}
+#nastepny-odsluch:active{transform:scale(.96)}
+@media (hover:hover){#nastepny-odsluch:hover{filter:brightness(1.08);transform:translateY(-1px)}}
+#nastepny-odsluch svg{flex:none}
+
 /* ── Grupy filtrów: tryb / sekcje / wykład — osobne, podpisane bloki ── */
 .grupa-filtrow{padding:12px 0 4px;border-top:1px solid var(--obrys)}
 .grupa-etykieta{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--tekst-3);margin:0 0 9px}
@@ -146,7 +160,7 @@ body.w-ramce #pasek-ramki{
 /* ── Filtr wykładów — rząd podrzędny, zawijany (wszystkie numery widoczne) ── */
 #filtry-wykladow{display:flex;flex-wrap:wrap;gap:6px;padding:0 0 10px}
 .filtr-w{flex:none;min-width:34px;height:28px;padding:0 11px;border-radius:999px;background:none;border:1px solid var(--obrys);color:var(--tekst-2);font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk)}
-.filtr-w[aria-pressed="true"]{background:var(--karta-jasna);border-color:var(--akcent);color:var(--akcent)}
+.filtr-w[aria-pressed="true"]{background:var(--akcent);border-color:var(--akcent);color:var(--tlo)}
 @media (hover:hover){.filtr-w:hover:not([aria-pressed="true"]){color:var(--tekst-2);border-color:var(--tekst-3)}}
 /* Chipy bez odcinków w bieżącym zestawieniu filtrów — wyszarzone, nieklikalne */
 .filtr.niedostepny,.filtr-w.niedostepny{opacity:.3;pointer-events:none}
@@ -438,6 +452,12 @@ body.w-ramce .wiz-uwaga{display:none}
     <input id="szukaj" type="search" placeholder="Szukaj odcinka lub tematu…" autocomplete="off" aria-label="Szukaj odcinków">
   </div>
 
+  <button type="button" id="filtry-przelacznik" aria-expanded="true" aria-controls="filtry-panel">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+    Filtry
+    <span class="fp-aktywne" id="fp-aktywne"></span>
+  </button>
+  <div id="filtry-panel">
   <div id="tryb-wrap" class="grupa-filtrow">
     <p class="grupa-etykieta">Tryb studiów</p>
     <div id="tryb-studiow" role="group" aria-label="Tryb studiów">
@@ -455,6 +475,7 @@ body.w-ramce .wiz-uwaga{display:none}
     <p class="grupa-etykieta">Wykład</p>
     <nav id="filtry-wykladow" aria-label="Filtr wykładów"></nav>
   </div>
+  </div>
 
   <div id="postep-kursu" aria-label="Postęp kursu">
     <div class="pk-linia">
@@ -463,6 +484,10 @@ body.w-ramce .wiz-uwaga{display:none}
       <button type="button" id="chip-nieodsluchane" aria-pressed="false">Tylko nieodsłuchane</button>
     </div>
     <div class="pk-pasek"><i id="pk-wypelnienie"></i></div>
+    <button type="button" id="nastepny-odsluch">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+      Następny do odsłuchania
+    </button>
   </div>
 
   <div id="lista" aria-label="Lista odcinków"></div>
@@ -755,6 +780,7 @@ function rysujListe() {
     : `<p class="pusto">${fraza ? 'Nic nie pasuje do zapytania.' : 'Brak odcinków w tej kategorii.'}<br><button type="button" class="pusto-wyczysc">Wyczyść filtry</button></p>`;
   odswiezDostepnosc();
   odswiezPostepKursu();
+  if (window.odswiezLicznikFiltrow) window.odswiezLicznikFiltrow();
 }
 /* Pasek postępu kursu nad listą */
 function odswiezPostepKursu() {
@@ -820,6 +846,33 @@ document.getElementById('chip-nieodsluchane').addEventListener('click', function
   this.setAttribute('aria-pressed', String(tylkoNieodsluchane));
   rysujListe();
 });
+/* Następny do odsłuchania: pierwszy nieukończony odcinek zgodny z bieżącymi filtrami
+   (a gdy filtry nic nie zostawiają — pierwszy nieukończony w ogóle). */
+document.getElementById('nastepny-odsluch').addEventListener('click', () => {
+  const nieukonczony = (o) => !(postep[o.id] && postep[o.id].skonczony);
+  const kandydat = (widoczne || []).find(nieukonczony) || odcinki.find(nieukonczony);
+  if (!kandydat) return;
+  zaladuj(odcinki.indexOf(kandydat), true);
+});
+/* Zwijany panel filtrów: na wąskim ekranie domyślnie zwinięty; licznik aktywnych filtrów. */
+(function () {
+  const p = document.getElementById('filtry-panel');
+  const b = document.getElementById('filtry-przelacznik');
+  if (!p || !b) return;
+  if (matchMedia('(max-width:640px)').matches) { p.classList.add('zwiniete'); b.setAttribute('aria-expanded', 'false'); }
+  b.addEventListener('click', () => {
+    const zw = p.classList.toggle('zwiniete');
+    b.setAttribute('aria-expanded', String(!zw));
+  });
+  window.odswiezLicznikFiltrow = function () {
+    let n = 0;
+    if (trybStudiow !== 'dzienne') n++;
+    if (aktywnyFiltr !== 'wszystkie') n++;
+    if (aktywnyWyklad !== null) n++;
+    const e = document.getElementById('fp-aktywne');
+    if (e) e.textContent = n ? n + ' aktywne' : '';
+  };
+})();
 document.getElementById('lista').addEventListener('click', (e) => {
   if (!e.target.closest('.pusto-wyczysc')) return;
   aktywnyFiltr = 'wszystkie';
