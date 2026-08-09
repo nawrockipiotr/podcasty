@@ -45,9 +45,11 @@ KONTRAKT IDENTYFIKATORÓW player.js (nie zmieniać):
 -->
 <style>
 :root{
-  /* Paleta WZ UW: granat 281C #142A5B, ciemny 296C #081732, niebieski 2728C #284BA9, złoty 110C #D8BC44 */
-  --tlo:#081732;--tlo-gradient:#142A5B;--karta:#122349;--karta-jasna:#1c3260;
-  --obrys:rgba(151,156,164,.22);--tekst:#f2f3f5;--tekst-2:#aeb6c6;--tekst-3:#8790a1;
+  /* Paleta aplikacji: granat rozjaśniony wobec identyfikacji WZ UW dla lepszego kontrastu tekstu.
+     Kolory marki WZ UW (281C #142A5B, 296C #081732, 2728C #284BA9, 110C #D8BC44) zachowane
+     w akcencie i niebieskim; tło i karty są jaśniejsze. */
+  --tlo:#0b1d3e;--tlo-gradient:#1a3268;--karta:#172b55;--karta-jasna:#22396e;
+  --obrys:rgba(160,168,182,.3);--tekst:#f4f5f7;--tekst-2:#c3cad8;--tekst-3:#9aa5b8;
   --akcent:#D8BC44;--akcent-cien:rgba(216,188,68,.16);--niebieski:#284BA9;
   --blur-tlo:rgba(11,25,53,.74);--promien:12px;
   --przejscie:340ms cubic-bezier(.32,.72,0,1);--dotyk:150ms ease;
@@ -111,7 +113,7 @@ body.w-ramce #pasek-ramki{
 #szukaj:focus{border-color:var(--niebieski)}
 
 /* ── Filtry sezonów (generuje JS: .filtr + aria-pressed) ── */
-#filtry{display:flex;flex-wrap:wrap;gap:8px;padding:2px 0 14px}
+#filtry{display:flex;flex-wrap:wrap;gap:8px;padding:2px 0 10px}
 .filtr{flex:none;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;background:var(--karta);border:1px solid var(--obrys);color:var(--tekst-2);font-size:12.5px;font-weight:500;white-space:nowrap;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk)}
 .filtr b{width:22px;height:22px;margin-left:-6px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;background:rgba(216,188,68,.16);color:var(--akcent);transition:background var(--dotyk),color var(--dotyk)}
 .filtr[aria-pressed="true"] b{background:var(--akcent);color:var(--tlo)}
@@ -120,18 +122,30 @@ body.w-ramce #pasek-ramki{
 .filtr{transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk),transform var(--dotyk)}
 .filtr:active{transform:scale(.95)}
 
-/* ── Przełącznik trybu studiów (wybór wariantu kursu, nie filtr) ── */
-#tryb-wrap{display:flex;align-items:center;gap:10px;padding:0 0 12px}
-#tryb-etykieta{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--tekst-3)}
-#tryb-studiow{display:inline-flex;padding:3px;border-radius:10px;background:var(--karta);border:1px solid var(--obrys)}
+/* ── Postep kursu — pasek nad listą ── */
+#postep-kursu{padding:14px 0 4px}
+#postep-kursu .pk-linia{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+#postep-kursu .pk-tekst{font-size:13px;font-weight:600;color:var(--tekst-2)}
+#postep-kursu .pk-procent{font-size:12.5px;color:var(--tekst-3);font-variant-numeric:tabular-nums;margin-right:auto;padding-left:10px}
+#postep-kursu .pk-linia{gap:0}
+#postep-kursu .pk-pasek{height:10px;border-radius:999px;background:var(--karta);overflow:hidden}
+#postep-kursu .pk-pasek i{display:block;height:100%;width:0;border-radius:999px;background:var(--akcent);transition:width .5s ease}
+
+/* ── Filtr nieodsłuchanych ── */
+#chip-nieodsluchane{flex:none;height:30px;padding:0 12px;border-radius:999px;background:none;border:1px solid var(--obrys);color:var(--tekst-2);font-size:12.5px;font-weight:600;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk)}
+#chip-nieodsluchane[aria-pressed="true"]{background:var(--akcent);border-color:var(--akcent);color:var(--tlo)}
+@media (hover:hover){#chip-nieodsluchane:hover:not([aria-pressed="true"]){border-color:var(--tekst-3);color:var(--tekst)}}
+
+/* ── Grupy filtrów: tryb / sekcje / wykład — osobne, podpisane bloki ── */
+.grupa-filtrow{padding:12px 0 4px;border-top:1px solid var(--obrys)}
+.grupa-etykieta{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--tekst-3);margin:0 0 9px}
+#tryb-studiow{display:inline-flex;padding:3px;border-radius:10px;background:var(--karta);border:1px solid var(--obrys);margin-bottom:10px}
 #tryb-studiow button{height:30px;padding:0 16px;border-radius:8px;font-size:13px;font-weight:600;color:var(--tekst-2);transition:background var(--dotyk),color var(--dotyk)}
 #tryb-studiow button[aria-pressed="true"]{background:var(--akcent);color:var(--tlo)}
 
-/* ── Filtr wykładów — rząd podrzędny, przewijany poziomo ── */
-#filtry-wykladow{display:flex;align-items:center;gap:6px;padding:0 0 14px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-#filtry-wykladow::-webkit-scrollbar{display:none}
-.fw-etykieta{flex:none;font-size:11.5px;color:var(--tekst-3);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-right:2px}
-.filtr-w{flex:none;min-width:30px;height:26px;padding:0 10px;border-radius:999px;background:none;border:1px solid var(--obrys);color:var(--tekst-3);font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk)}
+/* ── Filtr wykładów — rząd podrzędny, zawijany (wszystkie numery widoczne) ── */
+#filtry-wykladow{display:flex;flex-wrap:wrap;gap:6px;padding:0 0 10px}
+.filtr-w{flex:none;min-width:34px;height:28px;padding:0 11px;border-radius:999px;background:none;border:1px solid var(--obrys);color:var(--tekst-2);font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums;transition:background var(--dotyk),color var(--dotyk),border-color var(--dotyk)}
 .filtr-w[aria-pressed="true"]{background:var(--karta-jasna);border-color:var(--akcent);color:var(--akcent)}
 @media (hover:hover){.filtr-w:hover:not([aria-pressed="true"]){color:var(--tekst-2);border-color:var(--tekst-3)}}
 /* Chipy bez odcinków w bieżącym zestawieniu filtrów — wyszarzone, nieklikalne */
@@ -424,17 +438,32 @@ body.w-ramce .wiz-uwaga{display:none}
     <input id="szukaj" type="search" placeholder="Szukaj odcinka lub tematu…" autocomplete="off" aria-label="Szukaj odcinków">
   </div>
 
-  <div id="tryb-wrap">
-    <span id="tryb-etykieta">Tryb studiów</span>
+  <div id="tryb-wrap" class="grupa-filtrow">
+    <p class="grupa-etykieta">Tryb studiów</p>
     <div id="tryb-studiow" role="group" aria-label="Tryb studiów">
       <button type="button" data-tryb="dzienne" aria-pressed="true">Dzienne</button>
       <button type="button" data-tryb="zaoczne" aria-pressed="false">Zaoczne</button>
     </div>
   </div>
 
-  <nav id="filtry" aria-label="Filtr modułów"></nav>
+  <div class="grupa-filtrow">
+    <p class="grupa-etykieta">Sekcje kursu</p>
+    <nav id="filtry" aria-label="Filtr modułów"></nav>
+  </div>
 
-  <nav id="filtry-wykladow" aria-label="Filtr wykładów" style="display:none"></nav>
+  <div class="grupa-filtrow" id="wyklady-blok" style="display:none">
+    <p class="grupa-etykieta">Wykład</p>
+    <nav id="filtry-wykladow" aria-label="Filtr wykładów"></nav>
+  </div>
+
+  <div id="postep-kursu" aria-label="Postęp kursu">
+    <div class="pk-linia">
+      <span class="pk-tekst" id="pk-tekst">Odsłuchane 0 z 64</span>
+      <span class="pk-procent" id="pk-procent">0%</span>
+      <button type="button" id="chip-nieodsluchane" aria-pressed="false">Tylko nieodsłuchane</button>
+    </div>
+    <div class="pk-pasek"><i id="pk-wypelnienie"></i></div>
+  </div>
 
   <div id="lista" aria-label="Lista odcinków"></div>
 </main>
@@ -668,6 +697,7 @@ if (miniOk) new MutationObserver(podmienKafelki).observe(miniOk, { attributes: t
    (wprost dozwolone w nagłówku player.js), owija zaladuj. Bez localStorage. */
 let trybStudiow = 'dzienne';
 let aktywnyWyklad = null;
+let tylkoNieodsluchane = false;
 function progTrybu(o) { return o && o.program ? o.program[trybStudiow] : null; }
 function tekstLektury(r) { return r == null || r === '' ? '' : (/^\d/.test(String(r)) ? 'rozdz. ' + r : String(r)); }
 function linijkaProgramu(o) {
@@ -715,6 +745,7 @@ function rysujListe() {
   widoczne = odcinki.filter((o) => {
     if (aktywnyFiltr !== 'wszystkie' && o.sezon !== aktywnyFiltr) return false;
     if (aktywnyWyklad !== null) { const p = progTrybu(o); if (!p || p.wyklad !== aktywnyWyklad) return false; }
+    if (tylkoNieodsluchane && postep[o.id] && postep[o.id].skonczony) return false;
     if (!fraza) return true;
     return [o.tytul, o.opis, o.opis_pelny, o.gosc, (o.tagi || []).join(' ')]
       .filter(Boolean).join(' ').toLowerCase().includes(fraza);
@@ -723,6 +754,19 @@ function rysujListe() {
     ? widoczne.map((o) => szablonOdcinka(o, odcinki.indexOf(o))).join('')
     : `<p class="pusto">${fraza ? 'Nic nie pasuje do zapytania.' : 'Brak odcinków w tej kategorii.'}<br><button type="button" class="pusto-wyczysc">Wyczyść filtry</button></p>`;
   odswiezDostepnosc();
+  odswiezPostepKursu();
+}
+/* Pasek postępu kursu nad listą */
+function odswiezPostepKursu() {
+  const razem = odcinki.length;
+  if (!razem) return;
+  const gotowe = odcinki.filter((o) => postep[o.id] && postep[o.id].skonczony).length;
+  const t = document.getElementById('pk-tekst');
+  const pr = document.getElementById('pk-procent');
+  const w = document.getElementById('pk-wypelnienie');
+  if (t) t.textContent = `Odsłuchane ${gotowe} z ${razem}`;
+  if (pr) pr.textContent = Math.round((gotowe / razem) * 100) + '%';
+  if (w) w.style.width = (gotowe / razem) * 100 + '%';
 }
 /* Wyszarzenie chipów bez wyników: sekcje sprawdzane przy aktywnym wykładzie i frazie,
    wykłady przy aktywnej sekcji i frazie. Wciśnięty chip nigdy nie jest blokowany. */
@@ -744,12 +788,13 @@ function odswiezDostepnosc() {
 }
 function zbudujFiltryWykladow() {
   const k = document.getElementById('filtry-wykladow');
+  const blok = document.getElementById('wyklady-blok');
   if (!k) return;
   const nry = [...new Set(odcinki.map((o) => { const p = progTrybu(o); return p && p.wyklad != null ? p.wyklad : null; }).filter((n) => n !== null))].sort((a, b) => a - b);
-  if (!nry.length) { k.style.display = 'none'; if (aktywnyWyklad !== null) { aktywnyWyklad = null; rysujListe(); } return; }
-  k.style.display = '';
+  if (!nry.length) { if (blok) blok.style.display = 'none'; if (aktywnyWyklad !== null) { aktywnyWyklad = null; rysujListe(); } return; }
+  if (blok) blok.style.display = '';
   if (aktywnyWyklad !== null && !nry.includes(aktywnyWyklad)) aktywnyWyklad = null;
-  k.innerHTML = '<span class="fw-etykieta">Wykład:</span>' + nry.map((n) =>
+  k.innerHTML = nry.map((n) =>
     `<button class="filtr-w" type="button" data-w="${n}" aria-pressed="${n === aktywnyWyklad}">${n}</button>`).join('');
   odswiezDostepnosc();
 }
@@ -770,10 +815,17 @@ document.getElementById('tryb-studiow').addEventListener('click', (e) => {
   rysujListe();
   if (biezacy !== null && odcinki[biezacy]) wypelnijSzczegoly(odcinki[biezacy]);
 });
+document.getElementById('chip-nieodsluchane').addEventListener('click', function () {
+  tylkoNieodsluchane = !tylkoNieodsluchane;
+  this.setAttribute('aria-pressed', String(tylkoNieodsluchane));
+  rysujListe();
+});
 document.getElementById('lista').addEventListener('click', (e) => {
   if (!e.target.closest('.pusto-wyczysc')) return;
   aktywnyFiltr = 'wszystkie';
   aktywnyWyklad = null;
+  tylkoNieodsluchane = false;
+  document.getElementById('chip-nieodsluchane').setAttribute('aria-pressed', 'false');
   const sz = $('szukaj'); if (sz) sz.value = '';
   document.querySelectorAll('#filtry .filtr').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.filtr === 'wszystkie')));
   zbudujFiltryWykladow();
@@ -806,9 +858,12 @@ zaladuj = function (i, odtworz) {
 (function czekajNaDane() {
   if (Array.isArray(odcinki) && odcinki.length) {
     zbudujFiltryWykladow();
-    if (seria.podrecznik) ustaw('seria-podrecznik', 'Podręcznik kursu: ' + seria.podrecznik);
+    if (seria.podrecznik) ustaw('seria-podrecznik', 'Podręcznik: ' + seria.podrecznik);
   } else setTimeout(czekajNaDane, 120);
 })();
+/* 12) Prędkość 0,75× — rozszerzenie skali playera (klik w chip cyklicznie: 0,75 → 1 → 1,25…).
+   PREDKOSCI jest stałą playera; tu podmieniamy zawartość tablicy, nie referencję. */
+if (Array.isArray(PREDKOSCI) && !PREDKOSCI.includes(0.75)) PREDKOSCI.unshift(0.75);
 /* 11) Podgląd poza wdrożeniem: linki „pełna wersja" otwierają TĘ wersję w nowej karcie,
    nie starą stronę produkcyjną. Na nawrockipiotr.github.io nic się nie zmienia. */
 (function () {
