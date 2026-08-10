@@ -91,7 +91,7 @@ body.w-ramce #pasek-ramki{
 #wz-logo:hover{text-decoration:none}
 #wz-logo img{display:block;height:26px;width:auto}
 .wz-nazwa{display:flex;flex-direction:column;line-height:1.25;padding-left:2px}
-.wz-nazwa b{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:-.01em}
+.wz-nazwa b{font-size:12.5px;font-weight:700;color:var(--tekst);letter-spacing:-.01em}
 .wz-nazwa span{font-size:11.5px;color:var(--tekst-2)}
 
 /* ── Nagłówek serii ── */
@@ -140,7 +140,6 @@ body.w-ramce #pasek-ramki{
 #filtry-przelacznik{display:flex;align-items:center;gap:9px;width:100%;height:44px;padding:0 2px;background:none;border:none;border-top:1px solid var(--obrys);color:var(--tekst);font-size:15px;font-weight:700;cursor:pointer}
 #filtry-przelacznik svg{transition:transform var(--dotyk)}
 #filtry-przelacznik[aria-expanded="true"] svg{transform:rotate(180deg)}
-#filtry-przelacznik .fp-aktywne{margin-left:auto;font-size:12px;font-weight:600;color:var(--akcent)}
 #filtry-panel.zwiniete{display:none}
 #filtry-panel .grupa-filtrow:first-child{border-top:none;padding-top:4px}
 
@@ -402,6 +401,46 @@ body.w-ramce .wiz-podpis{font-size:13px;margin-top:7px}
 body.w-ramce .wiz-przycisk{margin-top:18px;padding:12px 24px;font-size:15px;white-space:nowrap}
 body.w-ramce .wiz-uwaga{display:none}
 
+/* ── Kolory sekcji: subtelny odcień na kółku z literą, kodzie i obwódce miniatury ── */
+[data-filtr^="A"],[data-sezon^="A"]{--sekcja:#5b8def}
+[data-filtr^="B"],[data-sezon^="B"]{--sekcja:#a578e0}
+[data-filtr^="C"],[data-sezon^="C"]{--sekcja:#3fb98d}
+[data-filtr^="D"],[data-sezon^="D"]{--sekcja:#e0913f}
+[data-filtr^="E"],[data-sezon^="E"]{--sekcja:#d97aa2}
+[data-filtr^="F"],[data-sezon^="F"]{--sekcja:#41a8c9}
+[data-filtr^="P"],[data-sezon^="P"]{--sekcja:#d8bc44}
+#filtry .filtr b{background:var(--akcent-cien);color:var(--akcent)}
+#filtry .filtr[aria-pressed="true"] b{background:rgba(11,29,62,.18);color:var(--tlo)}
+.odcinek[data-sezon] .okladka::after{content:"";position:absolute;inset:0;border-radius:10px;border:1.5px solid color-mix(in srgb,var(--akcent) 40%,transparent);pointer-events:none}
+.odcinek[data-sezon] .odcinek-meta{color:var(--tekst-3)}
+
+/* ── Płynne przejście okładki do panelu (View Transitions; bez wsparcia działa jak dotąd) ── */
+#pelny.vt-natychmiast{transition:none !important}
+::view-transition-group(okladka){animation-duration:.65s;animation-timing-function:cubic-bezier(.22,.9,.24,1)}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.5s}
+
+/* ── Przełącznik trybu jasnego ── */
+#app{position:relative}
+#motyw-przelacznik{position:absolute;top:calc(env(safe-area-inset-top) + 18px);right:14px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--tekst-2);border:1px solid var(--obrys);background:var(--karta);transition:color var(--dotyk),transform var(--dotyk)}
+#motyw-przelacznik:active{transform:scale(.92)}
+@media (hover:hover){#motyw-przelacznik:hover{color:var(--tekst)}}
+#motyw-przelacznik .ik-slonce{display:none}
+body.jasny #motyw-przelacznik .ik-slonce{display:block}
+body.jasny #motyw-przelacznik .ik-ksiezyc{display:none}
+
+/* ── Tryb jasny ── */
+body.jasny{
+  --tlo:#f3f5f9;--tlo-gradient:#dfe6f3;--karta:#ffffff;--karta-jasna:#eaeef7;
+  --obrys:rgba(20,42,91,.2);--tekst:#12203f;--tekst-2:#3a486a;--tekst-3:#5d6a87;
+  --akcent:#284BA9;--akcent-cien:rgba(40,75,169,.12);
+  --blur-tlo:rgba(243,245,249,.82);
+}
+body.jasny a{color:#284BA9}
+body.jasny a:hover{color:#142A5B}
+body.jasny #wz-logo img,body.jasny #csri-logo{filter:invert(1) brightness(.4)}
+@media (hover:hover){body.jasny .odcinek:hover{background:rgba(13,27,61,.05)}}
+body.jasny .pelny-okladka-rama,body.jasny .mini-okladka-rama{box-shadow:0 14px 34px rgba(13,27,61,.25)}
+
 @media (prefers-reduced-motion:reduce){
   *,#mini,#pelny{transition:none !important;animation:none !important}
 }
@@ -431,6 +470,10 @@ body.w-ramce .wiz-uwaga{display:none}
     <span class="wz-nazwa"><b>Wydział Zarządzania</b><span>Uniwersytet Warszawski</span></span>
     <img id="csri-logo" src="okladki/csri.png" alt="Centrum Innowacji Odpowiedzialnych Społecznie">
   </a>
+  <button type="button" id="motyw-przelacznik" aria-label="Przełącz tryb jasny/ciemny">
+    <svg class="ik-ksiezyc" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path></svg>
+    <svg class="ik-slonce" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+  </button>
 
   <header id="naglowek">
     <span class="logo-rama"><img id="logo" src="okladki/podcast.png" alt="Okładka serii"></span>
@@ -455,7 +498,6 @@ body.w-ramce .wiz-uwaga{display:none}
   <button type="button" id="filtry-przelacznik" aria-expanded="true" aria-controls="filtry-panel">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
     Filtry
-    <span class="fp-aktywne" id="fp-aktywne"></span>
   </button>
   <div id="filtry-panel">
   <div id="tryb-wrap" class="grupa-filtrow">
@@ -751,7 +793,7 @@ function szablonOdcinka(o, indeks) {
   const oznaczenie = o.kod || (o.numer ? `Odc. ${o.numer}` : '');
   const metryczka = [oznaczenie, dataOpisowa(o.data)].filter(Boolean).join(' · ');
   const prog = linijkaProgramu(o);
-  return `<button class="odcinek" data-i="${indeks}" aria-current="${indeks === biezacy}">
+  return `<button class="odcinek" data-i="${indeks}" data-sezon="${o.sezon || ''}" aria-current="${indeks === biezacy}">
       <span class="okladka">${okladka ? `<img src="${okladka}" alt="" loading="lazy">` : ''}
         <span class="wskaznik"></span></span>
       <span class="odcinek-tresc">
@@ -780,7 +822,6 @@ function rysujListe() {
     : `<p class="pusto">${fraza ? 'Nic nie pasuje do zapytania.' : 'Brak odcinków w tej kategorii.'}<br><button type="button" class="pusto-wyczysc">Wyczyść filtry</button></p>`;
   odswiezDostepnosc();
   odswiezPostepKursu();
-  if (window.odswiezLicznikFiltrow) window.odswiezLicznikFiltrow();
 }
 /* Pasek postępu kursu nad listą */
 function odswiezPostepKursu() {
@@ -864,14 +905,6 @@ document.getElementById('nastepny-odsluch').addEventListener('click', () => {
     const zw = p.classList.toggle('zwiniete');
     b.setAttribute('aria-expanded', String(!zw));
   });
-  window.odswiezLicznikFiltrow = function () {
-    let n = 0;
-    if (trybStudiow !== 'dzienne') n++;
-    if (aktywnyFiltr !== 'wszystkie') n++;
-    if (aktywnyWyklad !== null) n++;
-    const e = document.getElementById('fp-aktywne');
-    if (e) e.textContent = n ? n + ' aktywne' : '';
-  };
 })();
 document.getElementById('lista').addEventListener('click', (e) => {
   if (!e.target.closest('.pusto-wyczysc')) return;
@@ -917,6 +950,56 @@ zaladuj = function (i, odtworz) {
 /* 12) Prędkość 0,75× — rozszerzenie skali playera (klik w chip cyklicznie: 0,75 → 1 → 1,25…).
    PREDKOSCI jest stałą playera; tu podmieniamy zawartość tablicy, nie referencję. */
 if (Array.isArray(PREDKOSCI) && !PREDKOSCI.includes(0.75)) PREDKOSCI.unshift(0.75);
+/* 13) Tryb jasny: ręczny wybór zapamiętany, domyślnie za systemem. */
+(function () {
+  const KLUCZ = 'wzuw-podcasty-motyw';
+  const b = document.getElementById('motyw-przelacznik');
+  /* W ramce (osadzenie na stronie CSRI) baner zostaje ciemny niezaleznie od motywu
+     systemu — na bialym tle Google Sites jasny kafelek zlewa sie z otoczeniem.
+     Klase w-ramce ustawia player.js, ktory laduje sie przed tym blokiem. */
+  if (document.body.classList.contains('w-ramce')) return;
+  const system = matchMedia('(prefers-color-scheme: light)');
+  let zapis = localStorage.getItem(KLUCZ);
+  function zastosuj() {
+    document.body.classList.toggle('jasny', zapis ? zapis === 'jasny' : system.matches);
+  }
+  zastosuj();
+  system.addEventListener('change', () => { if (!zapis) zastosuj(); });
+  if (b) b.addEventListener('click', () => {
+    zapis = document.body.classList.contains('jasny') ? 'ciemny' : 'jasny';
+    localStorage.setItem(KLUCZ, zapis);
+    zastosuj();
+  });
+})();
+/* 14) Okładka „przelatuje” z listy do panelu (View Transitions API; brak wsparcia = jak dotąd). */
+(function () {
+  if (!document.startViewTransition || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  let wToku = false;
+  document.getElementById('lista').addEventListener('click', (e) => {
+    if (wToku) return;
+    const btn = e.target.closest('.odcinek');
+    if (!btn) return;
+    const ok = btn.querySelector('.okladka');
+    const rama = document.querySelector('.pelny-okladka-rama');
+    const pelny = document.getElementById('pelny');
+    if (!ok || !rama || !pelny || pelny.classList.contains('otwarty')) return;
+    e.stopImmediatePropagation();
+    e.preventDefault();
+    ok.style.viewTransitionName = 'okladka';
+    wToku = true;
+    pelny.classList.add('vt-natychmiast');
+    const vt = document.startViewTransition(() => {
+      ok.style.viewTransitionName = '';
+      rama.style.viewTransitionName = 'okladka';
+      btn.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    });
+    vt.finished.finally(() => {
+      rama.style.viewTransitionName = '';
+      pelny.classList.remove('vt-natychmiast');
+      wToku = false;
+    });
+  }, true);
+})();
 /* 11) Podgląd poza wdrożeniem: linki „pełna wersja" otwierają TĘ wersję w nowej karcie,
    nie starą stronę produkcyjną. Na nawrockipiotr.github.io nic się nie zmienia. */
 (function () {
