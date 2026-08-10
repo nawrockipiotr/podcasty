@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#081732">
+<meta name="theme-color" content="#0b1d3e">
 <title>Podstawy zarządzania — pomoc naukowa · WZ UW</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -60,6 +60,7 @@ body{font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sa
 a{color:var(--akcent);text-decoration:none}
 a:hover{color:#e8d27a;text-decoration:underline}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--akcent);outline-offset:2px;border-radius:4px}
 img{display:block}
 
 #seria-kredyt{margin:6px 0 0;font-size:12px;color:var(--tekst-3);letter-spacing:.02em}
@@ -432,7 +433,7 @@ body.jasny{
 }
 body.jasny a{color:#284BA9}
 body.jasny a:hover{color:#142A5B}
-body.jasny #wz-logo img,body.jasny #csri-logo{filter:invert(1) brightness(.4)}
+body.jasny #wz-logo img,body.jasny #csri-logo{filter:brightness(0) saturate(100%) invert(14%) sepia(45%) saturate(1900%) hue-rotate(208deg) brightness(94%) contrast(97%)}
 @media (hover:hover){body.jasny .odcinek:hover{background:rgba(13,27,61,.05)}}
 body.jasny .pelny-okladka-rama,body.jasny .mini-okladka-rama{box-shadow:0 14px 34px rgba(13,27,61,.25)}
 
@@ -958,7 +959,10 @@ if (Array.isArray(PREDKOSCI) && !PREDKOSCI.includes(0.75)) PREDKOSCI.unshift(0.7
   const system = matchMedia('(prefers-color-scheme: light)');
   let zapis = localStorage.getItem(KLUCZ);
   function zastosuj() {
-    document.body.classList.toggle('jasny', zapis ? zapis === 'jasny' : system.matches);
+    const jasny = zapis ? zapis === 'jasny' : system.matches;
+    document.body.classList.toggle('jasny', jasny);
+    const m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.content = jasny ? '#f3f5f9' : '#0b1d3e';
   }
   zastosuj();
   system.addEventListener('change', () => { if (!zapis) zastosuj(); });
