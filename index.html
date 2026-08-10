@@ -106,7 +106,7 @@ body.w-ramce #pasek-ramki{
 #seria-opis{font-size:15.5px;font-weight:600;color:var(--tekst);margin-top:14px;line-height:1.45;max-width:40ch;letter-spacing:-.01em;text-wrap:pretty}
 
 /* ── Wyszukiwarka ── */
-#szukaj-wrap{position:relative;margin:0 0 12px}
+#szukaj-wrap{position:relative;margin:0 6px 12px}
 #szukaj-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--tekst-3);pointer-events:none}
 #szukaj{width:100%;height:44px;border:1px solid var(--obrys);border-radius:var(--promien);background:var(--karta);color:var(--tekst);font-size:15px;padding:0 14px 0 42px;outline:none;transition:border-color var(--dotyk);appearance:none;-webkit-appearance:none}
 #szukaj::placeholder{color:var(--tekst-3)}
@@ -185,7 +185,7 @@ body.w-ramce #pasek-ramki{
 #seria-podrecznik:empty{display:none}
 
 /* ── Lista odcinków (karty generuje JS) ── */
-#lista{display:flex;flex-direction:column}
+#lista{display:flex;flex-direction:column;margin:0 6px}
 .odcinek{display:flex;gap:12px;padding:14px 4px;width:100%;text-align:left;border-bottom:1px solid var(--obrys);transition:background var(--dotyk);align-items:flex-start}
 .odcinek:active{background:var(--karta)}
 @media (hover:hover){.odcinek:hover{background:rgba(255,255,255,.035)}}
@@ -212,7 +212,7 @@ body.w-ramce #pasek-ramki{
 
 /* ── Mini-player ── */
 #mini{
-  position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 12px);
+  position:fixed;left:18px;right:18px;bottom:calc(env(safe-area-inset-bottom) + 18px);
   max-width:696px;margin:0 auto;z-index:40;
   display:flex;align-items:center;gap:4px;padding:10px 12px;
   background:var(--blur-tlo);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);
@@ -401,14 +401,7 @@ body.w-ramce .wiz-podpis{font-size:13px;margin-top:7px}
 body.w-ramce .wiz-przycisk{margin-top:18px;padding:12px 24px;font-size:15px;white-space:nowrap}
 body.w-ramce .wiz-uwaga{display:none}
 
-/* ── Kolory sekcji: subtelny odcień na kółku z literą, kodzie i obwódce miniatury ── */
-[data-filtr^="A"],[data-sezon^="A"]{--sekcja:#5b8def}
-[data-filtr^="B"],[data-sezon^="B"]{--sekcja:#a578e0}
-[data-filtr^="C"],[data-sezon^="C"]{--sekcja:#3fb98d}
-[data-filtr^="D"],[data-sezon^="D"]{--sekcja:#e0913f}
-[data-filtr^="E"],[data-sezon^="E"]{--sekcja:#d97aa2}
-[data-filtr^="F"],[data-sezon^="F"]{--sekcja:#41a8c9}
-[data-filtr^="P"],[data-sezon^="P"]{--sekcja:#d8bc44}
+/* ── Kółka z literą i obwódki miniatur — jednolity akcent motywu ── */
 #filtry .filtr b{background:var(--akcent-cien);color:var(--akcent)}
 #filtry .filtr[aria-pressed="true"] b{background:rgba(11,29,62,.18);color:var(--tlo)}
 .odcinek[data-sezon] .okladka::after{content:"";position:absolute;inset:0;border-radius:10px;border:1.5px solid color-mix(in srgb,var(--akcent) 40%,transparent);pointer-events:none}
@@ -421,7 +414,9 @@ body.w-ramce .wiz-uwaga{display:none}
 
 /* ── Przełącznik trybu jasnego ── */
 #app{position:relative}
-#motyw-przelacznik{position:absolute;top:calc(env(safe-area-inset-top) + 18px);right:14px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--tekst-2);border:1px solid var(--obrys);background:var(--karta);transition:color var(--dotyk),transform var(--dotyk)}
+#gorny-rzad{display:flex;align-items:center;gap:12px}
+#gorny-rzad #wz-logo{flex:1;min-width:0}
+#motyw-przelacznik{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--tekst-2);border:1px solid var(--obrys);background:var(--karta);transition:color var(--dotyk),transform var(--dotyk);margin-bottom:12px}
 #motyw-przelacznik:active{transform:scale(.92)}
 @media (hover:hover){#motyw-przelacznik:hover{color:var(--tekst)}}
 #motyw-przelacznik .ik-slonce{display:none}
@@ -465,6 +460,7 @@ body.jasny .pelny-okladka-rama,body.jasny .mini-okladka-rama{box-shadow:0 14px 3
 </section>
 
 <main id="app">
+  <div id="gorny-rzad">
   <a id="wz-logo" href="https://wz.uw.edu.pl" aria-label="Wydział Zarządzania, Uniwersytet Warszawski">
     <img src="okladki/wz-uw.png" alt="WZ UW">
     <span class="wz-nazwa"><b>Wydział Zarządzania</b><span>Uniwersytet Warszawski</span></span>
@@ -474,6 +470,7 @@ body.jasny .pelny-okladka-rama,body.jasny .mini-okladka-rama{box-shadow:0 14px 3
     <svg class="ik-ksiezyc" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path></svg>
     <svg class="ik-slonce" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
   </button>
+  </div>
 
   <header id="naglowek">
     <span class="logo-rama"><img id="logo" src="okladki/podcast.png" alt="Okładka serii"></span>
@@ -992,6 +989,36 @@ if (Array.isArray(PREDKOSCI) && !PREDKOSCI.includes(0.75)) PREDKOSCI.unshift(0.7
       ok.style.viewTransitionName = '';
       rama.style.viewTransitionName = 'okladka';
       btn.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    });
+    vt.finished.finally(() => {
+      rama.style.viewTransitionName = '';
+      pelny.classList.remove('vt-natychmiast');
+      wToku = false;
+    });
+  }, true);
+})();
+/* 14b) To samo płynne przejście przy otwieraniu panelu z mini-playera. */
+(function () {
+  if (!document.startViewTransition || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  const mini = document.getElementById('mini');
+  if (!mini) return;
+  let wToku = false;
+  mini.addEventListener('click', (e) => {
+    if (wToku) return;
+    if (e.target.closest('#mini-play')) return; /* przycisk play nie otwiera panelu */
+    const ok = mini.querySelector('.mini-okladka-rama') || document.getElementById('mini-okladka');
+    const rama = document.querySelector('.pelny-okladka-rama');
+    const pelny = document.getElementById('pelny');
+    if (!ok || !rama || !pelny || pelny.classList.contains('otwarty')) return;
+    e.stopImmediatePropagation();
+    e.preventDefault();
+    ok.style.viewTransitionName = 'okladka';
+    wToku = true;
+    pelny.classList.add('vt-natychmiast');
+    const vt = document.startViewTransition(() => {
+      ok.style.viewTransitionName = '';
+      rama.style.viewTransitionName = 'okladka';
+      e.target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     });
     vt.finished.finally(() => {
       rama.style.viewTransitionName = '';
