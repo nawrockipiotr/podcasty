@@ -457,7 +457,15 @@ body.jasny .pelny-okladka-rama,body.jasny .mini-okladka-rama{box-shadow:0 14px 3
   border:1px solid var(--obrys);background:var(--karta);
   color:var(--tekst-2);font-size:12.5px;font-weight:600;white-space:nowrap;
 }
-#czytnik-tytul{flex:1;min-width:0;font-size:12.5px;font-weight:600;color:var(--tekst-3);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#czytnik-tytul{flex:1;min-width:0;font-size:12.5px;font-weight:600;color:var(--tekst-3);text-align:center;line-height:1.3;text-wrap:pretty;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* Nazwa rozdziału bywa długa („Naukowe zarządzanie — nurt przemysłowy i administracyjny”),
+   a na telefonie zostaje jej kilkadziesiąt pikseli. Poniżej 560 px przycisk powrotu jest
+   samą strzałką, a tytuł łamie się do dwóch wierszy zamiast urywać po jednym. */
+@media (max-width:560px){
+  .czytnik-wroc-tekst{display:none}
+  #czytnik-zamknij{padding:0 10px}
+  .czytnik-gora{gap:8px}
+}
 #czytnik-zewnetrznie{flex:none;width:34px;height:34px;border-radius:999px;display:grid;place-items:center;border:1px solid var(--obrys);background:var(--karta);color:var(--tekst-2);font-size:15px;text-decoration:none}
 #czytnik-zewnetrznie:hover{text-decoration:none;color:var(--tekst)}
 #czytnik-nota{
@@ -571,9 +579,16 @@ body:has(#test.otwarty):has(#mini.widoczny) #test-wynik .test-wynik-kolumna{padd
   display:flex;flex-direction:column;gap:11px;
   overflow-y:auto;-webkit-overflow-scrolling:touch;
 }
-.test-gora{display:flex;align-items:center;gap:12px;flex:none;min-height:44px}
-.test-gora .test-loga{margin-right:auto}
-#test-postep{font-size:13px;font-weight:700;color:var(--tekst-3);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.test-gora{display:flex;align-items:center;gap:12px;flex:none;min-height:44px;flex-wrap:nowrap}
+.test-gora .test-loga{margin-right:auto;min-width:0;overflow:hidden}
+#test-postep{font-size:13px;font-weight:700;color:var(--tekst-3);font-variant-numeric:tabular-nums;letter-spacing:.04em;flex:none;white-space:nowrap}
+/* Wąski ekran: dwa logotypy plus licznik plus „Przerwij test” nie mieszczą się
+   w jednym wierszu — znak CSRI (najszerszy, powtarza się na ekranie wyniku) ustępuje. */
+@media (max-width:560px){
+  .test-gora .test-logo-csri,.test-gora .test-loga-kreska{display:none}
+  .test-gora .test-logo-wz{height:28px}
+  .test-gora{gap:10px}
+}
 .test-nawigacja{flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:38px}
 #test-wstecz{
   flex:none;height:34px;padding:0 14px;border-radius:999px;
@@ -588,8 +603,11 @@ body:has(#test.otwarty):has(#mini.widoczny) #test-wynik .test-wynik-kolumna{padd
 #test-warianty .hap-wrap{width:100%}
 .hap-switch{position:absolute;inset:-2px;margin:0;display:block;cursor:inherit;z-index:2;border-radius:inherit}
 .hap-switch input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;appearance:none;-webkit-appearance:none;pointer-events:auto}
-/* Wibracje wyłączone: label nadal przejmuje dotyk, ale switch się nie przełącza — brak drgania */
-body.bez-haptyki .hap-switch input{pointer-events:none}
+/* Wibracje wyłączone: nakładka znika całkowicie, dotyk trafia w prawdziwy przycisk.
+   Samo `pointer-events:none` na inpucie nie wystarczało — klik lądował wtedy na labelu,
+   ten przekazywał drugi, syntetyczny klik na switcha, oba wracały do handlera labela
+   i przprzełączenie wykonywało się dwa razy, czyli wizualnie wcale. */
+body.bez-haptyki .hap-switch{display:none}
 #test-zamknij{
   flex:none;height:38px;padding:0 14px 0 12px;border-radius:999px;
   display:flex;align-items:center;gap:7px;
@@ -777,6 +795,13 @@ body.jasny #test{box-shadow:0 -20px 60px rgba(13,27,61,.16)}
 /* Odpowiedź już wybrana — nie reaguje na dotyk */
 .wariant:disabled,.wariant.poprawny,.wariant.bledny{transform:none !important;box-shadow:none !important}
 
+/* Oznaczenie wersji — żeby przy zgłoszeniu studenta dało się ustalić, co ma w przeglądarce
+   (powiłoka bywa stara mimo wdrożenia). Podbijać razem z POWLOKA w sw.js. */
+#stopka-wersja{
+  margin:22px 6px 0;padding-top:14px;border-top:1px solid var(--obrys);
+  font-size:11px;line-height:1.5;color:var(--tekst-3);letter-spacing:.02em;text-align:center;
+}
+
 @media (prefers-reduced-motion:reduce){
   *,#mini,#pelny{transition:none !important;animation:none !important}
 }
@@ -872,6 +897,7 @@ body.jasny #test{box-shadow:0 -20px 60px rgba(13,27,61,.16)}
   </div>
 
   <div id="lista" aria-label="Lista odcinków"></div>
+  <p id="stopka-wersja">Wersja v15 · 3 września 2026 · 64 odcinki, 61 rozdziałów, testy wiedzy</p>
 </main>
 
 <div id="mini" aria-label="Mini-odtwarzacz">
@@ -1007,9 +1033,9 @@ body.jasny #test{box-shadow:0 -20px 60px rgba(13,27,61,.16)}
 
 <section id="lektura-czytnik" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Rozdział podręcznika">
   <header class="czytnik-gora">
-    <button id="czytnik-zamknij" type="button">
+    <button id="czytnik-zamknij" type="button" aria-label="Wróć do odcinka">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="m14 6-6 6 6 6"></path></svg>
-      Wróć do odcinka
+      <span class="czytnik-wroc-tekst">Wróć do odcinka</span>
     </button>
     <span id="czytnik-tytul"></span>
     <a id="czytnik-zewnetrznie" href="#" target="_blank" rel="noopener" title="Otwórz w przeglądarce">↗</a>
