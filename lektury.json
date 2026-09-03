@@ -1,0 +1,978 @@
+[
+ {
+  "numer": 1,
+  "rozdzial": "brak"
+ },
+ {
+  "numer": 2,
+  "rozdzial": "brak"
+ },
+ {
+  "numer": 3,
+  "rozdzial": "1.2",
+  "podrecznik": "Klincewicz",
+  "tytul": "Skuteczne dzialanie - wklad politologii, wojskowosci i prakseologii do nauk o zarzadzaniu",
+  "autor": null,
+  "grupa": [
+   3
+  ],
+  "url": "lektury/lekt-r1_2-003-skuteczne-dzialanie-wklad-politologii-wojskowo.pdf",
+  "stron": 15,
+  "bajty": 427839,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r1_2-003-skuteczne-dzialanie-wklad-politologii-wojskowo.pdf"
+ },
+ {
+  "numer": 4,
+  "rozdzial": "2",
+  "podrecznik": "Klincewicz",
+  "tytul": "Naukowe zarządzanie – nurt przemysłowy i administracyjny",
+  "autor": "Michał Mijal",
+  "grupa": [
+   4,
+   5,
+   6,
+   7
+  ],
+  "url": "lektury/lekt-r2-004-007-naukowe-zarzadzanie-nurt-przemyslowy-i-adminis.pdf",
+  "stron": 12,
+  "bajty": 381129,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r2-004-007-naukowe-zarzadzanie-nurt-przemyslowy-i-adminis.pdf"
+ },
+ {
+  "numer": 5,
+  "rozdzial": "2",
+  "podrecznik": "Klincewicz",
+  "tytul": "Naukowe zarządzanie – nurt przemysłowy i administracyjny",
+  "autor": "Michał Mijal",
+  "grupa": [
+   4,
+   5,
+   6,
+   7
+  ],
+  "url": "lektury/lekt-r2-004-007-naukowe-zarzadzanie-nurt-przemyslowy-i-adminis.pdf",
+  "stron": 12,
+  "bajty": 381129,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r2-004-007-naukowe-zarzadzanie-nurt-przemyslowy-i-adminis.pdf"
+ },
+ {
+  "numer": 6,
+  "rozdzial": "2",
+  "podrecznik": "Klincewicz",
+  "tytul": "Naukowe zarządzanie – nurt przemysłowy i administracyjny",
+  "autor": "Michał Mijal",
+  "grupa": [
+   4,
+   5,
+   6,
+   7
+  ],
+  "url": "lektury/lekt-r2-004-007-naukowe-zarzadzanie-nurt-przemyslowy-i-adminis.pdf",
+  "stron": 12,
+  "bajty": 381129,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r2-004-007-naukowe-zarzadzanie-nurt-przemyslowy-i-adminis.pdf"
+ },
+ {
+  "numer": 7,
+  "rozdzial": "2",
+  "podrecznik": "Klincewicz",
+  "tytul": "Naukowe zarządzanie – nurt przemysłowy i administracyjny",
+  "autor": "Michał Mijal",
+  "grupa": [
+   4,
+   5,
+   6,
+   7
+  ],
+  "url": "lektury/lekt-r2-004-007-naukowe-zarzadzanie-nurt-przemyslowy-i-adminis.pdf",
+  "stron": 12,
+  "bajty": 381129,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r2-004-007-naukowe-zarzadzanie-nurt-przemyslowy-i-adminis.pdf"
+ },
+ {
+  "numer": 8,
+  "rozdzial": "brak"
+ },
+ {
+  "numer": 9,
+  "rozdzial": "9",
+  "podrecznik": "Klincewicz",
+  "tytul": "Max Weber i kontynuatorzy w badaniach nad organizacjami",
+  "autor": "Michał Mijal",
+  "grupa": [
+   9,
+   10,
+   11
+  ],
+  "url": "lektury/lekt-r9-009-011-max-weber-i-kontynuatorzy-w-badaniach-nad-orga.pdf",
+  "stron": 17,
+  "bajty": 406123,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r9-009-011-max-weber-i-kontynuatorzy-w-badaniach-nad-orga.pdf"
+ },
+ {
+  "numer": 10,
+  "rozdzial": "9",
+  "podrecznik": "Klincewicz",
+  "tytul": "Max Weber i kontynuatorzy w badaniach nad organizacjami",
+  "autor": "Michał Mijal",
+  "grupa": [
+   9,
+   10,
+   11
+  ],
+  "url": "lektury/lekt-r9-009-011-max-weber-i-kontynuatorzy-w-badaniach-nad-orga.pdf",
+  "stron": 17,
+  "bajty": 406123,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r9-009-011-max-weber-i-kontynuatorzy-w-badaniach-nad-orga.pdf"
+ },
+ {
+  "numer": 11,
+  "rozdzial": "9",
+  "podrecznik": "Klincewicz",
+  "tytul": "Max Weber i kontynuatorzy w badaniach nad organizacjami",
+  "autor": "Michał Mijal",
+  "grupa": [
+   9,
+   10,
+   11
+  ],
+  "url": "lektury/lekt-r9-009-011-max-weber-i-kontynuatorzy-w-badaniach-nad-orga.pdf",
+  "stron": 17,
+  "bajty": 406123,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r9-009-011-max-weber-i-kontynuatorzy-w-badaniach-nad-orga.pdf"
+ },
+ {
+  "numer": 12,
+  "rozdzial": "1.3",
+  "podrecznik": "Klincewicz",
+  "tytul": "Wklad socjologii do nauk o zarzadzaniu i badania operacyjne",
+  "autor": null,
+  "grupa": [
+   12,
+   14
+  ],
+  "url": "lektury/lekt-r1_3-012-014-wklad-socjologii-do-nauk-o-zarzadzaniu-i-badan.pdf",
+  "stron": 18,
+  "bajty": 395876,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r1_3-012-014-wklad-socjologii-do-nauk-o-zarzadzaniu-i-badan.pdf"
+ },
+ {
+  "numer": 13,
+  "rozdzial": "3",
+  "podrecznik": "Klincewicz",
+  "tytul": "Wkład Petera F. Druckera w rozwój teorii zarządzania",
+  "autor": "Magdalena Klimczuk-Kochańska",
+  "grupa": [
+   13,
+   33
+  ],
+  "url": "lektury/lekt-r3-013-033-wklad-petera-f-druckera-w-rozwoj-teorii-zarzad.pdf",
+  "stron": 13,
+  "bajty": 366090,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r3-013-033-wklad-petera-f-druckera-w-rozwoj-teorii-zarzad.pdf"
+ },
+ {
+  "numer": 14,
+  "rozdzial": "1.3",
+  "podrecznik": "Klincewicz",
+  "tytul": "Wklad socjologii do nauk o zarzadzaniu i badania operacyjne",
+  "autor": null,
+  "grupa": [
+   12,
+   14
+  ],
+  "url": "lektury/lekt-r1_3-012-014-wklad-socjologii-do-nauk-o-zarzadzaniu-i-badan.pdf",
+  "stron": 18,
+  "bajty": 395876,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r1_3-012-014-wklad-socjologii-do-nauk-o-zarzadzaniu-i-badan.pdf"
+ },
+ {
+  "numer": 15,
+  "rozdzial": "10",
+  "podrecznik": "Klincewicz",
+  "tytul": "Gry organizacyjne i polityczna perspektywa analiz organizacji",
+  "autor": "Julia Karcz",
+  "grupa": [
+   15
+  ],
+  "url": "lektury/lekt-r10-015-gry-organizacyjne-i-polityczna-perspektywa-ana.pdf",
+  "stron": 14,
+  "bajty": 414118,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r10-015-gry-organizacyjne-i-polityczna-perspektywa-ana.pdf"
+ },
+ {
+  "numer": 16,
+  "rozdzial": "Projektowanie",
+  "podrecznik": "Bogdanienko",
+  "tytul": "Projektowanie organizacji i jej struktura",
+  "autor": null,
+  "grupa": [
+   16
+  ],
+  "url": "lektury/lekt-projektowanie-016-projektowanie-organizacji-i-jej-struktura.pdf",
+  "stron": 15,
+  "bajty": 1961055,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-projektowanie-016-projektowanie-organizacji-i-jej-struktura.pdf"
+ },
+ {
+  "numer": 17,
+  "rozdzial": "25",
+  "podrecznik": "Klincewicz",
+  "tytul": "Perspektywa psychologiczna w zarządzaniu",
+  "autor": "Aleksandra Spik",
+  "grupa": [
+   17,
+   28,
+   29
+  ],
+  "url": "lektury/lekt-r25-017-029-perspektywa-psychologiczna-w-zarzadzaniu.pdf",
+  "stron": 21,
+  "bajty": 431808,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r25-017-029-perspektywa-psychologiczna-w-zarzadzaniu.pdf"
+ },
+ {
+  "numer": 18,
+  "rozdzial": "26",
+  "podrecznik": "Klincewicz",
+  "tytul": "Nurt Human Relations i zachowania organizacyjne",
+  "autor": "Adrianna Jaskanis i Julita Majczyk",
+  "grupa": [
+   18,
+   19,
+   20,
+   21
+  ],
+  "url": "lektury/lekt-r26-018-021-nurt-human-relations-i-zachowania-organizacyjn.pdf",
+  "stron": 16,
+  "bajty": 403088,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r26-018-021-nurt-human-relations-i-zachowania-organizacyjn.pdf"
+ },
+ {
+  "numer": 19,
+  "rozdzial": "26",
+  "podrecznik": "Klincewicz",
+  "tytul": "Nurt Human Relations i zachowania organizacyjne",
+  "autor": "Adrianna Jaskanis i Julita Majczyk",
+  "grupa": [
+   18,
+   19,
+   20,
+   21
+  ],
+  "url": "lektury/lekt-r26-018-021-nurt-human-relations-i-zachowania-organizacyjn.pdf",
+  "stron": 16,
+  "bajty": 403088,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r26-018-021-nurt-human-relations-i-zachowania-organizacyjn.pdf"
+ },
+ {
+  "numer": 20,
+  "rozdzial": "26",
+  "podrecznik": "Klincewicz",
+  "tytul": "Nurt Human Relations i zachowania organizacyjne",
+  "autor": "Adrianna Jaskanis i Julita Majczyk",
+  "grupa": [
+   18,
+   19,
+   20,
+   21
+  ],
+  "url": "lektury/lekt-r26-018-021-nurt-human-relations-i-zachowania-organizacyjn.pdf",
+  "stron": 16,
+  "bajty": 403088,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r26-018-021-nurt-human-relations-i-zachowania-organizacyjn.pdf"
+ },
+ {
+  "numer": 21,
+  "rozdzial": "26",
+  "podrecznik": "Klincewicz",
+  "tytul": "Nurt Human Relations i zachowania organizacyjne",
+  "autor": "Adrianna Jaskanis i Julita Majczyk",
+  "grupa": [
+   18,
+   19,
+   20,
+   21
+  ],
+  "url": "lektury/lekt-r26-018-021-nurt-human-relations-i-zachowania-organizacyjn.pdf",
+  "stron": 16,
+  "bajty": 403088,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r26-018-021-nurt-human-relations-i-zachowania-organizacyjn.pdf"
+ },
+ {
+  "numer": 22,
+  "rozdzial": "29",
+  "podrecznik": "Klincewicz",
+  "tytul": "Teorie kultury organizacji",
+  "autor": "Katarzyna Kowalczyk i Michał Szukała",
+  "grupa": [
+   22
+  ],
+  "url": "lektury/lekt-r29-022-teorie-kultury-organizacji.pdf",
+  "stron": 10,
+  "bajty": 376255,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r29-022-teorie-kultury-organizacji.pdf"
+ },
+ {
+  "numer": 23,
+  "rozdzial": "30",
+  "podrecznik": "Klincewicz",
+  "tytul": "Znaczenie kultur narodowych dla zarządzania",
+  "autor": "Michał Szukała",
+  "grupa": [
+   23
+  ],
+  "url": "lektury/lekt-r30-023-znaczenie-kultur-narodowych-dla-zarzadzania.pdf",
+  "stron": 11,
+  "bajty": 377932,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r30-023-znaczenie-kultur-narodowych-dla-zarzadzania.pdf"
+ },
+ {
+  "numer": 24,
+  "rozdzial": "28",
+  "podrecznik": "Klincewicz",
+  "tytul": "Wyzwania współczesnej pracy",
+  "autor": "Marcin Żemigała",
+  "grupa": [
+   24
+  ],
+  "url": "lektury/lekt-r28-024-wyzwania-wspolczesnej-pracy.pdf",
+  "stron": 13,
+  "bajty": 383152,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r28-024-wyzwania-wspolczesnej-pracy.pdf"
+ },
+ {
+  "numer": 25,
+  "rozdzial": "15",
+  "podrecznik": "Klincewicz",
+  "tytul": "Teorie podejmowania decyzji",
+  "autor": "Agata Holska",
+  "grupa": [
+   25,
+   26,
+   27
+  ],
+  "url": "lektury/lekt-r15-025-027-teorie-podejmowania-decyzji.pdf",
+  "stron": 15,
+  "bajty": 387570,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r15-025-027-teorie-podejmowania-decyzji.pdf"
+ },
+ {
+  "numer": 26,
+  "rozdzial": "15",
+  "podrecznik": "Klincewicz",
+  "tytul": "Teorie podejmowania decyzji",
+  "autor": "Agata Holska",
+  "grupa": [
+   25,
+   26,
+   27
+  ],
+  "url": "lektury/lekt-r15-025-027-teorie-podejmowania-decyzji.pdf",
+  "stron": 15,
+  "bajty": 387570,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r15-025-027-teorie-podejmowania-decyzji.pdf"
+ },
+ {
+  "numer": 27,
+  "rozdzial": "15",
+  "podrecznik": "Klincewicz",
+  "tytul": "Teorie podejmowania decyzji",
+  "autor": "Agata Holska",
+  "grupa": [
+   25,
+   26,
+   27
+  ],
+  "url": "lektury/lekt-r15-025-027-teorie-podejmowania-decyzji.pdf",
+  "stron": 15,
+  "bajty": 387570,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r15-025-027-teorie-podejmowania-decyzji.pdf"
+ },
+ {
+  "numer": 28,
+  "rozdzial": "25",
+  "podrecznik": "Klincewicz",
+  "tytul": "Perspektywa psychologiczna w zarządzaniu",
+  "autor": "Aleksandra Spik",
+  "grupa": [
+   17,
+   28,
+   29
+  ],
+  "url": "lektury/lekt-r25-017-029-perspektywa-psychologiczna-w-zarzadzaniu.pdf",
+  "stron": 21,
+  "bajty": 431808,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r25-017-029-perspektywa-psychologiczna-w-zarzadzaniu.pdf"
+ },
+ {
+  "numer": 29,
+  "rozdzial": "25",
+  "podrecznik": "Klincewicz",
+  "tytul": "Perspektywa psychologiczna w zarządzaniu",
+  "autor": "Aleksandra Spik",
+  "grupa": [
+   17,
+   28,
+   29
+  ],
+  "url": "lektury/lekt-r25-017-029-perspektywa-psychologiczna-w-zarzadzaniu.pdf",
+  "stron": 21,
+  "bajty": 431808,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r25-017-029-perspektywa-psychologiczna-w-zarzadzaniu.pdf"
+ },
+ {
+  "numer": 30,
+  "rozdzial": "14",
+  "podrecznik": "Klincewicz",
+  "tytul": "Społeczna odpowiedzialność biznesu",
+  "autor": "Marcin Żemigała",
+  "grupa": [
+   30
+  ],
+  "url": "lektury/lekt-r14-030-spoleczna-odpowiedzialnosc-biznesu.pdf",
+  "stron": 11,
+  "bajty": 402491,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r14-030-spoleczna-odpowiedzialnosc-biznesu.pdf"
+ },
+ {
+  "numer": 31,
+  "rozdzial": "27",
+  "podrecznik": "Klincewicz",
+  "tytul": "Poza głównym nurtem – wpływ krytyki kapitalizmu…",
+  "autor": "Przemysław Wiśniewski",
+  "grupa": [
+   31
+  ],
+  "url": "lektury/lekt-r27-031-poza-glownym-nurtem-wplyw-krytyki-kapitalizmu.pdf",
+  "stron": 15,
+  "bajty": 406564,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r27-031-poza-glownym-nurtem-wplyw-krytyki-kapitalizmu.pdf"
+ },
+ {
+  "numer": 32,
+  "rozdzial": "7",
+  "podrecznik": "Klincewicz",
+  "tytul": "Szkoła planistyczna w zarządzaniu strategicznym i jej krytycy",
+  "autor": "Ewa Miżejewska",
+  "grupa": [
+   32,
+   34,
+   42,
+   43
+  ],
+  "url": "lektury/lekt-r7-032-043-szkola-planistyczna-w-zarzadzaniu-strategiczny.pdf",
+  "stron": 16,
+  "bajty": 449812,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r7-032-043-szkola-planistyczna-w-zarzadzaniu-strategiczny.pdf"
+ },
+ {
+  "numer": 33,
+  "rozdzial": "3",
+  "podrecznik": "Klincewicz",
+  "tytul": "Wkład Petera F. Druckera w rozwój teorii zarządzania",
+  "autor": "Magdalena Klimczuk-Kochańska",
+  "grupa": [
+   13,
+   33
+  ],
+  "url": "lektury/lekt-r3-013-033-wklad-petera-f-druckera-w-rozwoj-teorii-zarzad.pdf",
+  "stron": 13,
+  "bajty": 366090,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r3-013-033-wklad-petera-f-druckera-w-rozwoj-teorii-zarzad.pdf"
+ },
+ {
+  "numer": 34,
+  "rozdzial": "7",
+  "podrecznik": "Klincewicz",
+  "tytul": "Szkoła planistyczna w zarządzaniu strategicznym i jej krytycy",
+  "autor": "Ewa Miżejewska",
+  "grupa": [
+   32,
+   34,
+   42,
+   43
+  ],
+  "url": "lektury/lekt-r7-032-043-szkola-planistyczna-w-zarzadzaniu-strategiczny.pdf",
+  "stron": 16,
+  "bajty": 449812,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r7-032-043-szkola-planistyczna-w-zarzadzaniu-strategiczny.pdf"
+ },
+ {
+  "numer": 35,
+  "rozdzial": "13",
+  "podrecznik": "Klincewicz",
+  "tytul": "Organizacja jako system",
+  "autor": "Julia Karcz",
+  "grupa": [
+   35,
+   36,
+   37
+  ],
+  "url": "lektury/lekt-r13-035-037-organizacja-jako-system.pdf",
+  "stron": 21,
+  "bajty": 628506,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r13-035-037-organizacja-jako-system.pdf"
+ },
+ {
+  "numer": 36,
+  "rozdzial": "13",
+  "podrecznik": "Klincewicz",
+  "tytul": "Organizacja jako system",
+  "autor": "Julia Karcz",
+  "grupa": [
+   35,
+   36,
+   37
+  ],
+  "url": "lektury/lekt-r13-035-037-organizacja-jako-system.pdf",
+  "stron": 21,
+  "bajty": 628506,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r13-035-037-organizacja-jako-system.pdf"
+ },
+ {
+  "numer": 37,
+  "rozdzial": "13",
+  "podrecznik": "Klincewicz",
+  "tytul": "Organizacja jako system",
+  "autor": "Julia Karcz",
+  "grupa": [
+   35,
+   36,
+   37
+  ],
+  "url": "lektury/lekt-r13-035-037-organizacja-jako-system.pdf",
+  "stron": 21,
+  "bajty": 628506,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r13-035-037-organizacja-jako-system.pdf"
+ },
+ {
+  "numer": 38,
+  "rozdzial": "Otoczenie",
+  "podrecznik": "Bogdanienko",
+  "tytul": "Organizacje i otoczenie",
+  "autor": null,
+  "grupa": [
+   38,
+   39,
+   40,
+   41
+  ],
+  "url": "lektury/lekt-otoczenie-038-041-organizacje-i-otoczenie.pdf",
+  "stron": 12,
+  "bajty": 663313,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-otoczenie-038-041-organizacje-i-otoczenie.pdf"
+ },
+ {
+  "numer": 39,
+  "rozdzial": "Otoczenie",
+  "podrecznik": "Bogdanienko",
+  "tytul": "Organizacje i otoczenie",
+  "autor": null,
+  "grupa": [
+   38,
+   39,
+   40,
+   41
+  ],
+  "url": "lektury/lekt-otoczenie-038-041-organizacje-i-otoczenie.pdf",
+  "stron": 12,
+  "bajty": 663313,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-otoczenie-038-041-organizacje-i-otoczenie.pdf"
+ },
+ {
+  "numer": 40,
+  "rozdzial": "Otoczenie",
+  "podrecznik": "Bogdanienko",
+  "tytul": "Organizacje i otoczenie",
+  "autor": null,
+  "grupa": [
+   38,
+   39,
+   40,
+   41
+  ],
+  "url": "lektury/lekt-otoczenie-038-041-organizacje-i-otoczenie.pdf",
+  "stron": 12,
+  "bajty": 663313,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-otoczenie-038-041-organizacje-i-otoczenie.pdf"
+ },
+ {
+  "numer": 41,
+  "rozdzial": "Otoczenie",
+  "podrecznik": "Bogdanienko",
+  "tytul": "Organizacje i otoczenie",
+  "autor": null,
+  "grupa": [
+   38,
+   39,
+   40,
+   41
+  ],
+  "url": "lektury/lekt-otoczenie-038-041-organizacje-i-otoczenie.pdf",
+  "stron": 12,
+  "bajty": 663313,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-otoczenie-038-041-organizacje-i-otoczenie.pdf"
+ },
+ {
+  "numer": 42,
+  "rozdzial": "7",
+  "podrecznik": "Klincewicz",
+  "tytul": "Szkoła planistyczna w zarządzaniu strategicznym i jej krytycy",
+  "autor": "Ewa Miżejewska",
+  "grupa": [
+   32,
+   34,
+   42,
+   43
+  ],
+  "url": "lektury/lekt-r7-032-043-szkola-planistyczna-w-zarzadzaniu-strategiczny.pdf",
+  "stron": 16,
+  "bajty": 449812,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r7-032-043-szkola-planistyczna-w-zarzadzaniu-strategiczny.pdf"
+ },
+ {
+  "numer": 43,
+  "rozdzial": "7",
+  "podrecznik": "Klincewicz",
+  "tytul": "Szkoła planistyczna w zarządzaniu strategicznym i jej krytycy",
+  "autor": "Ewa Miżejewska",
+  "grupa": [
+   32,
+   34,
+   42,
+   43
+  ],
+  "url": "lektury/lekt-r7-032-043-szkola-planistyczna-w-zarzadzaniu-strategiczny.pdf",
+  "stron": 16,
+  "bajty": 449812,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r7-032-043-szkola-planistyczna-w-zarzadzaniu-strategiczny.pdf"
+ },
+ {
+  "numer": 44,
+  "rozdzial": "18",
+  "podrecznik": "Klincewicz",
+  "tytul": "Wkład Michaela E. Portera w rozwój teorii zarządzania",
+  "autor": "Marcin Kardas",
+  "grupa": [
+   44,
+   45,
+   57
+  ],
+  "url": "lektury/lekt-r18-044-057-wklad-michaela-e-portera-w-rozwoj-teorii-zarza.pdf",
+  "stron": 15,
+  "bajty": 374442,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r18-044-057-wklad-michaela-e-portera-w-rozwoj-teorii-zarza.pdf"
+ },
+ {
+  "numer": 45,
+  "rozdzial": "18",
+  "podrecznik": "Klincewicz",
+  "tytul": "Wkład Michaela E. Portera w rozwój teorii zarządzania",
+  "autor": "Marcin Kardas",
+  "grupa": [
+   44,
+   45,
+   57
+  ],
+  "url": "lektury/lekt-r18-044-057-wklad-michaela-e-portera-w-rozwoj-teorii-zarza.pdf",
+  "stron": 15,
+  "bajty": 374442,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r18-044-057-wklad-michaela-e-portera-w-rozwoj-teorii-zarza.pdf"
+ },
+ {
+  "numer": 46,
+  "rozdzial": "8",
+  "podrecznik": "Klincewicz",
+  "tytul": "Wkład firm doradczych w rozwój teorii zarządzania",
+  "autor": "Tomasz Ludwicki",
+  "grupa": [
+   46
+  ],
+  "url": "lektury/lekt-r8-046-wklad-firm-doradczych-w-rozwoj-teorii-zarzadza.pdf",
+  "stron": 16,
+  "bajty": 428823,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r8-046-wklad-firm-doradczych-w-rozwoj-teorii-zarzadza.pdf"
+ },
+ {
+  "numer": 47,
+  "rozdzial": "22",
+  "podrecznik": "Klincewicz",
+  "tytul": "Podejście zasobowe do organizacji",
+  "autor": "Magdalena Marczewska",
+  "grupa": [
+   47
+  ],
+  "url": "lektury/lekt-r22-047-podejscie-zasobowe-do-organizacji.pdf",
+  "stron": 10,
+  "bajty": 341562,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r22-047-podejscie-zasobowe-do-organizacji.pdf"
+ },
+ {
+  "numer": 48,
+  "rozdzial": "23",
+  "podrecznik": "Klincewicz",
+  "tytul": "Relacje międzyorganizacyjne",
+  "autor": "Magdalena Klimczuk-Kochańska",
+  "grupa": [
+   48
+  ],
+  "url": "lektury/lekt-r23-048-relacje-miedzyorganizacyjne.pdf",
+  "stron": 13,
+  "bajty": 394146,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r23-048-relacje-miedzyorganizacyjne.pdf"
+ },
+ {
+  "numer": 49,
+  "rozdzial": "21",
+  "podrecznik": "Klincewicz",
+  "tytul": "Marketing – relacja wymiany wartości",
+  "autor": "Przemysław Wiśniewski",
+  "grupa": [
+   49
+  ],
+  "url": "lektury/lekt-r21-049-marketing-relacja-wymiany-wartosci.pdf",
+  "stron": 14,
+  "bajty": 391954,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r21-049-marketing-relacja-wymiany-wartosci.pdf"
+ },
+ {
+  "numer": 50,
+  "rozdzial": "32",
+  "podrecznik": "Klincewicz",
+  "tytul": "Teorie przedsiębiorczości",
+  "autor": "Agnieszka Brzozowska",
+  "grupa": [
+   50
+  ],
+  "url": "lektury/lekt-r32-050-teorie-przedsiebiorczosci.pdf",
+  "stron": 14,
+  "bajty": 365290,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r32-050-teorie-przedsiebiorczosci.pdf"
+ },
+ {
+  "numer": 51,
+  "rozdzial": "33",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarządzanie innowacjami i technologiami…",
+  "autor": "Krzysztof Klincewicz",
+  "grupa": [
+   51
+  ],
+  "url": "lektury/lekt-r33-051-zarzadzanie-innowacjami-i-technologiami.pdf",
+  "stron": 20,
+  "bajty": 426968,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r33-051-zarzadzanie-innowacjami-i-technologiami.pdf"
+ },
+ {
+  "numer": 52,
+  "rozdzial": "6",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarządzanie technologiami – perspektywa organizacji-użytkownika",
+  "autor": "Krzysztof Klincewicz",
+  "grupa": [
+   52,
+   55
+  ],
+  "url": "lektury/lekt-r6-052-055-zarzadzanie-technologiami-perspektywa-organiza.pdf",
+  "stron": 15,
+  "bajty": 374590,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r6-052-055-zarzadzanie-technologiami-perspektywa-organiza.pdf"
+ },
+ {
+  "numer": 53,
+  "rozdzial": "20",
+  "podrecznik": "Klincewicz",
+  "tytul": "Pojęcia i typy modeli biznesu",
+  "autor": "Marcin Kardas",
+  "grupa": [
+   53
+  ],
+  "url": "lektury/lekt-r20-053-pojecia-i-typy-modeli-biznesu.pdf",
+  "stron": 22,
+  "bajty": 441176,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r20-053-pojecia-i-typy-modeli-biznesu.pdf"
+ },
+ {
+  "numer": 54,
+  "rozdzial": "34",
+  "podrecznik": "Klincewicz",
+  "tytul": "Organizacyjne uczenie się i zarządzanie wiedzą",
+  "autor": "Adrianna Jaskanis",
+  "grupa": [
+   54
+  ],
+  "url": "lektury/lekt-r34-054-organizacyjne-uczenie-sie-i-zarzadzanie-wiedza.pdf",
+  "stron": 12,
+  "bajty": 376934,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r34-054-organizacyjne-uczenie-sie-i-zarzadzanie-wiedza.pdf"
+ },
+ {
+  "numer": 55,
+  "rozdzial": "6",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarządzanie technologiami – perspektywa organizacji-użytkownika",
+  "autor": "Krzysztof Klincewicz",
+  "grupa": [
+   52,
+   55
+  ],
+  "url": "lektury/lekt-r6-052-055-zarzadzanie-technologiami-perspektywa-organiza.pdf",
+  "stron": 15,
+  "bajty": 374590,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r6-052-055-zarzadzanie-technologiami-perspektywa-organiza.pdf"
+ },
+ {
+  "numer": 56,
+  "rozdzial": "4",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarządzanie operacyjne",
+  "autor": "Magdalena Klimczuk-Kochańska, Magdalena Marczewska",
+  "grupa": [
+   56,
+   58,
+   59,
+   60,
+   61
+  ],
+  "url": "lektury/lekt-r4-056-061-zarzadzanie-operacyjne.pdf",
+  "stron": 22,
+  "bajty": 431844,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r4-056-061-zarzadzanie-operacyjne.pdf"
+ },
+ {
+  "numer": 57,
+  "rozdzial": "18",
+  "podrecznik": "Klincewicz",
+  "tytul": "Wkład Michaela E. Portera w rozwój teorii zarządzania",
+  "autor": "Marcin Kardas",
+  "grupa": [
+   44,
+   45,
+   57
+  ],
+  "url": "lektury/lekt-r18-044-057-wklad-michaela-e-portera-w-rozwoj-teorii-zarza.pdf",
+  "stron": 15,
+  "bajty": 374442,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r18-044-057-wklad-michaela-e-portera-w-rozwoj-teorii-zarza.pdf"
+ },
+ {
+  "numer": 58,
+  "rozdzial": "4",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarządzanie operacyjne",
+  "autor": "Magdalena Klimczuk-Kochańska, Magdalena Marczewska",
+  "grupa": [
+   56,
+   58,
+   59,
+   60,
+   61
+  ],
+  "url": "lektury/lekt-r4-056-061-zarzadzanie-operacyjne.pdf",
+  "stron": 22,
+  "bajty": 431844,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r4-056-061-zarzadzanie-operacyjne.pdf"
+ },
+ {
+  "numer": 59,
+  "rozdzial": "4",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarządzanie operacyjne",
+  "autor": "Magdalena Klimczuk-Kochańska, Magdalena Marczewska",
+  "grupa": [
+   56,
+   58,
+   59,
+   60,
+   61
+  ],
+  "url": "lektury/lekt-r4-056-061-zarzadzanie-operacyjne.pdf",
+  "stron": 22,
+  "bajty": 431844,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r4-056-061-zarzadzanie-operacyjne.pdf"
+ },
+ {
+  "numer": 60,
+  "rozdzial": "4",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarządzanie operacyjne",
+  "autor": "Magdalena Klimczuk-Kochańska, Magdalena Marczewska",
+  "grupa": [
+   56,
+   58,
+   59,
+   60,
+   61
+  ],
+  "url": "lektury/lekt-r4-056-061-zarzadzanie-operacyjne.pdf",
+  "stron": 22,
+  "bajty": 431844,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r4-056-061-zarzadzanie-operacyjne.pdf"
+ },
+ {
+  "numer": 61,
+  "rozdzial": "4",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarządzanie operacyjne",
+  "autor": "Magdalena Klimczuk-Kochańska, Magdalena Marczewska",
+  "grupa": [
+   56,
+   58,
+   59,
+   60,
+   61
+  ],
+  "url": "lektury/lekt-r4-056-061-zarzadzanie-operacyjne.pdf",
+  "stron": 22,
+  "bajty": 431844,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r4-056-061-zarzadzanie-operacyjne.pdf"
+ },
+ {
+  "numer": 62,
+  "rozdzial": "1.7",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarzadzanie, organizacje i organizowanie – inspiracje teoretyczne i proby system",
+  "autor": null,
+  "grupa": [
+   62,
+   63,
+   64
+  ],
+  "url": "lektury/lekt-r1_7-062-064-zarzadzanie-organizacje-i-organizowanie-inspir.pdf",
+  "stron": 17,
+  "bajty": 387801,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r1_7-062-064-zarzadzanie-organizacje-i-organizowanie-inspir.pdf"
+ },
+ {
+  "numer": 63,
+  "rozdzial": "1.5",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarzadzanie, organizacje i organizowanie – inspiracje teoretyczne i proby system",
+  "autor": null,
+  "grupa": [
+   62,
+   63,
+   64
+  ],
+  "url": "lektury/lekt-r1_7-062-064-zarzadzanie-organizacje-i-organizowanie-inspir.pdf",
+  "stron": 17,
+  "bajty": 387801,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r1_7-062-064-zarzadzanie-organizacje-i-organizowanie-inspir.pdf"
+ },
+ {
+  "numer": 64,
+  "rozdzial": "1.7",
+  "podrecznik": "Klincewicz",
+  "tytul": "Zarzadzanie, organizacje i organizowanie – inspiracje teoretyczne i proby system",
+  "autor": null,
+  "grupa": [
+   62,
+   63,
+   64
+  ],
+  "url": "lektury/lekt-r1_7-062-064-zarzadzanie-organizacje-i-organizowanie-inspir.pdf",
+  "stron": 17,
+  "bajty": 387801,
+  "urlArchive": "https://archive.org/download/pz-lektury-wz-uw/lekt-r1_7-062-064-zarzadzanie-organizacje-i-organizowanie-inspir.pdf"
+ }
+]
