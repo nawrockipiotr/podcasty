@@ -125,8 +125,12 @@ const TEST_USTAWIENIA = {
     b.classList.toggle('niegotowy', !ile);
     const tytul = b.querySelector('[data-test-tytul]');
     const podpis = b.querySelector('[data-test-podpis]');
+    /* Odcinek odsłuchany, test jeszcze nierozwiązany — moment, w którym warto zaprosić. */
+    const skonczony = typeof postep !== 'undefined' && postep[o.id] && postep[o.id].skonczony;
+    const swiezy = ile && skonczony && !wyniki[o.numer];
+    b.classList.toggle('zachecony', !!swiezy);
     if (ile) {
-      if (tytul) tytul.textContent = 'Sprawdź, ile zapamiętałeś';
+      if (tytul) tytul.textContent = swiezy ? 'Odcinek odsłuchany — sprawdź się' : 'Sprawdź, ile zapamiętałeś';
       if (podpis) podpis.textContent = 'Test wiedzy z odcinka — ' + Math.min(TEST_USTAWIENIA.ile, ile) + ' pytań, bez oceny';
     } else {
       if (tytul) tytul.textContent = 'Test wiedzy do tego odcinka jest w przygotowaniu';
@@ -366,7 +370,24 @@ const TEST_USTAWIENIA = {
       const o = odcinki[Number(b.dataset.i)];
       const w = o && wyniki[o.numer];
       let z = b.querySelector('.odcinek-test');
-      if (!w) { if (z) z.remove(); return; }
+      /* Bez wyniku, ale z pytaniami w bazie: plakietka informuje, że test w ogóle jest.
+         Inaczej student, który nie otwiera panelu, nigdy się o testach nie dowie. */
+      if (!w) {
+        const ma = o && quizy ? pulaDla(o.numer).length : 0;
+        if (!ma) { if (z) z.remove(); return; }
+        if (!z) {
+          z = document.createElement('span');
+          z.className = 'odcinek-test';
+          const st = b.querySelector('.odcinek-stopka');
+          if (!st) return;
+          st.appendChild(z);
+        }
+        z.classList.add('wolny');
+        z.textContent = 'test';
+        z.title = 'Test wiedzy z tego odcinka — jeszcze nierozwiązany';
+        return;
+      }
+      if (z) z.classList.remove('wolny');
       if (!z) {
         z = document.createElement('span');
         z.className = 'odcinek-test';
@@ -480,6 +501,27 @@ const TEST_USTAWIENIA = {
     const oryg = window.zaladuj;
     window.zaladuj = function (...a) { const r = oryg.apply(this, a); odswiezWejscie(); return r; };
   }
+  /* Baza pytań (330 KB) wczytywana w wolnej chwili po pierwszym rysowaniu listy —
+     bez tego plakietka „test” nie ma skąd wiedzieć, które odcinki mają pytania, a
+     student, który nie otwiera panelu, nigdy nie dowiaduje się o testach. Plik jest
+     w PLIKI service workera, więc po pierwszej wizycie idzie z pamięci. */
+  (() => {
+    const zapowiedz = () => wczytajQuizy().then(odswiezStatystyki).catch(() => {});
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(zapowiedz, { timeout: 3000 });
+    else setTimeout(zapowiedz, 1200);
+  })();
+
+  /* Koniec odcinka: player przechodzi do następnego, więc tylko sygnalizujemy,
+     że test istnieje — plakietka na liście i wejście w panelu nosi resztę. */
+  const audioEl = document.getElementById('audio');
+  if (audioEl) audioEl.addEventListener('ended', async () => {
+    const o = biezacyOdcinek();
+    if (!o) return;
+    try { await wczytajQuizy(); } catch { return; }
+    if (!pulaDla(o.numer).length || wyniki[o.numer]) return;
+    if (typeof powiedz === 'function') powiedz('Odcinek odsłuchany — możesz sprawdzić się testem');
+  });
+
   const pelny = el('pelny');
   if (pelny) new MutationObserver(() => { if (pelny.classList.contains('otwarty')) odswiezWejscie(); })
     .observe(pelny, { attributes: true, attributeFilter: ['class'] });

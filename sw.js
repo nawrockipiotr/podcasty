@@ -8,7 +8,7 @@ const POWLOKA = 'csri-powloka-v16';
 const AUDIO = 'csri-audio-v1';
 /* pdf.worker.min.js (1,1 MB) musi być tu razem z rdzeniem: bez workera czytnik
    rozdziału nie otworzy się offline, a pobranie odcinka z lekturą było warunkiem. */
-const PLIKI = ['./', 'index.html', 'player.js', 'lektury.js', 'test.js',
+const PLIKI = ['./', 'index.html', 'player.js', 'lektury.js', 'test.js', 'kopia.js',
   'episodes.json', 'lektury.json', 'quizy.json',
   'manifest.webmanifest', 'pdfjs/pdf.min.js', 'pdfjs/pdf.worker.min.js'];
 

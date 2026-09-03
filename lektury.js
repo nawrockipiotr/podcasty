@@ -84,7 +84,9 @@ const LEKTURY_USTAWIENIA = {
     if (bezwzgledny(pelny)) return 'jest';
     /* Zapamiętujemy tylko „brak” (404 się nie zmieni). Pozytywu NIE — inaczej
        raz udana odpowiedź maskuje późniejszy realny brak pliku, jak w paczce
-       standalone, gdzie katalogu z rozdziałami nie ma wcale. */
+       standalone, gdzie katalogu z rozdziałami nie ma wcale.
+       Zapytanie lekkie (Range: pierwszy bajt) — bez pobierania calosci,
+       bo baner rysuje sie przy kazdym otwarciu panelu. */
     if (sprawdzone[pelny] === 'brak') return 'brak';
     /* Bufor na 3 s: panel odświeża się kilka razy przy otwarciu, a każde
        zapytanie o plik ma swój koszt — bez tego robi się lawina. */
@@ -92,20 +94,12 @@ const LEKTURY_USTAWIENIA = {
     if (swieze[pelny] && teraz - swieze[pelny].czas < 3000) return swieze[pelny].stan;
     let stan = 'blad';
     try {
-      /* NAJPIERW pamięć podręczna. Bez tego offline, z pobranym odcinkiem i PDF-em
-         w cache'u, sprawdzenie kończyło się porażką i baner nie powstawał —
-         czyli worker w paczce nie miałby po co tam być. */
+      /* Najpierw pamięć podręczna: offline, z pobranym rozdziałem, baner ma powstać. */
       if (self.caches) {
         const traf = await caches.match(pelny);
         if (traf && traf.ok) { swieze[pelny] = { czas: teraz, stan: 'jest' }; return 'jest'; }
       }
-      /* Brak w cache'u i brak sieci: nie wiemy, czy plik istnieje — widoczny stan
-         „nie udało się sprawdzić”, nie ukrycie i nie zapamiętany „brak”. */
       if (navigator.onLine === false) { swieze[pelny] = { czas: teraz, stan: 'blad' }; return 'blad'; }
-      /* Zwykłe GET, bez nagłówka Range — świadomie po CAŁY plik, nie po pierwszy bajt.
-         Przechodzi przez service workera (Range go omija, bo psułby przewijanie audio),
-         więc rozdział ląduje w pamięci już przy rysowaniu banera: klik otwiera czytnik
-         natychmiast i działa bez sieci. Powtórek nie ma — bufor 3 s i zapamiętane „brak”. */
       const r = await fetch(pelny, { method: 'GET' });
       if (r.status === 404 || r.status === 403) { sprawdzone[pelny] = 'brak'; return 'brak'; }
       stan = r.ok ? 'jest' : 'blad';
@@ -162,9 +156,6 @@ const LEKTURY_USTAWIENIA = {
   async function workerDo() {
     if (workerWybrany) return workerWybrany;
     try {
-      /* Cache najpierw, potem lekkie HEAD — workera nie ściągamy žeby sprawdzić,
-         czy jest (1,1 MB). Offline, gdy powiłoka jest w pamięci, trafienie w cache
-         wystarcza. */
       if (self.caches) {
         const traf = await caches.match(WORKER_LOKALNY);
         if (traf && traf.ok) { workerWybrany = WORKER_LOKALNY; return workerWybrany; }
@@ -179,6 +170,13 @@ const LEKTURY_USTAWIENIA = {
     return workerWybrany;
   }
 
+  /* Powiększenie czytnika: 1 = szerokość kolumny. Zapamiętane, bo kto raz powiększył,
+     ten czyta tak dalej. Strony renderujemy ponownie zamiast skalować bitmapę — inaczej
+     tekst rozmywa się przy 1,5×. */
+  const KLUCZ_ZOOM = 'pz-czytnik-zoom';
+  const KROKI_ZOOM = [0.85, 1, 1.25, 1.5, 1.85];
+  let zoom = (() => { const z = parseFloat(localStorage.getItem(KLUCZ_ZOOM)); return KROKI_ZOOM.includes(z) ? z : 1; })();
+  let stronRazem = 0;
   let generacja = 0;         // każde otwarcie i zamknięcie unieważnia poprzedni render
   let pdfBiezacy = null;
   let dogonBiezacy = null;   // handler resize — musi dać się odpiąć
@@ -203,12 +201,10 @@ const LEKTURY_USTAWIENIA = {
     const moja = ++generacja;
     /* Ścieżka względna nie prowadzi nigdzie poza aplikacją — martwy link
        jest gorszy niż jego brak. */
-    /* Lustro na Internet Archive (urlArchive) NIE idzie do pdf.js — archive.org nie
-       daje CORS, więc dokumentu nie da się tam odczytać. Nadaje się tylko na link
-       „otwórz w przeglądarce”: nowa karta, bez CORS. Gdy lustra nie ma, a ścieżka jest
-       względna, link zostaje ukryty — martwy odsyłacz jest gorszy niż jego brak. */
     const zewn = el('czytnik-zewnetrznie');
     if (zewn) {
+      /* Lustro na Internet Archive tylko jako link w nowej karcie — pdf.js go nie
+         odczyta, bo archive.org nie daje CORS. */
       const poza = archiwum || (bezwzgledny(url) ? url : '');
       if (poza) { zewn.href = poza; zewn.style.display = ''; }
       else { zewn.removeAttribute('href'); zewn.style.display = 'none'; }
@@ -252,7 +248,8 @@ const LEKTURY_USTAWIENIA = {
     const box = el('czytnik-strony');
     if (!box) return;
     box.innerHTML = '';
-    const szer = Math.min((box.clientWidth || 700) - 24, 820);
+    const szer = Math.min((box.clientWidth || 700) - 24, 820) * zoom;
+    stronRazem = pdf.numPages;
     const kanwy = [];
     kanwyBiezace = kanwy;
 
@@ -273,8 +270,19 @@ const LEKTURY_USTAWIENIA = {
       } catch { c.dataset.gotowa = ''; }
     };
 
+    /* Licznik bierze stronę, która zajmuje górną trzecią widoku — to ta, którą się czyta. */
+    const ustawLicznik = () => {
+      const licz = el('czytnik-licznik');
+      if (!licz || !kanwy.length) return;
+      const y = box.scrollTop + box.clientHeight * 0.3;
+      let n = 0;
+      kanwy.forEach((c, i) => { if (c.offsetTop <= y) n = i; });
+      licz.textContent = (n + 1) + '/' + stronRazem;
+    };
+
     const dogon = () => {
       if (moja !== generacja) return;
+      ustawLicznik();
       const gorna = box.scrollTop - 400;
       const dolna = box.scrollTop + box.clientHeight + 1200;
       kanwy.forEach((c) => {
@@ -295,6 +303,7 @@ const LEKTURY_USTAWIENIA = {
       c.dataset.strona = String(i);
       c.width = Math.round(v.width);
       c.height = Math.round(v.height);
+      c.style.width = Math.round(v.width) + 'px';
       c.setAttribute('aria-label', 'Strona ' + i + ' z ' + pdf.numPages);
       box.appendChild(c);
       kanwy.push(c);
@@ -304,6 +313,7 @@ const LEKTURY_USTAWIENIA = {
     if (moja !== generacja) return;
 
     dogon();
+    ustawLicznik();
   }
 
   function zamknijCzytnik() {
@@ -316,6 +326,35 @@ const LEKTURY_USTAWIENIA = {
     zwolnijCzytnik();
     setTimeout(() => { const b = el('czytnik-strony'); if (b) b.innerHTML = ''; }, 320);
   }
+
+  /* Powiększenie: pozycję w dokumencie zachowujemy proporcjonalnie, żeby student
+     nie wracał na początek rozdziału po każdym kliknięciu. */
+  async function ustawZoom(kierunek) {
+    const i = KROKI_ZOOM.indexOf(zoom);
+    const nowy = KROKI_ZOOM[Math.min(KROKI_ZOOM.length - 1, Math.max(0, i + kierunek))];
+    if (!nowy || nowy === zoom || !pdfBiezacy) return;
+    const box = el('czytnik-strony');
+    const udzial = box && box.scrollHeight ? box.scrollTop / box.scrollHeight : 0;
+    zoom = nowy;
+    try { localStorage.setItem(KLUCZ_ZOOM, String(zoom)); } catch {}
+    odswiezZoom();
+    await rysujStrony(pdfBiezacy, generacja);
+    if (box) box.scrollTop = udzial * box.scrollHeight;
+  }
+
+  function odswiezZoom() {
+    const mniej = el('czytnik-mniej');
+    const wiecej = el('czytnik-wiecej');
+    const i = KROKI_ZOOM.indexOf(zoom);
+    if (mniej) mniej.disabled = i <= 0;
+    if (wiecej) wiecej.disabled = i >= KROKI_ZOOM.length - 1;
+  }
+
+  const bMniej = el('czytnik-mniej');
+  if (bMniej) bMniej.onclick = () => ustawZoom(-1);
+  const bWiecej = el('czytnik-wiecej');
+  if (bWiecej) bWiecej.onclick = () => ustawZoom(1);
+  odswiezZoom();
 
   const zamknijBtn = el('czytnik-zamknij');
   if (zamknijBtn) zamknijBtn.onclick = zamknijCzytnik;

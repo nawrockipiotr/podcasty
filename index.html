@@ -479,8 +479,21 @@ body.jasny #czytnik-nota{color:#8a5316}
   display:flex;flex-direction:column;gap:12px;align-items:center;
 }
 #czytnik-strony:focus{outline:none}
+#czytnik-licznik{flex:none;font-size:11px;font-weight:700;color:var(--tekst-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+#czytnik-licznik:empty{display:none}
+.czytnik-zoom{flex:none;display:flex;gap:4px}
+.czytnik-zoom button{
+  width:30px;height:30px;border-radius:999px;display:grid;place-items:center;
+  border:1px solid var(--obrys);background:var(--karta);color:var(--tekst-2);
+  font-size:15px;font-weight:700;line-height:1;
+}
+.czytnik-zoom button:disabled{opacity:.35;cursor:default}
+@media (hover:hover){.czytnik-zoom button:not(:disabled):hover{color:var(--tekst);border-color:var(--tekst-3)}}
+/* Powiększona strona jest szersza od kolumny — stąd przewijanie w poziomie.
+   Szerokość canvasu ustawia lektury.js (renderujemy ponownie, nie skalujemy bitmapy). */
+#czytnik-strony{overflow-x:auto}
 #czytnik-strony canvas{
-  width:100%;max-width:820px;height:auto;display:block;
+  max-width:none;flex:none;height:auto;display:block;
   background:#fff;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.28);
 }
 #czytnik-stan{font-size:13px;color:var(--tekst-3);padding:32px 0;text-align:center}
@@ -529,6 +542,41 @@ body.jasny .lektura-baner:hover .lektura-nazwa{color:var(--niebieski)}
    z redundancją kształtu (znacznik ✓/✕ + pozycja + grubość obrysu). */
 #postep-kursu .pk-linia{flex-wrap:wrap}
 #postep-kursu .pk-testy{flex:0 0 100%;order:3;font-size:12px;color:var(--tekst-3);margin-top:6px}
+/* Dane żyją w jednej przeglądarce — student musi to wiedzieć ZANIM zmieni telefon,
+   więc informacja stoi przy pasku postępu, nie w stopce. */
+#postep-kursu .pk-pamiec{
+  flex:0 0 100%;order:4;margin-top:6px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+  font-size:11.5px;line-height:1.5;color:var(--tekst-3);text-wrap:pretty;
+}
+#postep-kursu .pk-pamiec button{
+  min-height:34px;padding:0 14px;border-radius:999px;
+  border:1px solid var(--obrys);color:var(--tekst-2);
+  font-size:11.5px;font-weight:600;
+}
+@media (hover:hover){#postep-kursu .pk-pamiec button:hover{color:var(--tekst);border-color:var(--tekst-3)}}
+.odcinek-test.wolny{border-style:dashed}
+#test-start.zachecony{border-color:var(--akcent);background:var(--akcent-cien)}
+/* Pytanie o tryb studiów przy pierwszym wejściu — raz, zamiast szukania w filtrach. */
+#pytanie-tryb{
+  margin:14px 6px 0;padding:14px 16px;border-radius:14px;
+  border:1px solid var(--akcent);background:var(--akcent-cien);
+}
+#pytanie-tryb p{font-size:13.5px;line-height:1.5;color:var(--tekst);text-wrap:pretty}
+#pytanie-tryb p b{font-weight:700}
+#pytanie-tryb div{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+#pytanie-tryb button{
+  min-height:38px;padding:0 18px;border-radius:999px;
+  background:var(--akcent);border:1px solid var(--akcent);color:var(--tlo);
+  font-size:13px;font-weight:700;
+}
+#pytanie-tryb button.lekki{background:none;border-color:var(--obrys);color:var(--tekst-2);font-weight:600}
+#filtry-licznik{
+  flex:none;min-width:20px;height:20px;padding:0 6px;border-radius:999px;
+  display:grid;place-items:center;background:var(--akcent);color:var(--tlo);
+  font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;
+}
+#filtry-licznik:empty{display:none}
 .odcinek-test{
   flex:none;padding:1px 7px;border-radius:999px;
   border:1px solid var(--obrys);color:var(--tekst-3);
@@ -539,17 +587,20 @@ body.jasny .lektura-baner:hover .lektura-nazwa{color:var(--niebieski)}
   margin-top:18px;padding:13px 14px;
   border:1px solid var(--obrys);border-radius:14px;background:var(--karta);
 }
+/* Kafelek jak przy lekturze i okrągłej okładce: granatowy gradient, znak w żółci 110C.
+   Ten sam rysunek tła co `.lektura-ikona` — różni je tylko glif. */
 .test-start-ikona{
   flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
-  background:var(--akcent-cien);border:1px solid var(--akcent);color:var(--akcent);
+  background:linear-gradient(135deg,#33409a 0%,#1a2360 45%,#0b1240 100%);color:#d8bc44;
 }
+.test-start-ikona svg{width:22px;height:22px}
 .test-start-tekst{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
 .test-start-tekst b{font-size:14.5px;font-weight:700;color:var(--tekst)}
 .test-start-tekst i{font-style:normal;font-size:12px;color:var(--tekst-3)}
 .test-start-strzalka{flex:none;color:var(--tekst-3);font-size:17px}
 @media (hover:hover){#test-start:not(:disabled):hover .test-start-tekst b{color:var(--akcent)}}
 #test-start.niegotowy{cursor:default}
-#test-start.niegotowy .test-start-ikona{background:none;border-color:var(--obrys);color:var(--tekst-3)}
+#test-start.niegotowy .test-start-ikona{background:var(--karta-jasna);color:var(--tekst-3)}
 #test-start.niegotowy .test-start-tekst b{color:var(--tekst-2);font-weight:600}
 #test-start.niegotowy .test-start-strzalka{display:none}
 #pelny-test-wynik{
@@ -887,6 +938,12 @@ body.jasny #test{box-shadow:0 -20px 60px rgba(13,27,61,.16)}
       <span class="pk-tekst" id="pk-tekst">Odsłuchane 0 z 64</span>
       <span class="pk-procent" id="pk-procent">0%</span>
       <span class="pk-testy" id="pk-testy" style="display:none"></span>
+      <span class="pk-pamiec">
+        Postęp i wyniki testów zapisują się tylko w tej przeglądarce, na tym urządzeniu.
+        <button type="button" id="kopia-zapisz">Zapisz kopię</button>
+        <button type="button" id="kopia-wczytaj">Wczytaj kopię</button>
+        <input type="file" id="kopia-plik" accept="application/json,.json" hidden>
+      </span>
       <button type="button" id="chip-nieodsluchane" aria-pressed="false">Tylko nieodsłuchane</button>
     </div>
     <div class="pk-pasek"><i id="pk-wypelnienie"></i></div>
@@ -897,7 +954,7 @@ body.jasny #test{box-shadow:0 -20px 60px rgba(13,27,61,.16)}
   </div>
 
   <div id="lista" aria-label="Lista odcinków"></div>
-  <p id="stopka-wersja">Wersja v15 · 3 września 2026 · 64 odcinki, 61 rozdziałów, testy wiedzy</p>
+  <p id="stopka-wersja">Wersja v16 · 3 września 2026 · 64 odcinki, 61 rozdziałów, testy wiedzy</p>
 </main>
 
 <div id="mini" aria-label="Mini-odtwarzacz">
@@ -1038,6 +1095,11 @@ body.jasny #test{box-shadow:0 -20px 60px rgba(13,27,61,.16)}
       <span class="czytnik-wroc-tekst">Wróć do odcinka</span>
     </button>
     <span id="czytnik-tytul"></span>
+    <span id="czytnik-licznik" aria-live="polite" aria-label="Widoczna strona"></span>
+    <span class="czytnik-zoom">
+      <button id="czytnik-mniej" type="button" aria-label="Pomniejsz stronę">−</button>
+      <button id="czytnik-wiecej" type="button" aria-label="Powiększ stronę">+</button>
+    </span>
     <a id="czytnik-zewnetrznie" href="#" target="_blank" rel="noopener" title="Otwórz w przeglądarce">↗</a>
   </header>
   <p id="czytnik-nota" style="display:none"></p>
@@ -1076,6 +1138,7 @@ for (const id of ['logo', 'mini-okladka', 'pelny-okladka-img']) {
 <script src="pdfjs/pdf.min.js"></script>
 <script src="lektury.js"></script>
 <script src="test.js"></script>
+<script src="kopia.js"></script>
 <script>
 /* Warstwa prezentacyjna — bez logiki odtwarzania.
    1) Brakujące okładki: ukryj zepsuty <img>, pod spodem jest stan zastępczy (sygnet WZ). */
@@ -1492,4 +1555,74 @@ if (Array.isArray(PREDKOSCI) && !PREDKOSCI.includes(0.75)) PREDKOSCI.unshift(0.7
 </script>
 
 
+<script>
+/* 15) Tryb studiów zapamiętany. Do tej pory wybór ginął przy każdym wejściu, a to
+   ustawienie zmienia numery wykładów i filtry — student nie ma powodu ustawiać go
+   codziennie od nowa. */
+(function () {
+  const KLUCZ = 'pz-tryb-studiow';
+  const grupa = document.getElementById('tryb-studiow');
+  if (!grupa) return;
+  const zapisany = localStorage.getItem(KLUCZ);
+  if (zapisany === 'zaoczne') {
+    const b = grupa.querySelector('[data-tryb="zaoczne"]');
+    if (b) b.click();
+  }
+  grupa.addEventListener('click', (e) => {
+    if (!e.target.closest('[data-tryb]')) return;
+    try { localStorage.setItem(KLUCZ, trybStudiow); } catch {}
+    domknijPytanie();
+  });
+
+  /* Pytanie zadane raz: dopóki nie ma zapisanego trybu ani odmowy. */
+  function domknijPytanie() {
+    const k = document.getElementById('pytanie-tryb');
+    if (k) k.remove();
+  }
+  if (zapisany) return;
+  const gdzie = document.getElementById('postep-kursu');
+  if (!gdzie) return;
+  const karta = document.createElement('section');
+  karta.id = 'pytanie-tryb';
+  karta.innerHTML = '<p><b>Studiujesz dziennie czy zaocznie?</b> Ustawię numery wykładów i filtry pod Twój program. Zmienisz to później w filtrach.</p>'
+    + '<div><button type="button" data-wybor="dzienne">Dzienne</button>'
+    + '<button type="button" data-wybor="zaoczne">Zaoczne</button>'
+    + '<button type="button" class="lekki" data-wybor="pozniej">Nie teraz</button></div>';
+  gdzie.before(karta);
+  karta.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-wybor]');
+    if (!b) return;
+    const w = b.dataset.wybor;
+    if (w === 'pozniej') { try { localStorage.setItem(KLUCZ, 'dzienne'); } catch {} domknijPytanie(); return; }
+    const cel = grupa.querySelector('[data-tryb="' + w + '"]');
+    if (cel && w !== trybStudiow) cel.click();
+    else { try { localStorage.setItem(KLUCZ, w); } catch {} }
+    domknijPytanie();
+  });
+})();
+/* 16) Licznik aktywnych filtrów na zwiniętym przełączniku — inaczej pusta lista przy
+   zwiniętym panelu wygląda jak brak odcinków, a nie jak działający filtr. */
+(function () {
+  const btn = document.getElementById('filtry-przelacznik');
+  const panel = document.getElementById('filtry-panel');
+  if (!btn || !panel) return;
+  const licznik = document.createElement('b');
+  licznik.id = 'filtry-licznik';
+  btn.appendChild(licznik);
+  function odswiez() {
+    let n = 0;
+    if (typeof aktywnyFiltr !== 'undefined' && aktywnyFiltr !== 'wszystkie') n++;
+    if (typeof aktywnyWyklad !== 'undefined' && aktywnyWyklad !== null) n++;
+    if (typeof tylkoNieodsluchane !== 'undefined' && tylkoNieodsluchane) n++;
+    licznik.textContent = n && panel.classList.contains('zwiniete') ? String(n) : '';
+  }
+  ['filtry', 'filtry-wykladow', 'chip-nieodsluchane', 'lista'].forEach((id) => {
+    const e = document.getElementById(id);
+    if (e) e.addEventListener('click', () => setTimeout(odswiez, 0));
+  });
+  btn.addEventListener('click', () => setTimeout(odswiez, 0));
+  new MutationObserver(odswiez).observe(panel, { attributes: true, attributeFilter: ['class'] });
+  odswiez();
+})();
+</script>
 </body></html>
