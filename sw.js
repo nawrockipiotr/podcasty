@@ -4,9 +4,21 @@
      csri-audio-v1    — pobrane odcinki, NIGDY nie czyszczone automatycznie
    Podbij numer POWLOKA po każdej zmianie w index.html / player.js. */
 
-const POWLOKA = 'csri-powloka-v12';
+const POWLOKA = 'csri-powloka-v13';
 const AUDIO = 'csri-audio-v1';
-const PLIKI = ['./', 'index.html', 'player.js', 'episodes.json', 'manifest.webmanifest'];
+const PLIKI = ['./', 'index.html', 'player.js', 'episodes.json', 'lektury.json', 'manifest.webmanifest'];
+
+/* Do pamięci podręcznej trafiają wyłącznie udane odpowiedzi.
+   Bez tego jeden 404 — wdrożenie w toku, chwilowy brak sieci, tunel w metrze —
+   zostaje zapisany i jest serwowany do końca życia tej wersji cache.
+   Odczytu nie naprawia ani odświeżenie strony, ani ponowne wejście. */
+const wartoZapisac = (odp) => odp && odp.ok && odp.status === 200 && odp.type !== 'opaque';
+
+function zapisz(zadanie, odp) {
+  if (!wartoZapisac(odp)) return;
+  const kopia = odp.clone();
+  caches.open(POWLOKA).then((c) => c.put(zadanie, kopia)).catch(() => {});
+}
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
@@ -39,15 +51,11 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // episodes.json: najpierw sieć, żeby nowe odcinki pojawiały się od razu.
-  if (zadanie.url.includes('episodes.json')) {
+  // episodes.json i lektury.json: najpierw sieć, żeby zmiany pojawiały się od razu.
+  if (zadanie.url.includes('episodes.json') || zadanie.url.includes('lektury.json')) {
     e.respondWith(
       fetch(zadanie)
-        .then((odp) => {
-          const kopia = odp.clone();
-          caches.open(POWLOKA).then((c) => c.put(zadanie, kopia)).catch(() => {});
-          return odp;
-        })
+        .then((odp) => { zapisz(zadanie, odp); return odp; })
         .catch(() => caches.match(zadanie))
     );
     return;
@@ -55,10 +63,6 @@ self.addEventListener('fetch', (e) => {
 
   // Reszta powłoki: najpierw pamięć podręczna, w tle odświeżenie.
   e.respondWith(
-    caches.match(zadanie).then((traf) => traf || fetch(zadanie).then((odp) => {
-      const kopia = odp.clone();
-      caches.open(POWLOKA).then((c) => c.put(zadanie, kopia)).catch(() => {});
-      return odp;
-    }))
+    caches.match(zadanie).then((traf) => traf || fetch(zadanie).then((odp) => { zapisz(zadanie, odp); return odp; }))
   );
 });
