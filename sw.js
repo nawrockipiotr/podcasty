@@ -4,11 +4,12 @@
      csri-audio-v1    — pobrane odcinki, NIGDY nie czyszczone automatycznie
    Podbij numer POWLOKA po każdej zmianie w index.html / player.js. */
 
-const POWLOKA = 'csri-powloka-v14';
+const POWLOKA = 'csri-powloka-v15';
 const AUDIO = 'csri-audio-v1';
 /* pdf.worker.min.js (1,1 MB) musi być tu razem z rdzeniem: bez workera czytnik
    rozdziału nie otworzy się offline, a pobranie odcinka z lekturą było warunkiem. */
-const PLIKI = ['./', 'index.html', 'player.js', 'lektury.js', 'episodes.json', 'lektury.json',
+const PLIKI = ['./', 'index.html', 'player.js', 'lektury.js', 'test.js',
+  'episodes.json', 'lektury.json', 'quizy.json',
   'manifest.webmanifest', 'pdfjs/pdf.min.js', 'pdfjs/pdf.worker.min.js'];
 
 /* Do pamięci podręcznej trafiają wyłącznie udane odpowiedzi.
@@ -58,8 +59,10 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // episodes.json i lektury.json: najpierw sieć, żeby zmiany pojawiały się od razu.
-  if (zadanie.url.includes('episodes.json') || zadanie.url.includes('lektury.json')) {
+  // episodes.json, lektury.json i quizy.json: najpierw sieć, żeby zmiany pojawiały się od razu
+  // — poprawka w pytaniu nie może czekać na podbicie powłoki.
+  if (zadanie.url.includes('episodes.json') || zadanie.url.includes('lektury.json')
+      || zadanie.url.includes('quizy.json')) {
     e.respondWith(
       fetch(zadanie)
         .then((odp) => { zapisz(zadanie, odp); return odp; })

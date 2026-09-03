@@ -515,6 +515,268 @@ body.jasny .lektura-baner.blad .lektura-koszt{color:#9a5f1c}
 @media (hover:hover){.lektura-baner:hover .lektura-nazwa{color:var(--akcent)}}
 body.jasny .lektura-baner:hover .lektura-nazwa{color:var(--niebieski)}
 
+
+/* ── Test po odcinku ── znaczniki .wariant i .przeglad-* generuje test.js
+   Formatywny: bez ocen, bez timera, wyjście bezkosztowe. Zielony/czerwony zawsze
+   z redundancją kształtu (znacznik ✓/✕ + pozycja + grubość obrysu). */
+#postep-kursu .pk-linia{flex-wrap:wrap}
+#postep-kursu .pk-testy{flex:0 0 100%;order:3;font-size:12px;color:var(--tekst-3);margin-top:6px}
+.odcinek-test{
+  flex:none;padding:1px 7px;border-radius:999px;
+  border:1px solid var(--obrys);color:var(--tekst-3);
+  font-size:11px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+#test-start{
+  display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  margin-top:18px;padding:13px 14px;
+  border:1px solid var(--obrys);border-radius:14px;background:var(--karta);
+}
+.test-start-ikona{
+  flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+  background:var(--akcent-cien);border:1px solid var(--akcent);color:var(--akcent);
+}
+.test-start-tekst{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.test-start-tekst b{font-size:14.5px;font-weight:700;color:var(--tekst)}
+.test-start-tekst i{font-style:normal;font-size:12px;color:var(--tekst-3)}
+.test-start-strzalka{flex:none;color:var(--tekst-3);font-size:17px}
+@media (hover:hover){#test-start:not(:disabled):hover .test-start-tekst b{color:var(--akcent)}}
+#test-start.niegotowy{cursor:default}
+#test-start.niegotowy .test-start-ikona{background:none;border-color:var(--obrys);color:var(--tekst-3)}
+#test-start.niegotowy .test-start-tekst b{color:var(--tekst-2);font-weight:600}
+#test-start.niegotowy .test-start-strzalka{display:none}
+#pelny-test-wynik{
+  margin-top:10px;padding-left:14px;
+  font-size:12px;line-height:1.7;color:var(--tekst-3);font-variant-numeric:tabular-nums;
+  letter-spacing:.015em;word-spacing:.08em;
+}
+#pelny-test-wynik b{color:var(--tekst-2);font-weight:700}
+#pelny-test-wynik .pw-sep{display:inline-block;margin:0 9px;color:var(--obrys)}
+
+#test{
+  position:fixed;inset:0;z-index:55;
+  background:linear-gradient(180deg,var(--tlo-gradient) 0%,var(--tlo) 46%);
+  transform:translateY(100%);transition:transform var(--przejscie);
+  visibility:hidden;overflow:hidden;
+}
+#test.otwarty{transform:none;visibility:visible}
+/* Mini-player zostaje widoczny i klikalny obok otwartego testu */
+body:has(#test.otwarty) #mini{z-index:56}
+/* Mini-player leży NA panelu testu — kolumna zostawia mu miejsce od dołu */
+body:has(#test.otwarty):has(#mini.widoczny) .test-kolumna{padding-bottom:calc(env(safe-area-inset-bottom) + 92px)}
+body:has(#test.otwarty):has(#mini.widoczny) #test-wynik .test-wynik-kolumna{padding-bottom:calc(env(safe-area-inset-bottom) + 100px)}
+
+.test-kolumna{
+  height:100%;max-width:696px;margin:0 auto;
+  padding:calc(env(safe-area-inset-top) + 12px) 18px 12px;
+  display:flex;flex-direction:column;gap:11px;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.test-gora{display:flex;align-items:center;gap:12px;flex:none;min-height:44px}
+.test-gora .test-loga{margin-right:auto}
+#test-postep{font-size:13px;font-weight:700;color:var(--tekst-3);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.test-nawigacja{flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:38px}
+#test-wstecz{
+  flex:none;height:34px;padding:0 14px;border-radius:999px;
+  border:1px solid var(--obrys);background:var(--karta);
+  color:var(--tekst-2);font-size:12.5px;font-weight:600;white-space:nowrap;
+}
+#test-wstecz:disabled{opacity:.35;cursor:default}
+@media (hover:hover){#test-wstecz:not(:disabled):hover{color:var(--tekst);border-color:var(--tekst-3)}}
+.wariant.wybrany{border-width:2px;border-color:var(--akcent);background:var(--akcent-cien)}
+/* Nakładka haptyczna iOS: niewidoczny switch przejmuje dotyk (Safari 17.4+) */
+.hap-wrap{position:relative;display:flex;min-width:0}
+#test-warianty .hap-wrap{width:100%}
+.hap-switch{position:absolute;inset:-2px;margin:0;display:block;cursor:inherit;z-index:2;border-radius:inherit}
+.hap-switch input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;appearance:none;-webkit-appearance:none;pointer-events:auto}
+/* Wibracje wyłączone: label nadal przejmuje dotyk, ale switch się nie przełącza — brak drgania */
+body.bez-haptyki .hap-switch input{pointer-events:none}
+#test-zamknij{
+  flex:none;height:38px;padding:0 14px 0 12px;border-radius:999px;
+  display:flex;align-items:center;gap:7px;
+  border:1px solid var(--obrys);background:var(--karta);
+  color:var(--tekst-2);font-size:13px;font-weight:600;
+}
+#test-dalej{
+  flex:none;height:34px;padding:0 16px;border-radius:999px;
+  background:var(--niebieski);color:#fff;border:1px solid var(--niebieski);
+  font-size:13px;font-weight:700;white-space:nowrap;
+}
+@media (hover:hover){#test-dalej:hover{background:#1e3b85;border-color:#1e3b85}}
+@media (max-width:400px){
+  #test-zamknij{padding:0 12px 0 10px;font-size:12.5px}
+  #test-dalej{padding:0 13px;font-size:12.5px}
+  #test-postep{font-size:12px}
+}
+@media (hover:hover){#test-zamknij:hover{color:var(--tekst)}}
+.test-pasek-tor{flex:none;height:7px;border-radius:999px;background:var(--karta-jasna);overflow:hidden}
+#test-pasek{display:block;height:100%;width:0;border-radius:999px;background:var(--akcent);transition:width var(--przejscie)}
+
+.test-tresc{flex:none;display:flex;align-items:flex-start;padding:2px 0 6px}
+#test-pytanie{
+  font-size:19px;line-height:1.35;font-weight:600;color:var(--tekst);
+  text-wrap:pretty;letter-spacing:-.01em;
+}
+#test-pytanie:focus{outline:none}
+
+#test-warianty{flex:none;display:flex;flex-direction:column;gap:8px}
+.wariant{
+  position:relative;display:block;width:100%;min-height:48px;
+  padding:11px 44px 11px 14px;text-align:left;
+  border:1px solid var(--obrys);border-radius:var(--promien);
+  background:var(--karta);color:var(--tekst);
+  font-size:14.5px;line-height:1.32;font-weight:500;text-wrap:pretty;
+  transition:background var(--dotyk),border-color var(--dotyk),color var(--dotyk);
+}
+.wariant::after{
+  content:"";position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  width:22px;height:22px;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:13px;font-weight:800;line-height:1;
+  opacity:0;transition:opacity var(--dotyk);
+}
+@media (hover:hover){.wariant:hover{background:var(--karta-jasna);border-color:var(--tekst-3)}}
+.wariant:active{background:var(--karta-jasna)}
+.wariant:disabled{cursor:default}
+
+/* Poprawny: obrys 2px, tło zielone, znacznik ✓ po prawej */
+.wariant.poprawny{
+  background:rgba(78,163,113,.18);border:2px solid #4ea371;padding:10px 43px 10px 13px;
+  color:var(--tekst);font-weight:600;
+}
+.wariant.poprawny::after{content:"✓";opacity:1;background:#4ea371;color:#06210f}
+/* Błędny: obrys przerywany, treść przygaszona, znacznik ✕ */
+.wariant.bledny{
+  background:rgba(180,90,90,.14);border:1px dashed #c07575;color:var(--tekst-2);
+}
+.wariant.bledny::after{content:"✕";opacity:1;background:transparent;border:1.5px solid #c07575;color:#c07575}
+
+@media (pointer:fine){
+  #test-warianty{counter-reset:wariant}
+  .wariant{counter-increment:wariant;padding-left:44px}
+  .wariant.poprawny{padding-left:43px}
+  .wariant::before{
+    content:counter(wariant);position:absolute;left:13px;top:50%;transform:translateY(-50%);
+    width:21px;height:21px;border-radius:6px;display:grid;place-items:center;
+    background:var(--karta-jasna);color:var(--tekst-3);
+    font-size:11.5px;font-weight:700;font-variant-numeric:tabular-nums;
+  }
+  .wariant.poprawny::before,.wariant.bledny::before{opacity:.45}
+}
+@media (pointer:coarse){.test-klawisze{display:none}}
+.test-podpis{flex:none;display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:10px}
+.test-loga{flex:none;display:flex;align-items:center;gap:10px}
+.test-logo-wz{height:36px;width:auto;opacity:.9}
+.test-logo-csri{height:38px;width:auto;opacity:.9}
+.test-loga-kreska{width:1px;height:26px;background:var(--obrys)}
+body.jasny .test-logo-wz,body.jasny .test-logo-csri{filter:brightness(0) saturate(100%) invert(14%) sepia(45%) saturate(1900%) hue-rotate(208deg) brightness(94%) contrast(97%);opacity:.9}
+.test-loga img.brak{display:none}
+#test-haptyka{
+  flex:none;height:28px;padding:0 12px;border-radius:999px;
+  border:1px solid var(--obrys);background:var(--karta);
+  color:var(--tekst-3);font-size:11px;font-weight:600;white-space:nowrap;
+}
+#test-haptyka[aria-pressed="true"]{color:var(--tekst-2);border-color:var(--tekst-3)}
+@media (hover:hover){#test-haptyka:hover{color:var(--tekst)}}
+.test-stopka{flex:1;min-width:0;text-align:center;font-size:11px;line-height:1.4;color:var(--tekst-3);text-wrap:pretty}
+
+/* ── Ekran wyniku ── */
+#test-wynik{
+  position:absolute;inset:0;background:inherit;
+  opacity:0;visibility:hidden;transition:opacity var(--dotyk);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+#test-wynik.widoczny{opacity:1;visibility:visible}
+.test-wynik-kolumna{
+  max-width:696px;margin:0 auto;
+  padding:calc(env(safe-area-inset-top) + 26px) 18px 22px;
+  display:flex;flex-direction:column;
+}
+#test-wynik-liczba{font-size:38px;font-weight:700;letter-spacing:-.03em;color:var(--tekst);font-variant-numeric:tabular-nums}
+#test-wynik-opis{margin-top:6px;font-size:14px;line-height:1.5;color:var(--tekst-2);max-width:42ch;text-wrap:pretty}
+#test-porownanie{margin-top:4px;font-size:12.5px;font-weight:600;color:var(--akcent);font-variant-numeric:tabular-nums}
+#test-slabe{margin-top:22px;border-top:1px solid var(--obrys);padding-top:16px}
+#test-slabe h3{font-size:13.5px;font-weight:700;color:var(--tekst-3);margin-bottom:10px}
+#test-slabe ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px}
+#test-slabe li{font-size:13.5px;line-height:1.5;color:var(--tekst-2);text-wrap:pretty}
+#test-slabe li::marker{color:var(--akcent)}
+.slabe-licznik{color:var(--tekst-3);font-variant-numeric:tabular-nums}
+#test-przeglad{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+.przeglad-pytanie{
+  padding:13px 15px;border-radius:var(--promien);
+  background:var(--karta);border-left:3px solid #4ea371;
+}
+.przeglad-pytanie.zle{border-left:3px solid #c07575}
+.przeglad-tresc{font-size:14px;line-height:1.4;font-weight:600;color:var(--tekst);text-wrap:pretty}
+.przeglad-odp{margin-top:9px;display:flex;flex-direction:column;gap:4px}
+.przeglad-zla,.przeglad-dobra{
+  position:relative;padding-left:20px;font-size:13px;line-height:1.4;text-wrap:pretty;
+}
+.przeglad-zla::before,.przeglad-dobra::before{
+  position:absolute;left:0;top:0;font-weight:800;font-size:12px;line-height:1.55;
+}
+.przeglad-zla{color:var(--tekst-3);text-decoration:line-through;text-decoration-color:var(--tekst-3)}
+.przeglad-zla::before{content:"✕";color:#c07575;text-decoration:none}
+.przeglad-dobra{color:var(--tekst)}
+.przeglad-dobra::before{content:"✓";color:#4ea371}
+
+.test-loga-wynik{margin-top:26px;justify-content:flex-start;display:flex;align-items:center;gap:10px}
+.test-wynik-przyciski{margin-top:18px;display:flex;flex-wrap:wrap;gap:9px}
+.test-wynik-przyciski button{
+  min-height:44px;padding:0 18px;border-radius:999px;
+  border:1px solid var(--obrys);background:var(--karta);color:var(--tekst);
+  font-size:13.5px;font-weight:600;
+}
+#test-powtorz{background:var(--akcent);border-color:var(--akcent);color:var(--tlo)}
+#test-do-odcinka{background:none}
+@media (hover:hover){.test-wynik-przyciski button:hover{border-color:var(--tekst-3)}}
+
+@media (min-height:780px){
+  #test-pytanie{font-size:21px}
+  .wariant{min-height:52px;padding-top:13px;padding-bottom:13px}
+}
+@media (max-height:640px){
+  .test-podpis{display:none}
+  #test-pytanie{font-size:17px}
+}
+
+/* Tryb jasny */
+body.jasny .wariant.poprawny{background:rgba(45,122,80,.13);border-color:#2d7a50}
+body.jasny .wariant.poprawny::after{background:#2d7a50;color:#fff}
+body.jasny .wariant.bledny{background:rgba(168,58,58,.08);border-color:#a83a3a;color:var(--tekst-2)}
+body.jasny .wariant.bledny::after{border-color:#a83a3a;color:#a83a3a}
+body.jasny .przeglad-pytanie{border-left-color:#2d7a50}
+body.jasny .przeglad-pytanie.zle{border-left-color:#a83a3a}
+body.jasny .przeglad-zla::before{color:#a83a3a}
+body.jasny .przeglad-dobra::before{color:#2d7a50}
+body.jasny #test{box-shadow:0 -20px 60px rgba(13,27,61,.16)}
+
+/* Reakcja na dotyk — tylko elementy testu (reszta interfejsu bez zmian) */
+#test-start,#test-dalej,#test-wstecz,#test-zamknij,#test-haptyka,
+.test-wynik-przyciski button,.wariant{
+  transition:transform 140ms cubic-bezier(.2,.8,.2,1),box-shadow 140ms cubic-bezier(.2,.8,.2,1),
+             background var(--dotyk),color var(--dotyk),border-color var(--dotyk);
+}
+@media (hover:hover){
+  #test-start:not(:disabled):hover,#test-dalej:hover,#test-wstecz:not(:disabled):hover,
+  #test-zamknij:hover,#test-haptyka:hover,.test-wynik-przyciski button:hover,
+  .wariant:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.38)}
+  body.jasny #test-start:not(:disabled):hover,body.jasny #test-dalej:hover,
+  body.jasny #test-wstecz:not(:disabled):hover,body.jasny #test-zamknij:hover,
+  body.jasny #test-haptyka:hover,body.jasny .test-wynik-przyciski button:hover,
+  body.jasny .wariant:not(:disabled):hover{box-shadow:0 6px 18px rgba(13,27,61,.18)}
+}
+#test-start:active,#test-dalej:active,#test-wstecz:active,#test-zamknij:active,
+#test-haptyka:active,.test-wynik-przyciski button:active,.wariant:not(:disabled):active{
+  transform:translateY(1px) scale(.985);box-shadow:0 2px 6px rgba(0,0,0,.3);
+}
+/* iOS: dotyk trafia w nakładkę haptyczną, więc wciśnięcie bierzemy z wrappera */
+.hap-wrap:active > button,.hap-wrap:active > .wariant{
+  transform:translateY(1px) scale(.985);box-shadow:0 2px 6px rgba(0,0,0,.3);
+}
+.hap-wrap:active > .wariant:disabled{transform:none;box-shadow:none}
+/* Odpowiedź już wybrana — nie reaguje na dotyk */
+.wariant:disabled,.wariant.poprawny,.wariant.bledny{transform:none !important;box-shadow:none !important}
+
 @media (prefers-reduced-motion:reduce){
   *,#mini,#pelny{transition:none !important;animation:none !important}
 }
@@ -599,6 +861,7 @@ body.jasny .lektura-baner:hover .lektura-nazwa{color:var(--niebieski)}
     <div class="pk-linia">
       <span class="pk-tekst" id="pk-tekst">Odsłuchane 0 z 64</span>
       <span class="pk-procent" id="pk-procent">0%</span>
+      <span class="pk-testy" id="pk-testy" style="display:none"></span>
       <button type="button" id="chip-nieodsluchane" aria-pressed="false">Tylko nieodsłuchane</button>
     </div>
     <div class="pk-pasek"><i id="pk-wypelnienie"></i></div>
@@ -668,6 +931,18 @@ body.jasny .lektura-baner:hover .lektura-nazwa{color:var(--niebieski)}
 
     <section id="pelny-lektura" style="display:none" aria-label="Lektura — rozdział podręcznika"></section>
 
+    <button id="test-start" type="button">
+      <span class="test-start-ikona" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 2.2 2.2L9 5.4"></path><path d="m3 16.5 2.2 2.2L9 14.9"></path><path d="M13 7.6h8"></path><path d="M13 17.1h8"></path></svg>
+      </span>
+      <span class="test-start-tekst">
+        <b data-test-tytul>Sprawdź, ile zapamiętałeś</b>
+        <i data-test-podpis>Test wiedzy z odcinka — 8 pytań, bez oceny</i>
+      </span>
+      <span class="test-start-strzalka" aria-hidden="true">→</span>
+    </button>
+    <p id="pelny-test-wynik" style="display:none"></p>
+
     <section id="pelny-program" style="display:none" aria-label="Miejsce w programie kursu"></section>
     <section id="pelny-efekty" style="display:none" aria-label="Efekty uczenia się"></section>
   </div>
@@ -677,6 +952,58 @@ body.jasny .lektura-baner:hover .lektura-nazwa{color:var(--niebieski)}
 
 
 
+
+
+<section id="test" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Test sprawdzający po odcinku">
+  <div class="test-kolumna">
+    <header class="test-gora">
+      <span class="test-loga" aria-hidden="true">
+        <img class="test-logo-wz" src="okladki/wz-uw.png" alt="">
+        <span class="test-loga-kreska"></span>
+        <img class="test-logo-csri" src="okladki/csri.png" alt="">
+      </span>
+      <span id="test-postep">1 / 8</span>
+      <button id="test-zamknij" type="button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        Przerwij test
+      </button>
+    </header>
+    <div class="test-pasek-tor" aria-hidden="true"><i id="test-pasek"></i></div>
+    <div class="test-nawigacja">
+      <button id="test-wstecz" type="button" style="visibility:hidden">← Poprzednie</button>
+      <button id="test-dalej" type="button" style="visibility:hidden">Następne pytanie →</button>
+    </div>
+    <div class="test-tresc">
+      <h2 id="test-pytanie" aria-live="polite" tabindex="-1"></h2>
+    </div>
+    <div id="test-warianty"></div>
+    <div class="test-podpis">
+      <button id="test-haptyka" type="button" aria-pressed="true">Wibracje włączone</button>
+      <p class="test-stopka">Test nie wpływa na ocenę — wynik widzisz tylko Ty.<span class="test-klawisze"> Klawisze 1–4 wybierają odpowiedź, strzałki ← → zmieniają pytanie, Esc przerywa.</span></p>
+    </div>
+  </div>
+
+  <div id="test-wynik" aria-label="Wynik testu">
+    <div class="test-wynik-kolumna">
+      <p id="test-wynik-liczba"></p>
+      <p id="test-porownanie" style="display:none"></p>
+      <p id="test-wynik-opis"></p>
+      <section id="test-slabe" style="display:none" aria-label="Fragmenty do powtórzenia"></section>
+      <div id="test-przeglad"></div>
+      <div class="test-loga test-loga-wynik" aria-hidden="true">
+        <img class="test-logo-wz" src="okladki/wz-uw.png" alt="">
+        <span class="test-loga-kreska"></span>
+        <img class="test-logo-csri" src="okladki/csri.png" alt="">
+      </div>
+      <div class="test-wynik-przyciski">
+        <button id="test-powtorz" type="button">Powtórz błędne</button>
+        <button id="test-jeszcze-raz" type="button">Nowe 8 pytań</button>
+        <button id="test-nastepny" type="button">Następny odcinek →</button>
+        <button id="test-do-odcinka" type="button">Wróć do odcinka</button>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="lektura-czytnik" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Rozdział podręcznika">
   <header class="czytnik-gora">
@@ -722,6 +1049,7 @@ for (const id of ['logo', 'mini-okladka', 'pelny-okladka-img']) {
 <script src="player.js"></script>
 <script src="pdfjs/pdf.min.js"></script>
 <script src="lektury.js"></script>
+<script src="test.js"></script>
 <script>
 /* Warstwa prezentacyjna — bez logiki odtwarzania.
    1) Brakujące okładki: ukryj zepsuty <img>, pod spodem jest stan zastępczy (sygnet WZ). */
