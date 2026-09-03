@@ -4,7 +4,7 @@
      csri-audio-v1    — pobrane odcinki, NIGDY nie czyszczone automatycznie
    Podbij numer POWLOKA po każdej zmianie w index.html / player.js. */
 
-const POWLOKA = 'csri-powloka-v15';
+const POWLOKA = 'csri-powloka-v16';
 const AUDIO = 'csri-audio-v1';
 /* pdf.worker.min.js (1,1 MB) musi być tu razem z rdzeniem: bez workera czytnik
    rozdziału nie otworzy się offline, a pobranie odcinka z lekturą było warunkiem. */
