@@ -4,9 +4,12 @@
      csri-audio-v1    — pobrane odcinki, NIGDY nie czyszczone automatycznie
    Podbij numer POWLOKA po każdej zmianie w index.html / player.js. */
 
-const POWLOKA = 'csri-powloka-v13';
+const POWLOKA = 'csri-powloka-v14';
 const AUDIO = 'csri-audio-v1';
-const PLIKI = ['./', 'index.html', 'player.js', 'episodes.json', 'lektury.json', 'manifest.webmanifest'];
+/* pdf.worker.min.js (1,1 MB) musi być tu razem z rdzeniem: bez workera czytnik
+   rozdziału nie otworzy się offline, a pobranie odcinka z lekturą było warunkiem. */
+const PLIKI = ['./', 'index.html', 'player.js', 'lektury.js', 'episodes.json', 'lektury.json',
+  'manifest.webmanifest', 'pdfjs/pdf.min.js', 'pdfjs/pdf.worker.min.js'];
 
 /* Do pamięci podręcznej trafiają wyłącznie udane odpowiedzi.
    Bez tego jeden 404 — wdrożenie w toku, chwilowy brak sieci, tunel w metrze —
@@ -23,8 +26,10 @@ function zapisz(zadanie, odp) {
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(POWLOKA)
-      .then((c) => c.addAll(PLIKI))
-      .catch(() => {})          // brak pojedynczego pliku nie może zablokować instalacji
+      /* Pojedynczo, nie addAll: brak jednego pliku (np. workera pdf.js) nie może
+         wywrócić całej instalacji powłoki. */
+      .then((c) => Promise.all(PLIKI.map((u) => c.add(u).catch(() => {}))))
+      .catch(() => {})
       .then(() => self.skipWaiting())
   );
 });
@@ -43,8 +48,10 @@ self.addEventListener('fetch', (e) => {
   const zadanie = e.request;
   if (zadanie.method !== 'GET') return;
 
-  // Audio: najpierw pamięć podręczna (odcinki pobrane na offline).
-  // Zapytania częściowe (Range) przepuszczamy do sieci — inaczej psuje się przewijanie.
+  /* Audio: najpierw pamięć podręczna (odcinki pobrane na offline).
+     Zapytania częściowe (Range) tylko tutaj omijają workera — inaczej psuje się
+     przewijanie nagrania. Reszta, w tym PDF-y lektur, idzie przez cache, bo od tego
+     zależy działanie czytnika bez sieci. */
   if (/\.(mp3|m4a|aac|ogg|opus)$/i.test(new URL(zadanie.url).pathname)) {
     if (zadanie.headers.has('range')) return;
     e.respondWith(caches.match(zadanie).then((traf) => traf || fetch(zadanie)));
