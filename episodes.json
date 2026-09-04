@@ -2,7 +2,7 @@
   "seria": {
     "tytul": "Podstawy zarządzania — podcasty",
     "podpis": "Wydział Zarządzania UW",
-    "opis": "Cykl 64 nagrań audio do zajęć „Podstawy zarządzania” dla I roku studiów licencjackich Wydziału Zarządzania Uniwersytetu Warszawskiego — od klasycznych nurtów teorii organizacji po współczesne podejścia badawcze. Siedem sekcji, około dziewięciu godzin. Nagrania powstały z wykorzystaniem syntezy mowy. Za dobór i treść materiału odpowiada Katedra Teorii Organizacji i Zarządzania.",
+    "opis": "Cykl 64 nagrań audio do zajęć „Podstawy zarządzania” — od klasycznych nurtów teorii organizacji po współczesne podejścia badawcze. Materiał podzielono na siedem sekcji: wprowadzenie do zarządzania; ludzie i kultura; decyzje i planowanie; otoczenie organizacji; strategia, marketing i innowacje; zarządzanie operacyjne; podsumowanie. Pojedynczy odcinek trwa od pięciu do dwunastu minut, całość około dziewięciu godzin.\n\nDo każdego odcinka dołączony jest rozdział podręcznika do przeczytania w aplikacji oraz krótki test sprawdzający — osiem pytań losowanych z puli, bez ocen i bez logowania. Pobrany odcinek działa bez dostępu do sieci razem z lekturą i testem.\n\nNagrania odpowiadają kolejnym tematom kursu — można ich słuchać w porządku programu albo wracać do pojedynczego zagadnienia. Nagrania powstały z wykorzystaniem syntezy mowy w Centrum Innowacji Odpowiedzialnych Społecznie. Za dobór i treść materiału odpowiada Katedra Teorii Organizacji i Zarządzania Wydziału Zarządzania UW.",
     "okladka": "okladki/podcast.png",
     "autor": "Centrum Innowacji Odpowiedzialnych Społecznie, Wydział Zarządzania UW",
     "email": "csri@wz.uw.edu.pl",
@@ -2134,4 +2134,4 @@
       ]
     }
   ]
-}
+        }
