@@ -180,7 +180,10 @@ body.w-ramce #pasek-ramki{
 /* ── Pusta lista: czyszczenie filtrów ── */
 .pusto-wyczysc{margin-top:12px;height:34px;padding:0 16px;border-radius:999px;border:1px solid var(--obrys);background:var(--karta);color:var(--tekst);font-size:13px;font-weight:600}
 
-/* ── Informacja o syntezie mowy ── */
+/* ── Informacja o syntezie mowy ──
+   Zdanie stoi i w opisie serii, i przy KAŻDYM odcinku: student wchodzi z Campusa
+   prosto w konkretne nagranie i nagłówka serii może nigdy nie zobaczyć. */
+#pelny-synteza{margin-top:12px;font-size:11.5px;line-height:1.5;color:var(--tekst-3);max-width:52ch;text-wrap:pretty}
 #seria-synteza{font-size:12px;color:var(--tekst-3);margin-top:10px;line-height:1.5;max-width:46ch;text-wrap:pretty}
 #seria-podrecznik{font-size:12px;color:var(--tekst-3);margin-top:8px;line-height:1.5;max-width:46ch;text-wrap:pretty}
 #seria-podrecznik:empty{display:none}
@@ -900,7 +903,7 @@ body.jasny #test{box-shadow:0 -20px 60px rgba(13,27,61,.16)}
       <p id="kredyt-nazwy">Centrum Innowacji Odpowiedzialnych Społecznie<br>Wydział Zarządzania UW</p>
       <p id="seria-opis">64 odcinki — od Taylora i Fayola po najnowsze nurty.</p>
       <p id="seria-podrecznik"></p>
-      <p id="seria-synteza">Nagrania powstały z wykorzystaniem syntezy mowy. Za dobór i treść materiału odpowiada Katedra Teorii Organizacji i Zarządzania.</p>
+      <p id="seria-synteza">Nagrania wygenerowano z użyciem sztucznej inteligencji: lektorem jest syntezator mowy. Za dobór i treść materiału odpowiada Katedra Teorii Organizacji i Zarządzania.</p>
     </div>
   </header>
 
@@ -1011,6 +1014,7 @@ body.jasny #test{box-shadow:0 -20px 60px rgba(13,27,61,.16)}
     </div>
 
     <p id="pelny-opis-tresc"></p>
+    <p id="pelny-synteza">Nagranie wygenerowano z użyciem sztucznej inteligencji: lektorem jest syntezator mowy. Za dobór i treść materiału odpowiada Katedra Teorii Organizacji i Zarządzania WZ UW.</p>
 
     <section id="pelny-lektura" style="display:none" aria-label="Lektura — rozdział podręcznika"></section>
 
